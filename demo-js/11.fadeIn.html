@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            background-color: #0094ff;
+            width: 80%;
+            /*margin:5% 10%;*/
+            height: 400px;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+    <button class="in">in</button>
+    <button class="out"> out</button>
+    <button class="show">show</button>
+    <button class="hide">hide</button>
+    <button class="up">slideUp</button>
+    <button class="down">slideDown</button>
+    <div class="box">
+        <div class="top">
+            <h3 >查看设备详细信息</h3>
+        <span  class="close">
+            <i class="fa fa-times fa-lg"></i>
+        </span>
+        </div>
+        <!-- bottom -->
+        <div class="info">
+            <div class="bread">
+                <h5>设备图纸&nbsp;(&nbsp;<strong>5</strong>&nbsp;)&nbsp;&nbsp; <i class='icon-chevron-right '></i></h5>
+                <h5>维护记录&nbsp;(&nbsp;<strong>20</strong>&nbsp;)&nbsp;&nbsp; <i class='icon-chevron-right '></i> </h5>
+                <h5>技术参数&nbsp;(&nbsp;<strong>10</strong>&nbsp;)&nbsp;&nbsp; <i class='icon-chevron-right '></i> </h5>
+            </div>
+            <div class="details">
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-6 col-md-6 "><!-- 左边 -->
+                        <!--  名称  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-2 control-label"  for="monitor-btn">设备名称：</label>
+                            <div class="col-md-7 col-input">
+                                <input type="text" class="form-control" value="10F新风机">
+                            </div>
+                            <!--<div class="col-xs-4 col-sm-5 col-md-3 "></div>-->
+                        </div>
+                        <!--  类型  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-2 control-label"  for="monitor-btn">设备类型：</label>
+                            <div class="col-md-7 col-input">
+                                <input type="text" class="form-control" value="新风机">
+                            </div>
+                            <!--<div class="col-xs-4 col-sm-5 col-md-3 "></div>-->
+                        </div>
+                        <!--  名称  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-2 control-label"  for="monitor-btn">设备名称：</label>
+                            <div class="col-md-7 col-input">
+                                <input type="text" class="form-control" value="10F新风机">
+                            </div>
+                            <!--<div class="col-xs-4 col-sm-5 col-md-3 "></div>-->
+                        </div>
+                        <!--  状态 级别  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-6 control-label"  for="monitor-btn">设备状态：<strong>告警</strong></label>
+                            <label class="col-md-6 control-label"  for="monitor-btn">级别：<strong>二级</strong></label>
+                            <!--<div class="col-xs-4 col-sm-5 col-md-3 "></div>-->
+                        </div>
+                        <!--  楼宇 楼层  -->
+                        <div class="col-btn col-xs-12 ">
+                            <div class="col-md-5">
+                                <label class="col-md-5 control-label text-right"  for="monitor-btn">楼宇：</label>
+                                <div class="col-md-6 col-input">
+                                    <input type="text" class="form-control" value="3号楼">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="col-md-4 control-label"  for="monitor-btn">所在楼层：</label>
+                                <div class="col-md-3 col-input">
+                                    <input type="text" class="form-control" value="10">
+                                </div>
+                            </div>
+                            <!--<div class="col-xs-4 col-sm-5 col-md-3 "></div>-->
+                        </div>
+                        <!--  监控 能源  -->
+                        <div class="col-btn col-xs-12 ">
+                            <div class="col-md-5">
+                                <label class="col-md-5 control-label text-right"  for="monitor-btn">是否监控：</label>
+                                <div class="col-md-6 col-input">
+                                    <input type="text" class="form-control" value="是">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="col-md-4 control-label"  for="monitor-btn">使用能源：</label>
+                                <div class="col-md-3 col-input">
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                            </div>
+                            <!--<div class="col-xs-4 col-sm-5 col-md-3 "></div>-->
+                        </div>
+                
+                    </div><!-- 左边结束 -->
+                
+                    <div class="col-xs-12 col-sm-6 col-md-6 "><!-- 右边 -->
+                        <!--  编号  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-2 control-label"  for="monitor-btn">设备编号：</label>
+                            <div class="col-md-7 col-input">
+                                <input type="text" class="form-control" value="XDLKT201DFH87C">
+                            </div>
+                            <div class="col-xs-4 col-sm-5 col-md-3 "></div>
+                        </div>
+                        <!--  系统  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-2 control-label"  for="monitor-btn">所属系统：</label>
+                            <div class="col-md-7 col-input">
+                                <input type="text" class="form-control" value="空调系统">
+                            </div>
+                            <div class="col-xs-4 col-sm-5 col-md-3 "></div>
+                        </div>
+                        <!--  资产  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-2 control-label"  for="monitor-btn">资产编号：</label>
+                            <div class="col-md-7 col-input">
+                                <input type="text" class="form-control" value="--">
+                            </div>
+                            <div class="col-xs-4 col-sm-5 col-md-3 "></div>
+                        </div>
+                        <!--  位置  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-2 control-label"  for="monitor-btn">安装位置：</label>
+                            <div class="col-md-7 col-input">
+                                <input type="text" class="form-control" value="10F">
+                            </div>
+                            <div class="col-xs-4 col-sm-5 col-md-3 "></div>
+                        </div>
+                        <!--  位置  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-2 control-label"  for="monitor-btn">安装位置：</label>
+                            <div class="col-md-7 col-input">
+                                <input type="text" class="form-control" value="新风机房">
+                            </div>
+                            <div class="col-xs-4 col-sm-5 col-md-3 "></div>
+                        </div>
+                    </div><!--右边结束-->
+                </div>
+                <!-- line -->
+                <div class="line"></div>
+                <!-- 底部 -->
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-6 col-md-6 "><!-- 左边 -->
+                        <!--  品牌 产地  -->
+                        <div class="col-btn col-xs-12 ">
+                            <div class="col-md-5">
+                                <label class="col-md-5 control-label text-right"  for="monitor-btn">品牌：</label>
+                                <div class="col-md-7 col-input">
+                                    <input type="text" class="form-control" value="上海百富乐">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="col-md-6 control-label text-right"  for="monitor-btn">产地：</label>
+                                <div class="col-md-6 col-input">
+                                    <input type="text" class="form-control" value="上海">
+                                </div>
+                            </div>
+                            <!--<div class="col-xs-4 col-sm-5 col-md-3 "></div>-->
+                        </div>
+                        <!--  生产 安装  -->
+                        <div class="col-btn col-xs-12 ">
+                            <div class="col-md-6">
+                                <label class="col-md-4 control-label text-right"  for="monitor-btn">生产日期：</label>
+                                <div class="col-md-6 col-input">
+                                    <input type="text" class="form-control" value="2012-03-14">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="col-md-4 control-label"  for="monitor-btn">安装日期：</label>
+                                <div class="col-md-6 col-input">
+                                    <input type="text" class="form-control" value="2012-10-14">
+                                </div>
+                            </div>
+                            <!--<div class="col-xs-4 col-sm-5 col-md-3 "></div>-->
+                        </div>
+                        <!--  质保 保养  -->
+                        <div class="col-btn col-xs-12 ">
+                            <div class="col-md-6">
+                                <label class="col-md-4 control-label text-right"  for="monitor-btn">质保期：</label>
+                                <div class="col-md-6 col-input">
+                                    <input type="text" class="form-control" value="2013-10-01">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="col-md-4 control-label"  for="monitor-btn">保养周期：</label>
+                                <div class="col-md-6 col-input">
+                                    <input type="text" class="form-control" value="365天">
+                                </div>
+                            </div>
+                            <!--<div class="col-xs-4 col-sm-5 col-md-3 "></div>-->
+                        </div>
+                    </div><!-- 左边结束 -->
+                
+                    <div class="col-xs-12 col-sm-6 col-md-6 "><!-- 右边 -->
+                        <!--  生产  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-2 control-label"  for="monitor-btn">生产单位：</label>
+                            <div class="col-md-9 col-input">
+                                <input type="text" class="form-control" value="上海百富乐">
+                            </div>
+                            <div class="col-xs-4 col-sm-5 col-md-3 "></div>
+                        </div>
+                        <!--  日期 年限  -->
+                        <div class="col-btn col-xs-12 ">
+                            <div class="col-md-6">
+                                <label class="col-md-4 control-label text-right"  for="monitor-btn">使用日期：</label>
+                                <div class="col-md-6 col-input">
+                                    <input type="text" class="form-control" value="2012-12-01">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="col-md-4 control-label"  for="monitor-btn">使用年限：</label>
+                                <div class="col-md-6 col-input">
+                                    <input type="text" class="form-control" value="20年">
+                                </div>
+                            </div>
+                            <!--<div class="col-xs-4 col-sm-5 col-md-3 "></div>-->
+                        </div>
+                        <!--  采购  -->
+                        <div class="col-btn col-xs-12 ">
+                            <label class="col-md-2 control-label text-right"  for="monitor-btn">采购价：</label>
+                            <div class="col-md-9 col-input">
+                                <input type="text" class="form-control" value="">
+                            </div>
+                            <div class="col-xs-4 col-sm-5 col-md-3 "></div>
+                        </div>
+                    </div><!--右边结束-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="../jsFile/jquery-1.12.4.min.js"></script>
+<script>
+    $(function (){
+        $('.in').on('click',function (){
+            $('.box').fadeIn(2000);
+        });
+        $('.out').on('click',function (){
+            $('.box').fadeOut(2000);
+        });
+        $('.show').on('click',function (){
+            $('.box').show(2000);
+        });
+        $('.hide').on('click',function (){
+            $('.box').hide(2000);
+        });
+        $('.up').on('click',function (){
+            $('.box').slideUp(2000);
+        });
+        $('.down').on('click',function (){
+            $('.box').slideDown(2000);
+        });
+    })
+</script>
+

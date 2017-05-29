@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border: 1px solid red;
+            text-align: center;
+        }
+        th{
+            border: 1px solid blue;
+        }
+        td{
+            width: 100px;
+            height: 30px;
+            /*border: 1px solid #000000;*/
+        }
+        span{
+            cursor: pointer;
+        }
+        #boxTr{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<script src="../jsFile/jquery-3.1.0.js"></script>
+<table cellspacing="0px">
+    <thead>
+        <th>a</th>
+        <th>b</th>
+        <th>c</th>
+        <th>d</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td><span uid="1" onclick="add(this)">2</span></td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><span uid="2" onclick="add(this)">2</span></td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><span uid="3" onclick="add(this)">2</span></td>
+            <td>3</td>
+            <td>4</td>
+
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><span uid="4" onclick="add(this)">2</span></td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><span uid="4" onclick="add(this)">2</span></td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
+<script>
+    $(function (){
+        $('tbody tr:odd').css({'background':'#F5F5D5'});//隔行变色
+    });
+
+    function add (self){
+        var _this = self;
+        var current = $(_this).parent().parent();
+
+        if(current.next().children("#boxTr").length){
+            $("#boxTr").remove();
+        }
+        else{
+            $("#boxTr").remove();
+            current.after('<tr><td id="boxTr" colspan="4"></td></tr>');
+            $('#boxTr').load('testHTML.html', {'name':'luogege', 'age':18} );
+        }
+
+    };
+</script>

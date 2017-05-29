@@ -1,0 +1,71 @@
+.main ul {
+  position: absolute;
+  margin: 5em 0 0 10em;
+  padding-left: 1em;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.main ul li {
+  width: 40em;
+  background-color: #eeeeee;
+  padding: 1em 1em 0 1em;
+  box-shadow: #333333;
+  margin-bottom: 1em;
+}
+.main ul li .mod {
+  background-color: #fff;
+  box-shadow: .1em .1em #D2D2D2;
+  padding: 1em;
+}
+.main ul li .mod > .title {
+  font-size: .8em;
+  padding: 1em 0;
+  color: #CCCCCC;
+}
+.main ul li .mod > .title span {
+  display: inline-block;
+  float: right;
+  color: #3377AA;
+}
+.main ul li .mod .con {
+  font-size: .8em;
+  color: #666666;
+}
+.main ul li .mod .con .img {
+  display: inline;
+  float: left;
+  padding-right: 1em;
+}
+.main ul li .mod .con .txt .title {
+  font: 1.2em 'Adobe 楷体 Std R';
+  padding: .5em 0 0 0;
+}
+.main ul li .mod .con .txt .title a {
+  color: #666699;
+  text-decoration: none;
+}
+.main ul li .mod .con .txt .rating {
+  padding: .5em 0;
+}
+.main ul li .mod .con .txt .rating .rating_nums {
+  color: #E0902A;
+}
+.main ul li .mod .con .txt .abstract {
+  line-height: 1.5em;
+}
+.main ul li .ft {
+  padding: 1em 1.5em;
+  font: 0.7em 'Adobe 仿宋 Std R';
+}
+.main ul li .ft .actions a {
+  text-decoration: none;
+}
+.main ul li .ft .actions time {
+  float: right;
+  color: #999999;
+}
+.main ul li .ft .actions .count {
+  color: #999999;
+}

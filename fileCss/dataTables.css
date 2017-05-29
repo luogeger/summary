@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+.dataTables_info {
+    position: absolute;
+}
+
+.dataTables_paginate {
+    float: right;
+}
+
+.paginate_disabled_previous, .paginate_enabled_previous {
+    margin-right: 7px;
+}
+table, .table {
+    width: 100% !important;
+    clear: both;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #666;
+}
+.dataTables_length{
+    display: inline-block;
+    margin-right: 7px;
+}
+.dataTables_Info{
+    text-align: right;
+}
+.dataTables_Info .dataTables_length label {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 3em;
+    margin: 0;
+}
+.dataTables_Info .dataTables_paginate {
+    line-height: 40px;
+}
+.dataTables_Info .table-length-input{
+    border: none;
+    border-bottom: 1px solid #ddd;
+    color: #888;
+    font-size: 12px;
+    height: 31px;
+    margin-bottom: 8px;
+    text-align: center;
+    width: 80px;
+}
+.paginate_button.previous {
+    margin-right: 7px;
+}
+.table thead tr th {
+    background-color: #f5f6fa;
+    border-bottom: 1px solid #e1e6eb;
+    color: #999;
+    font-weight: normal;
+    padding: 8px;
+}
+a {
+	cursor: pointer;
+}
+a.disabled {
+    pointer-events: none;
+    color: #afafaf;
+}
+.table {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #e1e6eb;
+    font-size: 12px;
+}
+table td {
+    word-break: break-all!important;
+}
+.table thead tr th.select-checkbox {
+	padding: 2px 0 0 13px;
+}
+table.dataTable input[type="checkbox"]:checked + label::after {
+	top: -5px;
+}
+.table tbody tr td {
+    border-bottom: 1px solid #e1e6eb;
+    border-top: 0 none;
+    padding: 12px 8px;
+    vertical-align: middle;
+}

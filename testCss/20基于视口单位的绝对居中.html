@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: yellow;
+            display: flex;
+            min-height: 100vh;
+            /*margin: 0;*/
+
+        }
+        main{
+            margin: auto;
+            width: 20em;
+            height: 5em;
+            background-color: #050702;
+            color: #ffffff;
+
+            /*绝对定位居中*/
+            /*position: absolute;*/
+            /*top:50%;*/
+            /*left: 50%;*/
+            /*margin-top: -2.5em;*/
+            /*margin-left:-10em;*/
+
+            /*借助calc()函数，省2行代码,中间是减号*/
+            /*position: absolute;*/
+            /*top:calc(50% - 2.5em);*/
+            /*left: calc(50% - 10em);*/
+
+            /*视口相关的长度单位*/
+            /*transform:translateY( -50%);*/
+            /*margin: 50vh auto 0;*/
+
+            display: flex;
+            justify-content:center;
+            align-items: center;
+
+            /*align-self: center;*/
+
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        Am i centered yet ?
+        <!--<h1>Am i centered yet ?</h1>-->
+        <!--<p>Center me, please!</p>-->
+    </main>
+</body>
+</html>

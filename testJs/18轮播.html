@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18轮播</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .clearfix:after,.clearfix:before{
+            content: '';
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .box{
+            border: 2px solid #ff0000;
+            margin: 50px auto;
+            width: 980px;
+            height: 454px;
+            overflow: hidden;
+        }
+        ul{
+            position: relative;
+
+        }
+
+        li{
+            position: absolute;
+            /*left: 100px;*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="clearfix">
+            <li><img src="../images/b1.jpg" alt="1"></li>
+            <li><img src="../images/b2.jpg" alt="2" class="one"></li>
+            <li><img src="../images/b3.jpg" alt="3"></li>
+            <li><img src="../images/b4.jpg" alt="4"></li>
+            <li><img src="../images/b5.jpg" alt="5"></li>
+            <li><img src="../images/b6.jpg" alt="6"></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+        var arr = $('li');
+        for(var i = 0; i < arr.length; i++){
+            var juli = 50*i + 'px';
+            $(arr[i]).css('left', juli);
+            $(arr[i]).on('click', function(){
+//                console.log($(this));
+//                console.log($(this).css('left'));
+                var next = $(this).nextAll('li');
+                for(var j = 0; j < next.length; j++){
+
+                }
+            })
+        }
+    })
+</script>

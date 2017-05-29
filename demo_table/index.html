@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/template-native.js"></script>
+    <script src="js/index.js"></script>
+    <!-- template -->
+    <script type="text/html" id="ul_temp">
+        <%for(var i = 0; i < 3; i++){%>
+        <li>
+            <div class="mod">
+                <div class="title">
+                    <i></i>
+                    <span>
+                        添加到豆列
+                    </span>
+                    来自：豆瓣电影
+                </div>
+                <div class="con clearfix">
+                    <div class="img">
+                        <a href="https://movie.douban.com/subject/1292052/" target="_blank">
+                            <img width="100"src="<%=arr.subjects[i].images.medium%>"/>
+                        </a>
+                    </div>
+                    <div class="txt">
+                        <div class="title">
+                            <a href="<%=arr.subjects[i].alt%>" target="_blank">
+                                <%=arr.subjects[i].title%> <%=arr.subjects[i].original_title%>
+                            </a>
+                        </div>
+                        <div class="rating">
+                            <span class="allstar50"></span>
+                            <span class="rating_nums">9.6</span>
+                            <span>(771703人评价)</span>
+                        </div>
+                        <div class="abstract">
+                            导演：<%=arr.subjects[i].directors[0].name%>
+                            <br/>
+                            主演: <%=arr.subjects[i].casts[0].name%> / <%=arr.subjects[i].casts[1].name%> / <%=arr.subjects[i].casts[2].name%>
+                            <br/>
+                            类型: <%=arr.subjects[i].genres[0]%> / <%=arr.subjects[i].genres[1]%>
+                            <br/>
+                            制片国家/地区: 美国
+                            <br/>
+                            年份: <%=arr.subjects[i].year%>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ft">
+                <div class="actions">
+                    <time class="time">
+                            <span>
+                                2014年4月14日
+                            </span>
+                    </time>
+                    <a href="javascript: void 0;" class="btn btn-like " data-action-type="like">赞</a>
+                    <span class="count like-count" data-count="3">(3)</span>
+                    <a href="javascript: void 0;" class="btn btn-action-reply" data-action-type="showComments" data-count="0">
+                        回复
+                    </a>
+                </div>
+            </div>
+        </li>
+        <%}%>
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <h1>header</h1>
+</div>
+
+<div class="aside">
+    <ul>
+        <li><span>电影</span></li>
+        <li><span>图书</span></li>
+        <li><span>音乐</span></li>
+        <li><span>广播</span></li>
+        <li><span>相册</span></li>
+    </ul>
+</div>
+
+<div class="main">
+    <ul class="movie"></ul>
+    <ul class="book"></ul>
+    <ul class="music"></ul>
+    <ul class="radio"></ul>
+    <ul class="photo"></ul>
+</div>
+
+</body>
+</html>
+<script>
+
+</script>

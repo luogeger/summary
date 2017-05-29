@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>24线性渐变</title>
+    <style>
+        div{
+            width: 500px;
+            height: 50px;
+            border: 2px solid deeppink;
+            margin-top:20px;
+
+        }
+
+        div:nth-child(2){
+            background-image: linear-gradient(
+                42deg,
+                yellow 0%,yellow 10%,
+                blue 10%,blue 20%,
+                yellow 20%,yellow 30%,
+                blue 30%,blue 40%,
+                yellow 40%,yellow 50%,
+                blue 50%,blue 60%,
+                yellow 60%,yellow 70%,
+                blue 70%,blue 80%,
+                yellow 80%,yellow 90%,
+                blue 90%,blue 100%
+            );
+
+            /*transition: all ;*/
+            animation: autoMove 5s infinite linear;
+        }
+
+        @keyframes autoMove {
+            to{
+                background-position: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

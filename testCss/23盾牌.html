@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23盾牌</title>
+    <style>
+        body{
+            background-color: yellowgreen;
+
+        }
+        .shield{
+            width: 500px;
+            background-color: deeppink;
+        }
+        .shield img{
+            /* 默认就添加了 过渡效果
+                如果 希望 整个过程 都有过渡效果 可以添加在默认的 样式上
+                如果希望在触发的时候 才有 过渡效果 可以 在 触发时添加
+
+            */
+            /*            transition:  all 1s;*/
+        }
+        /*
+                .shield img:nth-child(6){
+                    transform: rotate(90deg) translate(300px,200px);
+                }
+                .shield:hover img:nth-child(6){
+                     transform: rotate(0) translate(0,0);
+                }
+        */
+    </style>
+    <script src="../jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+
+            function sanLuan (){
+                $('.shield img').each(function(index,element){
+                    var $_img = $(element);
+                    var randomDeg = Math.random()*360;
+                    var randomX = Math.random()*500;
+                    var randomY = Math.random()*500;
+                    $_img.css({
+                        transform:
+                        'rotate('+randomDeg+'deg) translate('+randomX+'px,'+randomY+'px)'
+                    });
+                });
+            };
+
+            function huiFu (){
+                $('.shield img').each(function(index,element){
+                    $(element).css({
+                        transform:'rotate(0) translate(0,0)',
+                        transition:'all 0.5s'
+                    });
+                })
+            };
+
+            sanLuan();
+
+//            $('.shield').mouseenter(function(){
+//                $('.shield img').each(function(index,element){
+//                    $(element).css({
+//                        transform:'rotate(0) translate(0,0)',
+//                        transition:'all 1s'
+//                    });
+//                })
+//            })
+
+//            $('.shield').on('mouseenter', huiFu);
+//            $('.shield').on('mouseleave', sanLuan);
+
+            $('.shield').on('mouseenter mouseleave', function(e){
+
+//                if(e.type == 'mouseenter'){
+//                    huiFu();
+//                }
+//                else{
+//                    sanLuan();
+//                }
+                e.type == 'mouseenter'?huiFu():sanLuan();
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+<div class='shield'>
+    <img src="../images/shield_1_01.png" alt="">
+    <img src="../images/shield_1_02.png" alt="">
+    <img src="../images/shield_1_03.png" alt="">
+    <img src="../images/shield_1_04.png" alt="">
+    <img src="../images/shield_1_05.png" alt="">
+    <img src="../images/shield_1_06.png" alt="">
+    <img src="../images/shield_1_07.png" alt="">
+    <img src="../images/shield_1_08.png" alt="">
+    <img src="../images/shield_1_09.png" alt="">
+
+</div>
+</body>
+</html>

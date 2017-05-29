@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3宏暖</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .clearfix:before,.clearfix:after{
+            content: '';
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .box{
+            width: 1200px;
+            height: 50px;
+            margin: 80px auto;
+            margin-bottom:0px;
+            background-color: #eee;
+            position: relative;
+        }
+        ul{
+            background-color: yellow;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        li{
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height:50px;
+            float: left;
+            border-left: 1px solid red;
+        }
+        ul>li:nth-child(1){
+            width: 70px;
+            border-left:none;
+        }
+        .out{
+            width: 100%;
+            height: 5px;
+            background-color: #cccccc;
+            position: relative;
+        }
+        .in{
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            left: 0px;
+            background-color: #f60;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="clearfix">
+            <li><a href="baidu.com" target="_blank">2</a></li>
+            <li><a href="baidu.com" target="_parent">3</a></li>
+            <li><a href="baidu.com" target="_self">1</a></li>
+            <li><a href="baidu.com" target="_top">4</a></li>
+            <li><a href="baidu.com" target="_self">5</a></li>
+        </ul>
+
+    </div>
+    <div class="out">
+        <div class="in"></div>
+    </div>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+        //窗口发生变化的时候的事件
+        $(window).resize(function(){
+            var lis = $('li');
+        });
+
+
+        function one(){
+            var inLeft = $(this).offset().left;
+            var inWidth = $(this).width();
+            $('.in').css({
+                'width':inWidth + 'px',
+                'left': inLeft + 'px'
+            });
+        };
+        $('ul').delegate('li','mouseenter', one);
+
+        $('ul').delegate('li', 'mouseleave', function(){
+            $('.in').css({'width':'100%', 'left':'0px'});
+        })
+    })
+</script>

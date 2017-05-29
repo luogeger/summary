@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7鼠标进入</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        ul{
+            width: 450px;
+            margin: 50px auto;
+            position: relative;
+        }
+        li{
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ff0000;
+            float: left;
+            background-image: url(../images/child.jpg);
+            background-clip: content-box;
+            background-size: cover;
+            margin: -1px;
+        }
+        /*
+            hover之后，才让伪元素出现，再给伪元素添加样式
+        */
+        li:before{
+            content: '萌萌哒';
+            color: #ffffff;
+            width: 148px;
+            height: 148px;
+            background-color: rgba(0,0,0, .5);
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+</ul>
+    <!--<div class="wrap" style="width: 150px; height:150px; margin-left: 50px; margin-top: 60px; border: 2px solid red;"></div>-->
+    <p id="result"></p>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(".wrap").on("mouseenter mouseleave",function(e) {
+        var w = $(this).width();
+        var h = $(this).height();
+        var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+        var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+        var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;
+        //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+        var eventType = e.type;
+        var dirName = new Array('上方','右侧','下方','左侧');
+        if(e.type == 'mouseenter'){
+            $("#result").html(dirName[direction]+'进入');
+        }else{
+            $('#result').html(dirName[direction]+'离开');
+        }
+    });
+</script>
+<script>
+    $(function(){
+//        console.log(document.getElementsByTagName("li"));
+        console.log($('li'));
+        console.log($('li:eq(0)').text());
+        console.log($('li').get(1).innerText);
+
+        var $lis = $('li'),lis = [];
+        console.log($lis instanceof jQuery);
+        console.error(lis instanceof jQuery);
+        for(var i = 0; i < $lis.length; i++){
+
+//            $lis[i].style.color = 'red';
+            lis.push($lis[i]);
+        }
+        $('li').css({'color':'blue'});
+    })
+</script>

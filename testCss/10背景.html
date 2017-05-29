@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10背景</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 310px;
+            margin: 50px auto;
+            box-sizing: border-box;
+            border: 5px solid rgba(42,82,204, .5);
+            background-image: url(images/child.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-clip: content-box;
+            background-position: top center;
+            position: relative;
+            overflow: hidden;
+        }
+        .small{
+            font: 20px/300px 'microsoft yahei';
+            color: #fff;
+            text-align: center;
+
+            position: absolute;
+            left: -100%;
+            width: 290px;
+            height: 300px;
+            background-color: rgba(0, 0, 0, .5);
+            /*transition: all 2s;*/
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="box">
+            <span class="small">
+                我可是小美女O(∩_∩)O~
+            </span>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    //                console.info('鼠标水平位置：'+ e.pageX);
+    //                console.info('鼠标垂直位置：'+ e.pageY);
+    //                console.log('盒子水平边距：'+ $('.box')[0].offsetLeft);
+    //                console.log('盒子垂直边距：'+ $('.box')[0].offsetTop);
+    //                console.log('盒子Width：'+ $('.box')[0].offsetWidth);
+    //                console.log('盒子Height：'+ $('.box')[0].offsetHeight);
+    $(function(e){
+        //鼠标进入盒子之前的位置 -- 距离浏览器
+        var outMouseTop;
+        var outMouseLeft;
+        $(document).on('mousemove', function(e){
+        //  获取鼠标随时在浏览器的位置
+            outMouseLeft = e.pageX;
+            outMouseTop = e.pageY;
+        });
+
+
+        //  全部事件函数
+        //  Left
+        function inLeft (){
+            $('.small')
+                .css({
+                    'left': '-100%',
+                    'top': '0%',
+                    'transition': 'all 0s'
+                });
+            setTimeout(function(){
+                $('.small').css({
+                    'left': '0%',
+                    'transition': 'all 0.2s'
+                 })
+            },20)
+        };
+
+        function outLeft (){
+            $('.small').css({
+                'left': '-100%',
+                'transition': 'all 0.2s'
+            });
+        };
+
+        //  Right
+        function inRight (){
+            $('.small').css({
+                'left': '100%',
+                'top': '0%',
+                'transition': 'all 0s'
+            });
+
+            setTimeout(function(){
+                $('.small').css({
+                        'left': '0%',
+                        'transition': 'all 0.2s'
+                    })
+            },20)
+        };
+
+        function outRight (){
+            $('.small').css({
+                'left': '100%',
+                'transition': 'all 0.2s'
+            });
+        };
+
+        //  Top
+        function inTop (){
+            $('.small').css({
+                'left': '0',
+                'top': '-100%',
+                'transition': 'all 0s'
+            });
+
+            setTimeout(function(){
+                $('.small').css({
+                    'top': '0%',
+                    'transition': 'all 0.2s'
+                })
+            },20);
+        };
+
+        function outTop (){
+            $('.small').css({
+                'top': '-100%',
+                'left':'0%',
+                'transition': 'all 0.2s'
+            });
+        };
+
+        //  Bottom
+        function inBottom (){
+            $('.small').css({
+                'left': '0',
+                'top': '100%',
+                'transition': 'all 0s'
+            });
+
+            setTimeout(function(){
+                $('.small').css({
+                    'top': '0%',
+                    'transition': 'all 0.2s'
+                })
+            },20);
+        };
+
+        function outBottom (){
+            $('.small').css({
+                'top': '100%',
+                'left':'0%',
+                'transition': 'all 0.2s'
+            });
+        };
+
+        //  鼠标8个事件判断，-- 因为要引用变量，所以把Leave事件也写在了里面
+        $('.box').on('mouseenter', function(e){
+
+
+            //盒子边距 -- 左上角
+            var boxLeft = $('.box')[0].offsetLeft;
+            var boxTop = $('.box')[0].offsetTop;
+
+            //盒子大小
+            var boxH = $('.box')[0].offsetHeight;
+            var boxW = $('.box')[0].offsetWidth;
+
+            //鼠标边距 -- 浏览器
+            var inMouseTop = e.pageY;
+            var inMouseLeft = e.pageX;
+
+            //鼠标边距 -- 盒子
+            var level = inMouseTop - boxLeft;
+            var vertical = inMouseLeft - boxTop;
+
+        //  鼠标 -- Enter
+            //  Enter：left and right
+            if(outMouseTop > boxTop && outMouseTop < boxTop + boxH){
+                if(outMouseLeft < inMouseLeft){//  left
+                    console.info('left');
+                    inLeft();
+                }
+                else{//  right
+                    console.info('right');
+                    inRight();
+                }
+            }
+
+            //  Enter：top and bottom
+            if(outMouseLeft > boxLeft && outMouseLeft < boxLeft + boxW){
+                if(inMouseTop > outMouseTop){   //  top
+                    console.info('top');
+                    inTop();
+                }
+                else{   //bottom
+                    console.info('bottom');
+                    inBottom();
+                }
+            }
+
+        //  鼠标 -- Leave
+            $('.box').on('mouseleave', function(e){
+                //鼠标离开盒子浏览器的距离
+                var leaveMouseTop = e.pageY;
+                var leaveMouseLeft = e.pageX;
+                //  Leave：left and right
+                if(leaveMouseTop > boxTop && leaveMouseTop < boxTop + boxH ){
+                    if(leaveMouseLeft < boxLeft){
+                        console.warn('left');
+                        outLeft();
+                    }
+                    else{
+                        console.warn('right')
+                        outRight();
+                    }
+                }
+
+                //  Leave：top and bottom
+                if(leaveMouseLeft > boxLeft && leaveMouseLeft < boxLeft + boxW){
+                    if(leaveMouseTop < boxTop){
+                        console.warn('top')
+                        outTop();
+                    }
+                    else{
+                        console.warn('bottom');
+                        outBottom();
+                    }
+                }
+
+            })//    mouseLeave end
+
+        })//    mouseEnter  end
+
+
+
+
+    });
+
+</script>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09旋转阴影</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        .clearfix:before, .clearfix:after{
+            content: '';
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+        .box{
+            margin: 50px auto;
+            width: 454px;
+            border: 2px dashed #000;
+        }
+        ul{
+
+        }
+        li{
+            width: 150px;
+            height: 150px;
+            background-color: #0094ff;
+            float: left;
+            border-top: 5px solid #eee;
+            border-left: 5px solid #eee;
+            font: 50px 'microsoft yahei';
+            color: #009;
+            text-align: center;
+            line-height: 150px;
+        }
+        li:nth-child(3n){
+            border-right: 5px solid #eee;
+        }
+        li:nth-child(7),
+        li:nth-child(8),
+        li:nth-child(9){
+            border-bottom: 5px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+        </ul>
+    </div>
+</body>
+</html>

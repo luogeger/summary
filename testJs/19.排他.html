@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19.排他</title>
+    <style>
+        li{
+            font: 30px 'microsoft yahei';
+        }
+        .current{
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="current">I'm 1</li>
+        <li>I'm 2</li>
+        <li>I'm 3</li>
+        <li>I'm 4</li>
+        <li>I'm 5</li>
+    </ul>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    // -- jquery 排他， each里面的 v 是DOM对象
+    $(function (){
+        $('li').each(function (i,v ){
+            $(v).on('click', function (){
+
+                $('li').each(function (i,v){
+                    $(v).removeClass('current');
+                });
+                $(this).addClass('current');// -- 这里千万不能有"."
+                console.log($(this).attr('class'));
+            });
+        })
+    })
+</script>
+
+
+<script>
+//    var lis = document.getElementsByTagName("li");
+//    for(var i = 0; i < lis.length; i++){
+//        lis[i].onclick = function (){
+//            for(var j = 0; j < lis.length; j++){
+//                lis[j].className = '';
+//            }
+//            this.className = 'current'; // -- 这里一定要在内循环的外面,className千万不能有 “.”
+//        }
+//    }
+</script>

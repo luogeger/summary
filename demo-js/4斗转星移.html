@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4斗转星移</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .clearfix:before,.clearfix:after{
+            content: '';
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .left,.center,.right{
+            border: 1px solid red;
+        }
+        .box{
+            margin: 50px auto;
+            padding: 5px;
+            border: 1px solid #0094ff;
+            display: flex;
+            width: 600px;
+            height: 300px;
+        }
+
+        .left{
+            flex:4;
+            resize: none;
+        }
+        .center{
+            flex:2;
+            border-left: none;
+            border-right: none;
+        }
+        .right{
+            flex:4;
+        }
+        textarea{
+            font-size: 20px;
+            font-family: 'microsoft yahei';
+
+        }
+        .btn{
+            display: block;
+            width: 80px;
+            height: 30px;
+            border-radius: 8px;
+            background-color: #0094ff;
+            color: #fff;
+            text-align: center;
+            line-height:30px;
+            font-family: 'microsoft yahei';
+            margin: 80px auto;
+            margin-bottom:30px;
+            cursor: pointer;
+        }
+        .num{
+            text-align: center;
+        }
+        .num>span{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <textarea class="left">Textarea 对象代表 HTML 表单中的一个文本域 (text-area)。
+        </textarea>
+        <div class="center">
+            <span class="btn">斗转星移</span>
+            <div class="num">
+                <span class="one"></span>
+                /
+                <span class="two"></span>
+            </div>
+
+        </div>
+        <textarea class="right"></textarea>
+    </div>
+
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+
+        function btnClick (){
+            var num1 = $('.left').val().trim().split('');
+            var num2 = $('.right').text().trim().split('');
+            $('.one').text(num1.length);
+            $('.two').text(num2.length);
+
+        };
+        $('.btn').on('click', btnClick)
+    })
+</script>

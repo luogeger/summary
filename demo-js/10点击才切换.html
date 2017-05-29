@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10点击切换</title>
+    <style>
+        div{
+            width: 200px;
+            height: 30px;
+            border: 1px solid deepskyblue;
+            margin-top: 10px;
+        }
+
+        .isShow{
+            background-color: deeppink;
+        }
+        .isNono{
+            background-color: none;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 class="box">
+        <div class="isShow" id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+        <div id="four"></div>
+        <div id="five"></div>
+    </h1>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function (){
+        $('.box').on('click', 'div', function (){
+            console.log($(this).id);
+//            console.log(123);
+        })
+    })
+</script>
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6animate.line</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 20px;
+            height: 50px;
+            background-color: #0094ff
+        ;
+            margin-top: 100px;
+        }
+        .box{
+
+            background-color: #0094ff;
+            background-color: #000;
+            background-color: #eeeeee;
+            margin-left:80px;
+        }
+        p{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <div ></div>
+
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+        function btn (){
+            $('div').animate({'width':'1200px'},5000,'linear');
+//            var arr = ['q','w','e','r','t','y','u'],
+//                    i;
+//
+//            for(i = 0; i < 10; i++){
+//
+//                $('div').animate(console.log(arr[i]),5000,'linear');
+//            };
+//
+//
+        };
+        $('div').on('click',btn);
+
+    });
+
+
+</script>
+<script>
+    function getNum (){
+        return parseInt(Math.random()*1*Math.pow(10,9));
+    };
+    console.log(getNum());
+
+    var obj = {
+        name: 'lucy',
+        age: 20
+    };
+
+    console.log($('div'));
+
+
+</script>

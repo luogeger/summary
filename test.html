@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<a href="https://img12.360buyimg.com/cms/jfs/t5725/306/1140860448/981/b418aec6/5923fde0Ndf762a63.png">jd.com</a>
+<button id="btn">ajax</button>
+<div id="box">
+    <button id="show">显示</button>
+</div>
+</body>
+</html>
+<script src="fileJs/jquery-1.12.4.min.js"></script>
+<script>
+    var btn = document.getElementsByTagName("button"); // HTMLCollection
+    var idBtn = document.getElementById("btn");
+    console.log('123');
+    
+    
+    btn[0].onclick = function (){// HTMLCollection
+        console.log('click');
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", 'https://img12.360buyimg.com/cms/jfs/t5725/306/1140860448/981/b418aec6/5923fde0Ndf762a63.png', true);
+        xhr.onreadystatechange = function  (){
+            if(xhr.readyState === 4){
+                if(xhr.status === 200 ){
+                    var res = xhr.responseText;
+                    console.log('200');
+                };
+                if(xhr.status === 304 ){
+                    var res = xhr.responseText;
+                    console.log('304');
+                };
+
+            }
+        };
+        xhr.send();
+    };
+    
+    
+    $(function (){
+        $('#box').fadeIn(function (){
+            $('#box button').click(function (){
+                $(this).fadeOut();
+            })
+        });
+        
+//        $('#show').on('click', function (){
+//            $('#box').fadeOut();
+//        })
+        
+//        $('#box').fadeIn(function (){
+//            $('#box #show').click($.proxy(function (){
+//                $(this).fadeOut();
+//            }, this));
+//        })
+    })
+    
+    console.log(123);
+    
+</script>

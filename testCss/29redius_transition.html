@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>29radius_transition</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            border: 2px solid red;
+            margin: 20px;
+            text-align: center;
+        }
+        div:first-child{
+            -webkit-border-radius:20px;
+            -moz-border-radius:20px;
+            -ms-transition: 20px;
+            border-radius:20px;
+        }
+        div:last-child{
+            -webkit-transition: border-radius 1s;
+            -moz-transition: border-radius 1s;
+            -ms-transition: border-radius 1s;
+            -o-transition: border-radius 1s;
+            transition: border-radius 1s;
+
+        }
+        div:last-child:hover{
+            border-radius: 30px;
+            border-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>radius</div>
+    <div>transition</div>
+</body>
+</html>

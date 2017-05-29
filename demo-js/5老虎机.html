@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5老虎局</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .clearfix:before,.clearfix:after{
+            content: '';
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .box{
+            position: relative;
+        }
+        ul{
+            width: 408px;
+            margin: 50px auto;
+            border: 1px solid red;
+            padding: 5px;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #0094ff;
+            float: left;
+            text-align: center;
+            line-height:100px;
+            font-size: 26px;
+
+        }
+
+        .bg{
+            background-color: rgba(0,0,0, .3);
+        }
+
+        li:nth-child(6),
+        li:nth-child(7),
+        li:nth-child(10),
+        li:nth-child(11)
+        {
+            border-color: rgba(0,0,0, 0);
+        }
+        .btn{
+            display: block;
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            color: #ffffff;
+            font-size: 60px;
+            text-align: center;
+            line-height:60px;
+            text-indent: -4px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="clearfix">
+            <li class="bg">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li ></li>
+            <li ></li>
+            <li>8</li>
+            <li>9</li>
+            <li ></li>
+            <li ></li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+        </ul>
+        <i class="btn">×</i>
+    </div>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+        var newLis = [];
+        var lis = $('li');
+        var a = [].concat.apply(newLis, lis.slice(0, 5));
+        var b = [].concat.apply(newLis, lis.slice(7, 9));
+        var c = [].concat.apply(newLis, lis.slice(11, 16));
+        newLis = a.concat(b).concat(c);
+        var len = newLis.length;
+        console.log(len);
+        function btnClick (){
+
+        };
+        for(var i = 0; i < 100; i++){
+            if(i < 13){
+
+            }
+        }
+        $('.btn').on('click', btnClick );
+    })
+</script>

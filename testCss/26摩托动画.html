@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>26摩托动画</title>
+    <style>
+        body{
+            background-color: #F9DD9E;
+        }
+        img{
+            transform: scale(.5);
+        }
+        .one{
+            display: none;
+        }
+        .two{
+            border: 1px solid red;
+        }
+        .arrow{
+            transform: scale(1);
+            animation-name: arr;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        @keyframes arr {
+            0%{}
+            50%{
+                transform: translateX(600px);
+            }
+            60%{
+                transform: translateX(600px) rotateY(180deg);
+                display: none;
+                /* display没有效果 */
+            }
+            100%{
+                transform: translate(0,0) rotateY(180deg);
+
+            }
+
+            /*0%{}*/
+            /*50%{*/
+                /*transform: translate(500px,0);*/
+            /*}*/
+            /*90%{*/
+                /*transform: translate(500px,0) rotateY(180deg);*/
+            /*}*/
+            /*100%{*/
+                /*transform: translate(0,0) rotateY(180deg);*/
+            /*}*/
+         }
+    </style>
+</head>
+<body>
+    <img src="../images/motp.jpg" class="one">
+    <br>
+    <img src="../images/motp.jpg" class="two">
+    <br>
+    <img src="../images/arrow01.png" class="arrow">
+
+
+</body>
+</html>

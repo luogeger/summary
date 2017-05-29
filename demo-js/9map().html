@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9map()</title>
+    <style>
+        div{
+            width: 150px;
+            height: 200px;
+            margin: 10px;
+            background-color: deepskyblue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function (){
+        var $divs = $('div');
+        $divs.each(function (i,v){
+            $(v).text(i);
+            $(this).css({width: '15'+i+'px'});
+        });
+
+        //把单独的属性拿出来, 定义一个空数组，迭代Push输出
+        var abs = [];
+        $divs.each(function (i,v){
+            abs.push($(v).css('width'));
+        });
+        console.log(abs);
+
+        //
+        var maps = $divs.map(function (i,v){
+            return $(this).css('width');
+        }).get();
+        console.log(maps);
+        console.log($divs.get());
+    })
+</script>
+
+
+
+

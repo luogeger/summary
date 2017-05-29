@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14ajaxJSONP</title>
+</head>
+<body>
+<div class="box">
+
+</div>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+        $.ajax({
+            type: 'get',
+            url: 'https://api.douban.com/v2/book/1220562',
+            dataType: 'jsonp', // 不支持跨域，加这行代码
+            success:function(data){
+                console.log(data);
+                document.write(data.id);
+            }
+
+        })
+    })
+</script>
+
+</body>
+</html>

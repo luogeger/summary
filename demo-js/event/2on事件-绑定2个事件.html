@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2on事件</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #0094ff;
+            transition: all 0.3s;
+        }
+
+        .small{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+<p>我是P标签</p>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+
+    $(function(){
+        $('.box').on('mouseenter mouseleave', function(e){
+            if(e.type == 'mouseenter'){
+                $(this).addClass('small')
+                console.log(event.type);
+                console.log(event.target);
+
+            }else{
+                $(this).removeClass('small')
+            }
+        })
+    })
+</script>

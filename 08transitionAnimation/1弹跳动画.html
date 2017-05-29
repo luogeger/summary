@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1弹跳动画</title>
+    <style>
+
+        @keyframes bounce{
+             0%{} 
+             20%{ 
+                 transform: translate(100px,400px); 
+                 animation-timing-function: ease-out; 
+             } 
+             40%{ 
+                 transform: translate(200px,250px); 
+                 animation-timing-function: ease-in; 
+             } 
+             60%{ 
+                 transform: translate(300px,400px); 
+                 animation-timing-function: ease-out; 
+             } 
+             80%{ 
+                 transform: translate(400px,300px);
+                animation-timing-function: ease-in;
+            }
+            100%{
+                transform: translate(500px,400px);
+                animation-timing-function: ease-out;
+            }
+
+
+            /*60%, 80% to {  
+                transform: translateY(400px);
+                animation-timing-function: ease;
+            }
+            70%{  transform: translateY(300px);  }
+            100%{  transform: translateY(360px);  }*/
+        }
+        .ball{
+            width: 100px;
+            height: 100px;
+            background-color: deeppink;
+            border-radius: 50%;
+            animation: bounce 4s cubic-bezier(.1,.25,.1,.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+    
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+        var $lis = $('li');
+        console.log($lis);
+        console.log(typeof $lis.toArray() );
+
+    });
+
+    var fnn = function(){
+        return fnn;
+    };
+
+    var arr = [1,2];
+
+//    console.log(typeof document.getElementsByTagName("li") );
+//    console.info(typeof fnn );
+//    console.info(typeof arr );
+</script>

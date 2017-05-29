@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02多个控制器，rootscope</title>
+</head>
+<body ng-app="xiao">
+    <div ng-controller="first">
+        <h1 ng-bind="hello"></h1>
+        <h2 ng-bind="lastname"></h2>
+        <h3 ng-bind="lastname"></h3>
+        <h4 ng-bind="lastname"></h4>
+        {{dakuohao}}
+        {{dakuohao}}
+        {{dakuohao}}
+    </div>
+
+    <div ng-controller="second">
+        <h2 ng-bind="world"></h2>
+    </div>
+
+    <script src="../angular.js"></script>
+    <script>
+        var luo = angular.module('xiao', []);
+        luo.controller('first', function($scope, $rootScope){
+            $scope.hello = '你好';
+            $rootScope.lastname = "Public";
+            $rootScope.dakuohao = '大括号';
+        })
+
+        luo.controller('second', function($scope){
+            $scope.world = '世界';
+        })
+    </script>
+</body>
+</html>

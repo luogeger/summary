@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01自适应内部元素</title>
+    <style>
+        div{
+            padding: 5px;
+            border: 1px solid deepskyblue;
+            max-width: 600px;
+            width: min-content;
+            margin: auto; /* 这个是让它水平居中*/
+            /*text-indent: 2em;*/
+        }
+        div>img{
+            /*max-width:inherit;*/
+        }
+        figcaption{
+            text-indent: 3em;
+            /* 默认英文字体换行*/
+        }
+    </style>
+</head>
+<body>
+    <p>Some Lorem ipsum dolor sit amet.</p>
+    <div>
+        <img src="../images/romance.jpeg" alt="">
+        <figcaption>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi corporis harum minus omnis quibusdam quisquam, repellendus voluptatibus? Commodi, eius labore! Exercitationem, explicabo, maxime. Accusamus eos excepturi facilis molestiae molestias.
+        </figcaption>
+    </div>
+    <p>More text Lorem ipsum dolor sit amet.</p>
+</body>
+</html>
+<!--
+    width: min-content;  这个关键字把宽度设置为容器为“内部最大的不可断行的元素的宽度”
+-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3toggle()</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border:2px solid ;
+        }
+        .bg{
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="button" value="开灯">
+    </div>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+
+    $(function(){
+        function white (){
+            $(this).removeClass('bg')
+        };
+        function black (){
+            $(this).val('关灯').parent().addClass('bg')
+        };
+
+        $('input').on('click', black)
+    })
+</script>

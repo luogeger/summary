@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15闭包</title>
+</head>
+<body>
+
+
+<script>
+    function one (){
+        var result = new Array();
+        for(var i = 0; i < 10; i++){
+            result[i] = function(){
+                return i;
+            }
+        }
+        return result;
+    };
+
+    var oneResult = one();
+    console.log(oneResult);
+    console.log(oneResult[0]());
+    console.log(oneResult[1]());
+    console.log(oneResult[2]());
+    console.log(oneResult[3]());
+    console.log(oneResult[4]());
+
+
+    function two (){
+        var result = new Array();
+        for(var i = 0; i < 10; i++){
+            result[i] = function(num){
+                return function(){
+                    return num;
+                }
+            }(i);
+        }
+        return result;
+    };
+
+    var twoResult = two();
+    console.log(twoResult);
+    console.log(twoResult[0]());
+    console.log(twoResult[1]());
+    console.log(twoResult[2]());
+    console.log(twoResult[3]());
+    console.log(twoResult[4]());
+</script>
+</body>
+</html>

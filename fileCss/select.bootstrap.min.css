@@ -1,0 +1,77 @@
+table.dataTable td.select-checkbox {
+    padding-bottom: 29px;
+    position: relative;
+    display: table-cell;
+}
+
+.table {
+    border-bottom: none;
+}
+
+table.dataTable td.select-checkbox:before, table.dataTable td.select-checkbox:after {
+    display: block;
+    position: absolute;
+    top: 1.4em;
+    left: 19px;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box
+}
+
+table.dataTable td.select-checkbox:before {
+    content: ' ';
+    margin-left: -6px;
+    border: 1px solid black;
+    border-radius: 3px
+}
+
+table.dataTable tr.selected td.select-checkbox:after {
+    color: black;
+    border-color: #00ace9;
+}
+
+table.dataTable tr.selected td.select-checkbox:after {
+    content: '\2714';
+    margin-top: -5px;
+    margin-left: -4px;
+    text-align: center;
+    text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white
+}
+
+/* ==================================================================== */
+/* CHECKBOX---------------------------------------------------- */
+/* ==================================================================== */
+
+table.dataTable input[type="checkbox"] {
+    display: none;
+}
+
+table.dataTable input[type="checkbox"] + label {
+    cursor: pointer;
+    font-size: 1em;
+    background-color: #FFF;
+    border: 1px solid black;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    position: relative;
+}
+
+table.dataTable input[type="checkbox"] + label:active {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+table.dataTable input[type="checkbox"]:checked + label {
+    border: 1px solid black;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #243441;
+}
+
+table.dataTable input[type="checkbox"]:checked + label:after {
+    content: '\2713';
+    position: absolute;
+    top: -8px;
+    left: 2px;
+    text-align: center;
+    text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white
+}

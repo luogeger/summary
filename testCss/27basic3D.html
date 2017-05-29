@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>27basic3D</title>
+    <style>
+        div {
+            border: 1px solid #0094ff;
+            width: 150px;
+            padding: 10px;
+            margin: 10px;
+
+            /*            视角
+                            子元素 距离 浏览器 窗口的 距离
+                        */
+            perspective: 100px;
+        }
+
+        img {
+            width: 150px;
+            transition: all 2s;
+        }
+
+        .imgA:hover {
+            transform: rotateX(90deg);
+        }
+
+        .imgB:hover {
+            transform: rotateY(90deg);
+        }
+
+        .imgC:hover {
+            transform: rotateZ(90deg);
+        }
+
+        .imgD:hover {
+            transform: translateZ(75px);
+            /*transform: scale(2,2);*/
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/motp.jpg" alt="" class='imgA'>
+    </div>
+    <div>
+        <img src="../images/motp.jpg" alt="" class='imgB'>
+    </div>
+    <div>
+        <img src="../images/motp.jpg" alt="" class='imgC'>
+    </div>
+    <div>
+        <img src="../images/motp.jpg" alt="" class='imgD'>
+    </div>
+</body>
+</html>

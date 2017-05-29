@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.css</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style:none;
+        }
+        li{
+            width: 200px;
+        }
+        li:first-child{
+            background-color: red;
+            height: 50px;
+        }
+        li:last-child{
+            background-color: #000;
+            height: 90px;
+        }
+        li:nth-child(2){
+            background-color: yellow;
+            height: 60px;
+        }
+        li:nth-child(3){
+            background-color: blue;
+            height: 70px;
+        }
+        li:nth-child(4){
+            background-color: green;
+            height: 80px;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function (){
+        var asd = $('li').map(function (){
+            //console.log($(this).css('height'));
+            //console.log($(this).height());
+            //return $(this).css('height').slice(0,2);
+            return $(this).height();
+        }).get();
+        console.log(asd);
+    })
+</script>
+<!--
+    $(this), map(), css(),获取jquery对象伪数组中的某个属性，再返回一个数组，里面装着这些属性
+-->

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1.隔行变色</title>
+    <style>
+        .red{
+            color: deeppink;
+        }
+        .blue{
+            color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div>我是第1</div>
+    <div>我是第2</div>
+    <div>我是第3</div>
+    <div>我是第4</div>
+    <div>我是第5</div>
+    <div>我是第6</div>
+    <div>我是第7</div>
+    <div>我是第8</div>
+    <div>我是第9</div>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+//    $(function (){
+//        var $divs = $('div');
+//        for( var i = 0; i < $divs.length; i++){
+//            var div = $divs[i];
+//            if(i % 2 == 0){
+//                div.style.backgroundColor = 'red';
+////                div.style.className = '.blue';
+//            }
+//            else{
+//                div.style.backgroundColor = 'deepskyblue';
+//            }
+//        }
+//
+//    })
+
+    //还是用css还解决的
+    $(function (){
+        $('div:even').css('color', 'red');
+        $('div:odd').css('color', 'blue');
+    })
+</script>
+

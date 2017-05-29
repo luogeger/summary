@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4on事件委托</title>
+    <style>
+        li{
+            background-color: #0094ff;
+            margin-top: 5px;
+        }
+        ul{
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+        $('ul').on('click', 'li', function(){
+            $(this).fadeTo(2000, 0.4)
+        });
+
+        var lis = document.getElementsByTagName("li");
+
+        $.each(lis, function(index){
+            console.log(index);
+
+        });
+
+        var browser = navigator.appName;
+        console.log(browser);
+        var b_version = navigator.appVersion;
+        console.log(b_version);
+        var version = b_version.split(";");
+        console.log(version);
+        var trim_Version = version[1].replace(/[ ]/g, "");
+        console.log(trim_Version);
+//        if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE9.0") {
+//            alert("IE9");
+//        }
+
+
+    });
+
+    var lis = document.getElementsByTagName("li");
+    console.log(lis);
+
+</script>

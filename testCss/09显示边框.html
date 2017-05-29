@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09旋转阴影</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        .clearfix:before, .clearfix:after{
+            content: '';
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+        .box{
+            margin: 50px auto;
+            width: 457px;
+            /*border: 5px dashed #000;*/
+            /*padding: 1px 0 0 1px;*/
+
+        }
+        ul{
+
+        }
+        li{
+            width: 150px;
+            height: 150px;
+            background-image: url(../images/child.jpg);
+            background-size:  cover;
+            background-origin: content-box;
+            background-repeat: no-repeat;
+            background-clip: content-box;
+            float: left;
+            border: 1px solid #eee;
+
+            position: relative;
+            margin-left:-1px;
+            margin-top: -1px;
+        }
+        li>span{
+            font: 20px 'microsoft yahei';
+            text-align: center;
+            line-height:148px;
+            color: rgba(0, 0, 0, 0);
+
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 148px;
+            height: 148px;
+            background-color: rgba(0, 0, 0, 0);
+            transition: all 0.5s;
+        }
+
+        li:hover{
+            /*border-color: deepskyblue;*/
+            /*z-index:1;*/
+        }
+
+        li:hover span{
+            background-color: rgba(0, 0, 0, .5);
+            color: rgba(255, 255, 255, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <ul>
+            <li>
+                <span>
+                    我可是小美女哦
+                </span>
+            </li>
+            <li>
+                <span>
+                    我可是小美女哦
+                </span>
+            </li>
+            <li>
+                <span>
+                    我可是小美女哦
+                </span>
+            </li>
+            <li>
+                <span>
+                    我可是小美女哦
+                </span>
+            </li>
+            <li>
+                <span>
+                    我可是小美女哦
+                </span>
+            </li>
+            <li>
+                <span>
+                    我可是小美女哦
+                </span>
+            </li>
+            <li>
+                <span>
+                    我可是小美女哦
+                </span>
+            </li>
+            <li>
+                <span>
+                    我可是小美女哦
+                </span>
+            </li>
+            <li>
+                <span>
+                    我可是小美女哦
+                </span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

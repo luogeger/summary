@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.点击高亮</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>I'am 1</li>
+    <li>I'am 2</li>
+    <li>I'am 3</li>
+    <li>I'am 4</li>
+    <li>I'am 5</li>
+    <li>I'am 6</li>
+    <li>I'am 7</li>
+    <li>I'am 8</li>
+    <li>I'am 9</li>
+</ul>
+
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function (){
+        $('li').on('mouseenter mouseleave', function (){
+            $(this).toggleClass('red');
+        })
+    })
+</script>
+

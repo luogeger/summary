@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12jsonP</title>
+</head>
+
+<body ng-app="xiao" ng-controller="qing">
+    <pre>
+        {{jsonpdata|json}}
+    </pre>
+</body>
+<script src="angular.js"></script>
+<script>
+    var luo = angular.module('xiao', []);
+        //通过Angular发送get请求,测试豆瓣API -- 不支持跨域,拿不到数据
+
+//    luo.controller('qing', function($scope, $http){
+//        $http({
+//            method: 'GET',
+//            url: 'https://api.douban.com/v2/book/1220562',
+//        })
+//        .then(
+//            function successCallback (data){
+//                console.log('success');
+//                console.log(data);
+//                $scope.jsonData = data;
+//            }
+//            ,function errorCallback (data){
+//                console.log('error');
+//                console.log(data);
+//            }
+//        )
+//
+//    })
+
+
+    //angular的JSONP, 获取豆瓣数据
+    //豆瓣只支持数字、字母、下划线，但是不支持.，返回的还是JSON格式数据，不能返回callback,
+    //所以需要手动修改，或者自己写一个
+    luo.service('httpProService', function(){
+        this.jsonp = function(url, params, callback){
+            var name = 'JSONP' + Math.random().toString().substring(2);
+            var strUrl = url + '?callback=' + name;
+            for(var key in params){
+                strUrl += '&' + key + '=' + params[key];
+            }
+
+            window[name] = function(data){
+                callback(data);
+            };
+
+            var script = document.createElement('script');
+            script.src = strUrl;
+            document.body.appendChild(script);
+            document.body.removeChild(script);
+        }
+    });
+
+    luo.controller('qing', function($scope, httpProService){
+        var url = 'https://api.douban.com/v2/book/1220562';
+        var params = {
+
+        };
+        httpProService.jsonp(url, params, function(data){
+            $scope.jsonpdata = data;
+            console.log(data);
+            $scope.$apply();    //更新$scope
+        })
+    });
+
+
+
+        //百度支持跨域，就可以拿到数据
+
+//    luo.controller('qing', function($http, $scope){
+//        $http({
+//            method: 'GET',
+//            url: 'http://apis.baidu.com/apistore/weatherservice/recentweathers?cityname=上海&cityid=101020100',
+//            headers:{
+//                'apikey':'08bfec92df73d84c56eb4bfe33fbfe37'
+//            }
+//        }).then(
+//            function successCallback (data) {
+//                console.log('success');
+//                console.log(data);
+//                $scope.jsonData=data;
+//            }
+//            ,function errorCallback(data) {
+//                console.log('error');
+//                console.log(data);
+//            }
+//        )
+//    })
+
+
+</script>
+
+</html>

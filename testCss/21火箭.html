@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21火箭</title>
+    <style>
+        body{
+            background-color: deeppink;
+        }
+        .dog{
+            position: absolute;
+            left: 500px;
+        }
+        .rocket{
+            position: absolute;
+            transform: rotate(90deg) scale(0,0);
+            left: 50px;
+            top: 25px;
+            /*display: none;*/
+            z-index:2;
+            transition: all 1s;
+        }
+
+        body:hover .rocket{
+            /*display: block;*/
+            transform: rotate(90deg) scale(1,1);
+            left: 580px;
+        }
+    </style>
+</head>
+<body>
+<img src="../images/rocket.png" alt="" class="rocket">
+<img src="../images/dog.gif" alt="" class="dog">
+</body>
+</html>

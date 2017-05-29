@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1五星好评</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            margin: 100px auto;
+        }
+        li{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #0094ff;
+            float: left;
+            margin-left:3px;
+            text-align: center;
+            line-height:30px;
+            color: #fff;
+        }
+        span{
+            line-height:30px;
+            padding-left:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <span>
+            qwerrt
+        </span>
+    </div>
+
+</body>
+</html>
+<script src="../jsFile/jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+        console.log($('span').text().trim().length);
+        var arr = [1,2,3,4,5];
+        var index;
+        var value;
+        $('li').on('mouseenter', function(){
+            $('li').css('backgroundColor', '#0094ff');
+            $(this)
+                    .css('backgroundColor', 'red')
+                    .prevAll()
+                    .css('backgroundColor', 'red')
+                    .end();
+            index = $('li').index(this);
+            $('span').html(arr[index]);
+            value = arr[index];
+
+        }).on('click', function(){
+            $(this).addClass('active').siblings().removeClass();
+            $('span').html(value);
+        });
+
+        // click/mouseleave不受冲突
+        $('li').on('mouseleave', function(){
+            $('li').css('backgroundColor', '#0094ff');
+            $('span').html('');
+            $('.active')
+                    .css('backgroundColor', 'red')
+                    .prevAll()
+                    .css('backgroundColor', 'red')
+                    .end();
+
+
+        })
+
+    })
+</script>
+<!--
+1. 鼠标进入 自己 和 前面 的变换
+2. 鼠标离开，全部清空
+3. 点击之后，再离开，点击的和前面的，确定变化
+4. 每次进入都要清空之前的样式
+5. 点击了添加样式之后，离开了，样式依然保持着
+-->

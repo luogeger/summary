@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2bannerTest</title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: #0094ff;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div>
+        <ul>
+            a<li>A</li>
+            s<li>S</li>
+            d<li>D</li>
+            f<li>F</li>
+            g<li>G</li>
+        </ul>
+        <ul>
+            h<li>H</li>
+            j<li>J</li>
+            k<li>K</li>
+            l<li>L</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    var divs = document.getElementsByTagName("div");
+    console.log(divs);
+    console.log(divs[1]);// -- div_second
+    console.log(divs[1].childNodes);// -- 有5个节点，length为5；
+    console.log(divs[1].children); // -- 只会获取元素节点，2个ul
+    console.log(divs[1].children[1]);// -- ul_second
+        console.log(divs[1].children[1].parentNode);// -- 等同于div_second
+
+
+</script>

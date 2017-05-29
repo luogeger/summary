@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2.开关灯-双开</title>
+</head>
+<body>
+    <input type="button" value="开灯">
+    <input type="button" value="关灯">
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function (){
+        var $btn = $(':button');
+        $btn[0].onclick = function (){
+            document.body.style.backgroundColor = '#FFFFFF';
+        }
+        $btn[1].onclick = function (){
+            document.body.style.backgroundColor = '#000';
+        }
+    })
+</script>
+

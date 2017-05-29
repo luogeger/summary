@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13手写跨域</title>
+</head>
+<body>
+    <!--
+        利用src属性可以任意跨域，那么在后面传递一个回调函数，
+        回调函数内部执行的代码块是，输出数据
+    -->
+    <div>
+
+    </div>
+<script>
+    function kuayu (data){
+        console.info(data);
+        var div = document.getElementsByTagName("div");
+        div.innerText = data;
+    };
+</script>
+<script src=""></script>
+
+</body>
+</html>

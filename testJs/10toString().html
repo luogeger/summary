@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10toString()</title>
+</head>
+<body>
+
+<script>
+
+    console.log({}.toString());
+    console.log({age:182}.valueOf());
+    console.log([1,22].valueOf());
+    console.info((new Date()).toString());
+    console.info(new Date());
+    var obj = {
+        age: 18
+    };
+    var str = obj.toString();
+    console.log(str);
+
+    var val = str.valueOf();
+    console.log(val);
+
+
+    console.info(Boolean( new Boolean(false)));
+
+    var a = 5;
+    if(a==1){
+        console.log(1);
+    }
+    else if(a==2){
+        console.log(2);
+    }
+    else{
+        console.log(3);
+    }
+</script>
+</body>
+</html>

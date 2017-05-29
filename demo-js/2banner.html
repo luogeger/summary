@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2banner</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background-color: #eeeeee;
+        }
+        .clearfix:before,.clearfix:after{
+            content: '';
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .box{
+            width: 600px;
+            height: 350px;
+            border: 2px solid red;
+            margin: 50px auto;
+            /*padding: 5px;*/
+            position: relative;
+            overflow: hidden;
+            background-color: yellow;
+        }
+        .imgs{
+            width: 3600px;
+            position: absolute;
+
+        }
+        li{
+            float: left;
+        }
+        img{
+            width: 600px;
+            height: 350px;
+            vertical-align: top;
+        }
+        .points{
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+        }
+        .points>li{
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            color: #fff;
+            text-align: center;
+            line-height:22px;
+            margin-left:4px;
+            cursor: pointer;
+        }
+        .points>li:nth-child(1){
+            margin-left: 0px;
+        }
+        /*.points>li:hover{*/
+            /*background-color: #fff;*/
+            /*color: red;*/
+        /*}*/
+
+        span{
+            display: block;
+            width: 40px;
+            height: 80px;
+            /*background-color: #0094ff;*/
+            background-color: rgba(100,100,100, .8);
+            position: absolute;
+            color: #ffffff;
+            font: 30px 'Arial';
+            line-height:80px;
+            text-align: center;
+            top: 50%;
+            margin-top: -40px;
+            cursor: pointer;
+            display: none;
+        }
+        .arrowsRight{
+            right: 0px;
+        }
+        .box:hover span{
+            display: block;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            background-color: #0094ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <ul class="imgs">
+        </ul>
+        <ul class="points">
+        </ul>
+        <span class="arrowsLeft">&lt;</span>
+        <span class="arrowsRight">&gt;</span>
+    </div>
+    <!--<p></p>-->
+</body>
+</html>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    var imgArr = [
+            '../images/b1.jpg',
+            '../images/b2.jpg',
+            '../images/b3.jpg',
+            '../images/b4.jpg',
+            '../images/b5.jpg',
+            '../images/b6.jpg'
+    ];
+    $(function(){
+        var creatLi = [];
+        var creatPoint = [];
+        for(var i = 0; i<imgArr.length; i++){
+            var liImg = $('<li><img src='+imgArr[i]+' alt=""></li>');
+            creatLi.push(liImg);
+            var liPoint = $('<li>'+(i+1)+'</li>');
+            creatPoint.push(liPoint);
+        };
+        $('.imgs').append(creatLi);
+        $('.points').append(creatPoint);
+        var ml = -$('.points').width()/2 + 'px';
+        $('.points').css('marginLeft', ml);
+
+
+        //定时器
+        //var imgW = -$('.imgs').width() + 'px';
+        //$('.imgs').animate({left: imgW}, 20000,'linear');
+
+
+
+
+    });// -- end
+
+
+</script>
+<!--
+1.  先让point和img同步
+1.  定时器自动播放，播放到最后一张，返回到第一张
+-->
