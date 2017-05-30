@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        1. 可以让元素在left, right, bottom, top 四个位置任意摆放，
+        2. margin: auto auto; 后面2个值都是auto
+    -->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000000;
+            margin: 20px auto;
+            position: relative;
+        }
+        .current{
+            width: 100px;
+            height: 100px;
+            background-color: #0094ff;
+            position: absolute;
+            right: 0;
+            /*left: 0;*/
+            top: 0;
+            bottom: 0;
+            margin: auto auto;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="current">
+    
+    </div>
+</div>
+
+</body>
+</html>

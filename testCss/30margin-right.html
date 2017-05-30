@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--
+        1. 如果元素给position, 但是不给top, left, 他还是在标准流里面
+        2. 元素给relative定位， top值是相对于上面的元素(P元素)
+    -->
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ff0000;
+        }
+        .current{
+            width: 100px;
+            height: 100px;
+            background-color: #0094ff;
+            /*margin-left: auto;  块元素挨着右边 */
+            position: relative;
+            left: 100px;
+            top: 10px;
+            
+        }
+        p{
+            background-color: deeppink;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p> 我是P元素 </p>
+        <div class="current">
+            
+        </div>
+    </div>
+</body>
+</html>
