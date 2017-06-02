@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        1. 给了display: inline-block; 以后， 1.右边有间隙， 2.底部有间隙
+            1. 底部解决：vertical-align: top、middle、bottom; 都可以解决。
+        2. word-spacing:
+        3. letter-spacing:
+        
+    -->
+    <meta charset="UTF-8">
+    <title>display</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box,#box2{
+            border: 5px solid #000;
+            margin: 40px 0;
+            font-size: 0;
+        }
+        .one, .two, .three{
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ff0000;
+            display: inline-block;
+            /*vertical-align: bottom;*/
+        }
+        #box2 a{
+            /* 不能给上下padding， 高度是由line-height撑起来的 */
+            padding: 0 1em;
+            background-color: #0094ff;
+            display: block;
+            
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+</div>
+
+<div id="box2">
+    <a href="#">郁闷</a>
+    <a href="#">惆怅</a>
+    <a href="#">失落</a>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

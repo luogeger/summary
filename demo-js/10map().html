@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>
+<script src="../fileJs/jquery-1.12.4.min.js"></script>
+<script>
+    
+    $(function (){
+        var obj = {
+            'name':'lucy',
+            'age': '18',
+            'job': 'student',
+            'length':3
+        };
+        var arr = ['one', 'two', 'three', 'four'];
+        for(key in obj){
+            //console.log(key);
+            //console.log(obj[key]);
+        }
+        
+        // 把伪数组转化成数组
+        var $lis = $('li');
+        var $obj = $.makeArray($lis);
+        console.log($lis);
+        console.log($obj);
+        
+        // 遍历数组
+        var _arr = [];
+        $.each(arr, function (index, value){
+            _arr.push(value)
+        });
+        console.log(_arr);
+        
+        //拿到obj对象的每一个value --> 返回的是一个数组
+        var values = $.map(obj, function (value, key){
+            return value
+        });
+        console.log(values.join(''));
+        
+    })
+</script>
