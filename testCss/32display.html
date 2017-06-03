@@ -6,6 +6,8 @@
             1. 底部解决：vertical-align: top、middle、bottom; 都可以解决。
         2. word-spacing:
         3. letter-spacing:
+        4. font-size: 能解决左右间隙, 还能同时解决底部间隙
+        5. 用display; inline-block; 主要是行内元素不能设置宽高, 但是行内块可以设置
         
     -->
     <meta charset="UTF-8">
@@ -29,9 +31,11 @@
         }
         #box2 a{
             /* 不能给上下padding， 高度是由line-height撑起来的 */
-            padding: 0 1em;
+            /*padding: 0 1em;*/
+            width: 50px;
+            height: 30px;
             background-color: #0094ff;
-            display: block;
+            display: inline-block;
             
         }
     </style>
