@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="animate.css">
+    
+    <style>
+        body{
+            text-align: center;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color:  #ff0000;
+            margin: 30px auto;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="box"></div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error!</p>
+</body>
+</html>
+<script src="../../fileJs/jquery-1.12.4.min.js"></script>
+<script>
+    $(function (){
+        //$('.box').addClass('bounce animated');
+        //$('.box').addClass('rubberBand animated');
+        //$('.box').addClass('shake animated');
+        $('.box').addClass('wobble animated');
+        $('.box').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function (){
+            $('.box').removeClass('bounce animated');
+            //$('p').addClass('bounceInRight animated')
+            $('p').addClass('slideInDown animated')
+        })
+    })
+</script>

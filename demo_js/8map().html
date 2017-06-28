@@ -3,22 +3,22 @@
 <head>
     <title>8map</title>
     <style>
-        p {
-            color:red;
-        }
-        label{
-            color: blue;
-            font-size:20px;
-            position: relative;
-            left: 50px;
-            top: 50px;
-        }
+        /*p {*/
+            /*color:red;*/
+        /*}*/
+        /*label{*/
+            /*color: blue;*/
+            /*font-size:20px;*/
+            /*position: relative;*/
+            /*left: 50px;*/
+            /*top: 50px;*/
+        /*}*/
     </style>
-    <script type="text/javascript" src="../jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../fileJs/jquery-1.12.4.min.js"></script>
 </head>
 
 <body>
-<form method="post" action="">
+<form method="post" action="#">
     <fieldset>
         <div>
             <label for="two">2</label>
@@ -50,18 +50,21 @@
         $lab.each(function (i,v){
             arr.push(v);
         });
-        console.log(arr);
-        console.log($lab.eq(3).position());
-        console.log($lab.eq(2).position());
+        console.log('$lab--', $lab );
+        console.log('arr--', arr );
+        
+        //console.log($lab.eq(3).position());
+        //console.log($lab.eq(2).position());
 
         var $a = $lab.eq(1).css(['color','top']);
-        console.log($a);    //a是jQuery对象
+        //console.log($a);    //a是jQuery对象
 
         //现在是arr是label的集合，每一个label都有几个属性，怎么把每个label里面的某个属性单独的拿出来，放到一个数组里面去
-        console.log($lab.map(function () {
+        var top = $lab.map(function (){
             return this.top;
-        }));
-
+        }).get().join();
+        console.log(top);
+        
         $(':checkbox').map(function() {
             return this.id;
         }).get().join();

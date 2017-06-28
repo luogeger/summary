@@ -20,10 +20,15 @@
     <div id="four"></div>
 </body>
 </html>
-<script src="../jquery-1.12.4.min.js"></script>
+<script src="../fileJs/jquery-1.12.4.min.js"></script>
 <script>
     $(function (){
         var $divs = $('div');
+        console.log($divs); // jQuery对象的伪数组
+        console.log($divs.eq(1)); // jQuery对象 --> 单个
+        console.log($divs.eq(1).position()); // 对象 --> top,left 的键值对
+        console.log($divs.get(1)); // HTML代码
+        
         $divs.each(function (i,v){
             $(v).text(i);
             $(this).css({width: '15'+i+'px'});
@@ -37,11 +42,20 @@
         console.log(abs);
 
         //
-        var maps = $divs.map(function (i,v){
-            return $(this).css('width');
-        }).get();
-        console.log(maps);
-        console.log($divs.get());
+//        var maps = $divs.map(function (i,v){
+//            return $(this).css('width');
+//        }).get();
+//        console.log(maps);
+//        console.log($divs.get());
+    
+        //var realArr = $.makeArray($divs);
+        //console.log(realArr[0].clientWidth)
+        
+        var widths = $.map($divs, function (value, key){
+            return value.clientWidth;
+            
+        });
+        console.log(widths);
     })
 </script>
 

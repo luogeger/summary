@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .parent{
+            border: 1px solid red;
+        }
+        .parent {
+            margin-left: -20px;
+        }
+        .column {
+            float: left;
+            /*width: 25%;*/
+            width: 200px;
+            padding-left: 20px;
+            box-sizing: border-box;
+            /*word-wrap:break-word;*/
+            overflow: hidden;
+            text-overflow: ellipsis;/* 文字超出用...*/
+            white-space: nowrap;/* 文字不换行*/
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iure iusto quasi recusandae. Dignissimos nam neque perferendis quasi sapiente? Similique.</p>
+    </div>
+    <div class="column">
+        <p>23253425342642352435234524352435435342546547654</p>
+    </div>
+    <div class="column">
+        <p>CSS div内放长英文字母或长数字自动换行 CSS一行排不下自动打断换行</p>
+    </div>
+    <div class="column">
+        <p>4</p>
+    </div>
+</div>
+</body>
+</html>
