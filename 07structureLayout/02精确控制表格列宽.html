@@ -5,6 +5,9 @@
     <title>02精确控制表格列宽</title>
     <style>
         table{
+            /*font-family: Arial,'Times New Roman','Microsoft YaHei',SimHei;*/
+            font-family: Ubuntu, sans-serif,Arial,'Times New Roman','Microsoft YaHei',SimHei;
+            font-style: italic;
             margin-bottom: 20px;
             border-collapse: collapse;/* 边框合并属性  */
             table-layout: fixed;
@@ -15,6 +18,7 @@
             overflow: hidden;
             text-overflow: ellipsis;/* 文字超出用...*/
             white-space: nowrap;/* 文字不换行*/
+            padding: 10px;
         }
     </style>
 </head>
@@ -23,9 +27,14 @@
         <!-- 1 -->
         <table>
             <tr>
-                <td>123</td>
-                <td>If we don’t…</td>
+                <td style="width: 150px;">12,234,354,688,789,123,355.00</td>
+                <td>数字超出部分可以用...来显示</td>
                 <td>specify a cell width, they will be assigned one that depends on their contents. Notice how the cell with the more content here is much wider.</td>
+            </tr>
+            <tr>
+                <td style="width: 150px;">上面的宽度是150px</td>
+                <td>后面2个td的宽度还是均分</td>
+                <td>后面2个td的宽度还是均分</td>
             </tr>
         </table>
         <!-- 2 -->
