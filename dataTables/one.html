@@ -36,6 +36,12 @@
             margin: 0;
             border:none;
         }
+        table.dataTable thead .sorting:after{
+            color: blue;
+        }
+        table.dataTable thead .sorting:after{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -211,7 +217,7 @@
                 initComplete: initComplete, // 添加dom 的方法
                 drawCallback: drawCallback, // 表格加载完毕后执行的方法
 
-                "ordering": false, // 全局排序 - true: 全选框有icon
+                "ordering": true, // 全局排序 - true: 全选框有icon
                 "sort": "position",
                 "deferRender": true, // -> 延迟渲染
                 "bStateSave": true, // -> 删除记录之后，跳到第一页
