@@ -9,6 +9,15 @@
             height: 100px;
             background-color: #0094ff;
         }
+        select{
+            width: 150px;
+        }
+        option{
+            display: block;
+            padding: 10px;
+            line-height: 30px;
+            font-size: 30px;
+        }
     </style>
 
 </head>
@@ -19,9 +28,7 @@
 
     </select>
     <h1></h1>
-    <p>
-
-    </p>
+    <p></p>
 </body>
 </html>
 <script src="../fileJs/jquery-1.12.4.min.js"></script>
@@ -50,6 +57,7 @@
 
         function initSelect (id, url, data){
             $('#' + id).empty();
+            $('#' + id).append('<option value="">请选择--</option>');
             
             $.getJSON(url, data, function (res){
                 res = res.list;
@@ -66,6 +74,7 @@
             var txt = $('#select>option:selected').text();
             $('h1').text(txt);
             var index = $('#select>option:selected').attr('value');
+            $('p').text(index);
         });
     })
 </script>
