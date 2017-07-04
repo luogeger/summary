@@ -34,6 +34,7 @@
         #tableId_paginate li{
             padding: 0;
             margin: 0;
+            border:none;
         }
     </style>
 </head>
@@ -161,6 +162,7 @@
 
 <script>
     $(function (){
+        $("#tableId").dataTable().fnDestroy();//清除表格
         initDataTables();
         
         /*
@@ -218,6 +220,7 @@
                 "bProcessing" : false,// -> 进度： 点击下一页的进度显示
                 "processing": false,// -> 进度：'sProcessing'顶部显示 loading...
                 // 刷新后回到第一页
+                renderer: "bootstrap",
 
                 //"ajax": "data.json",
                 "sAjaxSource": "data.json",
