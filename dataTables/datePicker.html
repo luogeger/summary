@@ -22,6 +22,7 @@
         body{
             padding: 10px;
             margin: 0;
+            
         }
         #box{
             border: 1px solid #ff0000;
@@ -57,7 +58,12 @@
     <div id="box">
         <h4>base</h4>
         <code>data-date-end-date="0d"</code>
-        <h6>禁止今天以后所有的日期</h6>
+        <h6>禁止今天以后所有的日期, 也可以在js配置</h6>
+        <code>autoclose: true,</code>
+        <br>
+        <code>todayBtn: true,</code>
+        <code>todayBtn : "linked",</code>
+        <br>
         
         <input id="base" type="text" size="16" class="form-control " data-date-end-date="0d">
         
@@ -88,31 +94,79 @@
         </div>
         
         <h4>interval</h4>
-            <code>$('#interval input').datepicker({format: "yyyy-mm-dd"});</code>
-            <h6>不能格式化日期,不然间隔期间无效</h6>
-            <div class="cy-text-right-md">
+            <code>$('#qBeginTime').datepicker({format: "yyyy-mm-dd"});</code>
+            <h6>格式化日期必须再内部，不然没有today快捷键</h6>
+            <form action="" id="formInterval">
                 <div class="form-inline">
-                    <div class="form-group cy-mar-ver-s">
-                        <span class="cy-pad-hor-s">最后接入时间</span>
+                    <div class="form-group">
+                        <span class="">最后接入时间</span>
+                        <code></code>
                     </div>
-                    <div class="input-daterange input-group" id="interval">
-                        <input type="text" class="form-control" name="start" id="qBeginTime" />
+                    <div class="input-group" id="interval">
+                        <input type="text" class="form-control" name="start" id="qBeginTime" placeholder="请选择开始日期"/>
                         <span class="input-group-addon">至</span>
-                        <input type="text" class="form-control" name="end" id="qEndTime" />
+                        <input type="text" class="form-control" name="end" id="qEndTime" placeholder="请选择结束日期"/>
                     </div>
-                    <div class="form-group cy-mar-ver-s">
-                        <button class="btn btn-primary cy-pad-rgt-s" onclick="javascript:doQuery();" type="button">搜索</button>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="btnInterval" type="button">搜索</button>
                     </div>
                 </div>
-            </div>
+            </form>
         
     </div><!-- box end -->
 </body>
 </html>
 <script>
     $(function (){
+        /*
+         *   修改为中文
+         * */
+        var dates = $.fn.datepicker.dates = {
+            cn: {
+                days: ["周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+                daysShort: ["日", "一", "二", "三", "四", "五", "六", "七"],
+                daysMin: ["日", "一", "二", "三", "四", "五", "六", "七"],
+                months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                monthsShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                today: "今天",
+
+                format: "mm/dd/yyyy",
+                clear: "清除"    }
+        };
+
+        var defaults = $.fn.datepicker.defaults = {
+            autoclose: false,
+            beforeShowDay: $.noop,
+            calendarWeeks: false,
+            clearBtn: false,
+            daysOfWeekDisabled: [],
+            endDate: Infinity,
+            forceParse: true,
+            format: 'mm/dd/yyyy',
+            keyboardNavigation: true,
+            language: 'cn',
+            minViewMode: 0,
+            orientation: "auto",
+            rtl: false,
+            startDate: -Infinity,
+            startView: 0,
+            todayBtn: false,
+            todayHighlight: false,
+            weekStart: 0
+        };
+        
+        
+        /*
+        *   base
+        * */
         $('#base').datepicker({
             format: "yyyy-mm-dd",
+            //language:  'zh-CN',
+            autoclose: true, //自动关闭
+            //todayBtn: true,
+            //startView: 'year',
+            //minView:'year',
+            //maxView:'decade'
         });
         //$('#base').datepicker('update', '2011-03-05', '2011-03-07');
         
@@ -138,18 +192,29 @@
         /*
         *   interval
         * */
-        //$('#interval input').datepicker({format: "yyyy-mm-dd"});
         $('#qBeginTime').datepicker({
-            todayBtn : "linked",
+            format: "yyyy-mm-dd",
+            //todayBtn : "linked",
             autoclose : true,
             todayHighlight : true,
-            endDate : new Date()
+            endDate : new Date(),
+            toDisplay: function (date, format, language) {
+                var d = new Date(date);
+                d.setDate(d.getDate() - 7);
+                return d.toISOString();
+            },
+            toValue: function (date, format, language) {
+                var d = new Date(date);
+                d.setDate(d.getDate() + 7);
+                return new Date(d);
+            }
         }).on('changeDate',function(e){
             var startTime = e.date;
             $('#qEndTime').datepicker('setStartDate',startTime);
         });
         
         $('#qEndTime').datepicker({
+            format: "yyyy-mm-dd",
             todayBtn : "linked",
             autoclose : true,
             todayHighlight : true,
@@ -159,6 +224,20 @@
             $('#qBeginTime').datepicker('setEndDate',endTime);
         });
         
+        $('#btnInterval').click(function (){
+            var asd = $('#formInterval').serialize();
+            console.log(asd);
+        })
         
-    })
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+    }); // jQuery  end
 </script>
