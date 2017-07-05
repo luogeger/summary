@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>datePicker</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>-->
+    <!--<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <!-- styles -->
+    <link rel="stylesheet" href="../fileCss/bootstrap.min.css">
+    <link rel="stylesheet" href="../fileCss/jquery.dataTables.css">
+    <link rel="stylesheet" href="../fileCss/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="../fileCss/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../fonts-bootstrap/fontawesome/font-awesome.css">
+    <!-- scripts -->
+    <script src="../fileJs/jquery-1.12.4.min.js"></script>
+    <script src="../fileJs/bootstrap.min.js"></script>
+    <script src="../fileJs/jquery.dataTables.js"></script>
+    <script src="../fileJs/dataTables.bootstrap.js"></script>
+    <script src="../fileJs/bootstrap-datepicker.js"></script>
+    <style>
+        body{
+            padding: 10px;
+            margin: 0;
+        }
+        #box{
+            border: 1px solid #ff0000;
+            padding: 20px;
+            width: 50%;
+            float: right;
+            margin-bottom: 200px;
+        }
+        h4{
+            color: deeppink;
+            font-weight: 700;
+            font-family: "Consolas,monospace";
+            /*font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;*/
+            color: #404040;
+        }
+        input:read-only{
+            background-color: red;
+        }
+        code{
+            white-space: nowrap;
+            max-width: 100%;
+            background: #fff;
+            border: solid 1px #e1e4e5;
+            font-size: 75%;
+            padding: 0 5px;
+            font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;
+            color: #E74C3C;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h4>base</h4>
+        <code>data-date-end-date="0d"</code>
+        <h6>禁止今天以后所有的日期</h6>
+        
+        <input id="base" type="text" size="16" class="form-control " data-date-end-date="0d">
+        
+        <h4>component</h4>
+        <div class="input-group date">
+            <input type="text" class="form-control" value="12-02-2012">
+            <div class="input-group-addon">
+                <!--<span class="fa fa-th-large"></span>-->
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+        </div>
+        
+        <h4>date-range</h4>
+        <div class="input-group input-daterange">
+            <input type="text" class="form-control " value="2012-04-05">
+            <div class="input-group-addon">to</div>
+            <input type="text" class="form-control" value="2012-04-19">
+        </div>
+        
+        <h4>inline or embedded</h4>
+        <div id="embedded" data-date="" style="border: 1px solid #0094ff;"></div>
+        <input type="hidden" id="my_embedded">
+        
+        <h4>event_period</h4>
+        <div id="event_period">
+            <input type="text" class="actual_range">
+            <input type="text" class="actual_range">
+        </div>
+        
+        <h4>interval</h4>
+            <code>$('#interval input').datepicker({format: "yyyy-mm-dd"});</code>
+            <h6>不能格式化日期,不然间隔期间无效</h6>
+            <div class="cy-text-right-md">
+                <div class="form-inline">
+                    <div class="form-group cy-mar-ver-s">
+                        <span class="cy-pad-hor-s">最后接入时间</span>
+                    </div>
+                    <div class="input-daterange input-group" id="interval">
+                        <input type="text" class="form-control" name="start" id="qBeginTime" />
+                        <span class="input-group-addon">至</span>
+                        <input type="text" class="form-control" name="end" id="qEndTime" />
+                    </div>
+                    <div class="form-group cy-mar-ver-s">
+                        <button class="btn btn-primary cy-pad-rgt-s" onclick="javascript:doQuery();" type="button">搜索</button>
+                    </div>
+                </div>
+            </div>
+        
+    </div><!-- box end -->
+</body>
+</html>
+<script>
+    $(function (){
+        $('#base').datepicker({
+            format: "yyyy-mm-dd",
+        });
+        //$('#base').datepicker('update', '2011-03-05', '2011-03-07');
+        
+        /*
+         *   date-range
+         * */
+        $('#embedded').datepicker();
+        $('#embedded').on('changeDate', function() {
+            $('#my_embedded').val(
+                $('#embedded').datepicker('getFormattedDate')
+            );
+        });
+
+        
+        /*
+         *   event_period
+         * */
+        $('#event_period').datepicker({
+            inputs: $('.actual_range')
+        });
+        
+        
+        /*
+        *   interval
+        * */
+        //$('#interval input').datepicker({format: "yyyy-mm-dd"});
+        $('#qBeginTime').datepicker({
+            todayBtn : "linked",
+            autoclose : true,
+            todayHighlight : true,
+            endDate : new Date()
+        }).on('changeDate',function(e){
+            var startTime = e.date;
+            $('#qEndTime').datepicker('setStartDate',startTime);
+        });
+        
+        $('#qEndTime').datepicker({
+            todayBtn : "linked",
+            autoclose : true,
+            todayHighlight : true,
+            endDate : new Date()
+        }).on('changeDate',function(e){
+            var endTime = e.date;
+            $('#qBeginTime').datepicker('setEndDate',endTime);
+        });
+        
+        
+    })
+</script>
