@@ -1,0 +1,207 @@
+{
+  "code": 200,
+  "msg": "success",
+  "result": {
+    "pageInfo": {
+      "pageNum": 2,
+      "pageSize": 10,
+      "size": 2,
+      "total": 33,
+      "pages": 1,
+      "list": [
+        {
+          "id":"324ert",
+          "name":"上海数据中心",
+          "address":"联行路",
+          "describe":"1号",
+          "alias":"Apple",
+          "nation":"China",
+          "city":"shanghai",
+          "remark":"nice...."
+        }
+
+      , {
+          "id":"3fgdg24",
+          "name":"北京数据中心",
+          "address":"天安门",
+          "describe":"2号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg2443",
+          "name":"广州",
+          "address":"天安门",
+          "describe":"3号",
+          "alias":"test",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdewrg24",
+          "name":"深圳",
+          "address":"天安门",
+          "describe":"4号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg24",
+          "name":"北京数据中心",
+          "address":"天安门",
+          "describe":"2号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg2443",
+          "name":"广州",
+          "address":"天安门",
+          "describe":"3号",
+          "alias":"test",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdewrg24",
+          "name":"深圳",
+          "address":"天安门",
+          "describe":"4号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg24",
+          "name":"北京数据中心",
+          "address":"天安门",
+          "describe":"2号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg2443",
+          "name":"广州",
+          "address":"天安门",
+          "describe":"3号",
+          "alias":"test",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdewrg24",
+          "name":"深圳",
+          "address":"天安门",
+          "describe":"4号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg24",
+          "name":"北京数据中心",
+          "address":"天安门",
+          "describe":"2号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg2443",
+          "name":"广州",
+          "address":"天安门",
+          "describe":"3号",
+          "alias":"test",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdewrg24",
+          "name":"深圳",
+          "address":"天安门",
+          "describe":"4号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg24",
+          "name":"北京数据中心",
+          "address":"天安门",
+          "describe":"2号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg2443",
+          "name":"广州",
+          "address":"天安门",
+          "describe":"3号",
+          "alias":"test",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdewrg24",
+          "name":"深圳",
+          "address":"天安门",
+          "describe":"4号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg24",
+          "name":"北京数据中心",
+          "address":"天安门",
+          "describe":"2号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdg2443",
+          "name":"广州",
+          "address":"天安门",
+          "describe":"3号",
+          "alias":"test",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+      , {
+          "id":"3fgdewrg24",
+          "name":"深圳",
+          "address":"天安门",
+          "describe":"4号",
+          "alias":"Orange",
+          "nation":"中国",
+          "city":"beijing",
+          "remark":"beauty...."
+        }
+
+      ]
+    }
+  }
+}

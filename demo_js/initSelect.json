@@ -1,13 +1,3 @@
 {
-  "list": [
-    {
-      "name": "java"
-    },
-    {
-      "name": "html"
-    },
-    {
-      "name": "css"
-    }
-  ]
+  "list": ["index", "html", "web"  ]
 }

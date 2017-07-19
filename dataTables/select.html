@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select</title>
+    <link rel="stylesheet" href="../fileCss/bootstrap.min.css">
+    <link rel="stylesheet" href="../fileCss/bootstrap-select.min.css">
+    <script src="../fileJs/jquery-1.12.4.min.js"></script>
+    <script src="../fileJs/bootstrap.min.js"></script>
+    <script src="../fileJs/bootstrap-select.min.js"></script>
+    <style>
+        body{
+            padding: 10px;
+            margin: 0;
+        
+        }
+        #box{
+            border: 1px solid #ff0000;
+            padding: 20px;
+            width: 50%;
+            float: right;
+            margin-bottom: 200px;
+        }
+        h4{
+            color: deeppink;
+            font-weight: 700;
+            font-family: "Consolas,monospace";
+            /*font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;*/
+            color: #404040;
+            color: #0094ff;
+        }
+        code{
+            white-space: nowrap;
+            max-width: 100%;
+            background: #fff;
+            border: solid 1px #e1e4e5;
+            font-size: 75%;
+            padding: 0 5px;
+            font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;
+            color: #E74C3C;
+            overflow-x: auto;
+            display: inline-block;
+        }
+        .selectpicker{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h4>Standard select boxes</h4>
+        <select class="selectpicker" data-width="fit" title="luoxiaoqing" data-size="3">
+            <option data-subtext="data-size=3">限制数量</option>
+            <option>Ketchup</option>
+            <option>Relish</option>
+            <option data-subtext="data-subtext=">Mustard</option>
+            <option data-content="<span class='label label-success'>Relish</span>"></option>
+            <option data-icon="glyphicon-heart">Relish 7777777777777777777777</option>
+        </select>
+        
+        <h4>Select boxes with optgroups</h4>
+        <code>下拉框有滚动条</code><br>
+        <select class="selectpicker">
+            <optgroup label="Picnic">
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+            </optgroup>
+            <optgroup label="Camping">
+                <option>Tent</option>
+                <option>Flashlight</option>
+                <option>Toilet Paper</option>
+            </optgroup>
+        </select>
+    
+        <h4>Live search</h4>
+        <code>下拉框有搜索框</code><br>
+        <select class="selectpicker" data-live-search="true">
+            <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+            <option data-tokens="mustard">Burger, Shake and a Smile</option>
+            <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+        </select>
+        
+        <h4>Limit the number of selections</h4>
+        <code>可以选择多个选项，也可以限制数量</code><br>
+        <select class="selectpicker" multiple data-max-options="2">
+            <option>Mustard</option>
+            <option>Ketchup</option>
+            <option>Relish</option>
+        </select>
+        <select class="selectpicker" multiple>
+            <optgroup label="Condiments" data-max-options="2">
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+            </optgroup>
+            <optgroup label="Breads" data-max-options="2">
+                <option>Plain</option>
+                <option>Steamed</option>
+                <option>Toasted</option>
+            </optgroup>
+        </select>
+
+        <h4>Custom button text</h4>
+        <code>Placeholder</code><br>
+        <select class="selectpicker show-tick" multiple title="title = placeHolder...">
+            <option>Mustard</option>
+            <option>Ketchup</option>
+            <option>Relish</option>
+        </select>
+        <h6><code>为option设置title属性</code></h6>
+        <select class="selectpicker">
+            <option title="Combo 1">Hot Dog, Fries and a Soda</option>
+            <option title="Combo 2">Burger, Shake and a Smile</option>
+            <option title="Combo 3">Sugar, Spice and all things nice</option>
+        </select>
+
+        <h4>Checkmark on selected option</h4>
+        <code>被选中的option有勾选标识</code>
+        <code>show-tick</code><br>
+        <select class="selectpicker show-tick">
+            <option>Mustard</option>
+            <option>Ketchup</option>
+            <option>Relish</option>
+        </select>
+        
+        <h6><code>弹出框有个小箭头</code><code>show-menu-arrow</code></h6>
+        <select class="selectpicker show-tick show-menu-arrow">
+            <option>Mustard</option>
+            <option>Ketchup</option>
+            <option>Relish</option>
+        </select>
+
+    </div><!-- end -->
+</body>
+</html>
+<script>
+    $(function (){
+        $('.selectpicker').selectpicker();
+
+    })
+</script>
+

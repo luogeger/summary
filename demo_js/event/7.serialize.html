@@ -7,19 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-<form action="#" id="form">
-    <input type="text" name="name">
-    <br>
-    <input type="password" name="psd">
-    <br>
-    <textarea name="txt" id="" cols="30" rows="10"></textarea>
-    <br>
+    <form action="#" id="form">
+        <input type="text" name="name">
+        <br>
+        <input type="password" name="psd">
+        <br>
+        <textarea name="txt" id="" cols="30" rows="10"></textarea>
+        <br>
+    </form>
     <button>注册</button>
-</form>
+
+    <form action="" id="box">
+        第一个名称: <input type="text" name="FirstName" value="Mickey" /><br>
+        最后一个名称: <input type="text" name="LastName" value="Mouse" /><br>
+    </form>
+    <button>序列化表单值</button>
+    <div></div>
 
 </body>
 </html>
-<script src="../fileJs/jquery-1.12.4.min.js"></script>
+<script src="../../fileJs/jquery-1.12.4.min.js"></script>
 <script>
     
     $(function(){
@@ -30,3 +37,15 @@
         })
     });
 </script>
+
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("div").text($("#box").serialize());
+        });
+    });
+</script>
+
+
+
+

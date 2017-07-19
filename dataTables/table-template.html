@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table-template</title>
+    <link rel="stylesheet" href="../fileCss/bootstrap.min.css">
+    <script src="../fileJs/jquery-1.12.4.min.js"></script>
+    <script src="../fileJs/bootstrap.min.js"></script>
+    <style>
+        body{
+            font-size: 12px;
+            font-family: monospace, monospace;
+        }
+        ul{
+            padding:0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #box{
+            margin: 50px auto;
+            width: 60%;
+        }
+        table th, table td{
+            text-align: center;
+        }
+        table>tbody>tr>td{
+            padding: 0 5px!important;
+            /*height: 32px;*/
+            /*line-height: 32px !important;*/
+        }
+        table span{
+            padding: 2px 5px !important;
+        }
+        .chengBen{
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <table id="tableId" class="table table-hover table-striped table-bordered table-condensed table-responsive">
+            <thead>
+                <th style="width: 10%;">序号</th>
+                <th style="width: 20%;">姓名</th>
+                <th style="width: 20%;">电话</th>
+                <th style="width: 35%;">住址</th>
+                <th style="width: 15%;">操作</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>费用</li>
+                            <li class="chengBen">成本</li>
+                            <li>利润</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>123.00</li>
+                            <li class="chengBen">342.00</li>
+                            <li>798.00</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>23609.00</li>
+                            <li class="chengBen">2946.00</li>
+                            <li>5903.00</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>5237.00</li>
+                            <li class="chengBen">7610.90</li>
+                            <li>2398.00</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <span class="edit">编辑</span>
+                        <span class="delete">删除</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Jim Green</td>
+                    <td>13579246810</td>
+                    <td>北卡罗来纳·</td>
+                    <td>
+                        <span class="edit btn btn-info btn-sm">编辑</span>
+                        <span class="delete btn btn-danger btn-sm">删除</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Jim Green</td>
+                    <td>13579246810</td>
+                    <td>北卡罗来纳·</td>
+                    <td>
+                        <span class="edit">编辑</span>
+                        <span class="delete">删除</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Jim Green</td>
+                    <td>13579246810</td>
+                    <td>北卡罗来纳·</td>
+                    <td>
+                        <span class="edit">编辑</span>
+                        <span class="delete">删除</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Jim Green</td>
+                    <td>13579246810</td>
+                    <td>北卡罗来纳·</td>
+                    <td>
+                        <span class="edit">编辑</span>
+                        <span class="delete">删除</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Jim Green</td>
+                    <td>13579246810</td>
+                    <td>北卡罗来纳·</td>
+                    <td>
+                        <span class="edit">编辑</span>
+                        <span class="delete">删除</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Jim Green</td>
+                    <td>13579246810</td>
+                    <td>北卡罗来纳·</td>
+                    <td>
+                        <span class="edit">编辑</span>
+                        <span class="delete">删除</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Jim Green</td>
+                    <td>13579246810</td>
+                    <td>北卡罗来纳·</td>
+                    <td>
+                        <span class="edit">编辑</span>
+                        <span class="delete">删除</span>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <button id="btn">清除</button>
+    </div>
+</body>
+</html>
+<script>
+    $(function (){
+        var asd = $('.chengBen').remove();
+        console.log(asd);
+        
+        $('#btn').click(function (){
+            $('tbody').remove();
+        });
+        
+        
+    })
+</script>

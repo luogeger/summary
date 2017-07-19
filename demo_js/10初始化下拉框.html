@@ -22,7 +22,7 @@
 
 </head>
 <body>
-    <select name="" id="select">
+    <select name="" id="selectId">
         <option value="">人之初</option>
         <option value="">性本善</option>
 
@@ -56,21 +56,20 @@
 
 
         function initSelect (id, url, data){
-            $('#' + id).empty();
-            $('#' + id).append('<option value="">请选择--</option>');
-            
             $.getJSON(url, data, function (res){
+                $('#' + id).empty();
+                $('#' + id).append('<option value="">请选择--</option>');
                 res = res.list;
                 $.each(res, function (index, value){
-                    $('#' + id).append( "<option value='"+index+"'>"+value.name+"</option>")
+                    $('#' + id).append( "<option value='"+index+"'>"+value+"</option>")
                 })
             })
 
         };
 
-//        initSelect('select', 'http://127.0.0.1:8888/lol' );
-        initSelect('select', './initSelect.json' );
-        $('#select').change(function (){
+
+        initSelect('selectId', './initSelect.json' );
+        $('#selectId').change(function (){
             var txt = $('#select>option:selected').text();
             $('h1').text(txt);
             var index = $('#select>option:selected').attr('value');
