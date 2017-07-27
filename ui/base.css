@@ -75,3 +75,31 @@ s, i, em {
     font-style: normal;  /*将原有的样式风格去掉*/
     text-decoration: none; /*去掉中划线，或是惯穿线*/
 }
+
+/* select 兼容性处理 */
+select {
+    border: solid 1px #000; /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    appearance: none; /*很关键：将默认的select选择框样式清除*/
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /* background: #0094ff;将背景改为红色*/
+    padding-right: 14px; /*加padding防止文字覆盖*/
+}
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand {
+    display: none;
+}
+
+
+*{
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+select{
+    outline:none;
+}

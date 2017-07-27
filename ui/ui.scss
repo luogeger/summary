@@ -1,16 +1,42 @@
+@charset "UTF-8";
+/*  height  */
+$height-md: 34px;
+$height-sm: 30px;
+$height-xs: 22px;
+$height-lg: 40px;
+
+/* theme */
+$theme-normal: #FF8A41;
+$theme-hover: #ED6C1C;
+$theme-other: #FFA974;
+
+/* text */
+$text-normal: #222222;
+$text-prompt: #999999;
+$text-other: #cccccc;
+
+/* border + background */
+$line: #E2E4E5;
+$back: #F6F8F9;
+$white: #ffffff;
+
+/* other */
+
+
+/* initialize */
 *{
-  font-family: "Microsoft YaHei";
+  color: $text-normal;
   font-size: 14px;
+  font-family: "Microsoft YaHei";
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-select{
-  outline:none;
-}
 
-// -- button
+
+
+/* -- button 按钮 */
 .btn{
   color: #3C3F41;
   text-align: center;
@@ -47,86 +73,182 @@ select{
 }
 
 .btn-default{
-  //border: 1px solid transparent;
-  //background-color: #D0D0D0;
+  border: 1px solid transparent;
+  background-color: #A4A9AE;
+  color: #F2F2DA;
+  &:hover{
+    background-color: #83898F;
+  }
+}
+
+.btn-theme{
+
 }
 
 
-// -- input
-.input-group{
+/*  input + select 共用样式 */
+.input-group,
+.input-group-sm,
+.input-group-xs,
+.input-group-lg,
+.select-group,
+.select-group-sm{
+  position: relative;
   display: inline-block;
+  padding: 0 5px;
   label{
     display: inline-block;
-    line-height: 36px;
     vertical-align: middle;
   }
-  input{
-    height: 34px;
+  select, input{
     border: 1px solid #CCCCCC;
     border-radius: 6px;
     padding: 5px 10px;
     font-size: 14px;
     font-family: microsoft yahei;
+  }
+  select{
+    padding-right: 20px;
+  }
+  .triangle{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    border-top: 5px solid black;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+}
+
+/*  input  */
+.input-group{
+  label{
+    line-height: 36px;
+  }
+  input{
+    height: 34px;
   }
 }
 
 .input-group-sm{
-  display: inline-block;
   label{
-    display: inline-block;
     line-height: 32px;
-    vertical-align: middle;
   }
   input{
     height: 30px;
-    border: 1px solid #CCCCCC;
-    border-radius: 6px;
-    padding: 5px 10px;
-    font-size: 14px;
-    font-family: microsoft yahei;
   }
 }
 
 
-// -- select
+/*  select  */
 .select-group{
-  display: inline-block;
   label{
-    display: inline-block;
     line-height: 36px;
-    vertical-align: middle;
   }
   select{
     height: 34px;
-    border: 1px solid #CCCCCC;
-    border-radius: 6px;
-    padding: 5px 10px;
-    font-size: 14px;
-    font-family: microsoft yahei;
   }
 }
 
 .select-group-sm{
-  display: inline-block;
   label{
-    display: inline-block;
     line-height: 32px;
-    vertical-align: middle;
   }
   select{
     height: 30px;
-    border: 1px solid #CCCCCC;
-    border-radius: 6px;
+  }
+}
+
+/* drapdown */
+.dropdown{
+  position: relative;
+  display: inline-block;
+  span{
+    display: inline-block;
+    height: $height-md;
     padding: 5px 10px;
-    font-size: 14px;
-    font-family: microsoft yahei;
+    line-height: $height-md - 10px;
+    min-width: 175px;
+    border: 1px solid $line;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  i{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  ul{
+    border: 1px solid $line;
+    position: absolute;
+    top: $height-md;
+    left: 0px;
+    border-radius: 6px;
+    padding: 5px 0;
+    background-color: $white;
+    z-index: 1;
+    display: none;
+    li{
+      padding: 2px 5px;
+      min-width: 173px;
+      cursor: pointer;
+      &:hover{
+        background-color: $back;
+      }
+    }
+  }
+}
+
+/*  table  */
+table{
+  width: 100%;
+  font-size: 14px;
+  line-height: 24px;
+  th,td{
+    text-align: center;
+  }
+  tbody{
+    tr{
+      &:hover{
+        background-color: $line;
+      }
+    }
+  }
+}
+
+/* 只有bottom边框 */
+.table-bottom{
+  thead,tr{
+    border-bottom: 1px solid $line;
+  }
+}
+
+/* 全部有边框 */
+.table-border{
+  th,td{
+    border: 1px solid $line;
+  }
+}
+
+/* 隔行变色 */
+.table-striped{
+  tbody{
+    tr:nth-child(odd){
+      background-color: $back;
+    }
+    tr:hover{
+      background-color: $line;
+    }
   }
 }
 
 
 
-
-// --
+/*  辅助类  */
 .text-left{
   text-align: left;
 }
@@ -145,4 +267,8 @@ select{
 
 .pull-right{
   float: right;
+}
+
+.hide{
+  display: none;
 }
