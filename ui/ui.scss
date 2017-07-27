@@ -2,7 +2,7 @@
 /*  height  */
 $height-md: 34px;
 $height-sm: 30px;
-$height-xs: 22px;
+$height-xs: 24px;
 $height-lg: 40px;
 
 /* theme */
@@ -38,21 +38,32 @@ $white: #ffffff;
 
 /* -- button 按钮 */
 .btn{
-  color: #3C3F41;
+  color: $text-normal;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
   padding: 6px 12px;
+  margin: 1px 0;
   font-weight: 400;
   line-height: 1.42857143;
   cursor: pointer;
-  border: 1px solid #D0D0D0;
+  border: 1px solid $line;
   border-radius: 4px;
+  background-color: $white;
   &:hover{
-    background-color: #E6E6E6;
+    background-color: $back;
+  }
+  &:focus{
+    background-color: $back;
+  }
+  i{
+    display: inline-block;
+    vertical-align: baseline;
+    padding-right: 5px;
   }
 }
 
+/* button -- 尺寸 */
 .btn-xs{
   padding: 1px 5px;
   font-size: 12px;
@@ -72,27 +83,70 @@ $white: #ffffff;
   border-radius: 6px;
 }
 
-.btn-default{
-  border: 1px solid transparent;
-  background-color: #A4A9AE;
-  color: #F2F2DA;
+/* button -- 类型 */
+.btn-text{
+  border: none;
+  color: $theme-normal;
+  i{
+    color: $theme-normal;
+  }
   &:hover{
-    background-color: #83898F;
+    color: $theme-hover;
+    background-color: $white;
+  }
+  &:focus{
+    color: $theme-hover;
+    background-color: $white;
+  }
+}
+
+.btn-border{
+  border: 1px solid $line;
+  background-color: $white;
+  color: $text-normal;
+  i{
+    color: $text-normal;
+  }
+  &:hover{
+    color: $theme-normal;
+    border-color: $theme-normal;
+    background-color: $white;
+    i{
+      color: $theme-normal;
+    }
+  }
+  &:focus{
+    color: $theme-normal;
+    border-color: $theme-normal;
+    background-color: $white;
+    i{
+      color: $theme-normal;
+    }
   }
 }
 
 .btn-theme{
-
+  border: 1px solid transparent;
+  background-color: $theme-normal;
+  color: $white;
+  i{
+    color: $white;
+  }
+  &:hover{
+    background-color: $theme-hover;
+  }
+  &:focus{
+    background-color: $theme-hover;
+  }
 }
+
 
 
 /*  input + select 共用样式 */
 .input-group,
 .input-group-sm,
 .input-group-xs,
-.input-group-lg,
-.select-group,
-.select-group-sm{
+.input-group-lg{
   position: relative;
   display: inline-block;
   padding: 0 5px;
@@ -100,73 +154,58 @@ $white: #ffffff;
     display: inline-block;
     vertical-align: middle;
   }
-  select, input{
+  input{
     border: 1px solid #CCCCCC;
     border-radius: 6px;
     padding: 5px 10px;
     font-size: 14px;
     font-family: microsoft yahei;
-  }
-  select{
-    padding-right: 20px;
-  }
-  .triangle{
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-    border-top: 5px solid black;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid transparent;
+    &:focus{
+      box-shadow: -2px 0 1px $theme-normal,
+      0 -2px 1px $theme-normal,
+      0 2px 1px $theme-normal,
+      2px 0 1px $theme-normal;
+    }
   }
 }
 
-/*  input  */
+
+
+/* input -- 尺寸 */
 .input-group{
   label{
-    line-height: 36px;
+    line-height: $height-md + 2px;
   }
   input{
-    height: 34px;
+    height: $height-md;
   }
 }
 
 .input-group-sm{
   label{
-    line-height: 32px;
+    line-height: $height-sm + 2px;
   }
   input{
-    height: 30px;
+    height: $height-sm;
   }
 }
 
-
-/*  select  */
-.select-group{
+.input-group-xs{
   label{
-    line-height: 36px;
+    line-height: $height-xs + 2px;
   }
-  select{
-    height: 34px;
+  input{
+    height: $height-xs;
   }
 }
 
-.select-group-sm{
-  label{
-    line-height: 32px;
-  }
-  select{
-    height: 30px;
-  }
-}
+
 
 /* drapdown */
 .dropdown{
   position: relative;
   display: inline-block;
+  margin: 1px 0;
   span{
     display: inline-block;
     height: $height-md;
@@ -181,11 +220,12 @@ $white: #ffffff;
     position: absolute;
     top: 10px;
     right: 10px;
+    cursor: pointer;
   }
   ul{
     border: 1px solid $line;
     position: absolute;
-    top: $height-md;
+    top: $height-md + 1px;
     left: 0px;
     border-radius: 6px;
     padding: 5px 0;

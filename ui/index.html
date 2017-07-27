@@ -5,11 +5,10 @@
     <link rel="stylesheet" href="../fonts-bootstrap/fontawesome/font-awesome.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="ui.css">
-    
     <title>UI</title>
     <style>
         body>div{
-            /*border: 1px solid #ff0000;*/
+            border: 1px solid #ff0000;
             margin: 10px;
         }
         
@@ -17,34 +16,53 @@
 </head>
 <body>
     <div id="button">
-        <div class="btn">删除</div>
-        <div class="btn">详情</div>
+        <button class="btn">编辑</button>
         
-        <div class="btn btn-xs">删除</div>
-        <div class="btn btn-xs">详情</div>
+        <button class="btn btn-txt">编辑</button>
         
-        <div class="btn btn-sm btn-default">删除</div>
-        <div class="btn btn-sm">详情</div>
-        
-        <div class="btn btn-lg">删除</div>
-        <div class="btn btn-lg">详情</div>
+        <button class="btn btn-border">编辑</button>
+                
+        <button class="btn btn-theme">编辑</button>
+    </div>
+    
+    <div class="">
+        <button class="btn btn-sm"><i class="icon-edit "></i>编辑</button>
+    
+        <button class="btn btn-text btn-sm"><i class="icon-edit"></i>编辑</button>
+    
+        <button class="btn btn-border btn-sm"><i class="icon-edit"></i>编辑</button>
+    
+        <button class="btn btn-theme btn-sm"><i class="icon-edit"></i>编辑</button>
+    </div>
+    
+    <div id="button-icon">
+        <button class="btn"><i class="icon-edit "></i>编辑</button>
+    
+        <button class="btn btn-txt"><i class="icon-edit"></i>编辑</button>
+    
+        <button class="btn btn-border"><i class="icon-edit"></i>编辑</button>
+    
+        <button class="btn btn-theme"><i class="icon-edit"></i>编辑</button>
     </div>
 
     <div id="input">
-        <div class="input-group">
-            <label for="">项目编号</label>
-            <input type="text" class="">
-        </div>
         <div class="input-group-sm">
+            <label>项目编号</label>
+            <input type="text">
+        </div>
+    </div>
+    
+    <div id="input-sm">
+        <div class="input-group">
             <label for="">项目编号</label>
             <input type="text" class="">
         </div>
     </div>
     
-    <div id="div-a-ul" style="margin-bottom: 200px;">
+    <div id="dropdown" style="margin-bottom: 200px;">
         <div class="dropdown">
             <span>-- 请选择 --</span>
-            <ul class="">
+            <ul>
                 <li>美元</li>
                 <li>欧元</li>
                 <li>英镑</li>
@@ -54,7 +72,7 @@
         
         <div class="dropdown">
             <span>-- 请选择 --</span>
-            <ul class="">
+            <ul>
                 <li>美元</li>
                 <li>欧元</li>
                 <li>英镑</li>
@@ -62,15 +80,6 @@
             </ul>
         </div>
         
-        <div class="dropdown">
-            <span>-- 请选择 --</span>
-            <ul class="">
-                <li>美元</li>
-                <li>欧元</li>
-                <li>英镑</li>
-                <li>日元</li>
-            </ul>
-        </div>
     </div>
 
     <div id="select">

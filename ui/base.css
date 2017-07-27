@@ -8,7 +8,7 @@ fieldset, img, input, button {
     border: none;
     padding: 0;
     margin: 0;
-    outline-style: none;   /*去掉环绕光圈*/
+    outline-style: none;  /* 去掉环绕光圈*/
 }
 
 ul, ol {
@@ -92,14 +92,3 @@ select::-ms-expand {
 }
 
 
-*{
-    font-family: "Microsoft YaHei";
-    font-size: 14px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-select{
-    outline:none;
-}
