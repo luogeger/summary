@@ -6,9 +6,9 @@ $height-xs: 24px;
 $height-lg: 40px;
 
 /* theme */
-$theme-normal: #FF8A41;
-$theme-hover: #ED6C1C;
-$theme-other: #FFA974;
+$theme-normal: #1D98F9;
+$theme-hover: #0283E8;
+$theme-other: #44ABFD;
 
 /* text */
 $text-normal: #222222;
@@ -142,7 +142,7 @@ $white: #ffffff;
 
 
 
-/*  input + select 共用样式 */
+/*  input 共用样式 */
 .input-group,
 .input-group-sm,
 .input-group-xs,
@@ -156,11 +156,12 @@ $white: #ffffff;
   }
   input{
     border: 1px solid #CCCCCC;
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 5px 10px;
     font-size: 14px;
     font-family: microsoft yahei;
     &:focus{
+      border: 1px solid transparent;
       box-shadow: -2px 0 1px $theme-normal,
       0 -2px 1px $theme-normal,
       0 2px 1px $theme-normal,
@@ -168,8 +169,6 @@ $white: #ffffff;
     }
   }
 }
-
-
 
 /* input -- 尺寸 */
 .input-group{
@@ -191,11 +190,14 @@ $white: #ffffff;
 }
 
 .input-group-xs{
+  font-size: 12px;
   label{
     line-height: $height-xs + 2px;
+    font-size: 12px;
   }
   input{
     height: $height-xs;
+    font-size: 12px;
   }
 }
 
@@ -233,13 +235,26 @@ $white: #ffffff;
     z-index: 1;
     display: none;
     li{
-      padding: 2px 5px;
+      padding: 0 10px;
+      line-height: 30px;
       min-width: 173px;
       cursor: pointer;
       &:hover{
-        background-color: $back;
+        color: $white;
+        background-color: $theme-hover;
       }
     }
+  }
+}
+
+/* .drop-hover */
+.drop-hover{
+  span{
+    border: 1px solid $theme-normal;
+  }
+
+  ul{
+    border: 1px solid $theme-normal;
   }
 }
 
