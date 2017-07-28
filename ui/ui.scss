@@ -6,9 +6,9 @@ $height-xs: 24px;
 $height-lg: 40px;
 
 /* theme */
-$theme-normal: #1D98F9;
-$theme-hover: #0283E8;
-$theme-other: #44ABFD;
+$theme-normal: #ED5565;
+$theme-hover: #DA4453;
+$theme-other: #FA7A87;
 
 /* text */
 $text-normal: #222222;
@@ -32,8 +32,6 @@ $white: #ffffff;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-
 
 
 /* -- button 按钮 */
@@ -211,18 +209,18 @@ $white: #ffffff;
   a{
     display: inline-block;
     height: $height-md;
-    padding: 5px 10px;
     line-height: $height-md - 10px;
+    padding: 5px 20px 5px 10px;
     min-width: 175px;
     border: 1px solid $line;
     border-radius: 6px;
   }
   i{
     position: absolute;
-    top: 10px;
+    top: $height-md / 2 - 7px;
     right: 10px;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 0.3s;
   }
   ul{
     border: 1px solid $line;
@@ -247,9 +245,38 @@ $white: #ffffff;
   }
 }
 
+.drop-sm{
+  a{
+    height: $height-sm;
+    line-height: $height-sm - 10px;
+  }
+  i{
+    top: $height-sm / 2 - 7px;
+  }
+  ul{
+    top: $height-sm + 1px;
+  }
+}
+
+.drop-xs{
+  a{
+    height: $height-xs;
+    padding: 3px 20px 3px 10px;
+    line-height: $height-xs - 10px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+  i{
+    top: $height-xs / 2 - 7px;
+  }
+  ul{
+    top: $height-xs + 1px;
+  }
+}
+
 /* .drop-hover */
-.drop-hover{
-  span{
+.drop-hover-border{
+  a{
     border: 1px solid $theme-normal;
   }
 

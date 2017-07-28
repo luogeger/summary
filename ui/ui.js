@@ -3,44 +3,61 @@
  */
 ;(function (){
     $(document).click(function (){
-        $('.dropdown').removeClass('open').removeClass('drop-hover');
+        $('.dropdown').removeClass('flag-open').removeClass('drop-hover-border');// 清除打开标记 + 边框颜色
         $('.dropdown ul').css({'display':'none'});// 点击页面任何地方，下拉框隐藏
         $('.dropdown i').css({'transform':'rotate(0deg)'});
     });
 
     $('.dropdown').each(function (index, item){
-        $(item).append('<i class="icon-angle-down"></i>');//追加icon
+        //追加icon
+        $(item).prepend('<i class="icon-angle-down"></i>');
+
+        // a 标签设置 自定义属性
+        $(item).children('a').attr('data-value', '');
+
+        // li 标签设置 自定义属性
+        $(item).children('ul').each(function (index, item){
+           console.log($(item).children());
+           $(item).children().each(function (index, item){
+               $(item).attr('data-value', index);
+           })
+        });
+
         // 点击输入框
         $(item).children('a').click(function (e){
             e.stopPropagation();
-            if($(this).parent().hasClass('open')){
+            if($(this).parent().hasClass('flag-open')){
                 $(this).siblings('i').css({'transform':'rotate(0deg)'});
                 $(this).siblings('ul').slideUp(100);
-                $(this).parent().removeClass('open').toggleClass('drop-hover');
+                $(this).parent().removeClass('flag-open').toggleClass('drop-hover-border');
                 return;
             }
-            $('.dropdown').removeClass('open').removeClass('drop-hover');
+            $('.dropdown').removeClass('flag-open').removeClass('drop-hover-border');
             $('.dropdown ul').css({'display':'none'});// 点击页面任何地方，下拉框隐藏
             $('.dropdown i').css({'transform':'rotate(0deg)'});
-            $(this).parent().addClass('open').toggleClass('drop-hover');
+            $(this).parent().addClass('flag-open').toggleClass('drop-hover-border');
             $(this).siblings('i').css({'transform':'rotate(180deg)'});
             $(this).siblings('ul').slideToggle(100);
         });
+
         // 点击icon
         $(item).children('i').click(function (e){
             e.stopPropagation();
             $(item).children('a').trigger('click');// 相当于点击了 a 标签
         });
+
         // 点击选项 -- 给 a 标签赋值
         $(item).find('li').click(function (e){
             e.stopPropagation();
             var _a = $(this).parent().siblings('a');
             var txt = $(this).text();
+            var val = $(this).data('value');
             _a.text(txt);
+            _a.attr('data-value', val);
             _a.siblings('ul').slideToggle(100);
             _a.siblings('i').css({'transform':'rotate(0deg)'});
-            $('.dropdown').removeClass('open');
-            $(this).parent().parent().toggleClass('drop-hover');
+            $('.dropdown').removeClass('flag-open');
+            $(this).parent().parent().toggleClass('drop-hover-border');
         });
     });
 })();
