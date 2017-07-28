@@ -9,12 +9,18 @@
     <style>
         body{
             /*background-color: #eeeeee;*/
+            overflow-x: hidden;
         }
         body>div{
             border: 1px solid #23527c;
             margin: 10px;
         }
-        
+        #table{
+            /*overflow-x: auto;*/
+        }
+        table{
+            /*width: 1000px;*/
+        }
     </style>
 </head>
 <body>
@@ -161,44 +167,16 @@
         </table>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
 <script src="../fileJs/jquery-1.12.4.min.js"></script>
+<script src="../fileJs/jquery.slimscroll.min.js"></script>
 <script src="ui.js"></script>
 <script>
-    $('.triangle').click(function (){
-        console.log($(this).siblings('select'));
-        $(this).siblings('select').trigger("change");
-    })
+    $("#table").slimScroll({
+        height: "200px",
+        width: "1000px",
+        size: '10px', //组件宽度
+    });
     
 </script>
