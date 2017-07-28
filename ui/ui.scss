@@ -161,11 +161,11 @@ $white: #ffffff;
     font-size: 14px;
     font-family: microsoft yahei;
     &:focus{
-      border: 1px solid transparent;
-      box-shadow: -2px 0 1px $theme-normal,
-      0 -2px 1px $theme-normal,
-      0 2px 1px $theme-normal,
-      2px 0 1px $theme-normal;
+      border: 1px solid rgba(0,0,0, .0);
+      box-shadow: -1px 0 1px $theme-normal,
+      0 -1px 1px $theme-normal,
+      0 1px 1px $theme-normal,
+      1px 0 1px $theme-normal;
     }
   }
 }
@@ -208,7 +208,7 @@ $white: #ffffff;
   position: relative;
   display: inline-block;
   margin: 1px 0;
-  span{
+  a{
     display: inline-block;
     height: $height-md;
     padding: 5px 10px;
@@ -216,13 +216,13 @@ $white: #ffffff;
     min-width: 175px;
     border: 1px solid $line;
     border-radius: 6px;
-    cursor: pointer;
   }
   i{
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
+    transition: all 0.5s;
   }
   ul{
     border: 1px solid $line;
