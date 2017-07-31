@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {margin: 0;padding: 0;}
+        .box {
+            width: 300px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 100px;
+            position: relative;
+            
+            overflow: hidden;
+            
+            /* 不让文字被选中 */
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+        .content {
+            padding: 5px 18px 5px 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+        }
+        .scroll {
+            width: 18px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #eee;
+        }
+        .bar {
+            height: 100px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: red;
+            border-radius:  10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="content" id="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda esse excepturi incidunt iusto molestias, natus rerum saepe voluptatibus. Culpa dignissimos doloribus enim exercitationem explicabo fuga ipsam ipsum magni maiores necessitatibus nihil officia officiis quaerat quas quia quod repellendus sapiente, suscipit totam veritatis? Ab aperiam aspernatur at doloremque id impedit ipsum molestias nam natus placeat quibusdam, quisquam similique sint vitae voluptatem. Amet assumenda dignissimos error exercitationem ipsum magni nesciunt pariatur possimus quasi vero. Accusamus assumenda autem consectetur doloremque eaque expedita fuga fugiat id illum magni minima non optio pariatur praesentium quaerat quam quasi, quis quisquam, quos ratione reiciendis repellat repellendus sint, suscipit tempora ullam ut vel. Ab amet animi aperiam asperiores assumenda aut autem consectetur cum cumque debitis, dolor doloremque eligendi enim esse eveniet hic itaque iure libero magni nisi non numquam, odit officiis optio placeat ratione repellendus temporibus totam veniam voluptatum? Accusantium aut, cumque deleniti, ducimus ea excepturi harum illo illum ipsa ipsum iusto maiores minus modi mollitia nam nihil nulla obcaecati officia officiis perferendis placeat quisquam quos recusandae rem repudiandae rerum sapiente sit sunt tempore voluptatem? Amet deleniti explicabo, fuga ipsum minima non nulla pariatur quas quos, repudiandae sed similique soluta temporibus ullam voluptatibus. Fugiat laboriosam maxime quae reprehenderit! Nobis, nulla, odit! Beatae dicta magni nobis quasi, quisquam quos ut. Aliquam architecto assumenda blanditiis fugiat harum repellendus. Accusantium aliquid distinctio est excepturi id incidunt, magnam omnis optio rerum ut! Aliquam maxime, officiis. Accusantium adipisci amet asperiores, aut culpa dignissimos dolore eius explicabo facere harum hic ipsa, ipsam ipsum minus mollitia obcaecati omnis perspiciatis quae rem repellat sapiente similique sint soluta tempore voluptatem! Ab amet beatae cum facere nesciunt nisi omnis porro quas tenetur ullam. Ab aliquid consectetur culpa cum cumque doloremque doloribus dolorum earum eos est facilis ipsa iste minus nisi nostrum numquam omnis, porro quibusdam quo rem repudiandae sit sunt ullam veritatis vitae! Adipisci amet, asperiores atque, consectetur corporis delectus distinctio dolores eius fugiat ipsum maiores minus nihil ratione rerum suscipit veniam veritatis voluptatum! Accusantium cumque dicta doloribus eligendi enim eos et exercitationem facere facilis illo impedit incidunt minus necessitatibus nobis odit, perferendis quasi quia recusandae repellat sapiente tempora tempore velit veritatis vitae voluptatum. Accusantium cupiditate debitis deleniti et excepturi fugit, hic illo inventore iste, iure laborum magnam natus necessitatibus nesciunt nobis odio odit officia optio praesentium quae quia quidem repellat rerum soluta sunt tempore voluptas! Commodi dolore libero quo tempora voluptas! Excepturi minus quasi quod sit. A ad autem cumque cupiditate dolor doloremque, doloribus error expedita facere impedit minima quae quidem totam. Aliquam animi aperiam asperiores consequatur, culpa debitis delectus dolore dolores doloribus eveniet expedita illo in iure magnam maiores modi molestiae mollitia nihil numquam, obcaecati quos sapiente similique sint soluta, sunt suscipit unde velit veniam voluptas voluptates? Facere, laudantium, omnis. Facere illum magnam nemo similique! Accusamus alias asperiores dolores est hic illo ipsum saepe vero voluptatibus! Animi corporis dolor eligendi eos expedita facilis, fugiat hic, ipsum maiores molestias natus nisi nostrum quam quidem rem rerum tempore temporibus velit. Adipisci aut dolorum expedita impedit, necessitatibus odit.
+    </div>
+    <div class="scroll" id="scroll">
+        <div class="bar" id="bar"></div>
+    </div>
+</div>
+<script>
+    //准备工作 获取元素
+    var box = document.getElementById("box");
+    var content = document.getElementById("content");
+    var scroll = document.getElementById("scroll");
+    var bar = document.getElementById("bar");
+
+
+    //1 计算滚动条的大小- boxH / contentH = barH / scrollH
+    var barH = box.offsetHeight * scroll.offsetHeight / content.offsetHeight;
+    bar.style.height = barH + "px";
+
+    if(box.offsetHeight > content.offsetHeight) {
+        bar.style.height = "0px";
+    }
+    //2 拖拽滚动条
+    bar.onmousedown = function (e) {
+        //获取鼠标在bar中的位置
+        var offsetY = e.pageY - this.offsetTop - box.offsetTop;
+
+        document.onmousemove = function (e) {
+            //获取bar的坐标
+            var y = e.pageY - offsetY - box.offsetTop;
+
+            //控制不越界
+            if(y < 0) {
+                y = 0;
+            }
+            if(y > scroll.offsetHeight - bar.offsetHeight) {
+                y = scroll.offsetHeight - bar.offsetHeight
+            }
+
+            bar.style.top = y + "px";
+
+
+            //3 文字跟随滚动
+            // barY / maxBarY = contentY / maxContentY
+            var contentY = y * (content.offsetHeight - box.offsetHeight) / (scroll.offsetHeight - bar.offsetHeight);
+
+            content.style.top = -contentY + "px";
+        }
+    }
+
+    document.onmouseup = function () {
+        document.onmousemove = null; //'null';
+    }
+
+
+
+</script>
+</body>
+</html>
