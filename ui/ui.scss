@@ -40,15 +40,14 @@ $btn-pad: 20px;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
-  padding: 6px $btn-pad;
+  padding: 0 $btn-pad;
+  line-height: $height-md - 2;
   margin: 1px 0;
   font-weight: 400;
-  line-height: 1.42857143;
   cursor: pointer;
   border: 1px solid $line;
   border-radius: 4px;
   background-color: $white;
-  position: relative;
   &:hover{
     background-color: $back;
   }
@@ -58,30 +57,30 @@ $btn-pad: 20px;
   i{
     display: inline-block;
     vertical-align: baseline;
-    //padding-right: 5px;
-    position: absolute;
-    top: 0px;
-    left: $btn-pad / 2;
+    width: 14px;
+    height: 14px;
+    position: relative;
+    right: 7px;
   }
 }
 
 /* button -- 尺寸 */
-.btn-xs{
-  padding: 1px $btn-pad;
-  font-size: 14px;
-  //line-height: 1.5;
+.btn-sm{
+  padding: 0 $btn-pad;
+  line-height: $height-sm - 2;
+  font-size: 12px;
 }
 
-.btn-sm{
-  padding: 5px $btn-pad;
-  font-size: 12px;
-  line-height: 1.5;
+.btn-xs{
+  padding: 0 $btn-pad;
+  line-height: $height-xs - 2;
+  font-size: 14px;
 }
 
 .btn-lg{
-  padding: 10px $btn-pad;
+  padding: 0 $btn-pad;
+  line-height: $height-lg - 2;
   font-size: 18px;
-  line-height: 1.3333333;
   border-radius: 6px;
 }
 
