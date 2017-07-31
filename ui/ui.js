@@ -2,12 +2,21 @@
  * Created by luogege on 2017.07.21.
  */
 ;(function (){
+    /*
+    *
+    * */
+    window.dyanmicDataValue = dyanmicDataValue;
+
     $(document).click(function (){
         $('.dropdown').removeClass('flag-open').removeClass('drop-hover-border');// 清除打开标记 + 边框颜色
         $('.dropdown ul').css({'display':'none'});// 点击页面任何地方，下拉框隐藏
         $('.dropdown i').css({'transform':'rotate(0deg)'});
     });
 
+
+    /*
+    *   下拉框 -- 自定义属性data-value
+    * */
     $('.dropdown').each(function (index, item){
         //追加icon
         $(item).prepend('<i class="icon-angle-down"></i>');
@@ -17,10 +26,9 @@
 
         // li 标签设置 自定义属性
         $(item).children('ul').each(function (index, item){
-           console.log($(item).children());
-           $(item).children().each(function (index, item){
-               $(item).attr('data-value', index);
-           })
+            $(item).children().each(function (index, item){
+                $(item).attr('data-value', index);
+            })
         });
 
         // 点击输入框
@@ -60,4 +68,20 @@
             $(this).parent().parent().toggleClass('drop-hover-border');
         });
     });
+
+    /*
+    *   动态生成li标签，在给li标签，加data-value
+    * */
+    function dyanmicDataValue (){
+        $('.dropdown').each(function (index, item){
+            $(item).children('ul').each(function (index, item){
+                $(item).children().each(function (index, item){
+                    $(item).attr('data-value', index);
+                })
+            });
+        })
+    };
+
+
+
 })();
