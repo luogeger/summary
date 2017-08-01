@@ -37,7 +37,7 @@
     width: 14px;
     height: 14px;
     position: relative;
-    right: 7px; }
+    right: 10px; }
 
 /* button -- 尺寸 */
 .btn-sm {
@@ -55,6 +55,8 @@
   line-height: 38px;
   font-size: 18px;
   border-radius: 6px; }
+  .btn-lg i {
+    width: 15px; }
 
 /* button -- 类型 */
 .btn-text {
