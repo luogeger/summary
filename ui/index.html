@@ -15,29 +15,26 @@
             border: 1px solid #23527c;
             margin: 10px;
         }
-        #table{
-            /*overflow-x: auto;*/
-        }
         table{
-            /*width: 1000px;*/
+            table-layout: fixed;
+        }
+        table thead th{
+            width: 100px;
         }
     </style>
 </head>
 <body>
-    <div id="button">
+    <div class="clearfix">
         <button class="btn">编辑</button>
         
         <button class="btn btn-text">编辑</button>
         
         <button class="btn btn-border">编辑</button>
-                
-        <button class="btn btn-theme btn-xs">编辑</button>
-        <button class="btn btn-theme btn-sm">编辑</button>
-        <button class="btn btn-theme ">编辑</button>
-        <button class="btn btn-theme btn-lg">编辑</button>
+        
+        <button class="btn  ">编辑</button>
     </div>
     
-    <div class="">
+    <div class="clearfix">
         <button class="btn btn-sm"><i class="icon-edit "></i>编辑</button>
     
         <button class="btn btn-text btn-sm"><i class="icon-edit"></i>编辑</button>
@@ -47,7 +44,7 @@
         <button class="btn btn-theme btn-sm"><i class="icon-edit"></i>编辑</button>
     </div>
     
-    <div id="button-icon">
+    <div class="clearfix">
         <button class="btn"><i class="icon-edit "></i>编辑</button>
     
         <button class="btn btn-text"><i class="icon-edit"></i>编辑</button>
@@ -60,28 +57,29 @@
         <button class="btn btn-theme btn-lg"><i class="icon-edit icon-large"></i>编辑</button>
     </div>
 
-    <div id="input-xs">
+    <div class="clearfix">
         <div class="input-group-xs">
             <label for="">项目编号</label>
             <input type="text" class="">
         </div>
+    
     </div>
 
-    <div id="input-sm">
+    <div class="clearfix">
         <div class="input-group-sm">
             <label>项目编号</label>
             <input type="text">
         </div>
     </div>
     
-    <div id="input">
+    <div class="clearfix">
         <div class="input-group">
             <label for="">项目编号</label>
             <input type="text" class="">
         </div>
     </div>
     
-    <div id="dropdown">
+    <div class="clearfix">
         <div id="asd" class="dropdown">
             <a href="javascript:;">-- 请选择 --</a>
             <ul>
@@ -93,7 +91,7 @@
         </div>
     </div>
     
-    <div id="dropdown-sm" style="padding-left: 200px;">
+    <div class="clearfix" style="padding-left: 200px;">
         <div class="dropdown drop-sm">
             <a href="javascript:;">-- 请选择 --</a>
             <ul>
@@ -105,7 +103,7 @@
         </div>
     </div>
     
-    <div id="dropdown-xs" style="padding-left: 400px;">
+    <div class="clearfix" style="padding-left: 400px;">
         <div class="dropdown drop-xs">
             <a href="javascript:;">-- 请选择 --</a>
             <ul>
@@ -117,17 +115,144 @@
         </div>
     </div>
     
-    <div id="table" class="clearfix">
-        <table class="table-striped">
+    <div class="clearfix">
+        <div class="input-group-xs">
+            <label for="">项目编号</label>
+            <input type="text" class="">
+        </div>
+    
+        <div class="dropdown drop-xs">
+            <a href="javascript:;">-- 请选择 --</a>
+            <ul>
+                <li>春眠不觉晓</li>
+                <li>处处闻啼鸟</li>
+                <li>夜来风雨声</li>
+                <li>花落知多少</li>
+            </ul>
+        </div>
+        <button class="btn btn-theme btn-xs"><i class="icon-edit"></i>编辑</button>
+    </div>
+
+    <div class="clearfix">
+        <div class="input-group-sm">
+            <label for="">项目编号</label>
+            <input type="text" class="">
+        </div>
+    
+        <div class="dropdown drop-sm">
+            <a href="javascript:;">-- 请选择 --</a>
+            <ul>
+                <li>春眠不觉晓</li>
+                <li>处处闻啼鸟</li>
+                <li>夜来风雨声</li>
+                <li>花落知多少</li>
+            </ul>
+        </div>
+        <button class="btn btn-theme btn-sm"><i class="icon-edit"></i>编辑</button>
+    </div>
+
+    <div class="clearfix">
+        
+        <div class="input-group">
+            <label for="">项目编号</label>
+            <input type="text" class="">
+        </div>
+    
+        <div class="dropdown drop">
+            <a href="javascript:;">-- 请选择 --</a>
+            <ul>
+                <li>春眠不觉晓</li>
+                <li>处处闻啼鸟</li>
+                <li>夜来风雨声</li>
+                <li>花落知多少</li>
+            </ul>
+        </div>
+        
+        <button class="btn btn-theme"><i class="icon-edit"></i>编辑</button>
+    </div>
+
+
+
+    <div class="clearfix">
+        <button class="btn btn-theme btn-lg"><i class="icon-edit"></i>编辑</button>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div>
+        <div class="table" style="width: 700px;border: 1px solid blue;">
+            <h1>12333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+            <h1>123</h1>
+        </div>
+    </div>
+    
+    <div >
+        <table class="ttable table-striped">
             <thead>
-                <th style="width: 10%;">序号</th>
-                <th style="width: 10%;">姓名</th>
-                <th style="width: 10%;">性别</th>
-                <th style="width: 10%;">年龄</th>
-                <th style="width: 10%;">电话</th>
-                <th style="width: 10%;">地址</th>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>电话</th>
+                <th>地址</th>
+
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>电话</th>
+                <th>地址</th>
+
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                
             </thead>
             <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>德玛西亚</td>
+                    <td>男</td>
+                    <td>19</td>
+                    <td>13579246810</td>
+                    <td>电信一区召唤师峡谷瓦洛兰大陆</td>
+    
+                    <td>1</td>
+                    <td>德玛西亚</td>
+                    <td>男</td>
+                    <td>19</td>
+                    <td>13579246810</td>
+                    <td>电信一区召唤师峡谷瓦洛兰大陆</td>
+                </tr>
                 <tr>
                     <td>1</td>
                     <td>德玛西亚</td>
@@ -172,17 +297,73 @@
             </tbody>
         </table>
     </div>
-    
 </body>
 </html>
 <script src="../fileJs/jquery-1.12.4.min.js"></script>
 <script src="../fileJs/jquery.slimscroll.min.js"></script>
 <script src="ui.js"></script>
 <script>
-    $("#table").slimScroll({
-        height: "200px",
-        width: "1000px",
-        size: '10px', //组件宽度
-    });
     
+    
+    $.fn.extend({
+        sScroll: function (options){
+            var defaults = {
+                width: 'auto', //可滚动区域宽度
+                height: '100%', //可滚动区域高度
+                size: '5px',
+
+                wrapClass: 'scrollWrap',
+                railClass: 'scrollRail',
+                barClass: 'scrollBar',
+            };
+
+            var obj = $.extend(defaults, options);
+            
+            this.each(function (){
+                var _this = $(this);
+                var thisHeight = _this.css('height');
+                var thisWidth = _this.css('width');
+                var wrapDiv = $('<div></div>').addClass(obj.wrapClass).css({
+                    width: obj.width,
+                    height: obj.height,
+                    border: '2px solid red',
+                    overflow: 'hidden',
+                    position: 'relative',
+                });
+                
+                _this.wrap(wrapDiv);
+
+                
+                
+                if(thisHeight > obj.height){
+                }
+                
+                if(thisWidth > obj.width){
+                    console.log(obj.width);
+                    var railDiv = $('<div></div>').addClass(obj.railClass).css({
+                        position: 'absolute',
+                        bottom: '0px',
+                        height: obj.size,
+                        width: obj.width,
+                        color: '#000',
+                    });
+                    $(this).after(railDiv);
+                }
+                
+            })// each -- end
+        }// slimScroll -- end
+    });// extend -- end
+    
+    
+
+    
+    $('.table').sScroll({
+        width: '500px',
+        height: '200px'
+    })
+
+
+
+
+
 </script>

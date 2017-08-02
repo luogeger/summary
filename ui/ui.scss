@@ -16,7 +16,7 @@ $text-prompt: #999999;
 $text-other: #cccccc;
 
 /* border + background */
-$line: #E2E4E5;
+$line: #CCCCCC;
 $back: #F6F8F9;
 $white: #ffffff;
 
@@ -39,10 +39,11 @@ $btn-pad: 20px;
   color: $text-normal;
   text-align: center;
   display: inline-block;
+  float: left;
   vertical-align: middle;
   padding: 0 $btn-pad;
+  margin: 0 5px;
   line-height: $height-md - 2;
-  margin: 1px 0;
   font-weight: 400;
   cursor: pointer;
   border: 1px solid $line;
@@ -153,13 +154,16 @@ $btn-pad: 20px;
 .input-group-lg{
   position: relative;
   display: inline-block;
+  float: left;
   padding: 0 5px;
   label{
     display: inline-block;
+    float: left;
     vertical-align: middle;
+    padding-right: 5px;
   }
   input{
-    border: 1px solid #CCCCCC;
+    border: 1px solid $line;
     border-radius: 4px;
     padding: 5px 10px;
     font-size: 14px;
@@ -177,7 +181,7 @@ $btn-pad: 20px;
 /* input -- 尺寸 */
 .input-group{
   label{
-    line-height: $height-md + 2px;
+    line-height: $height-md;
   }
   input{
     height: $height-md;
@@ -186,7 +190,7 @@ $btn-pad: 20px;
 
 .input-group-sm{
   label{
-    line-height: $height-sm + 2px;
+    line-height: $height-sm;
   }
   input{
     height: $height-sm;
@@ -196,7 +200,7 @@ $btn-pad: 20px;
 .input-group-xs{
   font-size: 12px;
   label{
-    line-height: $height-xs + 2px;
+    line-height: $height-xs;
     font-size: 12px;
   }
   input{
@@ -211,11 +215,12 @@ $btn-pad: 20px;
 .dropdown{
   position: relative;
   display: inline-block;
-  margin: 1px 0;
+  float: left;
+
   a{
     display: inline-block;
     height: $height-md;
-    line-height: $height-md - 10px;
+    //line-height: $height-md - 10px;
     padding: 5px 20px 5px 10px;
     min-width: 175px;
     border: 1px solid $line;
@@ -254,7 +259,7 @@ $btn-pad: 20px;
 .drop-sm{
   a{
     height: $height-sm;
-    line-height: $height-sm - 10px;
+    //line-height: $height-sm - 10px;
   }
   i{
     top: $height-sm / 2 - 7px;
@@ -268,7 +273,7 @@ $btn-pad: 20px;
   a{
     height: $height-xs;
     padding: 3px 20px 3px 10px;
-    line-height: $height-xs - 10px;
+    //line-height: $height-xs - 10px;
     font-size: 12px;
     border-radius: 4px;
   }
@@ -359,4 +364,18 @@ table{
 
 .hide{
   display: none;
+}
+
+/* 清除浮动 */
+.btn{
+  *zoom: 1; /*IE/7/6*/  /*兼容IE6下的写法*/
+  &:before{
+    content: "";
+    display: table;
+  }
+  &:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
