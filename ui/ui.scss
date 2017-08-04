@@ -6,9 +6,9 @@ $height-xs: 24px;
 $height-lg: 40px;
 
 /* theme */
-$theme-normal: #ED5565;
-$theme-hover: #DA4453;
-$theme-other: #FA7A87;
+$theme-normal: #FF8A41;
+$theme-hover: #ED6C1C;
+$theme-other: #FFA974;
 
 /* text */
 $text-normal: #222222;
@@ -18,6 +18,7 @@ $text-other: #cccccc;
 /* border + background */
 $line: #CCCCCC;
 $back: #F6F8F9;
+$hybrid: #E2E4E5;
 $white: #ffffff;
 
 /* other */
@@ -236,7 +237,7 @@ $btn-pad: 20px;
   ul{
     border: 1px solid $line;
     position: absolute;
-    top: $height-md + 1px;
+    top: $height-md - 1;
     left: 0px;
     border-radius: 6px;
     padding: 5px 0;
@@ -250,7 +251,7 @@ $btn-pad: 20px;
       cursor: pointer;
       &:hover{
         color: $white;
-        background-color: $theme-hover;
+        background-color: $theme-normal;
       }
     }
   }
@@ -265,7 +266,7 @@ $btn-pad: 20px;
     top: $height-sm / 2 - 7px;
   }
   ul{
-    top: $height-sm + 1px;
+    top: $height-sm - 1px;
   }
 }
 
@@ -281,7 +282,7 @@ $btn-pad: 20px;
     top: $height-xs / 2 - 7px;
   }
   ul{
-    top: $height-xs + 1px;
+    top: $height-xs - 1px;
   }
 }
 
@@ -295,6 +296,119 @@ $btn-pad: 20px;
     border: 1px solid $theme-normal;
   }
 }
+
+
+/* 进度条 */
+.progress-bar{
+  $height: 16px;
+  width: 500px;
+  height: $height;
+  background-color: $line;
+  border-radius: $height / 2;
+  .bar{
+    width: 300px;
+    height: 100%;
+    background-color: $theme-normal;
+    border-radius: $height / 2;
+    position: relative;
+    .percent{
+      font-size: 12px;
+      position: absolute;
+      right: -15px;
+      top: -30px;
+      padding: 3px 5px;
+      background-color: $theme-normal;
+      border-radius: 6px;
+      color: $white;
+      &:before{
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 13px;
+        width: 8px;
+        height: 8px;
+        background-color: $theme-normal;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+/* 进度条 -- 上传中 */
+.progress-upload{
+  $height: 20px;
+  width: 500px;
+  height: $height;
+  background-color: $line;
+  border-radius: 4px;
+  .bar{
+    width: 300px;
+    height: 100%;
+    background-color: $theme-normal;
+    border-radius: 4px;
+    position: relative;
+    .percent{
+      font-size: 12px;
+      position: absolute;
+      right: 10px;
+      top: 0px;
+      line-height: $height;
+      color: $white;
+
+    }
+  }
+}
+
+/* 进度条 -- step */
+.progress-step{
+  .step-group{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    margin-left: -15px;
+    $radius: 40px;
+
+    .interval,
+    .step{
+      background-color: $hybrid;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+    }
+
+    .step{
+      width: $radius;
+      height: $radius;
+      border-radius: 50%;
+      color: $text-prompt;
+      font-weight: 600;
+      text-align: center;
+      line-height: $radius;
+      z-index: 1;
+    }
+    .interval{
+      width: 100px;
+      height: 15px;
+      left: 5px;
+    }
+  }
+
+  .step-group:first-child{
+    margin-left: 0;
+  }
+}
+
+.bgc-theme{
+  .interval,
+  .step{
+    color: #fff !important;
+    background: $theme-normal !important;
+  }
+}
+
+
+
+
 
 /*  table  */
 table{

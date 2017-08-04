@@ -8,7 +8,7 @@
     <title>UI</title>
     <style>
         body{
-            /*background-color: #eeeeee;*/
+            background-color: #eeeeee;
             overflow-x: hidden;
         }
         body>div{
@@ -21,6 +21,7 @@
         table thead th{
             width: 100px;
         }
+        
     </style>
 </head>
 <body>
@@ -45,12 +46,6 @@
     </div>
     
     <div class="clearfix">
-        <button class="btn"><i class="icon-edit "></i>编辑</button>
-    
-        <button class="btn btn-text"><i class="icon-edit"></i>编辑</button>
-    
-        <button class="btn btn-border"><i class="icon-edit"></i>编辑</button>
-    
         <button class="btn btn-theme btn-xs"><i class="icon-edit"></i>编辑</button>
         <button class="btn btn-theme btn-sm"><i class="icon-edit"></i>编辑</button>
         <button class="btn btn-theme"><i class="icon-edit"></i>编辑</button>
@@ -171,52 +166,61 @@
         <button class="btn btn-theme"><i class="icon-edit"></i>编辑</button>
     </div>
 
-
-
-    <div class="clearfix">
-        <button class="btn btn-theme btn-lg"><i class="icon-edit"></i>编辑</button>
-    </div>
+    <div class="clearfix" style="margin-top: 50px;">
+        <div class="progress-bar">
+            <div class="bar">
+                <span class="percent"> 50% </span>
+            </div>
+        </div>
+            <div style="height: 50px;"></div>
+        <div class="progress-upload">
+            <div class="bar">
+                <span class="percent"> 37% </span>
+            </div>
+        </div>
+            <div style="height: 50px;"></div>
+        <div class="progress-step">
+            <div class="step-group bgc-theme">
+                <div class="step">1</div>
+            </div>
+            
+            <div class="step-group bgc-theme ">
+                <div class="interval"></div>
+                <div class="step">2</div>
+            </div>
     
+            <div class="step-group bgc-theme">
+                <div class="interval"></div>
+                <div class="step">3</div>
+            </div>
     
+            <div class="step-group">
+                <div class="interval"></div>
+                <div class="step">4</div>
+            </div>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div>
-        <div class="table" style="width: 700px;border: 1px solid blue;">
-            <h1>12333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
-            <h1>123</h1>
+            <div class="step-group">
+                <div class="interval"></div>
+                <div class="step">5</div>
+            </div>
         </div>
     </div>
+
     
-    <div >
-        <table class="ttable table-striped">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div style="margin: 50px 0;">
+        <table class="table table-striped">
             <thead>
                 <th>序号</th>
                 <th>姓名</th>
@@ -224,28 +228,9 @@
                 <th>年龄</th>
                 <th>电话</th>
                 <th>地址</th>
-
-                <th>序号</th>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>年龄</th>
-                <th>电话</th>
-                <th>地址</th>
-
-                <th>序号</th>
-                <th>姓名</th>
-                <th>性别</th>
-                
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>德玛西亚</td>
-                    <td>男</td>
-                    <td>19</td>
-                    <td>13579246810</td>
-                    <td>电信一区召唤师峡谷瓦洛兰大陆</td>
-    
                     <td>1</td>
                     <td>德玛西亚</td>
                     <td>男</td>
@@ -303,8 +288,6 @@
 <script src="../fileJs/jquery.slimscroll.min.js"></script>
 <script src="ui.js"></script>
 <script>
-    
-    
     $.fn.extend({
         sScroll: function (options){
             var defaults = {
@@ -354,16 +337,7 @@
         }// slimScroll -- end
     });// extend -- end
     
-    
-
-    
-    $('.table').sScroll({
-        width: '500px',
-        height: '200px'
-    })
-
-
-
-
-
 </script>
+
+
+

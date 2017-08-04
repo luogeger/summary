@@ -62,14 +62,14 @@
 /* button -- 类型 */
 .btn-text {
   border: none;
-  color: #ED5565; }
+  color: #FF8A41; }
   .btn-text i {
-    color: #ED5565; }
+    color: #FF8A41; }
   .btn-text:hover {
-    color: #DA4453;
+    color: #ED6C1C;
     background-color: #ffffff; }
   .btn-text:focus {
-    color: #DA4453;
+    color: #ED6C1C;
     background-color: #ffffff; }
 
 .btn-border {
@@ -79,28 +79,28 @@
   .btn-border i {
     color: #222222; }
   .btn-border:hover {
-    color: #ED5565;
-    border-color: #ED5565;
+    color: #FF8A41;
+    border-color: #FF8A41;
     background-color: #ffffff; }
     .btn-border:hover i {
-      color: #ED5565; }
+      color: #FF8A41; }
   .btn-border:focus {
-    color: #ED5565;
-    border-color: #ED5565;
+    color: #FF8A41;
+    border-color: #FF8A41;
     background-color: #ffffff; }
     .btn-border:focus i {
-      color: #ED5565; }
+      color: #FF8A41; }
 
 .btn-theme {
   border: 1px solid transparent;
-  background-color: #ED5565;
+  background-color: #FF8A41;
   color: #ffffff; }
   .btn-theme i {
     color: #ffffff; }
   .btn-theme:hover {
-    background-color: #DA4453; }
+    background-color: #ED6C1C; }
   .btn-theme:focus {
-    background-color: #DA4453; }
+    background-color: #ED6C1C; }
 
 /*  input 共用样式 */
 .input-group,
@@ -133,7 +133,7 @@
     .input-group-xs input:focus,
     .input-group-lg input:focus {
       border: 1px solid transparent;
-      box-shadow: -1px 0 1px #ED5565, 0 -1px 1px #ED5565, 0 1px 1px #ED5565, 1px 0 1px #ED5565; }
+      box-shadow: -1px 0 1px #FF8A41, 0 -1px 1px #FF8A41, 0 1px 1px #FF8A41, 1px 0 1px #FF8A41; }
 
 /* input -- 尺寸 */
 .input-group label {
@@ -176,7 +176,7 @@
   .dropdown ul {
     border: 1px solid #CCCCCC;
     position: absolute;
-    top: 35px;
+    top: 33px;
     left: 0px;
     border-radius: 6px;
     padding: 5px 0;
@@ -190,14 +190,14 @@
       cursor: pointer; }
       .dropdown ul li:hover {
         color: #ffffff;
-        background-color: #DA4453; }
+        background-color: #FF8A41; }
 
 .drop-sm a {
   height: 30px; }
 .drop-sm i {
   top: 8px; }
 .drop-sm ul {
-  top: 31px; }
+  top: 29px; }
 
 .drop-xs a {
   height: 24px;
@@ -207,13 +207,97 @@
 .drop-xs i {
   top: 5px; }
 .drop-xs ul {
-  top: 25px; }
+  top: 23px; }
 
 /* .drop-hover */
 .drop-hover-border a {
-  border: 1px solid #ED5565; }
+  border: 1px solid #FF8A41; }
 .drop-hover-border ul {
-  border: 1px solid #ED5565; }
+  border: 1px solid #FF8A41; }
+
+/* 进度条 */
+.progress-bar {
+  width: 500px;
+  height: 16px;
+  background-color: #CCCCCC;
+  border-radius: 8px; }
+  .progress-bar .bar {
+    width: 300px;
+    height: 100%;
+    background-color: #FF8A41;
+    border-radius: 8px;
+    position: relative; }
+    .progress-bar .bar .percent {
+      font-size: 12px;
+      position: absolute;
+      right: -15px;
+      top: -30px;
+      padding: 3px 5px;
+      background-color: #FF8A41;
+      border-radius: 6px;
+      color: #ffffff; }
+      .progress-bar .bar .percent:before {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 13px;
+        width: 8px;
+        height: 8px;
+        background-color: #FF8A41;
+        transform: rotate(45deg); }
+
+/* 进度条 -- 上传中 */
+.progress-upload {
+  width: 500px;
+  height: 20px;
+  background-color: #CCCCCC;
+  border-radius: 4px; }
+  .progress-upload .bar {
+    width: 300px;
+    height: 100%;
+    background-color: #FF8A41;
+    border-radius: 4px;
+    position: relative; }
+    .progress-upload .bar .percent {
+      font-size: 12px;
+      position: absolute;
+      right: 10px;
+      top: 0px;
+      line-height: 20px;
+      color: #ffffff; }
+
+/* 进度条 -- step */
+.progress-step .step-group {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0;
+  margin-left: -15px; }
+  .progress-step .step-group .interval,
+  .progress-step .step-group .step {
+    background-color: #E2E4E5;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative; }
+  .progress-step .step-group .step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #999999;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    z-index: 1; }
+  .progress-step .step-group .interval {
+    width: 100px;
+    height: 15px;
+    left: 5px; }
+.progress-step .step-group:first-child {
+  margin-left: 0; }
+
+.bgc-theme .interval,
+.bgc-theme .step {
+  color: #fff !important;
+  background: #FF8A41 !important; }
 
 /*  table  */
 table {

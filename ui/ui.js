@@ -3,7 +3,8 @@
  */
 ;(function (){
     /*
-    *
+    *   动态获取 data-value
+    *   1. 下拉框里面的数据如果是动态获取的，就要在执行一次这个函数
     * */
     window.dyanmicDataValue = dyanmicDataValue;
 
