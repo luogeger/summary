@@ -62,14 +62,14 @@
 /* button -- 类型 */
 .btn-text {
   border: none;
-  color: #FF8A41; }
+  color: #00BFA5; }
   .btn-text i {
-    color: #FF8A41; }
+    color: #00BFA5; }
   .btn-text:hover {
-    color: #ED6C1C;
+    color: #04A28D;
     background-color: #ffffff; }
   .btn-text:focus {
-    color: #ED6C1C;
+    color: #04A28D;
     background-color: #ffffff; }
 
 .btn-border {
@@ -79,28 +79,28 @@
   .btn-border i {
     color: #222222; }
   .btn-border:hover {
-    color: #FF8A41;
-    border-color: #FF8A41;
+    color: #00BFA5;
+    border-color: #00BFA5;
     background-color: #ffffff; }
     .btn-border:hover i {
-      color: #FF8A41; }
+      color: #00BFA5; }
   .btn-border:focus {
-    color: #FF8A41;
-    border-color: #FF8A41;
+    color: #00BFA5;
+    border-color: #00BFA5;
     background-color: #ffffff; }
     .btn-border:focus i {
-      color: #FF8A41; }
+      color: #00BFA5; }
 
 .btn-theme {
   border: 1px solid transparent;
-  background-color: #FF8A41;
+  background-color: #00BFA5;
   color: #ffffff; }
   .btn-theme i {
     color: #ffffff; }
   .btn-theme:hover {
-    background-color: #ED6C1C; }
+    background-color: #04A28D; }
   .btn-theme:focus {
-    background-color: #ED6C1C; }
+    background-color: #04A28D; }
 
 /*  input 共用样式 */
 .input-group,
@@ -133,7 +133,7 @@
     .input-group-xs input:focus,
     .input-group-lg input:focus {
       border: 1px solid transparent;
-      box-shadow: -1px 0 1px #FF8A41, 0 -1px 1px #FF8A41, 0 1px 1px #FF8A41, 1px 0 1px #FF8A41; }
+      box-shadow: -1px 0 1px #00BFA5, 0 -1px 1px #00BFA5, 0 1px 1px #00BFA5, 1px 0 1px #00BFA5; }
 
 /* input -- 尺寸 */
 .input-group label {
@@ -190,7 +190,7 @@
       cursor: pointer; }
       .dropdown ul li:hover {
         color: #ffffff;
-        background-color: #FF8A41; }
+        background-color: #00BFA5; }
 
 .drop-sm a {
   height: 30px; }
@@ -211,9 +211,9 @@
 
 /* .drop-hover */
 .drop-hover-border a {
-  border: 1px solid #FF8A41; }
+  border: 1px solid #00BFA5; }
 .drop-hover-border ul {
-  border: 1px solid #FF8A41; }
+  border: 1px solid #00BFA5; }
 
 /* 进度条 */
 .progress-bar {
@@ -224,7 +224,7 @@
   .progress-bar .bar {
     width: 300px;
     height: 100%;
-    background-color: #FF8A41;
+    background-color: #00BFA5;
     border-radius: 8px;
     position: relative; }
     .progress-bar .bar .percent {
@@ -233,7 +233,7 @@
       right: -15px;
       top: -30px;
       padding: 3px 5px;
-      background-color: #FF8A41;
+      background-color: #00BFA5;
       border-radius: 6px;
       color: #ffffff; }
       .progress-bar .bar .percent:before {
@@ -243,7 +243,7 @@
         left: 13px;
         width: 8px;
         height: 8px;
-        background-color: #FF8A41;
+        background-color: #00BFA5;
         transform: rotate(45deg); }
 
 /* 进度条 -- 上传中 */
@@ -255,7 +255,7 @@
   .progress-upload .bar {
     width: 300px;
     height: 100%;
-    background-color: #FF8A41;
+    background-color: #00BFA5;
     border-radius: 4px;
     position: relative; }
     .progress-upload .bar .percent {
@@ -294,10 +294,44 @@
 .progress-step .step-group:first-child {
   margin-left: 0; }
 
+/* 进度条 -- step -- 背景色 */
 .bgc-theme .interval,
 .bgc-theme .step {
   color: #fff !important;
-  background: #FF8A41 !important; }
+  background: #00BFA5 !important; }
+
+/* 多选框 */
+.check-box-group .check-parent {
+  display: inline;
+  margin: 0 5px;
+  cursor: pointer;
+  position: relative; }
+  .check-box-group .check-parent:hover .icon-check-empty {
+    color: #00BFA5; }
+  .check-box-group .check-parent .icon-check-empty {
+    color: #cccccc; }
+  .check-box-group .check-parent .icon-ok {
+    color: #00BFA5;
+    position: absolute;
+    top: 2px;
+    left: 1px; }
+
+/* 单选框 */
+.radio-group .radio-parent {
+  display: inline;
+  margin: 0 5px;
+  cursor: pointer;
+  position: relative; }
+  .radio-group .radio-parent:hover .fa-circle-thin {
+    color: #00BFA5; }
+  .radio-group .radio-parent .fa-circle-thin {
+    color: #cccccc; }
+  .radio-group .radio-parent .fa-circle {
+    color: #00BFA5;
+    transform: scale(0.8, 0.8);
+    position: absolute;
+    top: 3px;
+    left: 2px; }
 
 /*  table  */
 table {
@@ -324,6 +358,12 @@ table {
   background-color: #CCCCCC; }
 
 /*  辅助类  */
+.theme-col {
+  background-color: #00BFA5; }
+
+.hide {
+  display: none; }
+
 .text-left {
   text-align: left; }
 
@@ -338,9 +378,6 @@ table {
 
 .pull-right {
   float: right; }
-
-.hide {
-  display: none; }
 
 /* 清除浮动 */
 .btn {

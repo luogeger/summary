@@ -84,5 +84,26 @@
     };
 
 
+    /*
+    *   多选框
+    * */
+    $('.check-box-group input:checkbox').each(function (index, item){
+        $(item).wrap('<div class="check-parent"></div>').after('<span class="icon-check-empty icon-large"></span><span class="icon-ok hide"></span>').addClass('hide');
+    });
+    $('.check-parent').click(function (){
+        $(this).children('.icon-ok').toggleClass('hide');
+    });
+
+
+    /*
+    *   单选框
+    * */
+    $('.radio-group input:radio').each(function (index, item){
+        $(item).wrap('<div class="radio-parent"></div>').after('<span class="fa fa-circle-thin fa-lg"></span><span class="fa fa-circle hide"></span>').addClass('hide');
+    });
+    $('.radio-parent').click(function (){
+        $(this).children('.fa-circle').toggleClass('hide');
+    });
+
 
 })();

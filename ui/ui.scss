@@ -6,9 +6,9 @@ $height-xs: 24px;
 $height-lg: 40px;
 
 /* theme */
-$theme-normal: #FF8A41;
-$theme-hover: #ED6C1C;
-$theme-other: #FFA974;
+$theme-normal: #00BFA5;
+$theme-hover: #04A28D;
+$theme-other: #0BDABE;
 
 /* text */
 $text-normal: #222222;
@@ -20,6 +20,7 @@ $line: #CCCCCC;
 $back: #F6F8F9;
 $hybrid: #E2E4E5;
 $white: #ffffff;
+$nine: #cccccc;
 
 /* other */
 $btn-pad: 20px;
@@ -298,6 +299,7 @@ $btn-pad: 20px;
 }
 
 
+
 /* 进度条 */
 .progress-bar{
   $height: 16px;
@@ -398,6 +400,7 @@ $btn-pad: 20px;
   }
 }
 
+/* 进度条 -- step -- 背景色 */
 .bgc-theme{
   .interval,
   .step{
@@ -407,6 +410,55 @@ $btn-pad: 20px;
 }
 
 
+/* 多选框 */
+.check-box-group{
+  .check-parent{
+    display: inline;
+    margin: 0 5px;
+    cursor: pointer;
+    position: relative;
+    &:hover .icon-check-empty{
+      color: $theme-normal;
+    }
+
+    .icon-check-empty{
+      color: $nine;
+    }
+
+    .icon-ok{
+      color: $theme-normal;
+      position: absolute;
+      top: 2px;
+      left: 1px;
+    }
+  }
+}
+
+
+/* 单选框 */
+.radio-group{
+  .radio-parent{
+    display: inline;
+    margin: 0 5px;
+    cursor: pointer;
+    position: relative;
+    &:hover .fa-circle-thin{
+      color: $theme-normal;
+    }
+
+    .fa-circle-thin{
+      color: $nine;
+    }
+
+    .fa-circle{
+      color: $theme-normal;
+      transform: scale(0.8, 0.8);
+      position: absolute;
+      top: 3px;
+      left: 2px;
+    }
+  }
+}
 
 
 
@@ -456,6 +508,16 @@ table{
 
 
 /*  辅助类  */
+
+// 主题色背景
+.theme-col{
+  background-color: $theme-normal;
+}
+
+.hide{
+  display: none;
+}
+
 .text-left{
   text-align: left;
 }
@@ -476,9 +538,6 @@ table{
   float: right;
 }
 
-.hide{
-  display: none;
-}
 
 /* 清除浮动 */
 .btn{
