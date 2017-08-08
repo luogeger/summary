@@ -88,7 +88,12 @@
     *   多选框
     * */
     $('.check-box-group input:checkbox').each(function (index, item){
-        $(item).wrap('<div class="check-parent"></div>').after('<span class="icon-check-empty icon-large"></span><span class="icon-ok hide"></span>').addClass('hide');
+        var spans = '<span class="icon iconfont icon-check-empty icon-large"></span><span class="icon iconfont icon-ok hide"></span>';// 追加的元素
+
+        $(item).wrap('<div class="check-parent"></div>').after(spans).addClass('hide');
+        if(item.hasAttribute('checked')){
+            $(item).siblings('.icon-ok').removeClass('hide');
+        }
     });
     $('.check-parent').click(function (){
         $(this).children('.icon-ok').toggleClass('hide');
@@ -99,10 +104,16 @@
     *   单选框
     * */
     $('.radio-group input:radio').each(function (index, item){
-        $(item).wrap('<div class="radio-parent"></div>').after('<span class="fa fa-circle-thin fa-lg"></span><span class="fa fa-circle hide"></span>').addClass('hide');
+        var spans = '<span class="icon iconfont icon-circle-thin"></span><span class="icon iconfont icon-circle hide"></span>';// 追加的元素
+
+        $(item).wrap('<div class="radio-parent"></div>').after(spans).addClass('hide');
+        if(item.hasAttribute('checked')){
+            $(item).siblings('.icon-circle').removeClass('hide');
+        }
     });
     $('.radio-parent').click(function (){
-        $(this).children('.fa-circle').toggleClass('hide');
+        $(this).siblings().children('.icon-circle').addClass('hide');
+        $(this).children('.icon-circle').toggleClass('hide');
     });
 
 

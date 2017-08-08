@@ -6,9 +6,21 @@ $height-xs: 24px;
 $height-lg: 40px;
 
 /* theme */
-$theme-normal: #00BFA5;
-$theme-hover: #04A28D;
-$theme-other: #0BDABE;
+$theme-normal: #FF8A41;
+$theme-hover: #ED6C1C;
+$theme-other: #FFA974;
+
+//$theme-normal: #ED5565;
+//$theme-hover: #DA4453;
+//$theme-other: #FA7A87;
+
+//$theme-normal: #00BFA5;
+//$theme-hover: #04A28D;
+//$theme-other: #0BDABE;
+
+//$theme-normal: #1D98F9;
+//$theme-hover: #0283E8;
+//$theme-other: #44ABFD;
 
 /* text */
 $text-normal: #222222;
@@ -428,8 +440,8 @@ $btn-pad: 20px;
     .icon-ok{
       color: $theme-normal;
       position: absolute;
-      top: 2px;
-      left: 1px;
+      top: 3px;
+      left: -1px;
     }
   }
 }
@@ -442,20 +454,19 @@ $btn-pad: 20px;
     margin: 0 5px;
     cursor: pointer;
     position: relative;
-    &:hover .fa-circle-thin{
+    &:hover .icon-circle-thin{
       color: $theme-normal;
     }
 
-    .fa-circle-thin{
+    .icon-circle-thin{
       color: $nine;
     }
 
-    .fa-circle{
+    .icon-circle{
       color: $theme-normal;
-      transform: scale(0.8, 0.8);
       position: absolute;
-      top: 3px;
-      left: 2px;
+      top: 2px;
+      left: 0px;
     }
   }
 }
