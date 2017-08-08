@@ -116,5 +116,7 @@
         $(this).children('.icon-circle').toggleClass('hide');
     });
 
-
-})();
+    /*
+    *
+    * */
+})();// -- end

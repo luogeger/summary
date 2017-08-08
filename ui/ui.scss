@@ -35,7 +35,7 @@ $white: #ffffff;
 $nine: #cccccc;
 
 /* other */
-$btn-pad: 20px;
+$btn-padding: 20px;
 
 /* initialize */
 *{
@@ -53,72 +53,64 @@ $btn-pad: 20px;
   color: $text-normal;
   text-align: center;
   display: inline-block;
-  float: left;
   vertical-align: middle;
-  padding: 0 $btn-pad;
+  padding: 0 $btn-padding;
   margin: 0 5px;
-  line-height: $height-md - 2;
   font-weight: 400;
   cursor: pointer;
-  border: 1px solid $line;
+  color: $text-normal;
+  background-color: $hybrid;
   border-radius: 4px;
-  background-color: $white;
   &:hover{
-    background-color: $back;
+    background-color: $line;
   }
   &:focus{
-    background-color: $back;
+    background-color: $line;
   }
   i{
-    display: inline-block;
-    vertical-align: baseline;
-    width: 14px;
-    height: 14px;
     position: relative;
     right: 10px;
+    //bottom: 1px;
+    font-size: 16px;
   }
 }
 
 /* button -- 尺寸 */
-.btn-sm{
-  padding: 0 $btn-pad;
-  line-height: $height-sm - 2;
-  font-size: 12px;
+.btn-xs{
+  font-size: 14px;
+  height: $height-xs;
+  i{
+    font-size: 12px;
+    bottom: 1px;
+  }
 }
 
-.btn-xs{
-  padding: 0 $btn-pad;
-  line-height: $height-xs - 2;
+.btn-sm{
+  height: $height-sm;
   font-size: 14px;
+  i{
+    font-size: 14px;
+  }
+}
+
+.btn-md{
+  height: $height-md;
+  font-size: 16px;
+  i{
+    font-size: 16px;
+  }
 }
 
 .btn-lg{
-  padding: 0 $btn-pad;
-  line-height: $height-lg - 2;
+  height: $height-lg;
   font-size: 18px;
   border-radius: 6px;
   i{
-    width: 15px;
+    font-size: 18px;
   }
 }
 
 /* button -- 类型 */
-.btn-text{
-  border: none;
-  color: $theme-normal;
-  i{
-    color: $theme-normal;
-  }
-  &:hover{
-    color: $theme-hover;
-    background-color: $white;
-  }
-  &:focus{
-    color: $theme-hover;
-    background-color: $white;
-  }
-}
-
 .btn-border{
   border: 1px solid $line;
   background-color: $white;
@@ -141,6 +133,22 @@ $btn-pad: 20px;
     i{
       color: $theme-normal;
     }
+  }
+}
+
+.btn-text{
+  background-color: $white;
+  color: $theme-normal;
+  i{
+    color: $theme-normal;
+  }
+  &:hover{
+    color: $theme-hover;
+    background-color: $white;
+  }
+  &:focus{
+    color: $theme-hover;
+    background-color: $white;
   }
 }
 
