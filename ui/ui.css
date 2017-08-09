@@ -1,6 +1,7 @@
 @charset "UTF-8";
-/*  height  */
+/* 定义变量 */
 /* theme */
+/*  height  */
 /* text */
 /* border + background */
 /* other */
@@ -35,7 +36,7 @@
     right: 10px;
     font-size: 16px; }
 
-/* button -- 尺寸 */
+/*button -- 尺寸*/
 .btn-xs {
   font-size: 14px;
   height: 24px; }
@@ -62,7 +63,7 @@
   .btn-lg i {
     font-size: 18px; }
 
-/* button -- 类型 */
+/*button -- 类型*/
 .btn-border {
   border: 1px solid #CCCCCC;
   background-color: #ffffff;
@@ -312,7 +313,7 @@
   .check-box-group .check-parent:hover .icon-check-empty {
     color: #FF8A41; }
   .check-box-group .check-parent .icon-check-empty {
-    color: #cccccc; }
+    color: #CCCCCC; }
   .check-box-group .check-parent .icon-check {
     color: #FF8A41;
     position: absolute;
@@ -328,12 +329,98 @@
   .radio-group .radio-parent:hover .icon-circle-empty {
     color: #FF8A41; }
   .radio-group .radio-parent .icon-circle-empty {
-    color: #cccccc; }
+    color: #CCCCCC; }
   .radio-group .radio-parent .icon-circle {
     color: #FF8A41;
     position: absolute;
     top: 1px;
     left: 0px; }
+
+/* tab + nav */
+.nav-item {
+  padding: 0 10px;
+  line-height: 30px;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.nav-underline,
+.nav-crumb,
+.nav-button,
+.nav-border,
+.nav-btn-border {
+  font-size: 0;
+  margin-top: 10px; }
+
+.nav-underline .nav-item {
+  border-bottom: 2px solid #E2E4E5; }
+  .nav-underline .nav-item:hover {
+    color: #FF8A41;
+    border-color: #FF8A41; }
+
+.nav-crumb .nav-item i {
+  margin-right: 5px; }
+.nav-crumb > i {
+  color: #999999;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 30px;
+  position: relative;
+  top: 1px; }
+
+.nav-button .nav-item {
+  padding: 0 20px;
+  border-radius: 4px; }
+  .nav-button .nav-item:hover {
+    color: #ffffff;
+    background-color: #FF8A41; }
+    .nav-button .nav-item:hover i {
+      color: #ffffff; }
+
+.nav-border .nav-item {
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #999999;
+  border-radius: 4px 4px 0 0;
+  margin-left: -2px; }
+  .nav-border .nav-item:hover {
+    background-color: #FF8A41; }
+    .nav-border .nav-item:hover i {
+      color: #ffffff; }
+.nav-border .nav-item:first-child {
+  margin-left: 0px; }
+
+.nav-btn-border .nav-item {
+  padding: 0 20px; }
+  .nav-btn-border .nav-item:hover {
+    color: #ffffff;
+    background-color: #FF8A41; }
+    .nav-btn-border .nav-item:hover i {
+      color: #ffffff; }
+
+/* 点击 tab, 需要添加的类 */
+.opposite-underline {
+  color: #FF8A41 !important;
+  border-color: #FF8A41 !important; }
+
+.opposite-crumb {
+  color: #FF8A41; }
+  .opposite-crumb i {
+    color: #FF8A41; }
+
+.opposite-button {
+  background-color: #FF8A41;
+  color: #ffffff; }
+  .opposite-button i {
+    color: #ffffff; }
+
+.opposite-border {
+  border: 1px solid #999999 !important;
+  border-bottom: none !important; }
 
 /*  table  */
 table {
@@ -359,10 +446,14 @@ table {
 .table-striped tbody tr:hover {
   background-color: #CCCCCC; }
 
-/*  辅助类  */
-.theme-col {
+/* 常用类 */
+.themeColor-back {
   background-color: #FF8A41; }
 
+.themeColor-text {
+  color: #FF8A41; }
+
+/*  辅助类  */
 .hide {
   display: none; }
 

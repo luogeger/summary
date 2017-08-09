@@ -1,14 +1,9 @@
 @charset "UTF-8";
-/*  height  */
-$height-md: 34px;
-$height-sm: 30px;
-$height-xs: 24px;
-$height-lg: 40px;
-
+/* 定义变量 */
 /* theme */
 $theme-normal: #FF8A41;
 $theme-hover: #ED6C1C;
-$theme-other: #FFA974;
+$theme-other: #ffd9c2;
 
 //$theme-normal: #ED5565;
 //$theme-hover: #DA4453;
@@ -22,20 +17,25 @@ $theme-other: #FFA974;
 //$theme-hover: #0283E8;
 //$theme-other: #44ABFD;
 
+/*  height  */
+$height-md: 34px;
+$height-sm: 30px;
+$height-xs: 24px;
+$height-lg: 40px;
+
 /* text */
 $text-normal: #222222;
-$text-prompt: #999999;
-$text-other: #cccccc;
+$six9: #999999;
 
 /* border + background */
-$line: #CCCCCC;
+$sixF: #ffffff;
+$sicC: #CCCCCC;
 $back: #F6F8F9;
 $hybrid: #E2E4E5;
-$white: #ffffff;
-$nine: #cccccc;
 
 /* other */
-$btn-padding: 20px;
+$paddingH-20: 20px;
+$paddingH-10: 10px;
 
 /* initialize */
 *{
@@ -54,7 +54,7 @@ $btn-padding: 20px;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
-  padding: 0 $btn-padding;
+  padding: 0 $paddingH-20;
   margin: 0 5px;
   font-weight: 400;
   cursor: pointer;
@@ -62,10 +62,10 @@ $btn-padding: 20px;
   background-color: $hybrid;
   border-radius: 4px;
   &:hover{
-    background-color: $line;
+    background-color: $sicC;
   }
   &:focus{
-    background-color: $line;
+    background-color: $sicC;
   }
   i{
     position: relative;
@@ -75,7 +75,7 @@ $btn-padding: 20px;
   }
 }
 
-/* button -- 尺寸 */
+/*button -- 尺寸*/
 .btn-xs{
   font-size: 14px;
   height: $height-xs;
@@ -110,10 +110,10 @@ $btn-padding: 20px;
   }
 }
 
-/* button -- 类型 */
+/*button -- 类型*/
 .btn-border{
-  border: 1px solid $line;
-  background-color: $white;
+  border: 1px solid $sicC;
+  background-color: $sixF;
   color: $text-normal;
   i{
     color: $text-normal;
@@ -121,7 +121,7 @@ $btn-padding: 20px;
   &:hover{
     color: $theme-normal;
     border-color: $theme-normal;
-    background-color: $white;
+    background-color: $sixF;
     i{
       color: $theme-normal;
     }
@@ -129,7 +129,7 @@ $btn-padding: 20px;
   &:focus{
     color: $theme-normal;
     border-color: $theme-normal;
-    background-color: $white;
+    background-color: $sixF;
     i{
       color: $theme-normal;
     }
@@ -137,27 +137,27 @@ $btn-padding: 20px;
 }
 
 .btn-text{
-  background-color: $white;
+  background-color: $sixF;
   color: $theme-normal;
   i{
     color: $theme-normal;
   }
   &:hover{
     color: $theme-hover;
-    background-color: $white;
+    background-color: $sixF;
   }
   &:focus{
     color: $theme-hover;
-    background-color: $white;
+    background-color: $sixF;
   }
 }
 
 .btn-theme{
   border: 1px solid transparent;
   background-color: $theme-normal;
-  color: $white;
+  color: $sixF;
   i{
-    color: $white;
+    color: $sixF;
   }
   &:hover{
     background-color: $theme-hover;
@@ -185,7 +185,7 @@ $btn-padding: 20px;
     padding-right: 5px;
   }
   input{
-    border: 1px solid $line;
+    border: 1px solid $sicC;
     border-radius: 4px;
     padding: 5px 10px;
     font-size: 14px;
@@ -245,7 +245,7 @@ $btn-padding: 20px;
     //line-height: $height-md - 10px;
     padding: 5px 20px 5px 10px;
     min-width: 175px;
-    border: 1px solid $line;
+    border: 1px solid $sicC;
     border-radius: 6px;
   }
   i{
@@ -256,13 +256,13 @@ $btn-padding: 20px;
     transition: all 0.3s;
   }
   ul{
-    border: 1px solid $line;
+    border: 1px solid $sicC;
     position: absolute;
     top: $height-md - 1;
     left: 0px;
     border-radius: 6px;
     padding: 5px 0;
-    background-color: $white;
+    background-color: $sixF;
     z-index: 1;
     display: none;
     li{
@@ -271,7 +271,7 @@ $btn-padding: 20px;
       min-width: 173px;
       cursor: pointer;
       &:hover{
-        color: $white;
+        color: $sixF;
         background-color: $theme-normal;
       }
     }
@@ -325,7 +325,7 @@ $btn-padding: 20px;
   $height: 16px;
   width: 500px;
   height: $height;
-  background-color: $line;
+  background-color: $sicC;
   border-radius: $height / 2;
   .bar{
     width: 300px;
@@ -341,7 +341,7 @@ $btn-padding: 20px;
       padding: 3px 5px;
       background-color: $theme-normal;
       border-radius: 6px;
-      color: $white;
+      color: $sixF;
       &:before{
         content: '';
         position: absolute;
@@ -361,7 +361,7 @@ $btn-padding: 20px;
   $height: 20px;
   width: 500px;
   height: $height;
-  background-color: $line;
+  background-color: $sicC;
   border-radius: 4px;
   .bar{
     width: 300px;
@@ -375,7 +375,7 @@ $btn-padding: 20px;
       right: 10px;
       top: 0px;
       line-height: $height;
-      color: $white;
+      color: $sixF;
 
     }
   }
@@ -402,7 +402,7 @@ $btn-padding: 20px;
       width: $radius;
       height: $radius;
       border-radius: 50%;
-      color: $text-prompt;
+      color: $six9;
       font-weight: 600;
       text-align: center;
       line-height: $radius;
@@ -442,7 +442,7 @@ $btn-padding: 20px;
     }
 
     .icon-check-empty{
-      color: $nine;
+      color: $sicC;
     }
 
     .icon-check{
@@ -467,7 +467,7 @@ $btn-padding: 20px;
     }
 
     .icon-circle-empty{
-      color: $nine;
+      color: $sicC;
     }
 
     .icon-circle{
@@ -477,6 +477,130 @@ $btn-padding: 20px;
       left: 0px;
     }
   }
+}
+
+
+
+/* tab + nav */
+.nav-item{
+  padding: 0 $paddingH-10;
+  line-height: $height-sm;
+  color: $text-normal;
+  cursor: pointer;
+  display: inline-block;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+.nav-underline,
+.nav-crumb,
+.nav-button,
+.nav-border,
+.nav-btn-border{
+  font-size: 0;
+  margin-top: 10px;
+}
+
+
+.nav-underline{
+  .nav-item{
+    border-bottom: 2px solid $hybrid;
+    &:hover{
+      color: $theme-normal;
+      border-color: $theme-normal;
+    }
+  }
+}
+
+.nav-crumb{
+  .nav-item{
+    i{
+      margin-right: 5px;
+    }
+  }
+  >i{
+    color: $six9;
+    display: inline-block;
+    vertical-align: top;
+    line-height: $height-sm;
+    position: relative;
+    top: 1px;
+  }
+}
+
+.nav-button{
+  .nav-item{
+    padding: 0 $paddingH-20;
+    border-radius: 4px;
+    &:hover{
+      color: $sixF;
+      background-color: $theme-normal;
+      i{
+        color: $sixF;
+      }
+    }
+  }
+
+}
+
+.nav-border{
+  .nav-item{
+    padding: 0 $paddingH-20;
+    border: 1px solid transparent;
+    border-bottom: 1px solid $six9;
+    border-radius: 4px 4px 0 0;
+    margin-left: -2px;
+    &:hover{
+      background-color: $theme-normal;
+      i{
+        color: $sixF;
+      }
+    }
+  }
+  .nav-item:first-child{
+    margin-left: 0px;
+  }
+}
+
+.nav-btn-border{
+  .nav-item{
+    padding: 0 $paddingH-20;
+    &:hover{
+      color: $sixF;
+      background-color: $theme-normal;
+      i{
+        color: $sixF;
+      }
+    }
+  }
+}
+
+/* 点击 tab, 需要添加的类 */
+.opposite-underline{
+  color: $theme-normal !important;
+  border-color: $theme-normal !important;
+}
+
+.opposite-crumb{
+  color: $theme-normal;
+  i{
+    color: $theme-normal;
+  }
+}
+
+.opposite-button{
+  background-color: $theme-normal;
+  color: $sixF;
+  i{
+    color: $sixF;
+  }
+}
+
+.opposite-border{
+  border: 1px solid $six9 !important;
+  border-bottom: none !important;
 }
 
 
@@ -492,7 +616,7 @@ table{
   tbody{
     tr{
       &:hover{
-        background-color: $line;
+        background-color: $sicC;
       }
     }
   }
@@ -501,14 +625,14 @@ table{
 /* 只有bottom边框 */
 .table-bottom{
   thead,tr{
-    border-bottom: 1px solid $line;
+    border-bottom: 1px solid $sicC;
   }
 }
 
 /* 全部有边框 */
 .table-border{
   th,td{
-    border: 1px solid $line;
+    border: 1px solid $sicC;
   }
 }
 
@@ -519,20 +643,31 @@ table{
       background-color: $back;
     }
     tr:hover{
-      background-color: $line;
+      background-color: $sicC;
     }
   }
 }
 
 
 
-/*  辅助类  */
 
-// 主题色背景
-.theme-col{
+
+
+
+
+
+
+
+/* 常用类 */
+.themeColor-back{
   background-color: $theme-normal;
 }
 
+.themeColor-text{
+  color: $theme-normal;
+}
+
+/*  辅助类  */
 .hide{
   display: none;
 }
