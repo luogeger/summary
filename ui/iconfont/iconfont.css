@@ -15,13 +15,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-circle-thin:before { content: "\e60b"; }
+.icon-circle-empty:before { content: "\e60b"; }
 
 .icon-check-empty:before { content: "\e634"; }
 
-.icon-ok:before { content: "\e6fd"; }
+.icon-check:before { content: "\e6fd"; }
 
 .icon-circle:before { content: "\e609"; }
 
 .icon-edit:before { content: "\e649"; }
 
+.icon-arrow-down:before { content: "\e603"; }
+
+.icon-arrow-left:before { content: "\e610"; }
+
+.icon-arrow-right:before { content: "\e611"; }
+
+.icon-arrow-up:before { content: "\e600"; }

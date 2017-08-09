@@ -20,7 +20,7 @@
     * */
     $('.dropdown').each(function (index, item){
         //追加icon
-        $(item).prepend('<i class="icon-angle-down"></i>');
+        $(item).prepend('<i class="icon iconfont icon-arrow-down"></i>');
 
         // a 标签设置 自定义属性
         $(item).children('a').attr('data-value', '');
@@ -88,35 +88,44 @@
     *   多选框
     * */
     $('.check-box-group input:checkbox').each(function (index, item){
-        var spans = '<span class="icon iconfont icon-check-empty icon-large"></span><span class="icon iconfont icon-ok hide"></span>';// 追加的元素
+        var spans = '<span class="icon iconfont icon-check-empty"></span><span class="icon iconfont icon-check hide"></span>';// 追加的元素
 
         $(item).wrap('<div class="check-parent"></div>').after(spans).addClass('hide');
         if(item.hasAttribute('checked')){
-            $(item).siblings('.icon-ok').removeClass('hide');
+            $(item).siblings('.icon-check').removeClass('hide');
         }
     });
     $('.check-parent').click(function (){
-        $(this).children('.icon-ok').toggleClass('hide');
+        $(this).children('.icon-check').toggleClass('hide');
     });
 
 
     /*
     *   单选框
+    *   1. 只有最后一个包含 checked 的 input 才能被选中
+    *   2. 点击事件
     * */
+    var items = []; // 所有包含 checked 属性的 input
     $('.radio-group input:radio').each(function (index, item){
-        var spans = '<span class="icon iconfont icon-circle-thin"></span><span class="icon iconfont icon-circle hide"></span>';// 追加的元素
+        var spans = '<span class="icon iconfont icon-circle-empty"></span><span class="icon iconfont icon-circle hide"></span>';// 追加的元素
 
         $(item).wrap('<div class="radio-parent"></div>').after(spans).addClass('hide');
+        // 只让最后一个单选框被选中
         if(item.hasAttribute('checked')){
-            $(item).siblings('.icon-circle').removeClass('hide');
+            items.push(item);
         }
     });
+    $(items[items.length - 1]).siblings('.icon-circle').removeClass('hide');//给最后一个包含checked的input选中
+
     $('.radio-parent').click(function (){
         $(this).siblings().children('.icon-circle').addClass('hide');
         $(this).children('.icon-circle').toggleClass('hide');
     });
 
     /*
-    *
+    *   tab栏
     * */
+
+
+
 })();// -- end

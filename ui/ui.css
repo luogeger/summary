@@ -313,10 +313,10 @@
     color: #FF8A41; }
   .check-box-group .check-parent .icon-check-empty {
     color: #cccccc; }
-  .check-box-group .check-parent .icon-ok {
+  .check-box-group .check-parent .icon-check {
     color: #FF8A41;
     position: absolute;
-    top: 3px;
+    top: 1px;
     left: -1px; }
 
 /* 单选框 */
@@ -325,14 +325,14 @@
   margin: 0 5px;
   cursor: pointer;
   position: relative; }
-  .radio-group .radio-parent:hover .icon-circle-thin {
+  .radio-group .radio-parent:hover .icon-circle-empty {
     color: #FF8A41; }
-  .radio-group .radio-parent .icon-circle-thin {
+  .radio-group .radio-parent .icon-circle-empty {
     color: #cccccc; }
   .radio-group .radio-parent .icon-circle {
     color: #FF8A41;
     position: absolute;
-    top: 2px;
+    top: 1px;
     left: 0px; }
 
 /*  table  */

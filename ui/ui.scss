@@ -445,10 +445,10 @@ $btn-padding: 20px;
       color: $nine;
     }
 
-    .icon-ok{
+    .icon-check{
       color: $theme-normal;
       position: absolute;
-      top: 3px;
+      top: 1px;
       left: -1px;
     }
   }
@@ -462,18 +462,18 @@ $btn-padding: 20px;
     margin: 0 5px;
     cursor: pointer;
     position: relative;
-    &:hover .icon-circle-thin{
+    &:hover .icon-circle-empty{
       color: $theme-normal;
     }
 
-    .icon-circle-thin{
+    .icon-circle-empty{
       color: $nine;
     }
 
     .icon-circle{
       color: $theme-normal;
       position: absolute;
-      top: 2px;
+      top: 1px;
       left: 0px;
     }
   }
