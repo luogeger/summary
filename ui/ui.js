@@ -124,8 +124,8 @@
 
     /*
     *   tab栏
-    *   1. 面包屑 动态添加图标
     * */
+    // 1. 面包屑 动态添加图标
     $('.nav-crumb .nav-item').each(function (index, item){
         if(index > 0){
             $(item).before('<i class="icon iconfont icon-arrow-right"></i>')
@@ -134,6 +134,11 @@
 
 
 
-
+    /*
+    *   图标的 class 前缀 'icon iconfont', 动态添加
+    * */
+    $('i[class*=icon], span[class*=icon]').each(function (index, item){
+        $(item).addClass('hi');
+    });
 
 })();// -- end

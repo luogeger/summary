@@ -348,19 +348,13 @@
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-.nav-underline,
 .nav-crumb,
+.nav-underline,
 .nav-button,
 .nav-border,
 .nav-btn-border {
   font-size: 0;
   margin-top: 10px; }
-
-.nav-underline .nav-item {
-  border-bottom: 2px solid #E2E4E5; }
-  .nav-underline .nav-item:hover {
-    color: #FF8A41;
-    border-color: #FF8A41; }
 
 .nav-crumb .nav-item i {
   margin-right: 5px; }
@@ -372,6 +366,12 @@
   position: relative;
   top: 1px; }
 
+.nav-underline .nav-item {
+  border-bottom: 2px solid #E2E4E5; }
+  .nav-underline .nav-item:hover {
+    color: #FF8A41;
+    border-color: #FF8A41; }
+
 .nav-button .nav-item {
   padding: 0 20px;
   border-radius: 4px; }
@@ -381,36 +381,56 @@
     .nav-button .nav-item:hover i {
       color: #ffffff; }
 
-.nav-border .nav-item {
-  padding: 0 20px;
-  border: 1px solid transparent;
+.nav-border {
   border-bottom: 1px solid #999999;
-  border-radius: 4px 4px 0 0;
-  margin-left: -2px; }
-  .nav-border .nav-item:hover {
-    background-color: #FF8A41; }
-    .nav-border .nav-item:hover i {
-      color: #ffffff; }
-.nav-border .nav-item:first-child {
-  margin-left: 0px; }
+  display: inline-block; }
+  .nav-border .nav-item {
+    padding: 0 20px;
+    line-height: 30px;
+    position: relative;
+    top: 1px; }
+    .nav-border .nav-item i {
+      color: #222222;
+      position: relative;
+      left: 8px;
+      top: 1px; }
+    .nav-border .nav-item:hover {
+      color: #999999; }
+      .nav-border .nav-item:hover i {
+        color: #999999; }
 
-.nav-btn-border .nav-item {
-  padding: 0 20px; }
-  .nav-btn-border .nav-item:hover {
-    color: #ffffff;
-    background-color: #FF8A41; }
-    .nav-btn-border .nav-item:hover i {
+.nav-btn-border {
+  border-bottom: 1px solid #999999;
+  padding: 0 10px;
+  display: inline;
+  margin-left: -10px; }
+  .nav-btn-border .nav-item {
+    padding: 0 20px;
+    border: 1px solid #999999;
+    border-radius: 4px 4px 0px 0px;
+    position: relative;
+    top: 1px; }
+    .nav-btn-border .nav-item i {
+      position: relative;
+      left: 8px; }
+    .nav-btn-border .nav-item:hover {
+      border: 1px solid transparent !important;
+      background-color: #FF8A41;
       color: #ffffff; }
+      .nav-btn-border .nav-item:hover i {
+        color: #ffffff; }
+  .nav-btn-border .nav-item:not(:first-child) {
+    margin-left: 10px; }
 
 /* 点击 tab, 需要添加的类 */
-.opposite-underline {
-  color: #FF8A41 !important;
-  border-color: #FF8A41 !important; }
-
 .opposite-crumb {
   color: #FF8A41; }
   .opposite-crumb i {
     color: #FF8A41; }
+
+.opposite-underline {
+  color: #FF8A41 !important;
+  border-color: #FF8A41 !important; }
 
 .opposite-button {
   background-color: #FF8A41;
@@ -419,8 +439,19 @@
     color: #ffffff; }
 
 .opposite-border {
-  border: 1px solid #999999 !important;
-  border-bottom: none !important; }
+  color: #999999;
+  border: 1px solid #999999;
+  border-radius: 4px 4px 0 0;
+  border-bottom: 1px solid #ffffff; }
+  .opposite-border i {
+    color: #999999 !important; }
+
+.opposite-btn-border {
+  border: 1px solid transparent !important;
+  background-color: #FF8A41;
+  color: #ffffff; }
+  .opposite-btn-border i {
+    color: #ffffff; }
 
 /*  table  */
 table {

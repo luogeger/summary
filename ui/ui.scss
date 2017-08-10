@@ -488,30 +488,20 @@ $paddingH-10: 10px;
   color: $text-normal;
   cursor: pointer;
   display: inline-block;
+  //vertical-align: middle;
   max-width: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
 }
-.nav-underline,
+
 .nav-crumb,
+.nav-underline,
 .nav-button,
 .nav-border,
 .nav-btn-border{
   font-size: 0;
   margin-top: 10px;
-}
-
-
-.nav-underline{
-  .nav-item{
-    border-bottom: 2px solid $hybrid;
-    &:hover{
-      color: $theme-normal;
-      border-color: $theme-normal;
-    }
-  }
 }
 
 .nav-crumb{
@@ -527,6 +517,16 @@ $paddingH-10: 10px;
     line-height: $height-sm;
     position: relative;
     top: 1px;
+  }
+}
+
+.nav-underline{
+  .nav-item{
+    border-bottom: 2px solid $hybrid;
+    &:hover{
+      color: $theme-normal;
+      border-color: $theme-normal;
+    }
   }
 }
 
@@ -546,48 +546,70 @@ $paddingH-10: 10px;
 }
 
 .nav-border{
+  border-bottom: 1px solid $six9;
+  display: inline-block;
   .nav-item{
     padding: 0 $paddingH-20;
-    border: 1px solid transparent;
-    border-bottom: 1px solid $six9;
-    border-radius: 4px 4px 0 0;
-    margin-left: -2px;
+    line-height: $height-sm;
+    position: relative;
+    top: 1px;
+    i{
+      color: $text-normal;
+      position: relative;
+      left: 8px;
+      top: 1px;
+    }
     &:hover{
-      background-color: $theme-normal;
+      color: $six9;
       i{
-        color: $sixF;
+        color: $six9;
       }
     }
-  }
-  .nav-item:first-child{
-    margin-left: 0px;
   }
 }
 
 .nav-btn-border{
+  $padding: 10px;
+  border-bottom: 1px solid $six9;
+  padding: 0 $padding;
+  display: inline;
+  margin-left: -$padding;
   .nav-item{
     padding: 0 $paddingH-20;
+    border: 1px solid $six9;
+    border-radius: 4px 4px 0px 0px;
+    position: relative;
+    top: 1px;
+    i{
+      position: relative;
+      left: 8px;
+    }
     &:hover{
-      color: $sixF;
+      border: 1px solid transparent !important;
       background-color: $theme-normal;
+      color: $sixF;
       i{
         color: $sixF;
       }
     }
   }
+  .nav-item:not(:first-child){
+    margin-left: $padding;
+  }
 }
+
 
 /* 点击 tab, 需要添加的类 */
-.opposite-underline{
-  color: $theme-normal !important;
-  border-color: $theme-normal !important;
-}
-
 .opposite-crumb{
   color: $theme-normal;
   i{
     color: $theme-normal;
   }
+}
+
+.opposite-underline{
+  color: $theme-normal !important;
+  border-color: $theme-normal !important;
 }
 
 .opposite-button{
@@ -599,9 +621,27 @@ $paddingH-10: 10px;
 }
 
 .opposite-border{
-  border: 1px solid $six9 !important;
-  border-bottom: none !important;
+  color: $six9;
+  border: 1px solid $six9;
+  border-radius: 4px 4px 0 0;
+  border-bottom: 1px solid $sixF;
+  i{
+    color: $six9 !important;
+  }
 }
+
+.opposite-btn-border{
+  border: 1px solid transparent !important;
+  background-color: $theme-normal;
+  color: $sixF;
+  i{
+    color: $sixF;
+  }
+}
+
+
+
+
 
 
 
