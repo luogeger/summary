@@ -20,7 +20,7 @@
     * */
     $('.dropdown').each(function (index, item){
         //追加icon
-        $(item).prepend('<i class="icon iconfont icon-arrow-down"></i>');
+        $(item).prepend('<i class="icon-arrow-down"></i>');
 
         // a 标签设置 自定义属性
         $(item).children('a').attr('data-value', '');
@@ -88,7 +88,7 @@
     *   多选框
     * */
     $('.check-box-group input:checkbox').each(function (index, item){
-        var spans = '<span class="icon iconfont icon-check-empty"></span><span class="icon iconfont icon-check hide"></span>';// 追加的元素
+        var spans = '<span class="icon-check-empty"></span><span class="icon-check hide"></span>';// 追加的元素
 
         $(item).wrap('<div class="check-parent"></div>').after(spans).addClass('hide');
         if(item.hasAttribute('checked')){
@@ -107,7 +107,7 @@
     * */
     var items = []; // 所有包含 checked 属性的 input
     $('.radio-group input:radio').each(function (index, item){
-        var spans = '<span class="icon iconfont icon-circle-empty"></span><span class="icon iconfont icon-circle hide"></span>';// 追加的元素
+        var spans = '<span class="icon-circle-empty"></span><span class="icon-circle hide"></span>';// 追加的元素
 
         $(item).wrap('<div class="radio-parent"></div>').after(spans).addClass('hide');
         // 只让最后一个单选框被选中
@@ -128,7 +128,7 @@
     // 1. 面包屑 动态添加图标
     $('.nav-crumb .nav-item').each(function (index, item){
         if(index > 0){
-            $(item).before('<i class="icon iconfont icon-arrow-right"></i>')
+            $(item).before('<i class="icon-arrow-right"></i>')
         }
     })
 
@@ -138,7 +138,7 @@
     *   图标的 class 前缀 'icon iconfont', 动态添加
     * */
     $('i[class*=icon], span[class*=icon]').each(function (index, item){
-        $(item).addClass('hi');
+        $(item).addClass('icon iconfont');
     });
 
 })();// -- end
