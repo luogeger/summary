@@ -550,6 +550,7 @@ $paddingH-10: 10px;
   display: inline-block;
   .nav-item{
     padding: 0 $paddingH-20;
+    height: $height-sm;
     line-height: $height-sm;
     position: relative;
     top: 1px;

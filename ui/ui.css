@@ -386,6 +386,7 @@
   display: inline-block; }
   .nav-border .nav-item {
     padding: 0 20px;
+    height: 30px;
     line-height: 30px;
     position: relative;
     top: 1px; }

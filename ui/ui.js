@@ -124,13 +124,33 @@
 
     /*
     *   tab栏
+    *   1. 面包屑 动态添加图标
+    *   2. tab栏的效果
     * */
-    // 1. 面包屑 动态添加图标
+    // 1.
     $('.nav-crumb .nav-item').each(function (index, item){
         if(index > 0){
             $(item).before('<i class="icon-arrow-right"></i>')
         }
-    })
+    });
+    // 2.
+    tabEffect($('.nav-underline'), 'opposite-underline');
+    tabEffect($('.nav-button'), 'opposite-button');
+    tabEffect($('.nav-border'), 'opposite-border');
+    tabEffect($('.nav-btn-border'), 'opposite-btn-border');
+    function tabEffect (dom, cls){
+        dom.each(function (index, item){
+            $(item).children().each(function (_index, _item){
+                $(_item).click(function (){
+                    $(this).parent().children().each(function (i, v){
+                        $(v).removeClass(cls);
+                    });
+                    $(this).addClass(cls);
+                })
+            })
+        })
+    };
+
 
 
 
