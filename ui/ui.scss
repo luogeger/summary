@@ -322,7 +322,7 @@ $paddingH-10: 10px;
 
 /* 进度条 */
 .progress-bar{
-  $height: 16px;
+  $height: 10px;
   width: 500px;
   height: $height;
   background-color: $sicC;
@@ -492,6 +492,7 @@ $paddingH-10: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  border: 1px solid transparent;
 }
 
 .nav-crumb,
@@ -689,6 +690,81 @@ $paddingH-10: 10px;
 
 
 
+/* 分页 */
+.pages-line,
+.pages-filled{
+  //border: 1px solid red;
+  display: inline-block;
+  div, ul, ul>li{
+    float: left;
+    cursor: pointer;
+  }
+  div, ul>li{
+    padding: 0 10px;
+    height: $height-md;
+    line-height: $height-md;
+  }
+}
+
+.pages-line{
+  div, ul>li{
+    border: 1px solid $sicC;
+    border-radius: 4px;
+    margin-right: 5px;
+  }
+  ul>li{
+    padding: 0 12px;
+  }
+  .previous, .next{
+    padding: 0 15px;
+  }
+  .last{
+    margin-right: 0px;
+  }
+}
+
+.pages-filled{
+  div, ul>li{
+    background-color: $theme-normal;
+  }
+  div>i, div>span, ul>li{
+    color: $sixF;
+  }
+  ul>li{
+    padding: 0 13px;
+  }
+  ul>li:not(:last-child){
+    border-right: 1px solid $theme-hover;
+  }
+  .previous{
+    border-radius: 4px 0 0 4px;
+    margin-right: 5px;
+  }
+  .next{
+    border-radius: 0 4px 4px 0;
+    margin-left: 5px;
+  }
+}
+
+.line-opposite{
+  color: $sixF;
+  background-color: $theme-normal;
+  border-color: $theme-hover !important;
+}
+
+.filled-opposite{
+  background-color: $theme-hover !important;
+}
+
+
+
+
+
+
+
+
+
+
 /*  table  */
 table{
   width: 100%;
@@ -778,7 +854,9 @@ table{
 
 
 /* 清除浮动 */
-.btn{
+.btn,
+.pages-line,
+.pages-filled{
   *zoom: 1; /*IE/7/6*/  /*兼容IE6下的写法*/
   &:before{
     content: "";

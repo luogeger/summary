@@ -222,14 +222,14 @@
 /* 进度条 */
 .progress-bar {
   width: 500px;
-  height: 16px;
+  height: 10px;
   background-color: #CCCCCC;
-  border-radius: 8px; }
+  border-radius: 5px; }
   .progress-bar .bar {
     width: 300px;
     height: 100%;
     background-color: #FF8A41;
-    border-radius: 8px;
+    border-radius: 5px;
     position: relative; }
     .progress-bar .bar .percent {
       font-size: 12px;
@@ -346,7 +346,8 @@
   max-width: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; }
+  white-space: nowrap;
+  border: 1px solid transparent; }
 
 .nav-crumb,
 .nav-underline,
@@ -488,6 +489,57 @@
   .alert-info span {
     color: #14a6ef; }
 
+/* 分页 */
+.pages-line,
+.pages-filled {
+  display: inline-block; }
+  .pages-line div, .pages-line ul, .pages-line ul > li,
+  .pages-filled div,
+  .pages-filled ul,
+  .pages-filled ul > li {
+    float: left;
+    cursor: pointer; }
+  .pages-line div, .pages-line ul > li,
+  .pages-filled div,
+  .pages-filled ul > li {
+    padding: 0 10px;
+    height: 34px;
+    line-height: 34px; }
+
+.pages-line div, .pages-line ul > li {
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  margin-right: 5px; }
+.pages-line ul > li {
+  padding: 0 12px; }
+.pages-line .previous, .pages-line .next {
+  padding: 0 15px; }
+.pages-line .last {
+  margin-right: 0px; }
+
+.pages-filled div, .pages-filled ul > li {
+  background-color: #FF8A41; }
+.pages-filled div > i, .pages-filled div > span, .pages-filled ul > li {
+  color: #ffffff; }
+.pages-filled ul > li {
+  padding: 0 13px; }
+.pages-filled ul > li:not(:last-child) {
+  border-right: 1px solid #ED6C1C; }
+.pages-filled .previous {
+  border-radius: 4px 0 0 4px;
+  margin-right: 5px; }
+.pages-filled .next {
+  border-radius: 0 4px 4px 0;
+  margin-left: 5px; }
+
+.line-opposite {
+  color: #ffffff;
+  background-color: #FF8A41;
+  border-color: #ED6C1C !important; }
+
+.filled-opposite {
+  background-color: #ED6C1C !important; }
+
 /*  table  */
 table {
   width: 100%;
@@ -539,14 +591,20 @@ table {
   float: right; }
 
 /* 清除浮动 */
-.btn {
+.btn,
+.pages-line,
+.pages-filled {
   *zoom: 1;
   /*IE/7/6*/
   /*兼容IE6下的写法*/ }
-  .btn:before {
+  .btn:before,
+  .pages-line:before,
+  .pages-filled:before {
     content: "";
     display: table; }
-  .btn:after {
+  .btn:after,
+  .pages-line:after,
+  .pages-filled:after {
     content: "";
     display: table;
     clear: both; }
