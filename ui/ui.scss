@@ -488,7 +488,6 @@ $paddingH-10: 10px;
   color: $text-normal;
   cursor: pointer;
   display: inline-block;
-  //vertical-align: middle;
   max-width: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -642,6 +641,50 @@ $paddingH-10: 10px;
 
 
 
+
+/* 提示信息 */
+.alert-success,
+.alert-error,
+.alert-warn,
+.alert-info{
+  border: 1px solid $hybrid;
+  border-radius: 4px;
+  padding: 10px;
+  width: 80%;
+}
+
+.alert-success{
+  span{
+    color: #5eb95e;
+
+  }
+  border-color: #c9e7c9;
+  background-color: #e7f5e7;
+}
+
+.alert-error{
+  span{
+    color: #dd514c;
+  }
+  border-color: #f5cecd;
+  background-color: #fae5e4;
+}
+
+.alert-warn{
+  span{
+    color: #f37b1d;
+  }
+  border-color: #fbd0ae;
+  background-color: #feebdd;
+}
+
+.alert-info{
+  span{
+    color: #14a6ef;
+  }
+  border-color: #caebfb;
+  background-color: #e1f4fd;
+}
 
 
 

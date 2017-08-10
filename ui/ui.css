@@ -454,6 +454,40 @@
   .opposite-btn-border i {
     color: #ffffff; }
 
+/* 提示信息 */
+.alert-success,
+.alert-error,
+.alert-warn,
+.alert-info {
+  border: 1px solid #E2E4E5;
+  border-radius: 4px;
+  padding: 10px;
+  width: 80%; }
+
+.alert-success {
+  border-color: #c9e7c9;
+  background-color: #e7f5e7; }
+  .alert-success span {
+    color: #5eb95e; }
+
+.alert-error {
+  border-color: #f5cecd;
+  background-color: #fae5e4; }
+  .alert-error span {
+    color: #dd514c; }
+
+.alert-warn {
+  border-color: #fbd0ae;
+  background-color: #feebdd; }
+  .alert-warn span {
+    color: #f37b1d; }
+
+.alert-info {
+  border-color: #caebfb;
+  background-color: #e1f4fd; }
+  .alert-info span {
+    color: #14a6ef; }
+
 /*  table  */
 table {
   width: 100%;
