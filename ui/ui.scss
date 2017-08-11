@@ -29,7 +29,7 @@ $six9: #999999;
 
 /* border + background */
 $sixF: #ffffff;
-$sicC: #CCCCCC;
+$sixC: #CCCCCC;
 $back: #F6F8F9;
 $hybrid: #E2E4E5;
 
@@ -62,10 +62,10 @@ $paddingH-10: 10px;
   background-color: $hybrid;
   border-radius: 4px;
   &:hover{
-    background-color: $sicC;
+    background-color: $sixC;
   }
   &:focus{
-    background-color: $sicC;
+    background-color: $sixC;
   }
   i{
     position: relative;
@@ -112,7 +112,7 @@ $paddingH-10: 10px;
 
 /*button -- 类型*/
 .btn-border{
-  border: 1px solid $sicC;
+  border: 1px solid $sixC;
   background-color: $sixF;
   color: $text-normal;
   i{
@@ -185,7 +185,7 @@ $paddingH-10: 10px;
     padding-right: 5px;
   }
   input{
-    border: 1px solid $sicC;
+    border: 1px solid $sixC;
     border-radius: 4px;
     padding: 5px 10px;
     font-size: 14px;
@@ -245,7 +245,7 @@ $paddingH-10: 10px;
     //line-height: $height-md - 10px;
     padding: 5px 20px 5px 10px;
     min-width: 175px;
-    border: 1px solid $sicC;
+    border: 1px solid $sixC;
     border-radius: 6px;
   }
   i{
@@ -256,7 +256,7 @@ $paddingH-10: 10px;
     transition: all 0.3s;
   }
   ul{
-    border: 1px solid $sicC;
+    border: 1px solid $sixC;
     position: absolute;
     top: $height-md - 1;
     left: 0px;
@@ -325,7 +325,7 @@ $paddingH-10: 10px;
   $height: 10px;
   width: 500px;
   height: $height;
-  background-color: $sicC;
+  background-color: $sixC;
   border-radius: $height / 2;
   .bar{
     width: 300px;
@@ -361,7 +361,7 @@ $paddingH-10: 10px;
   $height: 20px;
   width: 500px;
   height: $height;
-  background-color: $sicC;
+  background-color: $sixC;
   border-radius: 4px;
   .bar{
     width: 300px;
@@ -442,7 +442,7 @@ $paddingH-10: 10px;
     }
 
     .icon-check-empty{
-      color: $sicC;
+      color: $sixC;
     }
 
     .icon-check{
@@ -467,7 +467,7 @@ $paddingH-10: 10px;
     }
 
     .icon-circle-empty{
-      color: $sicC;
+      color: $sixC;
     }
 
     .icon-circle{
@@ -522,12 +522,14 @@ $paddingH-10: 10px;
 
 .nav-underline{
   .nav-item{
+    border: none;
     border-bottom: 2px solid $hybrid;
     &:hover{
       color: $theme-normal;
-      border-color: $theme-normal;
+      border-bottom-color: $theme-normal;
     }
   }
+
 }
 
 .nav-button{
@@ -552,13 +554,13 @@ $paddingH-10: 10px;
     padding: 0 $paddingH-20;
     height: $height-sm;
     line-height: $height-sm;
-    position: relative;
-    top: 1px;
+    margin-bottom: -1px;
     i{
       color: $text-normal;
       position: relative;
       left: 8px;
       top: 1px;
+
     }
     &:hover{
       color: $six9;
@@ -571,22 +573,23 @@ $paddingH-10: 10px;
 
 .nav-btn-border{
   $padding: 10px;
-  border-bottom: 1px solid $six9;
+  //border-bottom: 1px solid $six9;
+  border: 1px solid $six9;
   padding: 0 $padding;
-  display: inline;
+  display: inline-block;
   margin-left: -$padding;
   .nav-item{
     padding: 0 $paddingH-20;
     border: 1px solid $six9;
     border-radius: 4px 4px 0px 0px;
-    position: relative;
-    top: 1px;
-    i{
-      position: relative;
-      left: 8px;
-    }
+    border-bottom: none;
+    //i{
+    //  position: relative;
+    //  left: 8px;
+    //}
     &:hover{
-      border: 1px solid transparent !important;
+      //border: 1px solid transparent !important;
+      //border-bottom: none;
       background-color: $theme-normal;
       color: $sixF;
       i{
@@ -610,7 +613,7 @@ $paddingH-10: 10px;
 
 .opposite-underline{
   color: $theme-normal !important;
-  border-color: $theme-normal !important;
+  border-bottom-color: $theme-normal !important;
 }
 
 .opposite-button{
@@ -625,14 +628,16 @@ $paddingH-10: 10px;
   color: $six9;
   border: 1px solid $six9;
   border-radius: 4px 4px 0 0;
-  border-bottom: 1px solid $sixF;
+  border-bottom: none;
+  background-color: #fff;
   i{
     color: $six9 !important;
   }
 }
 
 .opposite-btn-border{
-  border: 1px solid transparent !important;
+  //border: 1px solid transparent !important;
+  //border-bottom: none;
   background-color: $theme-normal;
   color: $sixF;
   i{
@@ -693,7 +698,6 @@ $paddingH-10: 10px;
 /* 分页 */
 .pages-line,
 .pages-filled{
-  //border: 1px solid red;
   display: inline-block;
   div, ul, ul>li{
     float: left;
@@ -704,11 +708,15 @@ $paddingH-10: 10px;
     height: $height-md;
     line-height: $height-md;
   }
+  .point{
+    border: none;
+    cursor: auto;
+  }
 }
 
 .pages-line{
   div, ul>li{
-    border: 1px solid $sicC;
+    border: 1px solid $sixC;
     border-radius: 4px;
     margin-right: 5px;
   }
@@ -718,8 +726,22 @@ $paddingH-10: 10px;
   .previous, .next{
     padding: 0 15px;
   }
-  .last{
+  .import{
+    padding: 0px;
+    input{
+      width: $height-md;
+      padding-left: 10px;
+      font-size: 14px;
+      font-family: "Microsoft YaHei";
+      margin-top: -3px;
+    }
+  }
+  .go{
     margin-right: 0px;
+  }
+  .page-disabled{
+    cursor: not-allowed !important;
+    background-color: $hybrid;
   }
 }
 
@@ -759,7 +781,46 @@ $paddingH-10: 10px;
 
 
 
+/* tree-view */
+.tree-view{
+  border: 1px solid $theme-normal;
+  display: inline-block;
+  padding: 10px;
+  ul{
 
+  }
+  li{
+
+  }
+  i, span{
+    cursor: pointer;
+  }
+  span{
+    display: inline-block;
+    padding: 3px 5px;
+    &:hover{
+      background-color: #0094ff;
+
+    }
+  }
+
+  .first>li:not(:last-child){
+    //background-color: deeppink;
+    padding: 0px 0px 5px 15px;
+  }
+  .second>li:not(:last-child){
+    //background-color: deepskyblue;
+    padding: 0px 0px 5px 15px;
+
+  }
+  .third>li:not(:last-child){
+    //background-color: darkcyan;
+    padding: 0px 0px 5px 15px;
+  }
+  .fourth>li:not(:last-child){
+
+  }
+}
 
 
 
@@ -776,7 +837,7 @@ table{
   tbody{
     tr{
       &:hover{
-        background-color: $sicC;
+        background-color: $sixC;
       }
     }
   }
@@ -785,14 +846,14 @@ table{
 /* 只有bottom边框 */
 .table-bottom{
   thead,tr{
-    border-bottom: 1px solid $sicC;
+    border-bottom: 1px solid $sixC;
   }
 }
 
 /* 全部有边框 */
 .table-border{
   th,td{
-    border: 1px solid $sicC;
+    border: 1px solid $sixC;
   }
 }
 
@@ -803,12 +864,10 @@ table{
       background-color: $back;
     }
     tr:hover{
-      background-color: $sicC;
+      background-color: $sixC;
     }
   }
 }
-
-
 
 
 

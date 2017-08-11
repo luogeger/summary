@@ -125,13 +125,11 @@
     /*
     *   tab栏
     *   1. 面包屑 动态添加图标
-    *   2. tab栏的效果
+    *   2. tab 的点击效果
     * */
     // 1.
-    $('.nav-crumb .nav-item').each(function (index, item){
-        if(index > 0){
-            $(item).before('<i class="icon-arrow-right"></i>')
-        }
+    $('.nav-crumb .nav-item:not(:first-child)').each(function (index, item){
+        $(item).before('<i class="icon-arrow-right"></i>')
     });
     // 2.
     tabEffect($('.nav-underline'), 'opposite-underline');
@@ -160,5 +158,24 @@
     $('i[class*=icon], span[class*=icon]').each(function (index, item){
         $(item).addClass('icon iconfont');
     });
+
+
+    /*
+    *   分页
+    * */
+    $('.pages-line>ul>li:not(.point)').click(function (){
+        $('.pages-line ul>li:not(.point)').each(function (index, item){
+            $(item).removeClass('line-opposite');
+        });
+        $(this).addClass('line-opposite');
+    });
+    $('.pages-filled>ul>li:not(.point)').click(function (){
+        $('.pages-filled>ul>li:not(.point)').each(function (index, item){
+            $(item).removeClass('filled-opposite');
+        });
+        $(this).addClass('filled-opposite');
+    })
+
+
 
 })();// -- end

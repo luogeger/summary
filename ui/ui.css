@@ -368,10 +368,11 @@
   top: 1px; }
 
 .nav-underline .nav-item {
+  border: none;
   border-bottom: 2px solid #E2E4E5; }
   .nav-underline .nav-item:hover {
     color: #FF8A41;
-    border-color: #FF8A41; }
+    border-bottom-color: #FF8A41; }
 
 .nav-button .nav-item {
   padding: 0 20px;
@@ -389,8 +390,7 @@
     padding: 0 20px;
     height: 30px;
     line-height: 30px;
-    position: relative;
-    top: 1px; }
+    margin-bottom: -1px; }
     .nav-border .nav-item i {
       color: #222222;
       position: relative;
@@ -402,21 +402,16 @@
         color: #999999; }
 
 .nav-btn-border {
-  border-bottom: 1px solid #999999;
+  border: 1px solid #999999;
   padding: 0 10px;
-  display: inline;
+  display: inline-block;
   margin-left: -10px; }
   .nav-btn-border .nav-item {
     padding: 0 20px;
     border: 1px solid #999999;
     border-radius: 4px 4px 0px 0px;
-    position: relative;
-    top: 1px; }
-    .nav-btn-border .nav-item i {
-      position: relative;
-      left: 8px; }
+    border-bottom: none; }
     .nav-btn-border .nav-item:hover {
-      border: 1px solid transparent !important;
       background-color: #FF8A41;
       color: #ffffff; }
       .nav-btn-border .nav-item:hover i {
@@ -432,7 +427,7 @@
 
 .opposite-underline {
   color: #FF8A41 !important;
-  border-color: #FF8A41 !important; }
+  border-bottom-color: #FF8A41 !important; }
 
 .opposite-button {
   background-color: #FF8A41;
@@ -444,12 +439,12 @@
   color: #999999;
   border: 1px solid #999999;
   border-radius: 4px 4px 0 0;
-  border-bottom: 1px solid #ffffff; }
+  border-bottom: none;
+  background-color: #fff; }
   .opposite-border i {
     color: #999999 !important; }
 
 .opposite-btn-border {
-  border: 1px solid transparent !important;
   background-color: #FF8A41;
   color: #ffffff; }
   .opposite-btn-border i {
@@ -505,6 +500,10 @@
     padding: 0 10px;
     height: 34px;
     line-height: 34px; }
+  .pages-line .point,
+  .pages-filled .point {
+    border: none;
+    cursor: auto; }
 
 .pages-line div, .pages-line ul > li {
   border: 1px solid #CCCCCC;
@@ -514,8 +513,19 @@
   padding: 0 12px; }
 .pages-line .previous, .pages-line .next {
   padding: 0 15px; }
-.pages-line .last {
+.pages-line .import {
+  padding: 0px; }
+  .pages-line .import input {
+    width: 34px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    margin-top: -3px; }
+.pages-line .go {
   margin-right: 0px; }
+.pages-line .page-disabled {
+  cursor: not-allowed !important;
+  background-color: #E2E4E5; }
 
 .pages-filled div, .pages-filled ul > li {
   background-color: #FF8A41; }
@@ -539,6 +549,25 @@
 
 .filled-opposite {
   background-color: #ED6C1C !important; }
+
+/* tree-view */
+.tree-view {
+  border: 1px solid #FF8A41;
+  display: inline-block;
+  padding: 10px; }
+  .tree-view i, .tree-view span {
+    cursor: pointer; }
+  .tree-view span {
+    display: inline-block;
+    padding: 3px 5px; }
+    .tree-view span:hover {
+      background-color: #0094ff; }
+  .tree-view .first > li:not(:last-child) {
+    padding: 0px 0px 5px 15px; }
+  .tree-view .second > li:not(:last-child) {
+    padding: 0px 0px 5px 15px; }
+  .tree-view .third > li:not(:last-child) {
+    padding: 0px 0px 5px 15px; }
 
 /*  table  */
 table {
