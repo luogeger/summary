@@ -813,6 +813,8 @@ $paddingH-10: 10px;
   .fifth>li:not(:last-child){
     padding: 0px 0px 5px 15px;
   }
+
+
   .first>li:last-child,
   .second>li:last-child,
   .third>li:last-child,
@@ -821,19 +823,20 @@ $paddingH-10: 10px;
     padding: 0px 0px 0px 15px;
   }
 
-  .first>li:not(:last-child){
+
+  .first>li{
+    padding-left: 0px !important;
+  }
+  .second>li{
 
   }
-  .second>li:not(:last-child){
+  .third>li{
 
   }
-  .third>li:not(:last-child){
+  .fourth>li{
 
   }
-  .fourth>li:not(:last-child){
-
-  }
-  .fifth>li:not(:last-child){
+  .fifth>li{
 
   }
 }

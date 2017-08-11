@@ -576,6 +576,8 @@
   .tree-view .fourth > li:last-child,
   .tree-view .fifth > li:last-child {
     padding: 0px 0px 0px 15px; }
+  .tree-view .first > li {
+    padding-left: 0px !important; }
 
 /*  table  */
 table {

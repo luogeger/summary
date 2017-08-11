@@ -174,15 +174,21 @@
     $('.tree-view li').each(function (index, item){
         var _item = $(item);
         if(_item.has('ul').length){
-            collapse()
+            collapse();
         }
         function collapse (){
             _item.children('ul').css({'display': 'none'});
             _item.children('.icon-arrow-down').addClass('icon-arrow-up').removeClass('icon-arrow-down');
-            _item.children('.icon-arrow-down').each(function (index_, item_){
-                $(item_).click(function (){
-
-                })
+            _item.children('.icon-arrow-up').click(function (){
+                if($(this).hasClass('flag-open')){
+                    $(this).removeClass('flag-open');
+                    $(this).addClass('icon-arrow-up').removeClass('icon-arrow-down');
+                    $(this).siblings('ul').slideToggle(100);
+                    return;
+                }
+                $(this).addClass('icon-arrow-down').removeClass('icon-arrow-up');
+                $(this).siblings('ul').slideToggle(100);
+                $(this).addClass('flag-open');
             })
         };
     });
