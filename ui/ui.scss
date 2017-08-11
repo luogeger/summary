@@ -786,6 +786,9 @@ $paddingH-10: 10px;
   border: 1px solid $theme-normal;
   display: inline-block;
   padding: 10px;
+  .icon-arrow-up{
+    transition: all 0.3s;
+  }
   ul{
 
   }
@@ -799,25 +802,38 @@ $paddingH-10: 10px;
     display: inline-block;
     padding: 3px 5px;
     &:hover{
-      background-color: #0094ff;
-
+      background-color: $hybrid;
     }
   }
 
-  .first>li:not(:last-child){
-    //background-color: deeppink;
+  .first>li:not(:last-child),
+  .second>li:not(:last-child),
+  .third>li:not(:last-child),
+  .fourth>li:not(:last-child),
+  .fifth>li:not(:last-child){
     padding: 0px 0px 5px 15px;
   }
+  .first>li:last-child,
+  .second>li:last-child,
+  .third>li:last-child,
+  .fourth>li:last-child,
+  .fifth>li:last-child{
+    padding: 0px 0px 0px 15px;
+  }
+
+  .first>li:not(:last-child){
+
+  }
   .second>li:not(:last-child){
-    //background-color: deepskyblue;
-    padding: 0px 0px 5px 15px;
 
   }
   .third>li:not(:last-child){
-    //background-color: darkcyan;
-    padding: 0px 0px 5px 15px;
+
   }
   .fourth>li:not(:last-child){
+
+  }
+  .fifth>li:not(:last-child){
 
   }
 }

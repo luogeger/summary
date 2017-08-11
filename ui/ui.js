@@ -151,15 +151,6 @@
 
 
 
-
-    /*
-    *   图标的 class 前缀 'icon iconfont', 动态添加
-    * */
-    $('i[class*=icon], span[class*=icon]').each(function (index, item){
-        $(item).addClass('icon iconfont');
-    });
-
-
     /*
     *   分页
     * */
@@ -177,5 +168,49 @@
     })
 
 
+    /*
+    *   tree-view
+    * */
+    $('.tree-view li').each(function (index, item){
+        var _item = $(item);
+        if(_item.has('ul').length){
+            collapse()
+        }
+        function collapse (){
+            _item.children('ul').css({'display': 'none'});
+            _item.children('.icon-arrow-down').addClass('icon-arrow-up').removeClass('icon-arrow-down');
+            _item.children('.icon-arrow-down').each(function (index_, item_){
+                $(item_).click(function (){
 
+                })
+            })
+        };
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+     *   -- 放在最后, 图标的 class 前缀 'icon iconfont', 动态添加
+     * */
+    $('i[class*=icon], span[class*=icon]').each(function (index, item){
+        $(item).addClass('icon iconfont');
+    });
 })();// -- end
