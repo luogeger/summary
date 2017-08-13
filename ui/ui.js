@@ -205,7 +205,19 @@
     // 改名
     function rename (self){
         var _this = $(self);
-        console.log(_this.text());
+        var width = _this.width() + 10 + 'px';
+        console.log(width);
+        var html = '<div class="change">' +
+            '<input type="text">' +
+            '<i class="cancel icon-arrow-left icon iconfont"></i>' +
+            '<i class="save icon-arrow-right icon iconfont"></i>' +
+            '</div>';
+
+        _this.after(html);
+        _this.siblings('.change').children('input').css('width', width);
+        _this.siblings('.change').children('input').val(_this.text());
+
+        _this.css({'display': 'none'});
 
 
     };

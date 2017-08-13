@@ -557,6 +557,20 @@
   padding: 10px; }
   .tree-view .icon-arrow-up {
     transition: all 0.3s; }
+  .tree-view li {
+    position: relative;
+    /* 改名html的动态样式 */ }
+    .tree-view li .change {
+      background-color: #fff;
+      display: inline-block; }
+      .tree-view li .change > input {
+        border: 1px solid #CCCCCC;
+        border-radius: 4px;
+        padding: 2px 5px;
+        font-size: 14px;
+        font-family: microsoft yahei;
+        width: 50px;
+        vertical-align: inherit; }
   .tree-view i, .tree-view span {
     cursor: pointer; }
   .tree-view span {

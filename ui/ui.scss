@@ -430,6 +430,8 @@ $paddingH-10: 10px;
 }
 
 
+
+
 /* 多选框 */
 .check-box-group{
   .check-parent{
@@ -793,8 +795,25 @@ $paddingH-10: 10px;
 
   }
   li{
-
+    position: relative;
+    /* 改名html的动态样式 */
+    .change{
+      background-color: #fff;
+      display: inline-block;
+      >input{
+        border: 1px solid $sixC;
+        border-radius: 4px;
+        padding: 2px 5px;
+        font-size: 14px;
+        font-family: microsoft yahei;
+        width: 50px;
+        vertical-align: inherit;
+      }
+      >i{
+      }
+    }
   }
+
   i, span{
     cursor: pointer;
   }
