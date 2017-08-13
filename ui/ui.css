@@ -583,7 +583,8 @@
   .tree-view .third > li:not(:last-child),
   .tree-view .fourth > li:not(:last-child),
   .tree-view .fifth > li:not(:last-child) {
-    padding: 0px 0px 5px 15px; }
+    padding: 0px 0px 5px 15px;
+    margin-top: 1px; }
   .tree-view .first > li:last-child,
   .tree-view .second > li:last-child,
   .tree-view .third > li:last-child,

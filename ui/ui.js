@@ -172,9 +172,11 @@
     *   tree-view
     *   1. 展开目录
     *   2. 改名
+    *   3. 取消改名
+    *   4. 保存改名
     * */
     $('.tree-view li').each(function (index, item){
-        var _item = $(item);
+        var _item = $(item);// 这个是 li 标签
 
         if(_item.has('ul').length){
             collapse(_item);// 展开目录
@@ -204,23 +206,43 @@
 
     // 改名
     function rename (self){
-        var _this = $(self);
-        var width = _this.width() + 10 + 'px';
-        console.log(width);
+        var _this = $(self);// 这个是 span 标签
+        var width = _this.width() + 15 + 'px';
         var html = '<div class="change">' +
             '<input type="text">' +
             '<i class="cancel icon-arrow-left icon iconfont"></i>' +
             '<i class="save icon-arrow-right icon iconfont"></i>' +
             '</div>';
-
         _this.after(html);
         _this.siblings('.change').children('input').css('width', width);
         _this.siblings('.change').children('input').val(_this.text());
-
         _this.css({'display': 'none'});
 
+        var changeDiv = _this.siblings('.change');
+        changeDiv.children('.cancel').click(function (){
+            cancelRename(_this, changeDiv);// 取消改名
+        });
 
+        changeDiv.children('.save').click(function (){
+            saveRename(_this, changeDiv);// 保存改名
+        });
     };
+
+    // 取消改名
+    function cancelRename (span, div){
+        div.remove();
+        span.css({'display': 'inline-block'});
+    };
+
+    // 保存改名
+    function saveRename (span, div){
+        var text = div.children('input').val();
+        span.text(text);
+        div.remove();
+        span.css({'display': 'inline-block'});
+    };
+
+
 
 
 
