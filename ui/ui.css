@@ -606,11 +606,14 @@
       width: 100%;
       padding: 5px 15px 5px 0px; }
       #accordion ul li a i {
-        transition: all 0.5s; }
+        display: inline-block;
+        transition: all 0.3s; }
       #accordion ul li a:hover {
         background-color: #FF8A41; }
         #accordion ul li a:hover i, #accordion ul li a:hover span {
           color: #ffffff; }
+    #accordion ul li .a-textColor i, #accordion ul li .a-textColor span {
+      color: #FF8A41; }
   #accordion .first a {
     padding-left: 10px; }
   #accordion .second a {

@@ -870,11 +870,9 @@ $paddingH-10: 10px;
         display: inline-block;
         width: 100%;
         padding: 5px 15px 5px 0px;
-        i, span{
-
-        }
         i{
-          transition: all 0.5s;
+          display: inline-block;
+          transition: all 0.3s;
         }
         span{
 
@@ -884,6 +882,12 @@ $paddingH-10: 10px;
           i, span{
             color: $sixF;
           }
+        }
+      }
+
+      .a-textColor{
+        i, span{
+          color: $theme-normal;
         }
       }
 

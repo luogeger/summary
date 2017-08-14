@@ -18,7 +18,6 @@
             margin: 10px;
         }
         
-
     </style>
 </head>
 <body>
@@ -676,6 +675,10 @@
             </tbody>
         </table>
     </div>
+
+    <div id="asd">
+        <i class="icon-arrow-right"></i>
+    </div>
 </body>
 </html>
 <script src="../fileJs/jquery-1.12.4.min.js"></script>
@@ -730,6 +733,10 @@
             })// each -- end
         }// slimScroll -- end
     });// extend -- end
+    
+    $('#asd i').click(function (){
+        $(this).css({'transform':'rotate(180deg)'});
+    })
     
 </script>
 

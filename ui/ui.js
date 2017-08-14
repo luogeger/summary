@@ -117,7 +117,7 @@
     *   1. 只有最后一个包含 checked 的 input 才能被选中
     *   2. 点击事件
     * */
-    var items = []; // 所有包含 checked 属性的 input
+    var items = []; // 所有包含 checked 属性的 input-radio
     $('.radio-group input:radio').each(function (index, item){
         var spans = '<span class="icon-circle-empty"></span><span class="icon-circle hide"></span>';// 追加的元素
 
@@ -127,7 +127,7 @@
             items.push(item);
         }
     });
-    $(items[items.length - 1]).siblings('.icon-circle').removeClass('hide');//给最后一个包含checked的input选中
+    $(items[items.length - 1]).siblings('.icon-circle').removeClass('hide');//给最后一个包含checked的 input-radio 选中
 
     $('.radio-parent').click(function (){
         $(this).siblings().children('.icon-circle').addClass('hide');
@@ -281,7 +281,14 @@
             if(_item.has('ul').length){
                 collapse(_item);// 展开目录
             }else{
+                // 这里没有子级菜单的标签
                 _item.children('a').prepend('<i class="icon-circle"></i>');
+                _item.children('a').click(function (){
+                    $('#accordion li').each(function (i, v){
+                        $(v).children('a').removeClass('a-textColor');
+                    })
+                    $(this).addClass('a-textColor');
+                })
             }
 
 
@@ -293,9 +300,17 @@
             _item.children('a').prepend('<i class="icon-arrow-right"></i>');
             _item.children('ul').css({'display': 'none'});
             _item.children('a').click(function (){
-                $(this).siblings('ul').slideToggle(100);
-                $(this).children('i').css({'transform':'rotate(45deg)'})
-            })
+                var _this = $(this);
+                if(_this.hasClass('flag-open')){
+                    _this.siblings('ul').slideToggle(100);
+                    _this.children('i').css({'transform':'rotate(0deg)'});
+                    _this.removeClass('flag-open');
+                    return;
+                }
+                _this.siblings('ul').slideToggle(100);
+                _this.children('i').css({'transform':'rotate(90deg)'});
+                _this.addClass('flag-open');
+            });
         };
     })();
 

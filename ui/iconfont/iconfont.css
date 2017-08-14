@@ -17,11 +17,11 @@
 
 .icon-circle-empty:before { content: "\e60b"; }
 
+.icon-circle:before { content: "\e609"; }
+
 .icon-check-empty:before { content: "\e634"; }
 
 .icon-check:before { content: "\e6fd"; }
-
-.icon-circle:before { content: "\e609"; }
 
 .icon-edit:before { content: "\e649"; }
 
