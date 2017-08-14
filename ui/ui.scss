@@ -779,7 +779,7 @@ $paddingH-10: 10px;
 
 
 /* tree-view */
-.tree-view{
+#tree-view{
   border: 1px solid $theme-normal;
   display: inline-block;
   padding: 10px;
@@ -857,7 +857,65 @@ $paddingH-10: 10px;
 }
 
 
+/* dirStructure */
+#accordion{
+  $paddingL: 10px;
+  border: 1px solid $theme-normal;
+  display: inline-block;
+  vertical-align: top;
+  ul{
+    li{
+      width: 180px;
+      a{
+        display: inline-block;
+        width: 100%;
+        padding: 5px 15px 5px 0px;
+        i, span{
 
+        }
+        i{
+          transition: all 0.5s;
+        }
+        span{
+
+        }
+        &:hover{
+          background-color: $theme-normal;
+          i, span{
+            color: $sixF;
+          }
+        }
+      }
+
+    }
+  }
+
+  .first{
+    a{
+      padding-left: $paddingL;
+    }
+  }
+  .second{
+    a{
+      padding-left: $paddingL + 15;
+    }
+  }
+  .third{
+    a{
+      padding-left: $paddingL + 2*15;
+    }
+  }
+  .fourth{
+    a{
+      padding-left: $paddingL + 3*15;
+    }
+  }
+  .fifth{
+    a{
+      padding-left: $paddingL + 4*15;
+    }
+  }
+}
 
 
 /*  table  */

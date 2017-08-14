@@ -551,19 +551,19 @@
   background-color: #ED6C1C !important; }
 
 /* tree-view */
-.tree-view {
+#tree-view {
   border: 1px solid #FF8A41;
   display: inline-block;
   padding: 10px; }
-  .tree-view .icon-arrow-up {
+  #tree-view .icon-arrow-up {
     transition: all 0.3s; }
-  .tree-view li {
+  #tree-view li {
     position: relative;
     /* 改名html的动态样式 */ }
-    .tree-view li .change {
+    #tree-view li .change {
       background-color: #fff;
       display: inline-block; }
-      .tree-view li .change > input {
+      #tree-view li .change > input {
         border: 1px solid #CCCCCC;
         border-radius: 4px;
         padding: 2px 5px;
@@ -571,28 +571,56 @@
         font-family: microsoft yahei;
         width: 50px;
         vertical-align: inherit; }
-  .tree-view i, .tree-view span {
+  #tree-view i, #tree-view span {
     cursor: pointer; }
-  .tree-view span {
+  #tree-view span {
     display: inline-block;
     padding: 3px 5px; }
-    .tree-view span:hover {
+    #tree-view span:hover {
       background-color: #E2E4E5; }
-  .tree-view .first > li:not(:last-child),
-  .tree-view .second > li:not(:last-child),
-  .tree-view .third > li:not(:last-child),
-  .tree-view .fourth > li:not(:last-child),
-  .tree-view .fifth > li:not(:last-child) {
+  #tree-view .first > li:not(:last-child),
+  #tree-view .second > li:not(:last-child),
+  #tree-view .third > li:not(:last-child),
+  #tree-view .fourth > li:not(:last-child),
+  #tree-view .fifth > li:not(:last-child) {
     padding: 0px 0px 5px 15px;
     margin-top: 1px; }
-  .tree-view .first > li:last-child,
-  .tree-view .second > li:last-child,
-  .tree-view .third > li:last-child,
-  .tree-view .fourth > li:last-child,
-  .tree-view .fifth > li:last-child {
+  #tree-view .first > li:last-child,
+  #tree-view .second > li:last-child,
+  #tree-view .third > li:last-child,
+  #tree-view .fourth > li:last-child,
+  #tree-view .fifth > li:last-child {
     padding: 0px 0px 0px 15px; }
-  .tree-view .first > li {
+  #tree-view .first > li {
     padding-left: 0px !important; }
+
+/* dirStructure */
+#accordion {
+  border: 1px solid #FF8A41;
+  display: inline-block;
+  vertical-align: top; }
+  #accordion ul li {
+    width: 180px; }
+    #accordion ul li a {
+      display: inline-block;
+      width: 100%;
+      padding: 5px 15px 5px 0px; }
+      #accordion ul li a i {
+        transition: all 0.5s; }
+      #accordion ul li a:hover {
+        background-color: #FF8A41; }
+        #accordion ul li a:hover i, #accordion ul li a:hover span {
+          color: #ffffff; }
+  #accordion .first a {
+    padding-left: 10px; }
+  #accordion .second a {
+    padding-left: 25px; }
+  #accordion .third a {
+    padding-left: 40px; }
+  #accordion .fourth a {
+    padding-left: 55px; }
+  #accordion .fifth a {
+    padding-left: 70px; }
 
 /*  table  */
 table {
