@@ -4,14 +4,26 @@
 ;(function (){
     /*
     *   动态获取 data-value
-    *   1. 下拉框里面的数据如果是动态获取的，就要在执行一次这个函数
+    *   1. 如果下拉框里面的数据如果是动态获取的，就要在执行一次这个函数
     * */
     window.dyanmicDataValue = dyanmicDataValue;
 
+
+    /*
+    *   点击 document 的事件
+    *   1. 下拉框消失
+    *   2. tree-view 改名状态消失
+    * */
     $(document).click(function (){
+        // 1.
         $('.dropdown').removeClass('flag-open').removeClass('drop-hover-border');// 清除打开标记 + 边框颜色
         $('.dropdown ul').css({'display':'none'});// 点击页面任何地方，下拉框隐藏
         $('.dropdown i').css({'transform':'rotate(0deg)'});
+
+        // 2.
+        $('.tree-view li .change .cancel').each(function (i, v){
+            $(v).trigger('click');// 双击的时候，让其他的 未保存/取消 的状态消失,
+        });
     });
 
 
@@ -71,7 +83,7 @@
     });
 
     /*
-    *   动态生成li标签，在给li标签，加data-value
+    *   动态生成li标签，再一次给li标签，加data-value
     * */
     function dyanmicDataValue (){
         $('.dropdown').each(function (index, item){
@@ -153,6 +165,7 @@
 
     /*
     *   分页
+    *    - 2种样式的分页
     * */
     $('.pages-line>ul>li:not(.point)').click(function (){
         $('.pages-line ul>li:not(.point)').each(function (index, item){
@@ -160,6 +173,7 @@
         });
         $(this).addClass('line-opposite');
     });
+
     $('.pages-filled>ul>li:not(.point)').click(function (){
         $('.pages-filled>ul>li:not(.point)').each(function (index, item){
             $(item).removeClass('filled-opposite');
@@ -183,6 +197,9 @@
         }
 
         _item.children('span').dblclick(function (){
+            // 双击的时候，让其他的 未保存/取消 的状态消失, -- 必须放在 rename() 的前面
+            $('.tree-view li .change .cancel').each(function (i, v){ $(v).trigger('click'); });
+
             rename(this);// 改名
         });
     });
@@ -210,21 +227,29 @@
         var width = _this.width() + 15 + 'px';
         var html = '<div class="change">' +
             '<input type="text">' +
-            '<i class="cancel icon-arrow-left icon iconfont"></i>' +
-            '<i class="save icon-arrow-right icon iconfont"></i>' +
+            '<i class="cancel icon-arrow-left"></i>' +
+            '<i class="save icon-arrow-right"></i>' +
             '</div>';
         _this.after(html);
+        addPrefix();// 添加前缀
         _this.siblings('.change').children('input').css('width', width);
         _this.siblings('.change').children('input').val(_this.text());
         _this.css({'display': 'none'});
 
-        var changeDiv = _this.siblings('.change');
-        changeDiv.children('.cancel').click(function (){
+        var changeDiv = _this.siblings('.change');// input、cancel、save 的父元素div
+
+        changeDiv.children('input').click(function (e){
+            e.stopPropagation();
+        });
+
+        changeDiv.children('.cancel').click(function (e){
+            e.stopPropagation();
             cancelRename(_this, changeDiv);// 取消改名
         });
 
-        changeDiv.children('.save').click(function (){
+        changeDiv.children('.save').click(function (e){
             saveRename(_this, changeDiv);// 保存改名
+            e.stopPropagation();
         });
     };
 
@@ -267,7 +292,13 @@
     /*
      *   -- 放在最后, 图标的 class 前缀 'icon iconfont', 动态添加
      * */
-    $('i[class*=icon], span[class*=icon]').each(function (index, item){
-        $(item).addClass('icon iconfont');
-    });
+    addPrefix();
+    function addPrefix (){
+        $('i[class*=icon], span[class*=icon]').each(function (index, item){
+            if(!$(item).hasClass('icon iconfont')){
+                $(item).addClass('icon iconfont');
+            }
+        });
+    };
+
 })();// -- end
