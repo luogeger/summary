@@ -346,8 +346,7 @@
   max-width: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  border: 1px solid transparent; }
+  white-space: nowrap; }
 
 .nav-crumb,
 .nav-underline,
@@ -355,7 +354,7 @@
 .nav-border,
 .nav-btn-border {
   font-size: 0;
-  margin-top: 10px; }
+  margin-top: 17px; }
 
 .nav-crumb .nav-item i {
   margin-right: 5px; }
@@ -384,13 +383,12 @@
       color: #ffffff; }
 
 .nav-border {
-  border-bottom: 1px solid #999999;
   display: inline-block; }
   .nav-border .nav-item {
     padding: 0 20px;
     height: 30px;
     line-height: 30px;
-    margin-bottom: -1px; }
+    border-bottom: 1px solid #999999; }
     .nav-border .nav-item i {
       color: #222222;
       position: relative;
@@ -402,18 +400,19 @@
         color: #999999; }
 
 .nav-btn-border {
-  border: 1px solid #999999;
+  border-bottom: 1px solid #999999;
   padding: 0 10px;
   display: inline-block;
   margin-left: -10px; }
   .nav-btn-border .nav-item {
     padding: 0 20px;
     border: 1px solid #999999;
-    border-radius: 4px 4px 0px 0px;
-    border-bottom: none; }
+    border-bottom: none;
+    border-radius: 4px 4px 0px 0px; }
     .nav-btn-border .nav-item:hover {
       background-color: #FF8A41;
-      color: #ffffff; }
+      color: #ffffff;
+      border-color: #ED6C1C; }
       .nav-btn-border .nav-item:hover i {
         color: #ffffff; }
   .nav-btn-border .nav-item:not(:first-child) {
@@ -438,15 +437,16 @@
 .opposite-border {
   color: #999999;
   border: 1px solid #999999;
+  border-bottom: none !important;
   border-radius: 4px 4px 0 0;
-  border-bottom: none;
-  background-color: #fff; }
+  line-height: 29px !important; }
   .opposite-border i {
     color: #999999 !important; }
 
 .opposite-btn-border {
   background-color: #FF8A41;
-  color: #ffffff; }
+  color: #ffffff;
+  border-color: #ED6C1C !important; }
   .opposite-btn-border i {
     color: #ffffff; }
 
