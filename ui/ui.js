@@ -324,24 +324,34 @@
     };
 
     function uiModel (ele){
-        maskLayer();// 遮罩层的显示隐藏
+        $(ele).wrap(("<div id='mask-layer'></div>"));// 给 id 元素包裹 遮罩层
+        $(ele).animate({'top': '0px'}, 300);// 弹窗内容 显示
+        $(ele).click(function (e){  e.stopPropagation(); });// 阻止冒泡
+        $('body').css({'overflow': 'hidden'});// body 滚动条消失
+        $('#mask-layer').css({'overflow-y': 'scroll'});// 背景层的滚动条显示
+
+        $('#mask-layer').click(function (){
+            $('body').css({'overflow': 'auto'});
+            $('#mask-layer').css({'overflow-y': 'auto'});
+
+            $(ele).animate({'top': '-5000px'}, 300, function (){
+                $(this).parent().before($(this));
+                $('#mask-layer').remove();
+            });
+        });
+
     };
 
     function uiSidle (ele){
-        maskLayer();// 遮罩层的显示隐藏
-    };
-
-    /*
-    *   共用函数
-    * */
-    //  1. 遮罩层的显示隐藏
-    function maskLayer (){
         $('body').prepend("<div id='mask-layer'></div>").css({'overflow': 'hidden'});
         $('#mask-layer').click(function (){
-            $(this).remove();
+            $(this).css({'display': 'none'});
             $('body').css({'overflow': 'auto'});
         });
     };
+
+
+
 
 
 

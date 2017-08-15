@@ -26,7 +26,7 @@
         <button class="btn btn-xs">编辑</button>
         <button class="btn btn-xs btn-text"><i class="icon-edit"></i>编辑</button>
         <button class="btn btn-xs btn-border"><i class="icon-edit"></i>编辑</button>
-        <button class="btn btn-xs btn-theme"><i class="icon-edit"></i>编辑</button>
+        <button class="btn btn-xs btn-theme" id="btn1"><i class="icon-edit"></i>编辑</button>
     </div>
     
     <div class="clearfix">
@@ -40,7 +40,7 @@
         <button class="btn btn-md">编辑</button>
         <button class="btn btn-md btn-text"><i class="icon-edit"></i>编辑</button>
         <button class="btn btn-md btn-border"><i class="icon-edit"></i>编辑</button>
-        <button class="btn btn-md btn-theme" id="btn1"><i class="icon-edit"></i>编辑</button>
+        <button class="btn btn-md btn-theme"><i class="icon-edit"></i>编辑</button>
     </div>
 
     <div class="clearfix">
@@ -683,7 +683,20 @@
         </table>
     </div>
 
-    
+    <div id="self">
+        <h1>大江东去浪淘尽</h1>
+        <h1>浪花淘尽英雄</h1>
+        <h1>是非成败转头空</h1>
+        <h1>青山依旧在</h1>
+        <h1>几度夕阳红</h1>
+        <h1>白发渔樵江渚上</h1>
+        <h1>惯看春月秋风</h1>
+        <h1>一壶浊酒喜相逢</h1>
+        <h1>古今多少事</h1>
+        <h1>都付笑谈中</h1>
+       
+        
+    </div>
 </body>
 </html>
 <script src="../fileJs/jquery-1.12.4.min.js"></script>
@@ -741,12 +754,10 @@
     
     
     $('#btn1').click(function (e){
-        e.stopPropagation();
-        ui.model();
+        ui.model('#self');
     });
     
     $('#btn2').click(function (e){
-        e.stopPropagation();
         ui.sidle();
     })
 </script>

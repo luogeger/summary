@@ -934,6 +934,21 @@ $paddingH-10: 10px;
   margin: 0;
 }
 
+#self{
+  border: 1px solid $theme-normal;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px 2px $theme-normal;
+  position: absolute;
+  top: -5000px;
+  left: 0;
+  right: 0;
+  margin: 5% 20%;
+  background-color: $sixF;
+  padding: 100px 0;
+  text-align: center;
+  z-index: 2;
+}
+
 
 
 
