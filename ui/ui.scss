@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /* 定义变量 */
 /* theme */
-$theme-normal: #FF8A41;
-$theme-hover: #ED6C1C;
-$theme-other: #ffd9c2;
+//$theme-normal: #FF8A41;
+//$theme-hover: #ED6C1C;
+//$theme-other: #ffd9c2;
 
-//$theme-normal: #ED5565;
-//$theme-hover: #DA4453;
-//$theme-other: #FA7A87;
+$theme-normal: #ED5565;
+$theme-hover: #DA4453;
+$theme-other: #FA7A87;
 
 //$theme-normal: #00BFA5;
 //$theme-hover: #04A28D;
@@ -857,7 +857,7 @@ $paddingH-10: 10px;
 }
 
 
-/* dirStructure */
+/* accordion */
 #accordion{
   $paddingL: 10px;
   border: 1px solid $theme-normal;
@@ -920,6 +920,28 @@ $paddingH-10: 10px;
     }
   }
 }
+
+
+/* 弹出层 */
+#mask-layer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0 , 0, .3);
+  z-index: 2;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
 
 
 /*  table  */
@@ -1023,3 +1045,4 @@ table{
     clear: both;
   }
 }
+

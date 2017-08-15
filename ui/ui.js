@@ -11,19 +11,18 @@
 
     /*
     *   点击 document 的事件
-    *   1. 下拉框消失
-    *   2. tree-view 改名状态消失
     * */
     $(document).click(function (){
-        // 1.
+        // 1. 下拉框消失
         $('.dropdown').removeClass('flag-open').removeClass('drop-hover-border');// 清除打开标记 + 边框颜色
         $('.dropdown ul').css({'display':'none'});// 点击页面任何地方，下拉框隐藏
         $('.dropdown i').css({'transform':'rotate(0deg)'});
 
-        // 2.
+        // 2. tree-view 改名状态消失
         $('#tree-view li .change .cancel').each(function (i, v){
             $(v).trigger('click');// 双击的时候，让其他的 未保存/取消 的状态消失,
         });
+
     });
 
 
@@ -288,10 +287,8 @@
                         $(v).children('a').removeClass('a-textColor');
                     })
                     $(this).addClass('a-textColor');
-                })
-            }
-
-
+                });
+            };
         });
 
         // 展开目录
@@ -312,10 +309,39 @@
                 _this.addClass('flag-open');
             });
         };
+
     })();
 
 
 
+    /*
+    *   1. 弹出层 -- model
+    *   2. 侧边滑出-- sidle
+    * */
+    window.ui = {
+        model: function (ele){ uiModel(ele); },
+        sidle: function (ele){ uiSidle(ele); }
+    };
+
+    function uiModel (ele){
+        maskLayer();// 遮罩层的显示隐藏
+    };
+
+    function uiSidle (ele){
+        maskLayer();// 遮罩层的显示隐藏
+    };
+
+    /*
+    *   共用函数
+    * */
+    //  1. 遮罩层的显示隐藏
+    function maskLayer (){
+        $('body').prepend("<div id='mask-layer'></div>").css({'overflow': 'hidden'});
+        $('#mask-layer').click(function (){
+            $(this).remove();
+            $('body').css({'overflow': 'auto'});
+        });
+    };
 
 
 
