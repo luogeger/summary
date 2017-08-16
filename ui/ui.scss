@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /* 定义变量 */
 /* theme */
-//$theme-normal: #FF8A41;
-//$theme-hover: #ED6C1C;
-//$theme-other: #ffd9c2;
+$theme-normal: #FF8A41;
+$theme-hover: #ED6C1C;
+$theme-other: #ffd9c2;
 
-$theme-normal: #ED5565;
-$theme-hover: #DA4453;
-$theme-other: #FA7A87;
+//$theme-normal: #ED5565;
+//$theme-hover: #DA4453;
+//$theme-other: #FA7A87;
 
 //$theme-normal: #00BFA5;
 //$theme-hover: #04A28D;
@@ -937,11 +937,11 @@ $paddingH-10: 10px;
     border-radius: 6px;
     background-color: #fff;
     position: absolute;
-    top: 0;
+    top: -5000px;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: 10% auto;
+    margin: 5% auto;
     width: 450px;
     min-height: 135px;
     overflow: auto;
@@ -951,11 +951,11 @@ $paddingH-10: 10px;
     .opera{
       width: 100%;
       padding: 10px;
-      background-color: #f6f8f9;
     }
     .title{
       border-bottom: 1px solid $hybrid;
       border-radius: 6px 6px 0px 0px;
+      background-color: #f6f8f9;
       i{
         float: right;
         cursor: pointer;
@@ -967,8 +967,8 @@ $paddingH-10: 10px;
     .content{
       text-align: center;
       background-color: #fff;
-      //max-height: 200px;
-      //overflow: auto;
+      max-height: 400px;
+      overflow: auto;
     }
     .opera{
       border-top: 1px solid $hybrid;

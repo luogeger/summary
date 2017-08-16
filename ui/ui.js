@@ -347,7 +347,7 @@
             });
         }
 
-        // 对象
+        // 数组
         if(ele instanceof Array){
             var html =
                 '<div id="mask-layer">'+
@@ -365,18 +365,24 @@
                         '</div>'+
                     '</div>'+
                 '</div>';
-            $('body').css({'overflow': 'hidden'}).append(html);
+            $('body').css({'overflow': 'hidden'}).append(html);// 弹窗 追加
+            $('.layer-popup').animate({'top': '0px'}, 300);// 弹窗 显示
+
             $('#mask-layer .close, #mask-layer .cancel').each(function (index, item){
                 $(item).click(function (){
-                    $('#mask-layer').remove();
-                    $('body').css({'overflow': 'auto'});
+                    $('.layer-popup').animate({'top': '-5000px'}, 300, function (){
+                        $('#mask-layer').remove();// 清除 整个遮罩层 以及 弹窗
+                        $('body').css({'overflow': 'auto'});
+                    });// 弹窗 消失
                 });
             });
 
             $('#mask-layer .confirm').click(function (){
                 ele[1]();// 传过来的函数执行
-                $('#mask-layer').remove();
-                $('body').css({'overflow': 'auto'});
+                $('.layer-popup').animate({'top': '-5000px'}, 300, function (){
+                    $('#mask-layer').remove();// 清除 整个遮罩层 以及 弹窗
+                    $('body').css({'overflow': 'auto'});
+                });// 弹窗 消失
             });
 
         };
