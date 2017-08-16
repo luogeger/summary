@@ -633,7 +633,8 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
-  margin: 0; }
+  margin: 0;
+  overflow: auto; }
   #mask-layer .layer-popup {
     border: 1px solid #E2E4E5;
     border-radius: 6px;
@@ -672,7 +673,7 @@
 #self {
   border: 1px solid #ED5565;
   border-radius: 6px;
-  box-shadow: 1px 1px 1px 2px #ED5565;
+  box-shadow: 1px 1px 1px 1px #ED5565;
   position: absolute;
   top: -5000px;
   left: 0;

@@ -931,6 +931,7 @@ $paddingH-10: 10px;
   background-color: rgba(0, 0 , 0, .5);
   z-index: 2;
   margin: 0;
+  overflow: auto;
   .layer-popup{
     border: 1px solid $hybrid;
     border-radius: 6px;
@@ -979,7 +980,7 @@ $paddingH-10: 10px;
 #self{
   border: 1px solid $theme-normal;
   border-radius: 6px;
-  box-shadow: 1px 1px 1px 2px $theme-normal;
+  box-shadow: 1px 1px 1px 1px $theme-normal;
   position: absolute;
   top: -5000px;
   left: 0;

@@ -326,11 +326,11 @@
     function uiModel (ele){
         // undefined
         if(ele == undefined){
-
+            console.log('undefined');
         }
 
         // dom元素
-        if(ele == String && $(ele).length > 0){
+        if(typeof ele == 'string' && $(ele).length > 0){
             $(ele).wrap(("<div id='mask-layer'></div>"));// 给 id 元素包裹 遮罩层
             $('body').css({'overflow': 'hidden'});// body 滚动条消失
             $(ele).animate({'top': '0px'}, 300, function (){
@@ -348,9 +348,38 @@
         }
 
         // 对象
-        if(ele instanceof Object){
-            console.log('obj');
-        }
+        if(ele instanceof Array){
+            var html =
+                '<div id="mask-layer">'+
+                    '<div class="layer-popup">'+
+                        '<div class="title">'+
+                            '<span>提示</span>'+
+                            '<i class="icon iconfont icon-arrow-right close"></i>'+
+                        '</div>'+
+                        '<div class="content">'+
+                            '<div class="content-text">'+ ele[0] +'</div>'+
+                        '</div>'+
+                        '<div class="opera clearfix">'+
+                            '<button class="btn btn-sm pull-right cancel">取消</button>'+
+                            '<button class="btn btn-sm btn-theme pull-right confirm">确认</button>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>';
+            $('body').css({'overflow': 'hidden'}).append(html);
+            $('#mask-layer .close, #mask-layer .cancel').each(function (index, item){
+                $(item).click(function (){
+                    $('#mask-layer').remove();
+                    $('body').css({'overflow': 'auto'});
+                });
+            });
+
+            $('#mask-layer .confirm').click(function (){
+                ele[1]();// 传过来的函数执行
+                $('#mask-layer').remove();
+                $('body').css({'overflow': 'auto'});
+            });
+
+        };
     };
 
     function uiSidle (ele){
