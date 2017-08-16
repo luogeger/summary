@@ -50,7 +50,7 @@ $paddingH-10: 10px;
 
 /* -- button 按钮 */
 .btn{
-  color: $text-normal;
+  color: $sixF;
   text-align: center;
   display: inline-block;
   vertical-align: middle;
@@ -58,14 +58,13 @@ $paddingH-10: 10px;
   margin: 0 5px;
   font-weight: 400;
   cursor: pointer;
-  color: $text-normal;
-  background-color: $hybrid;
+  background-color: $sixC;
   border-radius: 4px;
   &:hover{
-    background-color: $sixC;
+    background-color: $hybrid;
   }
   &:focus{
-    background-color: $sixC;
+    background-color: $hybrid;
   }
   i{
     position: relative;
@@ -929,9 +928,52 @@ $paddingH-10: 10px;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0 , 0, .3);
+  background-color: rgba(0, 0 , 0, .5);
   z-index: 2;
   margin: 0;
+  .layer-popup{
+    border: 1px solid $hybrid;
+    border-radius: 6px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 10% auto;
+    width: 450px;
+    min-height: 135px;
+    overflow: auto;
+    position: relative;
+    .title,
+    .content,
+    .opera{
+      width: 100%;
+      padding: 10px;
+      background-color: #f6f8f9;
+    }
+    .title{
+      border-bottom: 1px solid $hybrid;
+      border-radius: 6px 6px 0px 0px;
+      i{
+        float: right;
+        cursor: pointer;
+        &:hover{
+          color: $theme-normal;
+        }
+      }
+    }
+    .content{
+      text-align: center;
+      background-color: #fff;
+      //max-height: 200px;
+      //overflow: auto;
+    }
+    .opera{
+      border-top: 1px solid $hybrid;
+      border-radius: 0 0 6px 6px;
+    }
+  }
 }
 
 #self{
@@ -948,7 +990,6 @@ $paddingH-10: 10px;
   text-align: center;
   z-index: 2;
 }
-
 
 
 

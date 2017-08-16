@@ -694,8 +694,22 @@
         <h1>一壶浊酒喜相逢</h1>
         <h1>古今多少事</h1>
         <h1>都付笑谈中</h1>
-       
-        
+    </div>
+
+    <div id="mask-layer">
+        <div class="layer-popup">
+            <div class="title">
+                <span>提示</span>
+                <i class="icon-arrow-right"></i>
+            </div>
+            <div class="content">
+                <div class="content-text">content</div>
+            </div>
+            <div class="opera clearfix">
+                <button class="btn btn-sm pull-right">取消</button>
+                <button class="btn btn-sm btn-theme pull-right">确认</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
@@ -753,11 +767,11 @@
     });// extend -- end
     
     
-    $('#btn1').click(function (e){
-        ui.model('#self');
+    $('#btn1').click(function (){
+        ui.model('12');
     });
     
-    $('#btn2').click(function (e){
+    $('#btn2').click(function (){
         ui.sidle();
     })
 </script>
