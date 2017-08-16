@@ -672,20 +672,6 @@
       border-top: 1px solid #E2E4E5;
       border-radius: 0 0 6px 6px; }
 
-#self {
-  border: 1px solid #FF8A41;
-  border-radius: 6px;
-  box-shadow: 1px 1px 1px 1px #FF8A41;
-  position: absolute;
-  top: -5000px;
-  left: 0;
-  right: 0;
-  margin: 5% 20%;
-  background-color: #ffffff;
-  padding: 100px 0;
-  text-align: center;
-  z-index: 2; }
-
 /*  table  */
 table {
   width: 100%;

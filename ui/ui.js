@@ -317,6 +317,7 @@
     /*
     *   1. 弹出层 -- model
     *   2. 侧边滑出-- sidle
+    *   3. **每次都要 remove mask-layer
     * */
     window.ui = {
         model: function (ele){ uiModel(ele); },
@@ -340,8 +341,8 @@
 
             $('#mask-layer').click(function (){
                 $(ele).animate({'top': '-5000px'}, 300, function (){
-                    $(this).parent().before($(this));
-                    $('#mask-layer').remove();
+                    $(this).parent().before($(this));// 保留 dom 元素
+                    $('#mask-layer').remove();// 删除 #mask-layer
                     $('body').css({'overflow': 'auto'});
                 });
             });
@@ -371,7 +372,7 @@
             $('#mask-layer .close, #mask-layer .cancel').each(function (index, item){
                 $(item).click(function (){
                     $('.layer-popup').animate({'top': '-5000px'}, 300, function (){
-                        $('#mask-layer').remove();// 清除 整个遮罩层 以及 弹窗
+                        $('#mask-layer').remove();// 删除 整个遮罩层 以及里面的 弹窗
                         $('body').css({'overflow': 'auto'});
                     });// 弹窗 消失
                 });
@@ -391,7 +392,7 @@
     function uiSidle (ele){
         $('body').prepend("<div id='mask-layer'></div>").css({'overflow': 'hidden'});
         $('#mask-layer').click(function (){
-            $(this).css({'display': 'none'});
+            $(this).remove();
             $('body').css({'overflow': 'auto'});
         });
     };
