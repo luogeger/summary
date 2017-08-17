@@ -624,7 +624,7 @@
   #accordion .fifth a {
     padding-left: 70px; }
 
-/* 弹出层 */
+/* 遮罩层(#mask-layer) -- 弹窗(.layer-popup) -- 侧滑(.layer-sidle) */
 #mask-layer {
   position: fixed;
   top: 0;
@@ -634,7 +634,8 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
   margin: 0;
-  overflow: auto; }
+  overflow-x: hidden;
+  overflow-y: auto; }
   #mask-layer .layer-popup {
     border: 1px solid #E2E4E5;
     border-radius: 6px;
@@ -671,6 +672,29 @@
     #mask-layer .layer-popup .opera {
       border-top: 1px solid #E2E4E5;
       border-radius: 0 0 6px 6px; }
+  #mask-layer .layer-sidle {
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #E2E4E5;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    bottom: 0; }
+    #mask-layer .layer-sidle .title {
+      width: 100%;
+      padding: 10px;
+      border-bottom: 1px solid #E2E4E5;
+      background-color: #f6f8f9; }
+      #mask-layer .layer-sidle .title i {
+        float: right;
+        cursor: pointer; }
+        #mask-layer .layer-sidle .title i:hover {
+          color: #FF8A41; }
+    #mask-layer .layer-sidle .content {
+      width: 100%;
+      padding: 10px;
+      overflow-x: hidden;
+      overflow-y: auto; }
 
 /*  table  */
 table {
@@ -727,8 +751,7 @@ table {
 .pages-line,
 .pages-filled {
   *zoom: 1;
-  /*IE/7/6*/
-  /*兼容IE6下的写法*/ }
+  /*IE/7/6*/ }
   .btn:before,
   .pages-line:before,
   .pages-filled:before {

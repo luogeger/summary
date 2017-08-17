@@ -921,7 +921,7 @@ $paddingH-10: 10px;
 }
 
 
-/* 弹出层 */
+/* 遮罩层(#mask-layer) -- 弹窗(.layer-popup) -- 侧滑(.layer-sidle) */
 #mask-layer{
   position: fixed;
   top: 0;
@@ -931,7 +931,8 @@ $paddingH-10: 10px;
   background-color: rgba(0, 0 , 0, .5);
   z-index: 2;
   margin: 0;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   .layer-popup{
     border: 1px solid $hybrid;
     border-radius: 6px;
@@ -973,6 +974,35 @@ $paddingH-10: 10px;
     .opera{
       border-top: 1px solid $hybrid;
       border-radius: 0 0 6px 6px;
+    }
+  }
+
+  .layer-sidle{
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid $hybrid;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    .title{
+      width: 100%;
+      padding: 10px;
+      border-bottom: 1px solid $hybrid;
+      background-color: #f6f8f9;
+      i{
+        float: right;
+        cursor: pointer;
+        &:hover{
+          color: $theme-normal;
+        }
+      }
+    }
+    .content{
+      width: 100%;
+      padding: 10px;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
   }
 }
@@ -1073,7 +1103,7 @@ table{
 .btn,
 .pages-line,
 .pages-filled{
-  *zoom: 1; /*IE/7/6*/  /*兼容IE6下的写法*/
+  *zoom: 1; /*IE/7/6*/
   &:before{
     content: "";
     display: table;

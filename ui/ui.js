@@ -340,7 +340,7 @@
             $(ele).click(function (e){  e.stopPropagation(); });// 阻止冒泡
 
             $('#mask-layer').click(function (){
-                $(ele).animate({'top': '-5000px'}, 300, function (){
+                $(ele).animate({'top': '-5000px'}, 150, function (){
                     $(this).parent().before($(this));// 保留 dom 元素
                     $('#mask-layer').remove();// 删除 #mask-layer
                     $('body').css({'overflow': 'auto'});
@@ -367,11 +367,11 @@
                     '</div>'+
                 '</div>';
             $('body').css({'overflow': 'hidden'}).append(html);// 弹窗 追加
-            $('.layer-popup').animate({'top': '0px'}, 300);// 弹窗 显示
+            $('.layer-popup').animate({'top': '0px'}, 100);// 弹窗 显示
 
             $('#mask-layer .close, #mask-layer .cancel').each(function (index, item){
                 $(item).click(function (){
-                    $('.layer-popup').animate({'top': '-5000px'}, 300, function (){
+                    $('.layer-popup').animate({'top': '-1000px'}, 100, function (){
                         $('#mask-layer').remove();// 删除 整个遮罩层 以及里面的 弹窗
                         $('body').css({'overflow': 'auto'});
                     });// 弹窗 消失
@@ -380,7 +380,7 @@
 
             $('#mask-layer .confirm').click(function (){
                 ele[1]();// 传过来的函数执行
-                $('.layer-popup').animate({'top': '-5000px'}, 300, function (){
+                $('.layer-popup').animate({'top': '-1000px'}, 100, function (){
                     $('#mask-layer').remove();// 清除 整个遮罩层 以及 弹窗
                     $('body').css({'overflow': 'auto'});
                 });// 弹窗 消失
@@ -390,10 +390,30 @@
     };
 
     function uiSidle (ele){
-        $('body').prepend("<div id='mask-layer'></div>").css({'overflow': 'hidden'});
+        var css = {'left': '-1000px', 'borderRadius': '0px 6px 6px 0px'};
+        var html =
+            '<div id="mask-layer">'+
+                '<div class="layer-sidle">'+
+                    '<div class="title">'+
+                        '<span>提示</span>'+
+                        '<i class="icon iconfont icon-arrow-right close"></i>'+
+                    '</div>'+
+                    '<div class="content"></div>'+
+                '</div>'+
+            '</div>';
+
+
+
+        $('body').prepend(html).css({'overflow-y': 'hidden'});
+        $('.layer-sidle').css(css).animate({'left': '0px'}, 300);// sidle 显示
+
+
         $('#mask-layer').click(function (){
-            $(this).remove();
-            $('body').css({'overflow': 'auto'});
+            $('.layer-sidle').animate({'left': '-1000px'}, 300, function (){
+                $('#mask-layer').remove();
+                $('body').css({'overflow': 'auto'});
+            });// sidle 消失
+
         });
     };
 
