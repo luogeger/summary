@@ -321,7 +321,8 @@
     * */
     window.ui = {
         model: function (ele){ uiModel(ele); },
-        sidle: function (ele){ uiSidle(ele); }
+        sidle: function (ele){ uiSidle(ele); },
+        slider: function (option){ uiSlider(option); }
     };
 
     function uiModel (ele){
@@ -391,6 +392,7 @@
 
     function uiSidle (ele){
         var css = {'left': '-1000px', 'borderRadius': '0px 6px 6px 0px'};
+
         var html =
             '<div id="mask-layer">'+
                 '<div class="layer-sidle">'+
@@ -419,8 +421,179 @@
         });
     };
 
+    function uiSlider (option){
+        var Slider = function (option){
+            this.init(option);
+        };
+
+        Slider.prototype = {
+            constructor: Slider,
+            init: function (option){
+                this.containerID = option.id;
+                this.showTime = option.showTime;
+                this.isAuto = option.isAuto;
+                this.data = option.data;
+                this.step = option.step;
+                this.timerId = 0;
+                this.length = this.data.length;
+
+                var $container = $('#' + this.containerID);
+                $container.html( this.parserDataHtml() );
+                this.$slider = $container.find('.slider');
+                this.$panel = $container.find('.slider-panel');
+                this.$prev = $container.find('.slider-prev');
+                this.$next = $container.find('.slider-next');
+                this.$navItem = $container.find('.slider-item');
+                this.$sliderPage = $container.find('.slider-page');
+
+                this.setIndex(0, this.length);
+                this.index = this.$slider.data('index');
+                this.$panel.fadeTo(0, 0).eq(0).fadeTo(0, 1);
+                this.bindEvent();
+                this.$sliderPage.hide();
+
+            },
+
+            // 索引样式
+            slide: function (index){
+                // 播放下一张
+                this.$panel
+                    .eq(index).fadeTo(this.showTime, 1).css('z-index', 1)
+                    .siblings().fadeTo(this.showTime, 0).css('z-index', 0);
+                this.setIndex(index, this.length);// 改变 index 的值，控制播放的索引
+                // 修改数字导航的样式
+                this.$navItem.eq(index).addClass('slider-selected')
+                    .siblings().removeClass('slider-selected');
+            },
+
+            // 设置索引
+            setIndex: function (index, length){
+                if(index > length - 1){
+                    this.index = 0;
+                }else if(index < 0){
+                    this.index = length -1;
+                }else{
+                    this.index = index;
+                }
+
+                this.$slider.data('index', this.index);
+            },
+
+            // 滑动、导航、定时器、自动播放
+            bindEvent: function (){
+                var self = this;// 保存 this
+                // 左滑动
+                self.$prev.on('click', function (){
+                    self.index -= 1;
+                    self.setIndex(self.index, self.length);
+                    self.slide(self.index);
+                });
+
+                // 右滑动
+                self.next.on('click', function (){
+                    self.index += 1;
+                    self.setIndex(self.index, self.length);
+                    self.slide(self.index);
+                });
+
+                // 数字导航
+                self.$navItem.on('click', function (){
+                    var index = parseInt($(this).html()) - 1;
+                    self.setIndex(self.index, self.length);
+                    self.slide(index);
+                });
+
+                // 取消定时器
+                self.$slider.on('mouseenter', function (){
+                    self.$sliderPage.show();
+                    clearInterval(self.timerId);
+                });
+
+                // 开启定时器
+                self.$slider.on('mouseleave', function (){
+                    self.$sliderPage.hide();
+                    self.isAuto && self.autoPlay();
+                });
+
+                // 自动播放
+                this.isAuto && this.autoPlay();
+            },
+
+            // 定时器 - 自动播放
+            autoPlay: function (){
+               var self = this;
+               var autoPlay = function (){
+                   self.index += 1;
+                   self.setIndex(self.index, self.length);
+                   self.slide(self.index);
+               };
+
+               self.timerId = setInterval(autoPlay, self.step);
+            },
+
+            // dom元素，拼接、追加
+            parserDataHtml: function (){
+                // JSON数据转化为 html 结构
+                var sliderMainList = [],
+                    sliderNavList = [],
+                    resultsList = [];
+
+                sliderMainList.push('<ul class="slider-main">');
+                this.data.forEach(function (item){
+                    sliderMainList.push('<li class="slider-panel">');
+                    sliderMainList.push('<a href="'+ item.href +'">');
+                    sliderMainList.push('<img src="'+ item.src +'" title="'+ item.title +'"/>');
+                    sliderMainList.push('</a>');
+                    sliderMainList.push('</li>');
+                });
+                sliderMainList.push('</ul>');
 
 
+                sliderNavList.push('<ul class="slider-nav">');
+                this.data.forEach(function (item, i){
+                    var index = i +1;
+                    if(i >= 1){
+                        sliderNavList.push('<li class="slider-item">'+ index +'</li>');
+                    }else{
+                        sliderNavList.push('<li class="slider-item slider-selected">'+ index +'</li>');
+                    }
+                });
+                sliderNavList.push('</ul>');
+
+
+                resultsList.push('<div class="slider" data-index="0">');
+                resultsList.push(sliderMainList.join(''));
+                resultsList.push('<div class="slider-extra">');
+                resultsList.push(sliderNavList.join(''));
+
+                resultsList.push('<div class="slider-page">');
+                resultsList.push('<a href="javascript:;" class="slider-prev">&lt;</a>');
+                resultsList.push('<a href="javascript:;" class="slider-next">&gt;</a>');
+                resultsList.push('</div>');
+                resultsList.push('</div>');
+
+                return resultsList.join('');
+            },
+        };
+
+        $.fn.slider = function (option){
+            var defaults = {
+                showTime: 1000,
+                step: 1000,
+                id: this[0].id,
+                data: [],
+                isAuto: false
+            };
+
+            var settings = $.extend({}, defaults, option);
+            var slider = new Slider(settings);
+            return this;
+        };
+    };
+
+    /*
+    *   slide
+    * */
 
 
 

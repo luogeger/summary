@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#focus {
+    width: 730px;
+    margin: 100px auto;
+    position: relative;
+}
+
+#focus .slider {
+    height: 454px;
+}
+
+#focus .slider-main {
+    position: relative;
+    /* z-index: 4; */
+}
+
+#focus .slider-panel {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 466px;
+    overflow: hidden;
+}
+
+#focus .slider-panel a {
+    display: block;
+    overflow: hidden;
+    zoom: 1;
+    height: 454px;
+}
+
+#focus .slider-extra {
+    position: relative;
+    height: 454px;
+}
+
+#focus .slider-nav {
+    top: 428px;
+    width: 730px;
+    height: 0;
+    left: 0;
+    text-align: center;
+    position: absolute;
+    z-index: 4;
+}
+
+#focus .slider-nav li {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    display: inline-block;
+    margin: 0 2px;
+    background: #3e3e3e;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#focus .slider-nav li.slider-selected {
+    background: #b61b1f;
+    color: #fff;
+}
+
+#focus .slider-prev {
+    left: 0;
+}
+
+#focus .slider-next {
+    right: 0;
+}
+
+#focus .slider-page a {
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+    z-index: 1;
+    display: block;
+    width: 28px;
+    height: 62px;
+    line-height: 62px;
+    background: gray;
+    background: rgba(0, 0, 0, .2);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#32000000, endColorstr=#32000000);
+    color: #fff;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: simsun;
+}
