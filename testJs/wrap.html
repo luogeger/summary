@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>warp</title>
+</head>
+<body>
+    <div class="box">
+        DOM元素
+    </div>
+
+</body>
+</html>
+<script src="../fileJs/jquery-1.12.4.min.js"></script>
+<script>
+    
+    
+    $('.box').wrap(function (){
+        return '<div id="main">' +
+                    '<div class="title">' +
+                        '<span>提示</span><span>+标签</span>' +
+                    '</div>' +
+                    '<div class="content">'+  $(this) +'</div>' +
+                '</div>';
+    });
+</script>

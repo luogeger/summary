@@ -1,0 +1,64 @@
+{
+    "code": 200,
+    "msg": "success",
+    "result": {
+        "pageInfo": {
+            "pageNum": 1,
+            "pageSize": 10,
+            "size": 8,
+            "total": 8,
+            "pages": 1,
+            "list": [
+                {
+                    "networkDeviceId": "1",
+                    "assetCode": "路由器1",
+                    "serviceStatus": "1",
+                    "assetTypeId": "2",
+                    "remark": "路由器1"
+                },
+                {
+                    "networkDeviceId": "2",
+                    "assetCode": "路由器2",
+                    "serviceStatus": "1",
+                    "assetTypeId": "2",
+                    "remark": "路由器2"
+                },
+                {
+                    "networkDeviceId": "3",
+                    "assetCode": "路由器3",
+                    "serviceStatus": "1",
+                    "assetTypeId": "2",
+                    "remark": "路由器3"
+                },
+                {
+                    "networkDeviceId": "4",
+                    "assetCode": "路由器4",
+                    "serviceStatus": "1",
+                    "assetTypeId": "2",
+                    "remark": "路由器4"
+                },
+                {
+                    "networkDeviceId": "5",
+                    "assetCode": "路由器5",
+                    "serviceStatus": "1",
+                    "assetTypeId": "2",
+                    "remark": "路由器5"
+                },
+                {
+                    "networkDeviceId": "6",
+                    "assetCode": "路由器6",
+                    "serviceStatus": "1",
+                    "assetTypeId": "2",
+                    "remark": "路由器6"
+                },
+                {
+                    "networkDeviceId": "7",
+                    "assetCode": "路由器7",
+                    "serviceStatus": "1",
+                    "assetTypeId": "2",
+                    "remark": "路由器7"
+                }
+            ]
+        }
+    }
+}

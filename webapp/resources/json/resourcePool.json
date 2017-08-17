@@ -1,0 +1,62 @@
+{
+    "code": 200,
+    "msg": "success",
+    "result": {
+        "list": [
+            {
+                "id": "1f278daf372a4ac8a7ad3aa7d4316f71",
+                "name": "资源池A-可用区A",
+                "resources": [
+                    {
+                        "name": "cpu",
+                        "title": "CPU",
+                        "used": "17"
+                    },
+                    {
+                        "name": "memory",
+                        "title": "内存",
+                        "used": "20"
+                    }
+                ]
+            },
+            {
+                "id": "1f278daf372a4ac8a7ad3aa7d4316f72",
+                "name": "资源池B-可用区A",
+                "resources": [
+                    {
+                        "name": "storage",
+                        "title": "存储大小",
+                        "used": "17"
+                    }
+                ]
+            },
+            {
+                "id": "1f278daf372a4ac8a7ad3aa7d4316f73",
+                "name": "资源池C-可用区B",
+                "resources": [
+                    {
+                        "name": "cpu",
+                        "title": "CPU",
+                        "used": "20"
+                    },
+                    {
+                        "name": "memory",
+                        "title": "内存",
+                        "used": "40"
+                    }
+                ]
+            },
+            {
+                "id": "1f278daf372a4ac8a7ad3aa7d4316f74",
+                "name": "资源池D-可用区A",
+                "resources": [
+                    {
+                        "name": "storage",
+                        "title": "存储大小",
+                        "used": "17"
+                    }
+                ]
+            }
+        ]
+    }
+ }

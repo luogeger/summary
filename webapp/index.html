@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>资产管理系统</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="resources/css/bootstrap/bootstrap.min.css" type="text/css"></link>
+    <link rel="stylesheet" href="resources/css/fontawesome/font-awesome.css" type="text/css"></link>
+    <link rel="stylesheet" href="resources/css/jquery/jquery.alerts.css" type="text/css"></link>
+    <link rel="stylesheet" href="resources/css/toastr/toastr.css" type="text/css"></link>
+    <link rel="stylesheet" href="resources/css/datatable/select.bootstrap.min.css" type="text/css"></link>
+    <link rel="stylesheet" href="resources/css/datatable/dataTables.css" type="text/css"></link>
+    <link rel="stylesheet" href="resources/css/bootstrap/bootstrap-select.min.css" type="text/css"></link>
+    <link rel="stylesheet" href="resources/css/bootstrap/bootstrap-datepicker.min.css" type="text/css"></link>
+    <link rel="stylesheet" href="resources/css/style.css" type="text/css"></link>
+    <style>
+        .sidebar {
+            padding-top: 0px !important;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="sidebar">
+        <div id="collapse-btn" onclick="toggleCollapse()" class="to-close">
+            <div class="caret-navbar-collapse">
+                <span class="fa fa-angle-left"></span>
+            </div>
+        </div>
+        
+        <div class="sidebar-wrapper panel-group" id="accordion">
+            <div class="panel">
+                <a id="success" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-cloud"></i>
+                    <span>success</span>
+                </a>
+                <a id="error" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-cloud"></i>
+                    <span>error</span>
+                </a>
+                <a id="warning" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-cloud"></i>
+                    <span>warning</span>
+                </a>
+                <a id="info" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-cloud"></i>
+                    <span>info</span>
+                </a>
+                
+                <a id="alert" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-television"></i>
+                    <span>alert</span>
+                </a>
+                <a id="confirm" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-television"></i>
+                    <span>confirm</span>
+                </a>
+                <a id="prompt" data-toggle="collapse" data-parent="#accordion">
+                    <i class="fa fa-television"></i>
+                    <span>prompt</span>
+                </a>
+                
+                
+            </div>
+            <div class="panel">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    <i class="fa fa-cloud"></i>
+                    <span>位置概览</span>
+                    <i class="fa fa-caret-down caret-direction"></i>
+                </a>
+                <ul id="collapseOne" class="nav panel-collapse collapse in">
+                    <li>
+                        <a class="active" onclick="loadMainPage('itam-content','pages/resource/dataCenterList.jsp');">
+                            <i class="fa fa-television"></i>
+                            <span>数据中心</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/resource/computerRoom.jsp');">
+                            <i class="fa fa-desktop"></i>
+                            <span>机房管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/resource/labelList.jsp')">
+                            <i class="fa fa-tags"></i>
+                            <span>标签管理</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel">
+                <a data-toggle="collapse" class="sidebar-table" data-parent="#accordion" href="#collapseTwo">
+                    <i class="fa fa-briefcase"></i>
+                    <span>资产管理</span>
+                    <i class="fa fa-caret-right caret-direction"></i>
+                </a>
+                <ul id="collapseTwo" class="nav panel-collapse collapse">
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/asset/serverList.jsp');">
+                            <i class="fa fa-server"></i>
+                            <span>计算设备</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/asset/networkList.jsp')">
+                            <i class="fa fa-globe"></i>
+                            <span>网络设备</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/asset/securityList.jsp');">
+                            <i class="fa fa-shield"></i>
+                            <span>安全设备</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/asset/storageList.jsp');">
+                            <i class="fa fa-database"></i>
+                            <span>存储设备</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/asset/peripheralList.jsp');">
+                            <i class="fa fa-hdd-o"></i>
+                            <span>外设设备</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/resource/cabinet.jsp')">
+                            <i class="fa fa-microchip"></i>
+                            <span>机柜设备</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                    <i class="fa fa-th-large"></i>
+                    <span>位置管理</span>
+                    <i class="fa fa-caret-right caret-direction"></i>
+                </a>
+                <ul id="collapseThree" class="nav panel-collapse collapse">
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/resource/dataCenterList.jsp');">
+                            <i class="fa fa-television"></i>
+                            <span>数据中心</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/resource/computerRoom.jsp');">
+                            <i class="fa fa-desktop"></i>
+                            <span>机房管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/resource/labelList.jsp')">
+                            <i class="fa fa-tags"></i>
+                            <span>标签管理</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                    <i class="fa fa-tty"></i>
+                    <span>供应商管理</span>
+                    <i class="fa fa-caret-right caret-direction"></i>
+                </a>
+                <ul id="collapseFour" class="nav panel-collapse collapse">
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/manufacture/vendorManagement.jsp')">
+                            <i class="fa fa-registered"></i>
+                            <span>厂商管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/manufacture/personnelManagement.jsp')">
+                            <i class="fa fa-user-circle-o"></i>
+                            <span>人员管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="loadMainPage('itam-content','pages/manufacture/modelManagement.jsp')">
+                            <i class="fa fa-file-text-o"></i>
+                            <span>型号管理</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-wrapper">
+        <div id="itam-content">
+        
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript" src="resources/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="resources/js/d3/d3.min.js"></script>
+<script type="text/javascript" src="resources/js/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery/dataTables.select.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery/jquery.alerts.js"></script>
+<script type="text/javascript" src="resources/js/toastr/toastr.js"></script>
+<script type="text/javascript" src="resources/js/other/moment.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap/bootstrap-datepicker.zh-CN.min.js"></script>
+<!--<script type="text/javascript" src="resources/js/constant.js"></script>-->
+<script type="text/javascript">
+    $(function () {
+        clickLeftMenu();
+//        loadMainPage('itam-content', 'pages/resource/dataCenterList.jsp');
+        $(".sidebar-wrapper").slimScroll({
+            height: "100%",
+            width: "180px"
+        });
+    });
+
+    toastr.options = {
+        closeButton: true,
+        debug: false,
+        progressBar: true,
+        positionClass: "toast-top-right",
+        onclick: null,
+        showDuration: "100",
+        hideDuration: "100",
+        timeOut: "150000",
+        extendedTimeOut: "500",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut"
+    };
+    
+    $('#success').click(function (){
+        toastr.success('修改成功');
+    });
+
+    $('#error').click(function (){
+        toastr.error('删除失败');
+    });
+    
+    $('#warning').click(function (){
+        toastr.warning('错误警报');
+    });
+    
+    $('#info').click(function (){
+        toastr.info('你有一条新消息');
+    });
+    
+    $('#alert').click(function (){
+        jAlert('name', 'alert', function (){
+            console.log('alert');
+        });
+    });
+    $('#confirm').click(function (){
+        jConfirm('name', 'confirm', function (){
+            console.log('confirm');
+        });
+    });
+    $('#prompt').click(function (){
+        jPrompt('name', 'prompt', function (){
+            console.log('prompt');
+        });
+    });
+    
+</script>
+<script type="text/javascript" src="resources/js/index.js"></script>
+
+
+

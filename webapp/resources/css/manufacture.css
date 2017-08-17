@@ -1,0 +1,45 @@
+@charset "UTF-8";
+.left-menu{
+	margin-right:10px;
+}
+.operationList{
+    background-color: #FFFFFF;
+}
+.inputSize{
+    width: 160px;
+    display: inline-block;
+}
+.fonts{
+    color:#0099CC;
+    font-size: 20px;
+}
+.add-operation{
+	margin-top:20px;
+}
+ul.contentList{
+	width:50%;
+	margin-top:20px;
+}
+ul.contentList:first-child{
+	padding-left:0;
+}
+.contentList li{
+	list-style:none;
+	height: 30px;
+          line-height: 30px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid #cccccc;
+}
+.contentList li input{
+	height:24px;
+	width:180px;
+}
+.contentList li .col-xs-9,.col-sm-8{
+	padding-right:0;
+}
+.add-label{
+	white-space:nowrap;
+}
+#vendor_management{
+	margin-top:50px;
+}

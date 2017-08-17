@@ -1,0 +1,37 @@
+{
+    "code": 200,
+    "msg": "success",
+    "result": {
+        "pageInfo": {
+            "pageNum": 1,
+            "pageSize": 10,
+            "size": 2,
+            "total": 2,
+            "pages": 1,
+            "list": [
+                {
+                    "templateId": "83eefcbd0d8446f7bf9a4279afd543a5",
+                    "vendorName":"中兴",
+                    "templateName": "templateTest01",
+                    "templateTel":"18300002100",
+                    "templateEmail":"zhangsan@wondersgroup.com",
+                    "templateAddress":"shangghai",
+                    "resourceType":"1",
+                    "remark": "create routerTest",
+                    "is_default": "true"
+                },
+                {
+                    "templateId": "58cc2c93f8d34b52a8acb18d98efa17d",
+                    "vendorName":"华为",
+                    "templateName": "templateTest02",
+                    "templateTel":"18300002122",
+                    "templateEmail":"lisi@wondersgroup.com",
+                    "templateAddress":"shangghai",
+                    "resourceType":"1",
+                    "remark": "create routerTest",
+                    "is_default": "false"
+                }
+            ]
+        }
+    }
+}

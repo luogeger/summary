@@ -1,0 +1,71 @@
+{
+    "code": 200,
+    "msg": "success",
+    "result": {
+        "pageInfo": {
+            "pageNum": 1,
+            "pageSize": 10,
+            "size": 8,
+            "total": 8,
+            "pages": 1,
+            "list": [
+                {
+                    "scurityDeviceId": "1",
+                    "assetCode": "防火墙1",
+                    "serviceStatus": "可用",
+                    "assetTypeId": "2",
+                    "createTime": "2017-3-3 10:10::10",
+                    "remark": "防火墙1"
+                },
+                {
+                    "networkDeviceId": "2",
+                    "assetCode": "防火墙2",
+                    "serviceStatus": "可用",
+                    "assetTypeId": "2",
+                    "createTime": "2017-3-3 10:10::10",
+                    "remark": "防火墙2"
+                },
+                {
+                    "networkDeviceId": "3",
+                    "assetCode": "防火墙3",
+                    "serviceStatus": "可用",
+                    "assetTypeId": "2",
+                    "createTime": "2017-3-3 10:10::10",
+                    "remark": "防火墙3"
+                },
+                {
+                    "networkDeviceId": "4",
+                    "assetCode": "防火墙4",
+                    "serviceStatus": "可用",
+                    "assetTypeId": "2",
+                    "createTime": "2017-3-3 10:10::10",
+                    "remark": "防火墙4"
+                },
+                {
+                    "networkDeviceId": "5",
+                    "assetCode": "防火墙5",
+                    "serviceStatus": "可用",
+                    "assetTypeId": "2",
+                    "createTime": "2017-3-3 10:10::10",
+                    "remark": "防火墙5"
+                },
+                {
+                    "networkDeviceId": "6",
+                    "assetCode": "防火墙6",
+                    "serviceStatus": "可用",
+                    "assetTypeId": "2",
+                    "createTime": "2017-3-3 10:10::10",
+                    "remark": "防火墙6"
+                },
+                {
+                    "networkDeviceId": "7",
+                    "assetCode": "防火墙7",
+                    "serviceStatus": "可用",
+                    "assetTypeId": "2",
+                    "createTime": "2017-3-3 10:10::10",
+                    "remark": "防火墙7"
+                }
+            ]
+        }
+    }
+}

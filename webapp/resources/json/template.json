@@ -1,0 +1,51 @@
+{
+    "code": 200,
+    "msg": "success",
+    "result": {
+        "pageInfo": {
+            "pageNum": 1,
+            "pageSize": 10,
+            "size": 2,
+            "total": 2,
+            "pages": 1,
+            "list": [
+                {
+                    "templateId": "83eefcbd0d8446f7bf9a4279afd543a5",
+                    "type":"一线运维人员",
+                    "brandName":"网神",
+                    "vendorName":"中兴",
+                    "templateName": "templateTest01",
+                    "templateTel":"18300002100",
+                    "templateEmail":"zhangsan@wondersgroup.com",
+                    "templateAddress":"shangghai",
+                    "resourceType":"1",
+                    "remark": "create routerTest",
+                    "is_default": "true",
+                    "model":"分类1",
+                    "modelType":"品牌类型1",
+       				"modelName":"123",
+       				"miaoshu":"中兴123",
+       				"Uadr":"1-4"
+                },
+                {
+                    "templateId": "58cc2c93f8d34b52a8acb18d98efa17d",
+                    "type":"厂商对应接口人",
+                    "brandName":"网神",
+                    "vendorName":"华为",
+                    "templateName": "templateTest02",
+                    "templateTel":"18300002122",
+                    "templateEmail":"lisi@wondersgroup.com",
+                    "templateAddress":"shangghai",
+                    "resourceType":"1",
+                    "remark": "create routerTest",
+                    "is_default": "false",
+                     "model":"分类2",
+                    "modelType":"品牌类型2",
+       				"modelName":"321",
+       				"miaoshu":"华为123",
+       				"Uadr":""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "code": 200,
+    "msg": "success",
+    "result": {
+        "pageInfo": {
+            "pageNum": 1,
+            "pageSize": 10,
+            "size": 2,
+            "total": 2,
+            "pages": 1,
+            "list": [
+                {
+                    "Id": "83eefcbd0d8446f7bf9a4279afd543a5",
+                    "code":"22",
+                    "deviceName":"打印机1",
+                    "deviceType":"打印机",
+                    "model":"5000",
+                    "user":"123",
+                    "remark":"aa"
+                },
+                {
+                	"Id": "83eefcbd0d8446f7bf9a4279afd543a6",
+                	"code":"21",
+                    "deviceName":"打印机2",
+                    "deviceType":"打印机",
+                    "model":"6000",
+                    "user":"321",
+                    "remark":"aa"
+                }
+            ]
+        }
+    }
+}
