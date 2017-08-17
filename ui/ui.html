@@ -18,12 +18,9 @@
             margin: 10px;
         }
 
-        #self{
-            /*border: 1px solid #FF8A41;*/
-            border: 1px solid #0094ff;
+        #popup{
             border-radius: 6px;
-            /*box-shadow: 1px 1px 1px 1px #FF8A41;*/
-            box-shadow: 1px 1px 1px 1px #0094ff;
+            box-shadow: 1px 1px 10px 1px #000;
             position: absolute;
             top: -5000px;
             left: 0;
@@ -34,6 +31,14 @@
             text-align: center;
             z-index: 2;
         }
+        
+        #sidle{
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ff0000;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -41,7 +46,7 @@
     <div class="clearfix">
         <button class="btn btn-xs" id="dom">dom</button>
         <button class="btn btn-xs btn-text" id="arr"><i class="icon-edit"></i>arr</button>
-        <button class="btn btn-xs btn-border" id="sidle"><i class="icon-edit"></i>sidle</button>
+        <button class="btn btn-xs btn-border" id="sidleBtn"><i class="icon-edit"></i>sidle</button>
         <button class="btn btn-xs btn-theme" ><i class="icon-edit"></i>编辑</button>
     </div>
     
@@ -713,6 +718,64 @@
         <br>
     </div>
 
+    <div id="sidle">
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+       <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+       <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+        <h1>ui.sidle</h1>
+       
+    </div>
 </body>
 </html>
 <script src="../fileJs/jquery-1.12.4.min.js"></script>
@@ -804,8 +867,8 @@
         ui.model(arr);
     });
     
-    $('#sidle').click(function (){
-        ui.sidle();
+    $('#sidleBtn').click(function (){
+        ui.sidle('#sidle');
     });
 </script>
 

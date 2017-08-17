@@ -640,6 +640,7 @@
     border: 1px solid #E2E4E5;
     border-radius: 6px;
     background-color: #fff;
+    box-shadow: 1px 1px 10px 1px #000;
     position: absolute;
     top: -5000px;
     bottom: 0;
@@ -673,9 +674,9 @@
       border-top: 1px solid #E2E4E5;
       border-radius: 0 0 6px 6px; }
   #mask-layer .layer-sidle {
-    width: 400px;
     background-color: #fff;
     border: 1px solid #E2E4E5;
+    box-shadow: 1px 1px 10px 1px #000;
     overflow: hidden;
     position: absolute;
     top: 0px;
@@ -687,7 +688,9 @@
       background-color: #f6f8f9; }
       #mask-layer .layer-sidle .title i {
         float: right;
-        cursor: pointer; }
+        cursor: pointer;
+        position: relative;
+        top: 2px; }
         #mask-layer .layer-sidle .title i:hover {
           color: #FF8A41; }
     #mask-layer .layer-sidle .content {

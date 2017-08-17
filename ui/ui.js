@@ -403,14 +403,16 @@
             '</div>';
 
 
-
         $('body').prepend(html).css({'overflow-y': 'hidden'});
+        var height = $('.layer-sidle').outerHeight() - $('.title').outerHeight() + 'px';
+        $('.layer-sidle .content').append($(ele).css({'display': 'block'})).css({'max-height': height});
         $('.layer-sidle').css(css).animate({'left': '0px'}, 300);// sidle 显示
 
 
         $('#mask-layer').click(function (){
             $('.layer-sidle').animate({'left': '-1000px'}, 300, function (){
-                $('#mask-layer').remove();
+                $(ele).parents('#mask-layer').before($(ele).css({'display': 'none'}));// 保留 dom 元素
+                $('#mask-layer').remove();// 删除 #mask-layer
                 $('body').css({'overflow': 'auto'});
             });// sidle 消失
 
