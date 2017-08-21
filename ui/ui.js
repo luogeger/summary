@@ -275,41 +275,53 @@
     ;(function (){
         $('#accordion li').each(function (index, item){
             var _item = $(item);// 这是 li 标签
+            // hover -- 效果
+            _item.children('a').hover(function (){
+                var _this = $(this);
+                _this.toggleClass('a-hover');
+            },function (){
+                var _this = $(this);
+                _this.toggleClass('a-hover');
+            })
 
-
+            // 点击 -- 展开目录
             if(_item.has('ul').length){
-                collapse(_item);// 展开目录
+                // 如果有 子级菜单
+                collapse(_item, 'if');// 展开目录
             }else{
-                // 这里没有子级菜单的标签
-                _item.children('a').prepend('<i class="icon-circle"></i>');
-                _item.children('a').click(function (){
-                    $('#accordion li').each(function (i, v){
-                        $(v).children('a').removeClass('a-textColor');
-                    })
-                    $(this).addClass('a-textColor');
-                });
+                // 没有 子级菜单
+                collapse(_item);// 展开目录
             };
         });
 
         // 展开目录
-        function collapse (_item){
-            // _item 是 li 标签
-            _item.children('a').prepend('<i class="icon-arrow-right"></i>');
-            _item.children('ul').css({'display': 'none'});
-            _item.children('a').click(function (){
-                var _this = $(this);
-                if(_this.hasClass('flag-open')){
+        function collapse (_item, flag){
+            if(flag == 'if'){
+                _item.children('a').prepend('<i class="icon-arrow-right"></i>');
+                _item.children('ul').css({'display': 'none'});
+                _item.children('a').click(function (){
+                    var _this = $(this);
+                    if(_this.hasClass('flag-open')){
+                        _this.siblings('ul').slideToggle(100);
+                        _this.children('i').css({'transform':'rotate(0deg)'});
+                        _this.removeClass('flag-open');
+                        return;
+                    }
                     _this.siblings('ul').slideToggle(100);
-                    _this.children('i').css({'transform':'rotate(0deg)'});
-                    _this.removeClass('flag-open');
-                    return;
-                }
-                _this.siblings('ul').slideToggle(100);
-                _this.children('i').css({'transform':'rotate(90deg)'});
-                _this.addClass('flag-open');
-            });
+                    _this.children('i').css({'transform':'rotate(90deg)'});
+                    _this.addClass('flag-open');
+                });
+            }
+            else{
+                _item.children('a').prepend('<i class="icon-circle"></i>');
+                _item.children('a').click(function (){
+                    $('#accordion li').each(function (i, v){
+                        $(v).children('a').removeClass('a-click-no');
+                    })
+                    $(this).addClass('a-click-no');
+                });
+            }
         };
-
     })();
 
 

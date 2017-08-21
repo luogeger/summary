@@ -170,9 +170,9 @@ $paddingH-10: 10px;
 
 
 /*  input 共用样式 */
-.input-group,
-.input-group-sm,
 .input-group-xs,
+.input-group-sm,
+.input-group-md,
 .input-group-lg{
   position: relative;
   display: inline-block;
@@ -201,12 +201,15 @@ $paddingH-10: 10px;
 }
 
 /* input -- 尺寸 */
-.input-group{
+.input-group-xs{
+  font-size: 12px;
   label{
-    line-height: $height-md;
+    line-height: $height-xs;
+    font-size: 12px;
   }
   input{
-    height: $height-md;
+    height: $height-xs;
+    font-size: 12px;
   }
 }
 
@@ -219,15 +222,12 @@ $paddingH-10: 10px;
   }
 }
 
-.input-group-xs{
-  font-size: 12px;
+.input-group-md{
   label{
-    line-height: $height-xs;
-    font-size: 12px;
+    line-height: $height-md;
   }
   input{
-    height: $height-xs;
-    font-size: 12px;
+    height: $height-md;
   }
 }
 
@@ -261,10 +261,10 @@ $paddingH-10: 10px;
     top: $height-md - 1;
     left: 0px;
     border-radius: 6px;
-    padding: 5px 0;
     background-color: $sixF;
     z-index: 1;
     display: none;
+    overflow: hidden;
     li{
       padding: 0 10px;
       line-height: 30px;
@@ -316,7 +316,19 @@ $paddingH-10: 10px;
 }
 
 .drop-md{
-
+  a{
+    height: $height-md;
+    //line-height: $height-sm - 10px;
+  }
+  i{
+    top: $height-md / 2 - 7px;
+  }
+  ul{
+    top: $height-md - 1px;
+    li{
+      line-height: $height-md;
+    }
+  }
 }
 
 .drop-lg{
@@ -892,16 +904,16 @@ $paddingH-10: 10px;
         span{
 
         }
-        &:hover{
-          background-color: $content-bg;
-          i, span{
-            //color: $sixF;
-          }
-        }
+
+      }
+
+      /* hover*/
+      .a-hover{
+        background-color: $hybrid;
       }
 
       /* 有子集菜单的 -- 点击效果 */
-      .li-bgc-color{
+      .a-click-yes{
         background-color: $theme-normal;
         i, span{
           color: $sixF;
@@ -909,7 +921,7 @@ $paddingH-10: 10px;
       }
 
       /* 没有子集菜单 -- 点击效果 */
-      .a-textColor{
+      .a-click-no{
         i, span{
           color: $theme-normal;
         }

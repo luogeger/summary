@@ -106,49 +106,39 @@
     background-color: #ED6C1C; }
 
 /*  input 共用样式 */
-.input-group,
-.input-group-sm,
 .input-group-xs,
+.input-group-sm,
+.input-group-md,
 .input-group-lg {
   position: relative;
   display: inline-block;
   float: left;
   padding: 0 5px; }
-  .input-group label,
-  .input-group-sm label,
   .input-group-xs label,
+  .input-group-sm label,
+  .input-group-md label,
   .input-group-lg label {
     display: inline-block;
     float: left;
     vertical-align: middle;
     padding-right: 5px; }
-  .input-group input,
-  .input-group-sm input,
   .input-group-xs input,
+  .input-group-sm input,
+  .input-group-md input,
   .input-group-lg input {
     border: 1px solid #CCCCCC;
     border-radius: 4px;
     padding: 5px 10px;
     font-size: 14px;
     font-family: microsoft yahei; }
-    .input-group input:focus,
-    .input-group-sm input:focus,
     .input-group-xs input:focus,
+    .input-group-sm input:focus,
+    .input-group-md input:focus,
     .input-group-lg input:focus {
       border: 1px solid transparent;
       box-shadow: -1px 0 1px #FF8A41, 0 -1px 1px #FF8A41, 0 1px 1px #FF8A41, 1px 0 1px #FF8A41; }
 
 /* input -- 尺寸 */
-.input-group label {
-  line-height: 34px; }
-.input-group input {
-  height: 34px; }
-
-.input-group-sm label {
-  line-height: 30px; }
-.input-group-sm input {
-  height: 30px; }
-
 .input-group-xs {
   font-size: 12px; }
   .input-group-xs label {
@@ -157,6 +147,16 @@
   .input-group-xs input {
     height: 24px;
     font-size: 12px; }
+
+.input-group-sm label {
+  line-height: 30px; }
+.input-group-sm input {
+  height: 30px; }
+
+.input-group-md label {
+  line-height: 34px; }
+.input-group-md input {
+  height: 34px; }
 
 /* drapdown */
 .dropdown {
@@ -182,10 +182,10 @@
     top: 33px;
     left: 0px;
     border-radius: 6px;
-    padding: 5px 0;
     background-color: #ffffff;
     z-index: 1;
-    display: none; }
+    display: none;
+    overflow: hidden; }
     .dropdown ul li {
       padding: 0 10px;
       line-height: 30px;
@@ -217,6 +217,15 @@
   .drop-sm ul li {
     font-size: 14px;
     line-height: 30px; }
+
+.drop-md a {
+  height: 34px; }
+.drop-md i {
+  top: 10px; }
+.drop-md ul {
+  top: 33px; }
+  .drop-md ul li {
+    line-height: 34px; }
 
 /* .drop-hover */
 .drop-hover-border a {
@@ -608,6 +617,7 @@
   vertical-align: top; }
   #accordion ul li {
     width: 180px;
+    /* hover*/
     /* 有子集菜单的 -- 点击效果 */
     /* 没有子集菜单 -- 点击效果 */ }
     #accordion ul li a {
@@ -617,13 +627,13 @@
       #accordion ul li a i {
         display: inline-block;
         transition: all 0.3s; }
-      #accordion ul li a:hover {
-        background-color: #F6F8F9; }
-    #accordion ul li .li-bgc-color {
+    #accordion ul li .a-hover {
+      background-color: #E2E4E5; }
+    #accordion ul li .a-click-yes {
       background-color: #FF8A41; }
-      #accordion ul li .li-bgc-color i, #accordion ul li .li-bgc-color span {
+      #accordion ul li .a-click-yes i, #accordion ul li .a-click-yes span {
         color: #ffffff; }
-    #accordion ul li .a-textColor i, #accordion ul li .a-textColor span {
+    #accordion ul li .a-click-no i, #accordion ul li .a-click-no span {
       color: #FF8A41; }
   #accordion .first a {
     padding-left: 10px; }
