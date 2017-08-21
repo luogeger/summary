@@ -195,13 +195,6 @@
         color: #ffffff;
         background-color: #FF8A41; }
 
-.drop-sm a {
-  height: 30px; }
-.drop-sm i {
-  top: 8px; }
-.drop-sm ul {
-  top: 29px; }
-
 .drop-xs a {
   height: 24px;
   padding: 3px 20px 3px 10px;
@@ -211,6 +204,19 @@
   top: 5px; }
 .drop-xs ul {
   top: 23px; }
+  .drop-xs ul li {
+    font-size: 12px;
+    line-height: 24px; }
+
+.drop-sm a {
+  height: 30px; }
+.drop-sm i {
+  top: 8px; }
+.drop-sm ul {
+  top: 29px; }
+  .drop-sm ul li {
+    font-size: 14px;
+    line-height: 30px; }
 
 /* .drop-hover */
 .drop-hover-border a {
@@ -222,7 +228,7 @@
 .progress-bar {
   width: 500px;
   height: 10px;
-  background-color: #CCCCCC;
+  background-color: #E2E4E5;
   border-radius: 5px; }
   .progress-bar .bar {
     width: 300px;
@@ -253,7 +259,7 @@
 .progress-upload {
   width: 500px;
   height: 20px;
-  background-color: #CCCCCC;
+  background-color: #E2E4E5;
   border-radius: 4px; }
   .progress-upload .bar {
     width: 300px;
@@ -282,17 +288,17 @@
     vertical-align: middle;
     position: relative; }
   .progress-step .step-group .step {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     color: #999999;
     font-weight: 600;
     text-align: center;
-    line-height: 40px;
+    line-height: 30px;
     z-index: 1; }
   .progress-step .step-group .interval {
     width: 100px;
-    height: 15px;
+    height: 9px;
     left: 5px; }
 .progress-step .step-group:first-child {
   margin-left: 0; }
@@ -387,27 +393,29 @@
     padding: 0 20px;
     height: 30px;
     line-height: 30px;
-    border-bottom: 1px solid #999999; }
+    border-bottom: 1px solid #E2E4E5;
+    color: #999999; }
     .nav-border .nav-item i {
-      color: #222222;
+      color: #999999;
       position: relative;
       left: 8px;
       top: 1px; }
     .nav-border .nav-item:hover {
-      color: #999999; }
+      color: #222222; }
       .nav-border .nav-item:hover i {
-        color: #999999; }
+        color: #222222; }
 
 .nav-btn-border {
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #E2E4E5;
   padding: 0 10px;
   display: inline-block;
   margin-left: -10px; }
   .nav-btn-border .nav-item {
     padding: 0 20px;
-    border: 1px solid #999999;
+    border: 1px solid #E2E4E5;
     border-bottom: none;
-    border-radius: 4px 4px 0px 0px; }
+    border-radius: 4px 4px 0px 0px;
+    background-color: #F6F8F9; }
     .nav-btn-border .nav-item:hover {
       background-color: #FF8A41;
       color: #ffffff;
@@ -434,16 +442,16 @@
     color: #ffffff; }
 
 .opposite-border {
-  color: #999999;
-  border: 1px solid #999999;
+  color: #222222 !important;
+  border: 1px solid #E2E4E5;
   border-bottom: none !important;
   border-radius: 4px 4px 0 0;
   line-height: 29px !important; }
   .opposite-border i {
-    color: #999999 !important; }
+    color: #222222 !important; }
 
 .opposite-btn-border {
-  background-color: #FF8A41;
+  background-color: #FF8A41 !important;
   color: #ffffff;
   border-color: #ED6C1C !important; }
   .opposite-btn-border i {
@@ -599,7 +607,9 @@
   display: inline-block;
   vertical-align: top; }
   #accordion ul li {
-    width: 180px; }
+    width: 180px;
+    /* 有子集菜单的 -- 点击效果 */
+    /* 没有子集菜单 -- 点击效果 */ }
     #accordion ul li a {
       display: inline-block;
       width: 100%;
@@ -608,9 +618,11 @@
         display: inline-block;
         transition: all 0.3s; }
       #accordion ul li a:hover {
-        background-color: #FF8A41; }
-        #accordion ul li a:hover i, #accordion ul li a:hover span {
-          color: #ffffff; }
+        background-color: #F6F8F9; }
+    #accordion ul li .li-bgc-color {
+      background-color: #FF8A41; }
+      #accordion ul li .li-bgc-color i, #accordion ul li .li-bgc-color span {
+        color: #ffffff; }
     #accordion ul li .a-textColor i, #accordion ul li .a-textColor span {
       color: #FF8A41; }
   #accordion .first a {
@@ -640,7 +652,6 @@
     border: 1px solid #E2E4E5;
     border-radius: 6px;
     background-color: #fff;
-    box-shadow: 1px 1px 10px 1px #000;
     position: absolute;
     top: -5000px;
     bottom: 0;
@@ -676,7 +687,6 @@
   #mask-layer .layer-sidle {
     background-color: #fff;
     border: 1px solid #E2E4E5;
-    box-shadow: 1px 1px 10px 1px #000;
     overflow: hidden;
     position: absolute;
     top: 0px;
@@ -699,6 +709,7 @@
       overflow-x: hidden;
       overflow-y: auto; }
 
+/* slider */
 /*  table  */
 table {
   width: 100%;

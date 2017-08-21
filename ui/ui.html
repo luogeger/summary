@@ -42,7 +42,6 @@
     </style>
 </head>
 <body>
-    <h1>update</h1>
     <!-- btn -->
     <div class="clearfix">
         <button class="btn btn-xs" id="dom">dom</button>
@@ -192,6 +191,7 @@
         
         <button class="btn btn-md btn-theme" id="btn2"><i class="icon-edit"></i>编辑</button>
     </div>
+    
     <!-- progress-bar -->
     <div class="clearfix" style="margin-top: 50px;">
         <div class="progress-bar">
@@ -871,6 +871,13 @@
     $('#sidleBtn').click(function (){
         ui.sidle('#sidle');
     });
+    
+    var arr = ['5', '6', '7'];
+    var arr = $(arr);
+    console.log(arr.map(function (x, y){
+        return x*3;
+    }));
+    
 </script>
 
 

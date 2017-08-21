@@ -18,14 +18,15 @@ $theme-other: #ffd9c2;
 //$theme-other: #44ABFD;
 
 /*  height  */
-$height-md: 34px;
-$height-sm: 30px;
 $height-xs: 24px;
+$height-sm: 30px;
+$height-md: 34px;
 $height-lg: 40px;
 
 /* text */
 $text-normal: #222222;
 $six9: #999999;
+$content-bg: #F6F8F9;
 
 /* border + background */
 $sixF: #ffffff;
@@ -277,19 +278,6 @@ $paddingH-10: 10px;
   }
 }
 
-.drop-sm{
-  a{
-    height: $height-sm;
-    //line-height: $height-sm - 10px;
-  }
-  i{
-    top: $height-sm / 2 - 7px;
-  }
-  ul{
-    top: $height-sm - 1px;
-  }
-}
-
 .drop-xs{
   a{
     height: $height-xs;
@@ -303,8 +291,39 @@ $paddingH-10: 10px;
   }
   ul{
     top: $height-xs - 1px;
+    li{
+      font-size: 12px;
+      line-height: $height-xs;
+    }
   }
 }
+
+.drop-sm{
+  a{
+    height: $height-sm;
+    //line-height: $height-sm - 10px;
+  }
+  i{
+    top: $height-sm / 2 - 7px;
+  }
+  ul{
+    top: $height-sm - 1px;
+    li{
+      font-size: 14px;
+      line-height: $height-sm;
+    }
+  }
+}
+
+.drop-md{
+
+}
+
+.drop-lg{
+
+}
+
+
 
 /* .drop-hover */
 .drop-hover-border{
@@ -324,7 +343,7 @@ $paddingH-10: 10px;
   $height: 10px;
   width: 500px;
   height: $height;
-  background-color: $sixC;
+  background-color: $hybrid;
   border-radius: $height / 2;
   .bar{
     width: 300px;
@@ -360,7 +379,7 @@ $paddingH-10: 10px;
   $height: 20px;
   width: 500px;
   height: $height;
-  background-color: $sixC;
+  background-color: $hybrid;
   border-radius: 4px;
   .bar{
     width: 300px;
@@ -387,7 +406,7 @@ $paddingH-10: 10px;
     display: inline-block;
     font-size: 0;
     margin-left: -15px;
-    $radius: 40px;
+    $radius: 30px;
 
     .interval,
     .step{
@@ -409,7 +428,7 @@ $paddingH-10: 10px;
     }
     .interval{
       width: 100px;
-      height: 15px;
+      height: 9px;
       left: 5px;
     }
   }
@@ -549,22 +568,22 @@ $paddingH-10: 10px;
 
 .nav-border{
   display: inline-block;
-  //overflow: hidden;
   .nav-item{
     padding: 0 $paddingH-20;
     height: $height-sm;
     line-height: $height-sm;
-    border-bottom: 1px solid $six9;
+    border-bottom: 1px solid $hybrid;
+    color: $six9;
     i{
-      color: $text-normal;
+      color: $six9;
       position: relative;
       left: 8px;
       top: 1px;
     }
     &:hover{
-      color: $six9;
+      color: $text-normal;
       i{
-        color: $six9;
+        color: $text-normal;
       }
     }
   }
@@ -572,19 +591,16 @@ $paddingH-10: 10px;
 
 .nav-btn-border{
   $padding: 10px;
-  border-bottom: 1px solid $six9;
+  border-bottom: 1px solid $hybrid;
   padding: 0 $padding;
   display: inline-block;
   margin-left: -$padding;
   .nav-item{
     padding: 0 $paddingH-20;
-    border: 1px solid $six9;
+    border: 1px solid $hybrid;
     border-bottom: none;
     border-radius: 4px 4px 0px 0px;
-    //i{
-    //  position: relative;
-    //  left: 8px;
-    //}
+    background-color: $content-bg;
     &:hover{
       background-color: $theme-normal;
       color: $sixF;
@@ -622,18 +638,18 @@ $paddingH-10: 10px;
 }
 
 .opposite-border{
-  color: $six9;
-  border: 1px solid $six9;
+  color: $text-normal !important;
+  border: 1px solid $hybrid;
   border-bottom: none !important;
   border-radius: 4px 4px 0 0;
   line-height: $height-sm - 1 !important;
   i{
-    color: $six9 !important;
+    color: $text-normal !important;
   }
 }
 
 .opposite-btn-border{
-  background-color: $theme-normal;
+  background-color: $theme-normal !important;
   color: $sixF;
   border-color: $theme-hover !important;
   i{
@@ -877,13 +893,22 @@ $paddingH-10: 10px;
 
         }
         &:hover{
-          background-color: $theme-normal;
+          background-color: $content-bg;
           i, span{
-            color: $sixF;
+            //color: $sixF;
           }
         }
       }
 
+      /* 有子集菜单的 -- 点击效果 */
+      .li-bgc-color{
+        background-color: $theme-normal;
+        i, span{
+          color: $sixF;
+        }
+      }
+
+      /* 没有子集菜单 -- 点击效果 */
       .a-textColor{
         i, span{
           color: $theme-normal;
@@ -937,7 +962,7 @@ $paddingH-10: 10px;
     border: 1px solid $hybrid;
     border-radius: 6px;
     background-color: #fff;
-    box-shadow: 1px 1px 10px 1px #000;
+    //box-shadow: 1px 1px 10px 1px #000;
     position: absolute;
     top: -5000px;
     bottom: 0;
@@ -981,7 +1006,8 @@ $paddingH-10: 10px;
   .layer-sidle{
     background-color: #fff;
     border: 1px solid $hybrid;
-    box-shadow: 1px 1px 10px 1px #000;
+    //box-shadow: 1px 1px 10px 1px #0094ff;
+
     overflow: hidden;
     position: absolute;
     top: 0px;
@@ -1013,6 +1039,7 @@ $paddingH-10: 10px;
 
 
 
+/* slider */
 
 
 

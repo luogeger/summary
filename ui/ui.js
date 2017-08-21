@@ -270,7 +270,7 @@
 
 
     /*
-    *   目录结构 -- dirStructure
+    *   accordion -- 目录结构
     * */
     ;(function (){
         $('#accordion li').each(function (index, item){
