@@ -527,6 +527,10 @@
   margin-right: 5px; }
 .pages-line ul > li {
   padding: 0 12px; }
+  .pages-line ul > li:hover:not(.point) {
+    color: #ffffff;
+    background-color: #FF8A41;
+    border-color: #ED6C1C !important; }
 .pages-line .previous, .pages-line .next {
   padding: 0 15px; }
 .pages-line .import {
@@ -537,6 +541,8 @@
     font-size: 14px;
     font-family: "Microsoft YaHei";
     margin-top: -3px; }
+    .pages-line .import input:focus .import {
+      border-color: #FF8A41; }
 .pages-line .go {
   margin-right: 0px; }
 .pages-line .page-disabled {
@@ -549,6 +555,8 @@
   color: #ffffff; }
 .pages-filled ul > li {
   padding: 0 13px; }
+  .pages-filled ul > li:hover:not(.point) {
+    background-color: #ED6C1C !important; }
 .pages-filled ul > li:not(:last-child) {
   border-right: 1px solid #ED6C1C; }
 .pages-filled .previous {
@@ -585,7 +593,7 @@
         padding: 2px 5px;
         font-size: 14px;
         font-family: microsoft yahei;
-        width: 50px;
+        min-width: 70px;
         vertical-align: inherit; }
   #tree-view i, #tree-view span {
     cursor: pointer; }
@@ -593,7 +601,7 @@
     display: inline-block;
     padding: 3px 5px; }
     #tree-view span:hover {
-      background-color: #E2E4E5; }
+      background-color: #F6F8F9; }
   #tree-view .first > li:not(:last-child),
   #tree-view .second > li:not(:last-child),
   #tree-view .third > li:not(:last-child),
@@ -628,7 +636,7 @@
         display: inline-block;
         transition: all 0.3s; }
     #accordion ul li .a-hover {
-      background-color: #E2E4E5; }
+      background-color: #F6F8F9; }
     #accordion ul li .a-hasChild {
       background-color: #FF8A41; }
       #accordion ul li .a-hasChild i, #accordion ul li .a-hasChild span {

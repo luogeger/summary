@@ -777,6 +777,10 @@
         <h1>ui.sidle</h1>
        
     </div>
+
+    <div id="focus">
+    
+    </div>
 </body>
 </html>
 <script src="../fileJs/jquery-1.12.4.min.js"></script>
@@ -872,12 +876,21 @@
         ui.sidle('#sidle');
     });
     
-    var arr = ['5', '6', '7'];
-    var arr = $(arr);
-    console.log(arr.map(function (x, y){
-        return x*3;
-    }));
     
+    var data = [
+        {title: "Galaxy On7", src: "images/57e379eaNd0019450.jpg", href: "#Galaxy On7"},
+        {title: "Air Touch-X2", src: "images/57e3a213Na5664990.jpg", href: "#Air Touch-X2"},
+        {title: "满199减100", src: "images/57d8fbe7N805ce5a7.jpg", href: "#满199减100"},
+        {title: "奇趣", src: "images/57e8ce7dNb5318721.jpg", href: "#奇趣"},
+        {title: "国庆", src: "images/57e4df77Nc1ee769d.jpg", href: "#国庆"},
+        {title: "360奇酷", src: "images/57e8e57cNe0aabea6.jpg", href: "#360奇酷"}
+    ];
+
+    ui.slider($('#focus'), {
+        data: data,
+        showTime: 1,
+        isAuto: true
+    });
 </script>
 
 

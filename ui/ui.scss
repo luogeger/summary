@@ -746,6 +746,11 @@ $paddingH-10: 10px;
   }
   ul>li{
     padding: 0 12px;
+    &:hover:not(.point){
+      color: $sixF;
+      background-color: $theme-normal;
+      border-color: $theme-hover !important;
+    }
   }
   .previous, .next{
     padding: 0 15px;
@@ -758,6 +763,9 @@ $paddingH-10: 10px;
       font-size: 14px;
       font-family: "Microsoft YaHei";
       margin-top: -3px;
+      &:focus .import{
+        border-color: $theme-normal;
+      }
     }
   }
   .go{
@@ -778,6 +786,9 @@ $paddingH-10: 10px;
   }
   ul>li{
     padding: 0 13px;
+    &:hover:not(.point){
+      background-color: $theme-hover !important;
+    }
   }
   ul>li:not(:last-child){
     border-right: 1px solid $theme-hover;
@@ -828,7 +839,7 @@ $paddingH-10: 10px;
         padding: 2px 5px;
         font-size: 14px;
         font-family: microsoft yahei;
-        width: 50px;
+        min-width: 70px;
         vertical-align: inherit;
       }
       >i{
@@ -843,7 +854,7 @@ $paddingH-10: 10px;
     display: inline-block;
     padding: 3px 5px;
     &:hover{
-      background-color: $hybrid;
+      background-color: $content-bg;
     }
   }
 
@@ -909,7 +920,7 @@ $paddingH-10: 10px;
 
       /* hover*/
       .a-hover{
-        background-color: $hybrid;
+        background-color: $content-bg;
       }
 
       /* 有子集菜单的 -- 点击效果 */

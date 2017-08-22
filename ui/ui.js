@@ -337,12 +337,12 @@
     /*
     *   1. 弹出层 -- model
     *   2. 侧边滑出-- sidle
-    *   3. **每次都要 remove mask-layer
+    *   3. **每次都要 remove #mask-layer
     * */
     window.ui = {
         model: function (ele){ uiModel(ele); },
         sidle: function (ele){ uiSidle(ele); },
-        slider: function (option){ uiSlider(option); }
+        slider: function (ele, option){ uiSlider(ele, option); }
     };
 
     function uiModel (ele){
@@ -441,7 +441,18 @@
         });
     };
 
-    function uiSlider (option){
+    function uiSlider (ele, option){
+
+        var defaults = {
+            showTime: 1000,
+            step: 1000,
+            id: this[0].id,
+            data: [],
+            isAuto: false
+        };
+        var settings = $.extend({}, defaults, option);
+
+
         var Slider = function (option){
             this.init(option);
         };
@@ -596,7 +607,7 @@
             },
         };
 
-        $.fn.slider = function (option){
+        var slider = function (option){
             var defaults = {
                 showTime: 1000,
                 step: 1000,
@@ -609,6 +620,8 @@
             var slider = new Slider(settings);
             return this;
         };
+
+
     };
 
     /*
