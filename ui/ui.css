@@ -629,11 +629,11 @@
         transition: all 0.3s; }
     #accordion ul li .a-hover {
       background-color: #E2E4E5; }
-    #accordion ul li .a-click-yes {
+    #accordion ul li .a-hasChild {
       background-color: #FF8A41; }
-      #accordion ul li .a-click-yes i, #accordion ul li .a-click-yes span {
+      #accordion ul li .a-hasChild i, #accordion ul li .a-hasChild span {
         color: #ffffff; }
-    #accordion ul li .a-click-no i, #accordion ul li .a-click-no span {
+    #accordion ul li .a-noChild i, #accordion ul li .a-noChild span {
       color: #FF8A41; }
   #accordion .first a {
     padding-left: 10px; }

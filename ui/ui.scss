@@ -913,7 +913,7 @@ $paddingH-10: 10px;
       }
 
       /* 有子集菜单的 -- 点击效果 */
-      .a-click-yes{
+      .a-hasChild{
         background-color: $theme-normal;
         i, span{
           color: $sixF;
@@ -921,7 +921,7 @@ $paddingH-10: 10px;
       }
 
       /* 没有子集菜单 -- 点击效果 */
-      .a-click-no{
+      .a-noChild{
         i, span{
           color: $theme-normal;
         }
