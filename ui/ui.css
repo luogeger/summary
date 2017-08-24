@@ -167,7 +167,7 @@
     display: inline-block;
     height: 34px;
     padding: 5px 20px 5px 10px;
-    min-width: 175px;
+    min-width: 140px;
     border: 1px solid #CCCCCC;
     border-radius: 6px; }
   .dropdown i {
@@ -728,6 +728,18 @@
       overflow-y: auto; }
 
 /* slider */
+.slider {
+  width: 600%;
+  overflow: hidden; }
+  .slider .slider-main {
+    width: 100%; }
+    .slider .slider-main .slider-main-item {
+      float: left; }
+      .slider .slider-main .slider-main-item a img {
+        width: 100%; }
+  .slider .slider-extra .extra-nav .extra-nav-item {
+    float: left; }
+
 /*  table  */
 table {
   width: 100%;

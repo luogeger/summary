@@ -244,7 +244,7 @@ $paddingH-10: 10px;
     height: $height-md;
     //line-height: $height-md - 10px;
     padding: 5px 20px 5px 10px;
-    min-width: 175px;
+    min-width: 140px;
     border: 1px solid $sixC;
     border-radius: 6px;
   }
@@ -1063,6 +1063,39 @@ $paddingH-10: 10px;
 
 
 /* slider */
+.slider{
+  width: 600%;
+  overflow: hidden;
+  .slider-main{
+    width: 100%;
+    .slider-main-item{
+      float: left;
+      a{
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .slider-extra{
+    .extra-nav{
+      .extra-nav-item{
+        float: left;
+      }
+    }
+    .extra-page{
+      .extra-page-prev{
+
+      }
+      .extra-page-next{
+
+      }
+    }
+  }
+}
+
+
 
 
 
