@@ -442,12 +442,19 @@
     };
 
     function uiSlider (ele, obj){
-        var $container = $(ele);
-        var data = obj.data;
-
+        var $box = $(ele);
+        var data = obj.data;// data 必须是数组，每一项是对象
         var sliderWidth = obj.data.length + '00%';// .slider-main 的宽度
-        $container.html(parserDataHtml());
+        $box.html(parserDataHtml());
+        var $arrow = $box.find('.extra-page a');// 左右箭头
+        var $extraNav = $box.find('.extra-nav');// 数字导航 -- ul
+        var $navItem = $extraNav.children('.extra-nav-item');// 数字导航 -- li
+        var $sliderMain = $box.find('.slider-main');// 装图片的 ul
+        var imgWidth = $box.width();// 每张图片的宽度
 
+
+
+        bindEvent();
         function parserDataHtml (){
             var sliderMainList = [],
                 sliderNavList = [],
@@ -491,6 +498,52 @@
 
             return resultsList.join('');
         };
+
+        function bindEvent (){
+            $box.hover(function (){
+                $arrow.css('z-index', '0');
+            },function (){
+                $arrow.css('z-index', '-1');
+            });
+
+
+            //数字导航
+            $navItem.each(function (index, item){
+                var _item = $(item);
+                _item.click(function (){
+                    $navItem.each(function (i, v){ $(v).children('span').css('opacity', '.3'); });// 排他
+                    $(this).children('span').css('opacity', '0');
+                    var target = -index * imgWidth;// 目标距离
+                    console.log(target);
+                    autoPlay($sliderMain, target);
+                });
+            });
+
+        };
+
+        function autoPlay (ele, target){
+            ele[0].style.left = target + 'px';
+
+        };
+
+
+        function animate(obj,target){
+            clearInterval(obj.timerId);//每次开启定时器之前，一定要先将之前的清空，然后再开，保证只开启一个定时器
+            obj.timerId = setInterval(function(){
+                var step = 20;
+                var leader = obj.offsetLeft;//先获得当前的值  不是字符串，是一个数字，只是可读的，只能用来获取值
+                step=  leader <target?step:-step;
+                if(Math.abs(leader-target)>Math.abs(step)){ //没到达指定位置的时候，不断的加步长 进行移动，步长是整数的时候，是没有问题的   判断 怎么改
+                    leader = leader+step; // 这是一个数字
+                    obj.style.left = leader + 'px';
+                }else {
+                    clearInterval(obj.timerId);  // 清除的也是当前对象的定时器
+                    obj.style.left = target+'px';//给到一个最后的定值
+                    // 如果两者之间的距离 很接近了，已经小于一个步长 的时候，就不需要再加步长了，
+                    // 就直接清除定时器，把差的那一点点的距离 ，直接自己补上就可以了，也就是让当前对象的位置直接等于目标位置就行
+                }
+            },15);
+        }
     };
 
     /*

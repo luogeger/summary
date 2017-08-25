@@ -1,17 +1,17 @@
 @charset "UTF-8";
 /* 定义变量 */
 /* theme */
-$theme-normal: #FF8A41;
-$theme-hover: #ED6C1C;
-$theme-other: #ffd9c2;
+//$theme-normal: #FF8A41;
+//$theme-hover: #ED6C1C;
+//$theme-other: #ffd9c2;
 
 //$theme-normal: #ED5565;
 //$theme-hover: #DA4453;
 //$theme-other: #FA7A87;
 
-//$theme-normal: #00BFA5;
-//$theme-hover: #04A28D;
-//$theme-other: #0BDABE;
+$theme-normal: #00BFA5;
+$theme-hover: #04A28D;
+$theme-other: #0BDABE;
 
 //$theme-normal: #1D98F9;
 //$theme-hover: #0283E8;
@@ -1065,10 +1065,9 @@ $paddingH-10: 10px;
 /* slider */
 .slider{
   width: 100%;
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   .slider-main{
-
     .slider-main-item{
       float: left;
       a{
@@ -1095,7 +1094,7 @@ $paddingH-10: 10px;
           height: 16px;
           border-radius: 50%;
           background-color: $theme-normal;
-          opacity: .3;
+          opacity: .5;
           float: left;
         }
         i{
@@ -1104,11 +1103,10 @@ $paddingH-10: 10px;
           top: 0px;
           left: 0px;
         }
-
         &:hover i{
           font-size: 27px;
           top: -7px;
-          left: -6px;
+          left: -5px;
         }
       }
       .extra-nav-item:not(:last-child){
@@ -1119,8 +1117,10 @@ $paddingH-10: 10px;
 
       }
     }
+
     .extra-page{
       a{
+        z-index: -1;
         position: absolute;
         top: 50%;
         margin-top: -31px;
