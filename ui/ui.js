@@ -468,10 +468,10 @@
             data.forEach(function (item, i){
                 var index = i +1;
                 if(i >= 1){
-                    sliderNavList.push('<li class="extra-nav-item"><i class=" icon iconfont icon-circle-empty"></i><i class=" icon iconfont icon-circle"></i></li>');
+                    sliderNavList.push('<li class="extra-nav-item"><span></span><i class=" icon iconfont icon-circle"></i></li>');
 
                 }else{
-                    sliderNavList.push('<li class="extra-nav-item"><i class=" icon iconfont icon-circle-empty"></i><i class=" icon iconfont icon-circle"></i></li>');
+                    sliderNavList.push('<li class="extra-nav-item"><span></span><i class=" icon iconfont icon-circle"></i></li>');
                 }
             });
             sliderNavList.push('</ul>');

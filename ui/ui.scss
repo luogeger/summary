@@ -1089,18 +1089,26 @@ $paddingH-10: 10px;
         float: left;
         cursor: pointer;
         position: relative;
+        span{
+          display: block;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background-color: $theme-normal;
+          opacity: .3;
+          float: left;
+        }
         i{
           color: $theme-normal;
-        }
-        i:last-child{
           position: absolute;
-          top: 1px;
+          top: 0px;
           left: 0px;
         }
-        &:hover i:last-child{
-          font-size: 26px;
-          top: -5px;
-          left: -5px;
+
+        &:hover i{
+          font-size: 27px;
+          top: -7px;
+          left: -6px;
         }
       }
       .extra-nav-item:not(:last-child){
