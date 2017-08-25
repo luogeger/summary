@@ -41,7 +41,7 @@
         }
         
         #focus{
-            width: 430px;
+            width: 550px;
         }
     </style>
 </head>
@@ -782,7 +782,7 @@
        
     </div>
     
-    <span class="box" style="border: 2px solid red; display: inline-block;">
+    <span class="box" style="border: 2px solid red; display: inline-block; margin-bottom: 50px;">
         <div id="focus"></div>
     </span>
     
@@ -890,12 +890,11 @@
         {title: "国庆", src: "../images/b5.jpg", href: "#国庆"},
         {title: "360奇酷", src: "../images/b6.jpg", href: "#360奇酷"}
     ];
-
-    ui.slider('#focus', {
+    
+    var obj = {
         data: data,
-        showTime: 1,
-        isAuto: true
-    });
+    };
+    ui.slider('#focus', obj);
     
     
     

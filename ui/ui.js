@@ -442,9 +442,10 @@
     };
 
     function uiSlider (ele, obj){
-        var $container = $(ele).css('overflow', 'hidden');
-
+        var $container = $(ele);
         var data = obj.data;
+
+        var sliderWidth = obj.data.length + '00%';// .slider-main 的宽度
         $container.html(parserDataHtml());
 
         function parserDataHtml (){
@@ -452,9 +453,9 @@
                 sliderNavList = [],
                 resultsList = [];
 
-            sliderMainList.push('<ul class="slider-main clearfix">');
+            sliderMainList.push('<ul class="slider-main clearfix" style="width:'+ sliderWidth +'">');
             data.forEach(function (item){
-                sliderMainList.push('<li class="slider-main-item" style="width: '+ $(ele).width()+'px'+' ">');
+                sliderMainList.push('<li class="slider-main-item" style="width:'+ $(ele).width()+'px' +'">');
                 sliderMainList.push('<a href="'+ item.href +'">');
                 sliderMainList.push('<img src="'+ item.src +'" title="'+ item.title +'"/>');
                 sliderMainList.push('</a>');
@@ -462,21 +463,25 @@
             });
             sliderMainList.push('</ul>');
 
+
             sliderNavList.push('<ul class="extra-nav clearfix">');
             data.forEach(function (item, i){
                 var index = i +1;
                 if(i >= 1){
-                    sliderNavList.push('<li class="extra-nav-item">'+ index +'</li>');
+                    sliderNavList.push('<li class="extra-nav-item"><i class=" icon iconfont icon-circle-empty"></i><i class=" icon iconfont icon-circle"></i></li>');
+
                 }else{
-                    sliderNavList.push('<li class="extra-nav-item">'+ index +'</li>');
+                    sliderNavList.push('<li class="extra-nav-item"><i class=" icon iconfont icon-circle-empty"></i><i class=" icon iconfont icon-circle"></i></li>');
                 }
             });
             sliderNavList.push('</ul>');
+
 
             resultsList.push('<div class="slider" data-index="0">');
             resultsList.push(sliderMainList.join(''));
             resultsList.push('<div class="slider-extra">');
             resultsList.push(sliderNavList.join(''));
+
 
             resultsList.push('<div class="extra-page">');
             resultsList.push('<a href="javascript:;" class="extra-page-prev">&lt;</a>');

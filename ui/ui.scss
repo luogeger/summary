@@ -1064,10 +1064,11 @@ $paddingH-10: 10px;
 
 /* slider */
 .slider{
-  width: 600%;
+  width: 100%;
   overflow: hidden;
+  position: relative;
   .slider-main{
-    width: 100%;
+
     .slider-main-item{
       float: left;
       a{
@@ -1080,16 +1081,60 @@ $paddingH-10: 10px;
 
   .slider-extra{
     .extra-nav{
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      margin-left: -60px;
       .extra-nav-item{
         float: left;
+        cursor: pointer;
+        position: relative;
+        i{
+          color: $theme-normal;
+        }
+        i:last-child{
+          position: absolute;
+          top: 1px;
+          left: 0px;
+        }
+        &:hover i:last-child{
+          font-size: 26px;
+          top: -5px;
+          left: -5px;
+        }
+      }
+      .extra-nav-item:not(:last-child){
+        margin-right: 5px;
+      }
+
+      .extra-nav-item-click{
+
       }
     }
     .extra-page{
-      .extra-page-prev{
+      a{
+        position: absolute;
+        top: 50%;
+        margin-top: -31px;
+        width: 28px;
+        height: 62px;
+        line-height: 62px;
+        background: rgba(0, 0, 0, .5);
+        color: #fff;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 800;
+        font-family: simsun;
+        &:hover{
+          background: rgba(0, 0, 0, .8);
+        }
+      }
 
+      .extra-page-prev{
+        left: 0em;
       }
       .extra-page-next{
-
+        right: 0em;
       }
     }
   }
