@@ -342,7 +342,15 @@
     window.ui = {
         model: function (ele){ uiModel(ele); },
         sidle: function (ele){ uiSidle(ele); },
-        slider: function (ele, option){ uiSlider(ele, option); }
+        slider: function (ele, option){
+            uiSlider(ele, option);
+            window.onload = function (){
+                var height = $('.slider').find('.slider-main-item').eq(0).css('height');
+                console.log(height);
+                $('.slider').css('height', height)
+
+            }
+        }
     };
 
     function uiModel (ele){
@@ -454,14 +462,16 @@
 
 
 
+
         bindEvent();
+        var imgHeight = $box.find('img').eq(0).height();
         function parserDataHtml (){
             var sliderMainList = [],
                 sliderNavList = [],
                 resultsList = [];
 
             sliderMainList.push('<ul class="slider-main clearfix" style="width:'+ sliderWidth +'">');
-            data.forEach(function (item){
+            data.forEach(function (item, index){
                 sliderMainList.push('<li class="slider-main-item" style="width:'+ $(ele).width()+'px' +'">');
                 sliderMainList.push('<a href="'+ item.href +'">');
                 sliderMainList.push('<img src="'+ item.src +'" title="'+ item.title +'"/>');
@@ -522,29 +532,19 @@
         };
 
         function autoPlay (ele, target){
-            ele[0].style.left = target + 'px';
+            ele[0].style.left = '-350px';
 
         };
 
 
-        function animate(obj,target){
-            clearInterval(obj.timerId);//每次开启定时器之前，一定要先将之前的清空，然后再开，保证只开启一个定时器
-            obj.timerId = setInterval(function(){
-                var step = 20;
-                var leader = obj.offsetLeft;//先获得当前的值  不是字符串，是一个数字，只是可读的，只能用来获取值
-                step=  leader <target?step:-step;
-                if(Math.abs(leader-target)>Math.abs(step)){ //没到达指定位置的时候，不断的加步长 进行移动，步长是整数的时候，是没有问题的   判断 怎么改
-                    leader = leader+step; // 这是一个数字
-                    obj.style.left = leader + 'px';
-                }else {
-                    clearInterval(obj.timerId);  // 清除的也是当前对象的定时器
-                    obj.style.left = target+'px';//给到一个最后的定值
-                    // 如果两者之间的距离 很接近了，已经小于一个步长 的时候，就不需要再加步长了，
-                    // 就直接清除定时器，把差的那一点点的距离 ，直接自己补上就可以了，也就是让当前对象的位置直接等于目标位置就行
-                }
-            },15);
+        return function (){
+            return $box.find('.slider-main-item').eq(0).css('height');
         }
-    };
+    };// end -- uiSlider
+
+
+
+
 
     /*
     *   slide
@@ -717,6 +717,23 @@
         return this;
     };
 
+    function animate(obj,target){
+        clearInterval(obj.timerId);//每次开启定时器之前，一定要先将之前的清空，然后再开，保证只开启一个定时器
+        obj.timerId = setInterval(function(){
+            var step = 20;
+            var leader = obj.offsetLeft;//先获得当前的值  不是字符串，是一个数字，只是可读的，只能用来获取值
+            step=  leader <target?step:-step;
+            if(Math.abs(leader-target)>Math.abs(step)){ //没到达指定位置的时候，不断的加步长 进行移动，步长是整数的时候，是没有问题的   判断 怎么改
+                leader = leader+step; // 这是一个数字
+                obj.style.left = leader + 'px';
+            }else {
+                clearInterval(obj.timerId);  // 清除的也是当前对象的定时器
+                obj.style.left = target+'px';//给到一个最后的定值
+                // 如果两者之间的距离 很接近了，已经小于一个步长 的时候，就不需要再加步长了，
+                // 就直接清除定时器，把差的那一点点的距离 ，直接自己补上就可以了，也就是让当前对象的位置直接等于目标位置就行
+            }
+        },15);
+    }
 
 
 

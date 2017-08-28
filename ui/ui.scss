@@ -1062,12 +1062,15 @@ $paddingH-10: 10px;
 
 
 
-/* slider */
+/* slider -- 轮播图 */
 .slider{
   width: 100%;
-  //overflow: hidden;
+  overflow: hidden;
   position: relative;
   .slider-main{
+    position: absolute;
+    top: 0px;
+    left: -100px;
     .slider-main-item{
       float: left;
       a{
@@ -1241,6 +1244,7 @@ table{
 
 /* 清除浮动 */
 .btn,
+.slider-main,
 .pages-line,
 .pages-filled{
   *zoom: 1; /*IE/7/6*/

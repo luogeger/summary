@@ -727,14 +727,19 @@
       overflow-x: hidden;
       overflow-y: auto; }
 
-/* slider */
+/* slider -- 轮播图 */
 .slider {
   width: 100%;
+  overflow: hidden;
   position: relative; }
-  .slider .slider-main .slider-main-item {
-    float: left; }
-    .slider .slider-main .slider-main-item a img {
-      width: 100%; }
+  .slider .slider-main {
+    position: absolute;
+    top: 0px;
+    left: -100px; }
+    .slider .slider-main .slider-main-item {
+      float: left; }
+      .slider .slider-main .slider-main-item a img {
+        width: 100%; }
   .slider .slider-extra .extra-nav {
     position: absolute;
     bottom: 5%;
@@ -836,16 +841,19 @@ table {
 
 /* 清除浮动 */
 .btn,
+.slider-main,
 .pages-line,
 .pages-filled {
   *zoom: 1;
   /*IE/7/6*/ }
   .btn:before,
+  .slider-main:before,
   .pages-line:before,
   .pages-filled:before {
     content: "";
     display: table; }
   .btn:after,
+  .slider-main:after,
   .pages-line:after,
   .pages-filled:after {
     content: "";
