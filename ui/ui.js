@@ -82,7 +82,7 @@
     });
 
     /*
-    *   动态生成li标签，再一次给li标签，加data-value
+    *   动态生成li标签，重新给 li 标签加上 data-value 属性
     * */
     function dyanmicDataValue (){
         $('.dropdown').each(function (index, item){
@@ -340,8 +340,12 @@
     *   3. **每次都要 remove #mask-layer
     * */
     window.ui = {
-        model: function (ele){ uiModel(ele); },
-        sidle: function (ele){ uiSidle(ele); },
+        model: function (ele){
+            uiModel(ele);
+            },
+        sidle: function (ele){
+            uiSidle(ele);
+            },
         slider: function (ele, option){
             uiSlider(ele, option);
             window.onload = function (){
@@ -459,12 +463,13 @@
         var $navItem = $extraNav.children('.extra-nav-item');// 数字导航 -- li
         var $sliderMain = $box.find('.slider-main');// 装图片的 ul
         var imgWidth = $box.width();// 每张图片的宽度
+        var $prev = $box.find('.extra-page-prev');// 上一页
+        var $next = $box.find('.extra-page-next');// 下一页
 
 
 
 
         bindEvent();
-        var imgHeight = $box.find('img').eq(0).height();
         function parserDataHtml (){
             var sliderMainList = [],
                 sliderNavList = [],
@@ -518,29 +523,48 @@
 
 
             //数字导航
+            var currentIndex = '';
             $navItem.each(function (index, item){
                 var _item = $(item);
                 _item.click(function (){
+                    currentIndex = index;
                     $navItem.each(function (i, v){ $(v).children('span').css('opacity', '.3'); });// 排他
                     $(this).children('span').css('opacity', '0');
-                    var target = -index * imgWidth;// 目标距离
-                    console.log(target);
-                    autoPlay($sliderMain, target);
+                    setIndex(index);// 设置索引 -> 确定移动的距离
                 });
             });
 
+            //左右导航
+            $prev.click(function (){
+                currentIndex--;
+                setIndex(currentIndex);// 设置索引 -> 确定移动的距离
+            });
+            $next.click(function (){
+                currentIndex++;
+                setIndex(currentIndex);// 设置索引 -> 确定移动的距离
+            });
+
+            //设置索引 -> 确定移动的距离
+            function setIndex (index){
+                var target = -index * imgWidth;// 目标距离
+                autoPlay($sliderMain, target);
+            };
         };
 
         function autoPlay (ele, target){
-            ele[0].style.left = '-350px';
+            ele[0].style.left = target + 'px';
 
         };
 
 
-        return function (){
-            return $box.find('.slider-main-item').eq(0).css('height');
-        }
+
     };// end -- uiSlider
+
+
+
+
+
+
 
 
 

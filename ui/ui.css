@@ -730,12 +730,11 @@
 /* slider -- 轮播图 */
 .slider {
   width: 100%;
-  overflow: hidden;
   position: relative; }
   .slider .slider-main {
     position: absolute;
     top: 0px;
-    left: -100px; }
+    left: 0px; }
     .slider .slider-main .slider-main-item {
       float: left; }
       .slider .slider-main .slider-main-item a img {

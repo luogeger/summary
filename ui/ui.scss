@@ -1065,12 +1065,12 @@ $paddingH-10: 10px;
 /* slider -- 轮播图 */
 .slider{
   width: 100%;
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   .slider-main{
     position: absolute;
     top: 0px;
-    left: -100px;
+    left: 0px;
     .slider-main-item{
       float: left;
       a{
