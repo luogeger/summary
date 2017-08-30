@@ -350,7 +350,6 @@
             uiSlider(ele, option);
             window.onload = function (){
                 var height = $('.slider').find('.slider-main-item').eq(0).css('height');
-                console.log(height);
                 $('.slider').css('height', height)
 
             }
@@ -462,7 +461,8 @@
         var $extraNav = $box.find('.extra-nav');// 数字导航 -- ul
         var $navItem = $extraNav.children('.extra-nav-item');// 数字导航 -- li
         var $sliderMain = $box.find('.slider-main');// 装图片的 ul
-        var imgWidth = $box.width();// 每张图片的宽度
+        var $imgWidth = $box.width();// 每张图片的宽度
+        var $imgNum = $box.find('.slider-main-item').length;
         var $prev = $box.find('.extra-page-prev');// 上一页
         var $next = $box.find('.extra-page-next');// 下一页
 
@@ -515,6 +515,7 @@
         };
 
         function bindEvent (){
+            //左右导航的显示隐藏
             $box.hover(function (){
                 $arrow.css('z-index', '0');
             },function (){
@@ -523,7 +524,7 @@
 
 
             //数字导航
-            var currentIndex = '';
+            var currentIndex = '';// 当前索引
             $navItem.each(function (index, item){
                 var _item = $(item);
                 _item.click(function (){
@@ -537,23 +538,49 @@
             //左右导航
             $prev.click(function (){
                 currentIndex--;
+                if(currentIndex <= 0){
+                    currentIndex = $imgNum -1;
+                }
                 setIndex(currentIndex);// 设置索引 -> 确定移动的距离
             });
             $next.click(function (){
                 currentIndex++;
+                if(currentIndex >= $imgNum){
+                    currentIndex = 0;
+                }
                 setIndex(currentIndex);// 设置索引 -> 确定移动的距离
             });
 
+
             //设置索引 -> 确定移动的距离
             function setIndex (index){
-                var target = -index * imgWidth;// 目标距离
+                console.log(index, 'index');
+                var target = -index * $imgWidth;// 目标距离
                 autoPlay($sliderMain, target);
             };
         };
 
         function autoPlay (ele, target){
-            ele[0].style.left = target + 'px';
+            // ele[0].style.left = target + 'px';
+            // debugger;
+            //var step = 30;
+            //var initDistance = ele[0].offsetLeft;
+            //step = Math.abs((Math.abs(target) - Math.abs(initDistance)) / $imgWidth ) * 30;
 
+            ele.timeId = setInterval(function (){
+                var step = 30;
+                var distance = ele[0].offsetLeft;// 当前距离
+                step =  distance < target ? step : -step;
+
+
+                if(Math.abs(distance - target) > Math.abs(step)){// 判断步长和最后的距离
+                    distance = distance + step;
+                    ele[0].style.left = distance + 'px';
+                }else {
+                    clearInterval(ele.timeId);// 清除当前对象的定时器
+                    ele[0].style.left = target + 'px';// 给到一个最后的定值
+                }
+            }, 10);
         };
 
 

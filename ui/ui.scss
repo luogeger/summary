@@ -1,17 +1,17 @@
 @charset "UTF-8";
 /* 定义变量 */
 /* theme */
-//$theme-normal: #FF8A41;
-//$theme-hover: #ED6C1C;
-//$theme-other: #ffd9c2;
+$theme-normal: #FF8A41;
+$theme-hover: #ED6C1C;
+$theme-other: #ffd9c2;
 
 //$theme-normal: #ED5565;
 //$theme-hover: #DA4453;
 //$theme-other: #FA7A87;
 
-$theme-normal: #00BFA5;
-$theme-hover: #04A28D;
-$theme-other: #0BDABE;
+//$theme-normal: #00BFA5;
+//$theme-hover: #04A28D;
+//$theme-other: #0BDABE;
 
 //$theme-normal: #1D98F9;
 //$theme-hover: #0283E8;
@@ -1065,7 +1065,7 @@ $paddingH-10: 10px;
 /* slider -- 轮播图 */
 .slider{
   width: 100%;
-  //overflow: hidden;
+  overflow: hidden;
   position: relative;
   .slider-main{
     position: absolute;
