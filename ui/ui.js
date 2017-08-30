@@ -455,14 +455,16 @@
     function uiSlider (ele, obj){
         var $box = $(ele);
         var data = obj.data;// data 必须是数组，每一项是对象
-        var sliderWidth = obj.data.length + '00%';// .slider-main 的宽度
+        var sliderWidth = obj.data.length + 1 + '00%';// .slider-main 的宽度
         $box.html(parserDataHtml());
         var $arrow = $box.find('.extra-page a');// 左右箭头
         var $extraNav = $box.find('.extra-nav');// 数字导航 -- ul
         var $navItem = $extraNav.children('.extra-nav-item');// 数字导航 -- li
-        var $sliderMain = $box.find('.slider-main');// 装图片的 ul
+        var $sliderMain = $box.find('.slider-main');// 图片的 ul
+        var $imgAll = $box.find('.slider-main-item');// 所有图片 -- li
+        var $imgNum = $box.find('.slider-main-item').length;// 所有图片的数量
         var $imgWidth = $box.width();// 每张图片的宽度
-        var $imgNum = $box.find('.slider-main-item').length;
+
         var $prev = $box.find('.extra-page-prev');// 上一页
         var $next = $box.find('.extra-page-next');// 下一页
 
@@ -535,6 +537,9 @@
                 });
             });
 
+            //克隆
+            $sliderMain.append($imgAll.eq(0).clone(true));
+
             //左右导航
             $prev.click(function (){
                 currentIndex--;
@@ -554,19 +559,12 @@
 
             //设置索引 -> 确定移动的距离
             function setIndex (index){
-                console.log(index, 'index');
                 var target = -index * $imgWidth;// 目标距离
                 autoPlay($sliderMain, target);
             };
         };
 
         function autoPlay (ele, target){
-            // ele[0].style.left = target + 'px';
-            // debugger;
-            //var step = 30;
-            //var initDistance = ele[0].offsetLeft;
-            //step = Math.abs((Math.abs(target) - Math.abs(initDistance)) / $imgWidth ) * 30;
-
             ele.timeId = setInterval(function (){
                 var step = 30;
                 var distance = ele[0].offsetLeft;// 当前距离
