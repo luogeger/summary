@@ -357,11 +357,6 @@
     };
 
     function uiModel (ele){
-        // undefined
-        if(ele == undefined){
-            console.log('undefined');
-        }
-
         // dom元素
         if(typeof ele == 'string' && $(ele).length > 0){
             $(ele).wrap(("<div id='mask-layer'></div>"));// 给 id 元素包裹 遮罩层
@@ -372,16 +367,15 @@
             $(ele).click(function (e){  e.stopPropagation(); });// 阻止冒泡
 
             $('#mask-layer').click(function (){
-                $(ele).animate({'top': '-5000px'}, 150, function (){
+                $(ele).animate({'top': '-3000px'}, 100, function (){
                     $(this).parent().before($(this));// 保留 dom 元素
                     $('#mask-layer').remove();// 删除 #mask-layer
                     $('body').css({'overflow': 'auto'});
                 });
             });
         }
-
         // 数组
-        if(ele instanceof Array){
+        else if(ele instanceof Array){
             var html =
                 '<div id="mask-layer">'+
                     '<div class="layer-popup">'+
@@ -401,7 +395,8 @@
             $('body').css({'overflow': 'hidden'}).append(html);// 弹窗 追加
             $('.layer-popup').animate({'top': '0px'}, 100);// 弹窗 显示
 
-            $('#mask-layer .close, #mask-layer .cancel').each(function (index, item){
+            // 点击 #mask-layer、关闭、取消
+            $('#mask-layer, #mask-layer .close, #mask-layer .cancel').each(function (index, item){
                 $(item).click(function (){
                     $('.layer-popup').animate({'top': '-1000px'}, 100, function (){
                         $('#mask-layer').remove();// 删除 整个遮罩层 以及里面的 弹窗
@@ -410,6 +405,7 @@
                 });
             });
 
+            // 点击确认
             $('#mask-layer .confirm').click(function (){
                 ele[1]();// 传过来的函数执行
                 $('.layer-popup').animate({'top': '-1000px'}, 100, function (){
@@ -418,7 +414,11 @@
                 });// 弹窗 消失
             });
 
-        };
+        }
+        // 其他
+        else{
+            alert('ui.model(参数错误)');
+        }
     };
 
     function uiSidle (ele){
@@ -565,6 +565,7 @@
         };
 
         function autoPlay (ele, target){
+            clearInterval(ele.timeId);// 清除当前对象的定时器
             ele.timeId = setInterval(function (){
                 var step = 30;
                 var distance = ele[0].offsetLeft;// 当前距离

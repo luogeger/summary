@@ -43,12 +43,31 @@
         #focus{
             width: 500px;
         }
+        
+        .nav-head .logo{
+            width: 180px;
+            height: 100%;
+            background-color: #f60;
+            float: left;
+        }
     </style>
 </head>
 <body>
     <!-- navigate -->
     <div class="nav-head">
-        <h1>123</h1>
+        <div class="logo"></div>
+        <div class="nav-head-info-tip">
+            任务
+            <i class="icon-arrow-down"></i>
+        </div>
+        <div class="nav-head-info-tip pull-right">
+            公告
+            <i class="icon-arrow-down"></i>
+        </div>
+        <div class="nav-head-info-tip pull-right">
+            消息
+            <i class="icon-arrow-down"></i>
+        </div>
     </div>
     
     
@@ -59,7 +78,7 @@
     <!-- btn -->
     <div class="clearfix">
         <button class="btn btn-xs" id="dom">dom</button>
-        <button class="btn btn-xs btn-text" id="arr"><i class="icon-edit"></i>arr</button>
+        <button class="btn btn-xs btn-text" id="arr"><i class="icon-edit"></i>Array</button>
         <button class="btn btn-xs btn-border" id="sidleBtn"><i class="icon-edit"></i>sidle</button>
         <button class="btn btn-xs btn-theme" ><i class="icon-edit"></i>编辑</button>
     </div>
@@ -157,7 +176,7 @@
         <div class="dropdown drop-xs">
             <a href="javascript:;">-- 请选择 --</a>
             <ul>
-                <li>春眠不觉晓</li>
+                <li>春眠不觉晓11111</li>
                 <li>处处闻啼鸟</li>
                 <li>夜来风雨声</li>
                 <li>花落知多少</li>
@@ -861,20 +880,13 @@
     });
     
     $('#arr').click(function (){
-        function arrFun (){
-            console.log('arrFun');
-        };
-        
         var html =
-            
-           
             '<h1>青山依旧在</h1>'+
             '<h1>几度夕阳红</h1>'+
             '<h1>白发渔樵江渚上</h1>'+
             '<h1>惯看秋月春风</h1>'+
             '<h1>一壶浊酒喜相逢</h1>'+
             '<h1>古今多少事</h1>'+
-            
             '<h1>Array</h1>'+
             '<h1>大江东去浪淘尽</h1>'+
             '<h1>浪花淘尽英雄</h1>'+
@@ -887,9 +899,12 @@
             '<h1>古今多少事</h1>'+
             '<h1>都付笑谈中</h1>';
             
-        var arr = [html, arrFun]
+        function arrFun (){
+            console.log('点击确认，执行的函数');
+        };
         
-        ui.model(arr);
+        
+        ui.model([html, arrFun]);
     });
     
     $('#sidleBtn').click(function (){
