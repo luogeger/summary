@@ -303,12 +303,12 @@
     color: #999999;
     font-weight: 600;
     text-align: center;
-    line-height: 30px;
-    z-index: 1; }
+    line-height: 30px; }
   .progress-step .step-group .interval {
     width: 100px;
     height: 9px;
-    left: 5px; }
+    left: 5px;
+    z-index: -1; }
 .progress-step .step-group:first-child {
   margin-left: 0; }
 
@@ -788,6 +788,29 @@
     left: 0em; }
   .slider .slider-extra .extra-page .extra-page-next {
     right: 0em; }
+
+/* navigation */
+.nav-head {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 0px -1px 8px 0px #000;
+  margin: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+
+.nav-sidle {
+  width: 180px;
+  background-color: #ffffff;
+  box-shadow: -1px 5px 8px 0px #000000;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1; }
 
 /*  table  */
 table {

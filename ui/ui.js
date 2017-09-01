@@ -586,203 +586,24 @@
     };// end -- uiSlider
 
 
-
-
-
-
-
-
-
-
-
     /*
-    *   slide
+    *   navigate
     * */
-    var Slider = function (option){
-        this.init(option);
-    };
-
-    Slider.prototype = {
-        constructor: Slider,
-        init: function (option){
-            this.containerID = option.id;
-            this.showTime = option.showTime;
-            this.isAuto = option.isAuto;
-            this.data = option.data;
-            this.step = option.step;
-            this.timerId = 0;
-            this.length = this.data.length;
-
-            var $container = $('#' + this.containerID);
-            $container.html( this.parserDataHtml() );
-            this.$slider = $container.find('.slider');
-            this.$panel = $container.find('.slider-panel');
-            this.$prev = $container.find('.slider-prev');
-            this.$next = $container.find('.slider-next');
-            this.$navItem = $container.find('.slider-item');
-            this.$sliderPage = $container.find('.slider-page');
-
-            this.setIndex(0, this.length);
-            this.index = this.$slider.data('index');
-            this.$panel.fadeTo(0, 0).eq(0).fadeTo(0, 1);
-            this.bindEvent();
-            this.$sliderPage.hide();
-
-        },
-
-        // 索引样式
-        slide: function (index){
-            // 播放下一张
-            this.$panel
-                .eq(index).fadeTo(this.showTime, 1).css('z-index', 1)
-                .siblings().fadeTo(this.showTime, 0).css('z-index', 0);
-            this.setIndex(index, this.length);// 改变 index 的值，控制播放的索引
-            // 修改数字导航的样式
-            this.$navItem.eq(index).addClass('slider-selected')
-                .siblings().removeClass('slider-selected');
-        },
-
-        // 设置索引
-        setIndex: function (index, length){
-            if(index > length - 1){
-                this.index = 0;
-            }else if(index < 0){
-                this.index = length -1;
-            }else{
-                this.index = index;
-            }
-
-            this.$slider.data('index', this.index);
-        },
-
-        // 滑动、导航、定时器、自动播放
-        bindEvent: function (){
-            var self = this;// 保存 this
-            // 左滑动
-            self.$prev.on('click', function (){
-                self.index -= 1;
-                self.setIndex(self.index, self.length);
-                self.slide(self.index);
-            });
-
-            // 右滑动
-            self.next.on('click', function (){
-                self.index += 1;
-                self.setIndex(self.index, self.length);
-                self.slide(self.index);
-            });
-
-            // 数字导航
-            self.$navItem.on('click', function (){
-                var index = parseInt($(this).html()) - 1;
-                self.setIndex(self.index, self.length);
-                self.slide(index);
-            });
-
-            // 取消定时器
-            self.$slider.on('mouseenter', function (){
-                self.$sliderPage.show();
-                clearInterval(self.timerId);
-            });
-
-            // 开启定时器
-            self.$slider.on('mouseleave', function (){
-                self.$sliderPage.hide();
-                self.isAuto && self.autoPlay();
-            });
-
-            // 自动播放
-            this.isAuto && this.autoPlay();
-        },
-
-        // 定时器 - 自动播放
-        autoPlay: function (){
-            var self = this;
-            var autoPlay = function (){
-                self.index += 1;
-                self.setIndex(self.index, self.length);
-                self.slide(self.index);
-            };
-
-            self.timerId = setInterval(autoPlay, self.step);
-        },
-
-        // dom元素，拼接、追加
-        parserDataHtml: function (){
-            // JSON数据转化为 html 结构
-            var sliderMainList = [],
-                sliderNavList = [],
-                resultsList = [];
-
-            sliderMainList.push('<ul class="slider-main">');
-            this.data.forEach(function (item){
-                sliderMainList.push('<li class="slider-panel">');
-                sliderMainList.push('<a href="'+ item.href +'">');
-                sliderMainList.push('<img src="'+ item.src +'" title="'+ item.title +'"/>');
-                sliderMainList.push('</a>');
-                sliderMainList.push('</li>');
-            });
-            sliderMainList.push('</ul>');
+    ;(function (){
+        var navHead = $('.nav-head');
+        var navSidle = $('.nav-sidle');
+        var navHeadHeight = navHead.css('height');
+        var navSidleWidth = navSidle.css('width');
+        if(navHead){
+            $('body').css('padding-top', navHeadHeight);
+            navSidle.css('top', navHeadHeight);
+        }
+        if(navSidle){
+            $('body').css('padding-left', navSidleWidth);
+        }
+    })();
 
 
-            sliderNavList.push('<ul class="slider-nav">');
-            this.data.forEach(function (item, i){
-                var index = i +1;
-                if(i >= 1){
-                    sliderNavList.push('<li class="slider-item">'+ index +'</li>');
-                }else{
-                    sliderNavList.push('<li class="slider-item slider-selected">'+ index +'</li>');
-                }
-            });
-            sliderNavList.push('</ul>');
-
-
-            resultsList.push('<div class="slider" data-index="0">');
-            resultsList.push(sliderMainList.join(''));
-            resultsList.push('<div class="slider-extra">');
-            resultsList.push(sliderNavList.join(''));
-
-            resultsList.push('<div class="slider-page">');
-            resultsList.push('<a href="javascript:;" class="slider-prev">&lt;</a>');
-            resultsList.push('<a href="javascript:;" class="slider-next">&gt;</a>');
-            resultsList.push('</div>');
-            resultsList.push('</div>');
-
-            return resultsList.join('');
-        },
-    };
-
-    var slider = function (option){
-        var defaults = {
-            showTime: 1000,
-            step: 1000,
-            id: this[0].id,
-            data: [],
-            isAuto: false
-        };
-
-        var settings = $.extend({}, defaults, option);
-        var slider = new Slider(settings);
-        return this;
-    };
-
-    function animate(obj,target){
-        clearInterval(obj.timerId);//每次开启定时器之前，一定要先将之前的清空，然后再开，保证只开启一个定时器
-        obj.timerId = setInterval(function(){
-            var step = 20;
-            var leader = obj.offsetLeft;//先获得当前的值  不是字符串，是一个数字，只是可读的，只能用来获取值
-            step=  leader <target?step:-step;
-            if(Math.abs(leader-target)>Math.abs(step)){ //没到达指定位置的时候，不断的加步长 进行移动，步长是整数的时候，是没有问题的   判断 怎么改
-                leader = leader+step; // 这是一个数字
-                obj.style.left = leader + 'px';
-            }else {
-                clearInterval(obj.timerId);  // 清除的也是当前对象的定时器
-                obj.style.left = target+'px';//给到一个最后的定值
-                // 如果两者之间的距离 很接近了，已经小于一个步长 的时候，就不需要再加步长了，
-                // 就直接清除定时器，把差的那一点点的距离 ，直接自己补上就可以了，也就是让当前对象的位置直接等于目标位置就行
-            }
-        },15);
-    }
 
 
 
