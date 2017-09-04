@@ -807,7 +807,10 @@
     height: 100%;
     line-height: 60px;
     position: relative; }
-    .nav-head .nav-head-info-tip .info-tip-panel {
+    .nav-head .nav-head-info-tip .info-tip-drop {
+      cursor: pointer; }
+    .nav-head .nav-head-info-tip .info-tip-menu {
+      display: none;
       background-color: #ffffff;
       border: 1px solid #FF8A41;
       padding: 5px 0;
@@ -816,15 +819,15 @@
       right: 0px;
       border-radius: 4px;
       box-shadow: 0 0 2px #FF8A41; }
-      .nav-head .nav-head-info-tip .info-tip-panel li {
+      .nav-head .nav-head-info-tip .info-tip-menu li {
         line-height: 14px;
         padding: 5px 10px;
         cursor: pointer;
         white-space: nowrap; }
-      .nav-head .nav-head-info-tip .info-tip-panel li:hover {
+      .nav-head .nav-head-info-tip .info-tip-menu li:hover {
         background-color: #FF8A41;
         color: #ffffff; }
-    .nav-head .nav-head-info-tip .info-tip-panel:before {
+    .nav-head .nav-head-info-tip .info-tip-menu:before {
       position: absolute;
       top: -5px;
       right: 13px;

@@ -589,6 +589,8 @@
 
     /*
     *   navigate
+    *   - 头部和侧边导航，动态设置宽高
+    *
     * */
     ;(function (){
         var navHead = $('.nav-head');
@@ -602,6 +604,13 @@
         if(navSidle){
             $('body').css('padding-left', navSidleWidth);
         }
+
+        // .nav-head-info-tip 的hover事件
+        $('.nav-head-info-tip .info-tip-drop').hover(function (){
+            $(this).children('.info-tip-menu').slideToggle(10);
+        },function (){
+            $(this).children('.info-tip-menu').slideToggle(10);
+        });
     })();
 
 

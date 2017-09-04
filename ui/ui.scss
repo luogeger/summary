@@ -1174,7 +1174,12 @@ $paddingH-10: 10px;
     height: 100%;
     line-height: 60px;
     position: relative;
-    .info-tip-panel{
+    .info-tip-drop{
+      cursor: pointer;
+    }
+
+    .info-tip-menu{
+      display: none;
       background-color: $sixF;
       border: 1px solid $theme-normal;
       padding: 5px 0;
@@ -1194,7 +1199,7 @@ $paddingH-10: 10px;
         color: $sixF;
       }
     }
-    .info-tip-panel:before{
+    .info-tip-menu:before{
       position: absolute;
       top: -5px;
       right: 13px;
