@@ -654,6 +654,30 @@
   #accordion .fifth a {
     padding-left: 70px; }
 
+/*  table  */
+table {
+  width: 100%;
+  font-size: 14px;
+  line-height: 24px; }
+  table th, table td {
+    text-align: center; }
+  table tbody tr:hover {
+    background-color: #CCCCCC; }
+
+/* 只有bottom边框 */
+.table-bottom thead, .table-bottom tr {
+  border-bottom: 1px solid #CCCCCC; }
+
+/* 全部有边框 */
+.table-border th, .table-border td {
+  border: 1px solid #CCCCCC; }
+
+/* 隔行变色 */
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #F6F8F9; }
+.table-striped tbody tr:hover {
+  background-color: #CCCCCC; }
+
 /* 遮罩层(#mask-layer) -- 弹窗(.layer-popup) -- 侧滑(.layer-sidle) */
 #mask-layer {
   position: fixed;
@@ -848,31 +872,39 @@
   top: 0;
   left: 0;
   bottom: 0;
-  z-index: auto; }
-
-/*  table  */
-table {
-  width: 100%;
-  font-size: 14px;
-  line-height: 24px; }
-  table th, table td {
-    text-align: center; }
-  table tbody tr:hover {
-    background-color: #CCCCCC; }
-
-/* 只有bottom边框 */
-.table-bottom thead, .table-bottom tr {
-  border-bottom: 1px solid #CCCCCC; }
-
-/* 全部有边框 */
-.table-border th, .table-border td {
-  border: 1px solid #CCCCCC; }
-
-/* 隔行变色 */
-.table-striped tbody tr:nth-child(odd) {
-  background-color: #F6F8F9; }
-.table-striped tbody tr:hover {
-  background-color: #CCCCCC; }
+  z-index: auto;
+  /* 右边小箭头 */ }
+  .nav-sidle #collapse-btn {
+    cursor: pointer;
+    position: fixed;
+    top: 48%;
+    width: 20px;
+    line-height: 30px;
+    z-index: 100;
+    transition: all .2s ease 0s; }
+    .nav-sidle #collapse-btn .collapse-btn-nav i {
+      font-size: 18px;
+      position: relative; }
+    .nav-sidle #collapse-btn.to-close {
+      left: 165px;
+      border-bottom: 9px solid transparent;
+      border-left: none;
+      border-right: 13px solid #f7f7f7;
+      border-top: 9px solid transparent; }
+      .nav-sidle #collapse-btn.to-close:hover {
+        left: 160px; }
+      .nav-sidle #collapse-btn.to-close .collapse-btn-nav i {
+        left: 5px; }
+    .nav-sidle #collapse-btn.to-open {
+      left: -4px;
+      border-bottom: 9px solid transparent;
+      border-left: 13px solid #d9dee4;
+      border-top: 9px solid transparent; }
+      .nav-sidle #collapse-btn.to-open:hover {
+        left: 0px; }
+      .nav-sidle #collapse-btn.to-open .collapse-btn-nav i {
+        left: -8px;
+        transform: rotate(180deg); }
 
 /* 常用类 */
 .themeColor-back {

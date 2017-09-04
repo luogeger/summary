@@ -604,18 +604,32 @@
         if(navSidle){
             $('body').css('padding-left', navSidleWidth);
         }
-
-        // .nav-head-info-tip 的hover事件
-        $('.nav-head-info-tip .info-tip-drop').hover(function (){
-            $(this).children('.info-tip-menu').slideToggle(10);
-        },function (){
-            $(this).children('.info-tip-menu').slideToggle(10);
-        });
     })();
+    // .nav-head-info-tip 的hover事件
+    $('.nav-head-info-tip .info-tip-drop').hover(function (){
+        $(this).children('.info-tip-menu').slideToggle(10);
+    },function (){
+        $(this).children('.info-tip-menu').slideToggle(10);
+    });
+
+    // #collapse-btn 收展侧边栏
+    function toggleCollapse (){
+        var open = $("#collapse-btn").hasClass("to-close");
+        if(open){
+            $("#collapse-btn").removeClass("to-close").addClass("to-open");
+            $('.nav-sidle').addClass('sidebar-hide');
+            $('.content').css({'padding-left': '20px'});
+        }else{
+            $("#collapse-btn").removeClass("to-open").addClass("to-close");
+            $('.nav-sidle').removeClass('sidebar-hide');
+            $('.content').css({'padding-left': '190px'});
+        }
+    };
 
 
-
-
+    function asd (){
+        console.log('asd');
+    };
 
 
 
