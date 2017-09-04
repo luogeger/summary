@@ -1173,7 +1173,39 @@ $paddingH-10: 10px;
     padding: 0 10px;
     height: 100%;
     line-height: 60px;
-    float: left;
+    position: relative;
+    .info-tip-panel{
+      background-color: $sixF;
+      border: 1px solid $theme-normal;
+      padding: 5px 0;
+      position: absolute;
+      top: 46px;
+      right: 0px;
+      border-radius: 4px;
+      box-shadow: 0 0 2px $theme-normal;
+      li{
+        line-height: 14px;
+        padding: 5px 10px;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      li:hover{
+        background-color: $theme-normal;
+        color: $sixF;
+      }
+    }
+    .info-tip-panel:before{
+      position: absolute;
+      top: -5px;
+      right: 13px;
+      content: '';
+      transform: rotate(45deg);
+      width: 7px;
+      height: 7px;
+      border-left: 1px solid $theme-normal;
+      border-top: 1px solid $theme-normal;
+      background-color: $sixF;
+    }
   }
 }
 
@@ -1187,7 +1219,7 @@ $paddingH-10: 10px;
   top: 0;
   left: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: auto;
 }
 
 
