@@ -589,22 +589,8 @@
 
     /*
     *   navigate
-    *   - 头部和侧边导航，动态设置宽高
     *
     * */
-    ;(function (){
-        var navHead = $('.nav-head');
-        var navSidle = $('.nav-sidle');
-        var navHeadHeight = navHead.css('height');
-        var navSidleWidth = navSidle.css('width');
-        if(navHead){
-            $('body').css('padding-top', navHeadHeight);
-            navSidle.css('top', navHeadHeight);
-        }
-        if(navSidle){
-            $('body').css('padding-left', navSidleWidth);
-        }
-    })();
     // .nav-head-info-tip 的hover事件
     $('.nav-head-info-tip .info-tip-drop').hover(function (){
         $(this).children('.info-tip-menu').slideToggle(10);
@@ -612,24 +598,10 @@
         $(this).children('.info-tip-menu').slideToggle(10);
     });
 
-    // #collapse-btn 收展侧边栏
-    function toggleCollapse (){
-        var open = $("#collapse-btn").hasClass("to-close");
-        if(open){
-            $("#collapse-btn").removeClass("to-close").addClass("to-open");
-            $('.nav-sidle').addClass('sidebar-hide');
-            $('.content').css({'padding-left': '20px'});
-        }else{
-            $("#collapse-btn").removeClass("to-open").addClass("to-close");
-            $('.nav-sidle').removeClass('sidebar-hide');
-            $('.content').css({'padding-left': '190px'});
-        }
-    };
 
 
-    function asd (){
-        console.log('asd');
-    };
+
+
 
 
 
@@ -656,5 +628,19 @@
         });
     };
 
-    //edit in liunx vscode
+
 })();// -- end
+
+// #collapse-btn 收展侧边栏
+function toggleCollapse(){
+    var open = $("#collapse-btn").hasClass("to-close");
+    if(open){
+        $("#collapse-btn").removeClass("to-close").addClass("to-open");
+        $('#nav-sidle').animate({'left': '-180px'}, 200);
+        $('#nav-content').css({'padding-left': '15px'});
+    }else{
+        $("#collapse-btn").removeClass("to-open").addClass("to-close");
+        $('#nav-sidle').animate({'left': '0px'}, 200);
+        $('#nav-content').css({'padding-left': '180px'});
+    }
+};

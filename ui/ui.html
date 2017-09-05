@@ -8,13 +8,23 @@
     <link rel="stylesheet" href="iconfont/iconfont.css">
     <title>UI</title>
     <style>
-        body{
-            /*background-color: #CCCCCC;*/
-            /*overflow-x: hidden;*/
+        #nav-content{
+            padding-top: 60px;
+            padding-left: 180px;
         }
-        .content>div{
-            /*border: 1px solid #23527c;*/
+        #content-item{
+            padding: 10px;
+        }
+        
+        #content-item>div{
             margin: 10px;
+            margin-left: 0;
+        }
+
+        #nav-head .logo{
+            width: 180px;
+            height: 100%;
+            background-color: #f60;
         }
 
         #popup{
@@ -42,17 +52,13 @@
             width: 500px;
         }
         
-        .nav-head .logo{
-            width: 180px;
-            height: 100%;
-            background-color: #f60;
-        }
+        
     </style>
 </head>
 <body>
     <div class="wrapper">
         <!-- navigate -->
-        <div class="nav-head">
+        <div id="nav-head">
             <div class="logo pull-left"></div>
             <div class="nav-head-info-tip pull-left">
             <span class="info-tip-drop">
@@ -96,764 +102,821 @@
                 </ul>
             </span>
             </div>
-        </div><!-- /.nav-head -->
+        </div><!-- /#nav-head -->
     
-        <div class="nav-sidle">
+        <div id="nav-sidle">
             <!-- 右边小箭头 -->
-            <div id="collapse-btn" class="to-close" onclick="asd()">
+            <div id="collapse-btn" class="to-close" onclick="toggleCollapse()">
                 <div class="collapse-btn-nav">
                     <i class="icon-arrow-left"></i>
                 </div>
             </div>
         
             <!-- 导航内容 -->
-    
-        </div><!-- /.nav-sidle -->
-        
-        <div class="content">
-            <!-- btn -->
-            <div class="clearfix">
-                <button class="btn btn-xs" id="dom">dom</button>
-                <button class="btn btn-xs btn-text" id="arr"><i class="icon-edit"></i>Array</button>
-                <button class="btn btn-xs btn-border" id="sidleBtn"><i class="icon-edit"></i>sidle</button>
-                <button class="btn btn-xs btn-theme" ><i class="icon-edit"></i>编辑</button>
-            </div>
-    
-            <div class="clearfix">
-                <button class="btn btn-sm">编辑</button>
-                <button class="btn btn-sm btn-text"><i class="icon-edit"></i>编辑</button>
-                <button class="btn btn-sm btn-border"><i class="icon-edit"></i>编辑</button>
-                <button class="btn btn-sm btn-theme"><i class="icon-edit"></i>编辑</button>
-            </div>
-    
-            <div class="clearfix">
-                <button class="btn btn-md">编辑</button>
-                <button class="btn btn-md btn-text"><i class="icon-edit"></i>编辑</button>
-                <button class="btn btn-md btn-border"><i class="icon-edit"></i>编辑</button>
-                <button class="btn btn-md btn-theme"><i class="icon-edit"></i>编辑</button>
-            </div>
-    
-            <div class="clearfix">
-                <!--<button class="btn btn-lg">编辑</button>-->
-                <!--<button class="btn btn-lg btn-text"><i class="icon-edit"></i>编辑</button>-->
-                <!--<button class="btn btn-lg btn-border"><i class="icon-edit"></i>编辑</button>-->
-                <!--<button class="btn btn-lg btn-theme"><i class="icon-edit"></i>编辑</button>-->
-            </div>
-    
-            <div>
-                <!-- input -->
-                <!--<div class="clearfix">-->
-                <!--<div class="input-group-xs">-->
-                <!--<label for="">项目编号</label>-->
-                <!--<input type="text" class="">-->
-                <!--</div>-->
-                <!---->
-                <!--</div>-->
-                <!---->
-                <!--<div class="clearfix">-->
-                <!--<div class="input-group-sm">-->
-                <!--<label>项目编号</label>-->
-                <!--<input type="text">-->
-                <!--</div>-->
-                <!--</div>-->
-                <!---->
-                <!--<div class="clearfix">-->
-                <!--<div class="input-group">-->
-                <!--<label for="">项目编号</label>-->
-                <!--<input type="text" class="">-->
-                <!--</div>-->
-                <!--</div>-->
-        
-                <!--  dropDown -->
-                <!--<div class="clearfix">-->
-                <!--<div id="asd" class="dropdown">-->
-                <!--<a href="javascript:;">&#45;&#45; 请选择 &#45;&#45;</a>-->
-                <!--<ul>-->
-                <!--<li>窗前明月光</li>-->
-                <!--<li>疑是地上霜</li>-->
-                <!--<li>举头望明月</li>-->
-                <!--<li>低头思故乡</li>-->
-                <!--</ul>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!---->
-                <!--<div class="clearfix">-->
-                <!--<div class="dropdown drop-sm">-->
-                <!--<a href="javascript:;">&#45;&#45; 请选择 &#45;&#45;</a>-->
-                <!--<ul>-->
-                <!--<li>春眠不觉晓</li>-->
-                <!--<li>处处闻啼鸟</li>-->
-                <!--<li>夜来风雨声</li>-->
-                <!--<li>花落知多少</li>-->
-                <!--</ul>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!---->
-                <!--<div class="clearfix">-->
-                <!--<div class="dropdown drop-xs">-->
-                <!--<a href="javascript:;">&#45;&#45; 请选择 &#45;&#45;</a>-->
-                <!--<ul>-->
-                <!--<li>春眠不觉晓</li>-->
-                <!--<li>处处闻啼鸟</li>-->
-                <!--<li>夜来风雨声</li>-->
-                <!--<li>花落知多少</li>-->
-                <!--</ul>-->
-                <!--</div>-->
-                <!--</div>-->
-            </div>
-    
-            <!-- btn + input + dropDown -->
-            <div class="clearfix">
-                <div class="input-group-xs">
-                    <label for="">项目编号</label>
-                    <input type="text" class="">
-                </div>
-        
-                <div class="dropdown drop-xs">
-                    <a href="javascript:;">-- 请选择 --</a>
-                    <ul>
-                        <li>春眠不觉晓11111</li>
-                        <li>处处闻啼鸟</li>
-                        <li>夜来风雨声</li>
-                        <li>花落知多少</li>
-                    </ul>
-                </div>
-                <button class="btn btn-theme btn-xs"><i class="icon-edit"></i>编辑</button>
-            </div>
-    
-            <div class="clearfix">
-                <div class="input-group-sm">
-                    <label for="">项目编号</label>
-                    <input type="text" class="">
-                </div>
-        
-                <div class="dropdown drop-sm">
-                    <a href="javascript:;">-- 请选择 --</a>
-                    <ul>
-                        <li>春眠不觉晓</li>
-                        <li>处处闻啼鸟</li>
-                        <li>夜来风雨声</li>
-                        <li>花落知多少</li>
-                    </ul>
-                </div>
-                <button class="btn btn-theme btn-sm"><i class="icon-edit"></i>编辑</button>
-            </div>
-    
-            <div class="clearfix">
-        
-                <div class="input-group-md">
-                    <label for="">项目编号</label>
-                    <input type="text" class="">
-                </div>
-        
-                <div class="dropdown drop-md">
-                    <a href="javascript:;">-- 请选择 --</a>
-                    <ul>
-                        <li>春眠不觉晓</li>
-                        <li>处处闻啼鸟</li>
-                        <li>夜来风雨声</li>
-                        <li>花落知多少</li>
-                    </ul>
-                </div>
-        
-                <button class="btn btn-md btn-theme" id="btn2"><i class="icon-edit"></i>编辑</button>
-            </div>
-    
-            <!-- progress-bar -->
-            <div class="clearfix" style="margin-top: 50px;">
-                <div class="progress-bar">
-                    <div class="bar">
-                        <span class="percent"> 50% </span>
-                    </div>
-                </div>
-                <div style="height: 50px;"></div>
-        
-                <div class="progress-upload">
-                    <div class="bar">
-                        <span class="percent"> 37% </span>
-                    </div>
-                </div>
-                <div style="height: 50px;"></div>
-        
-                <div class="progress-step">
-                    <div class="step-group bgc-theme">
-                        <div class="step">1</div>
-                    </div>
-            
-                    <div class="step-group bgc-theme ">
-                        <div class="interval"></div>
-                        <div class="step">2</div>
-                    </div>
-            
-                    <div class="step-group ">
-                        <div class="interval"></div>
-                        <div class="step">3</div>
-                    </div>
-            
-                    <div class="step-group">
-                        <div class="interval"></div>
-                        <div class="step">4</div>
-                    </div>
-            
-                    <div class="step-group">
-                        <div class="interval"></div>
-                        <div class="step">5</div>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- check-box -->
-            <div class="clearfix">
-                <br>
-                <div class="check-box-group">
-                    <input type="checkbox" value="0"><span>篮球</span>
-                    <input type="checkbox" value="1" checked="checked"><span>足球</span>
-                    <input type="checkbox" value="2" checked="checked"><span>羽毛球</span>
-                </div>
-                <br>
-                <div class="radio-group">
-                    <input type="radio" name="asd" checked="checked"><span>三个月</span>
-                    <input type="radio" name="asd" checked="checked"><span>半年</span>
-                    <input type="radio" name="asd"><span>一年</span>
-                    <input type="radio" name="asd" checked="checked"><span>一年</span>
-                    <input type="radio" name="asd"><span>一年</span>
-                </div>
-            </div>
-    
-            <!-- tab -->
-            <div class="clearfix">
-                <!-- underline button border btn-border crumb-->
-                <br>
-                <div class="nav-crumb">
-                    <div class="nav-item opposite-crumb"><i class="icon-edit"></i>首页</div>
-                    <div class="nav-item opposite-crumb">通讯录</div>
-                    <div class="nav-item">各种报表</div>
-                    <div class="nav-item">好多好多报表</div>
-                </div>
-                <br>
-                <div class="nav-underline">
-                    <div class="nav-item opposite-underline">首页</div>
-                    <div class="nav-item">通讯录</div>
-                    <div class="nav-item">各种报表</div>
-                    <div class="nav-item">好多好多报表</div>
-                </div>
-                <br>
-                <div class="nav-button">
-                    <div class="nav-item opposite-button"><i class="icon-edit"></i>首页</div>
-                    <div class="nav-item">通讯录12312312312</div>
-                    <div class="nav-item">各种报表</div>
-                    <div class="nav-item">好多好多报表</div>
-                </div>
-                <br>
-                <div class="nav-border">
-                    <div class="nav-item ">首页</div>
-                    <div class="nav-item opposite-border">
-                        通讯录
+            <div id="accordion-nav">
+                <div class="panel">
+                    <a href="#">
                         <i class="icon-edit"></i>
-                    </div>
-                    <div class="nav-item">各种报表<i class="icon-edit"></i></div>
-                    <div class="nav-item">好多好多报表</div>
+                        <span>艾欧尼亚123</span>
+                    </a>
                 </div>
-                <br><br>
-                <div class="nav-btn-border">
-                    <div class="nav-item ">首页</div>
-                    <div class="nav-item opposite-btn-border">
-                        通讯录
-                        <i class="icon-edit"></i>
-                    </div>
-                    <div class="nav-item">
-                        各种报表
-                        <i class="icon-edit"></i>
-                        <i class="icon-edit"></i>
-                    </div>
-                    <div class="nav-item">好多好多报表</div>
-                </div>
-            </div>
-    
-            <!-- info success error warn-->
-            <div class="clearfix">
-                <div class="alert-success">
-                    <span>Well done! You successfully read this important alert message</span>
-                </div>
-                <br>
-                <div class="alert-error">
-                    <span>Oh snap! Change a few things up and try submitting again.</span>
-                </div>
-                <br>
-                <div class="alert-warn">
-                    <span>Warning! Better check yourself, you're not looking too good</span>
-                </div>
-                <br>
-                <div class="alert-info">
-                    <span>Heads up! This alert needs your attention, but it's not super important</span>
-                </div>
-            </div>
-    
-            <!-- pages --> <br>
-            <div class="clearfix">
-                <div class="pages-line">
-                    <!--<div class="first"> 首页 </div>-->
-                    <div class="previous page-disabled"> 上一页 </div>
-                    <ul>
-                        <li class="">1</li>
-                        <!--<li>...</li>-->
-                        <li class="line-opposite">2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li class="point">···</li>
-                        <li>39</li>
-                    </ul>
-                    <div class="next"> 下一页 </div>
-                    <!--<div class="last"> 末页 </div>-->
-                    <div class="import"> <input type="text"> </div>
-                    <div class="go">Go</div>
-                </div>
-                <br><br>
-                <div class="pages-filled">
-                    <div class="previous page-disabled"> <span class="icon-arrow-left"></span> </div>
-                    <ul>
-                        <li class="page-disabled">1</li>
-                        <!--<li>...</li>-->
-                        <li>2</li>
-                        <li class="filled-opposite">3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li class="point">···</li>
-                        <li>28</li>
-                    </ul>
-                    <div class="next"> <span class="icon-arrow-right"></span> </div>
-                </div>
-            </div>
-    
-            <!-- tree -->
-            <div id="tree-view">
-                <ul class="first">
-                    <li>
-                        <i class="icon-arrow-down"></i>
-                        <i class="icon-edit"></i>
-                        <span>艾欧尼亚123123123</span>
-                        <ul class="second">
-                            <li>
-                                <i class="icon-arrow-down"></i>
-                                <i class="icon-edit"></i>
-                                <span>上单</span>
-                            </li>
-                            <li>
-                                <i class="icon-arrow-down"></i>
-                                <i class="icon-edit"></i>
-                                <span>打野</span>
-                                <ul class="third">
-                                    <li>
-                                        <i class="icon-arrow-down"></i>
-                                        <i class="icon-edit"></i>
-                                        <span>德邦总管</span>
-                                    </li>
-                                    <li>
-                                        <i class="icon-arrow-down"></i>
-                                        <i class="icon-edit"></i>
-                                        <span>狂战士</span>
-                                    </li>
-                                    <li>
-                                        <i class="icon-arrow-down"></i>
-                                        <i class="icon-edit"></i>
-                                        <span>泰达米尔</span>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <i class="icon-arrow-down"></i>
-                                <i class="icon-edit"></i>
-                                <span>辅助</span>
-                                <ul class="third">
-                                    <li>
-                                        <i class="icon-arrow-down"></i>
-                                        <i class="icon-edit"></i>
-                                        <span>风暴之怒</span>
-                                    </li>
-                                    <li>
-                                        <i class="icon-arrow-down"></i>
-                                        <i class="icon-edit"></i>
-                                        <span>魂锁典狱长</span>
-                                    </li>
-                                    <li>
-                                        <i class="icon-arrow-down"></i>
-                                        <i class="icon-edit"></i>
-                                        <span>众星之子</span>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <i class="icon-arrow-down"></i>
-                        <i class="icon-edit"></i>
-                        <span>卡拉曼达</span>
-                    </li>
-                    <li>
-                        <i class="icon-arrow-down"></i>
-                        <i class="icon-edit"></i>
-                        <span>征服之海</span>
-                        <ul class="second">
-                            <li>
-                                <i class="icon-arrow-down"></i>
-                                <i class="icon-edit"></i>
-                                <span>上单</span>
-                            </li>
-                            <li>
-                                <i class="icon-arrow-down"></i>
-                                <i class="icon-edit"></i>
-                                <span>打野</span>
-                            </li>
-                            <li>
-                                <i class="icon-arrow-down"></i>
-                                <i class="icon-edit"></i>
-                                <span>辅助</span>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <i class="icon-arrow-down"></i>
-                        <i class="icon-edit"></i>
-                        <span>皮城警备</span>
-                    </li>
-                    <li>
-                        <i class="icon-arrow-down"></i>
+                
+                <div class="panel">
+                    <a href="#accordionTwo">
                         <i class="icon-edit"></i>
                         <span>裁决之地</span>
-                    </li>
-                    <li>
                         <i class="icon-arrow-down"></i>
+                    </a>
+                    <ul id="accordionTwo">
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>德邦总管</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="panel">
+                    <a href="#accordionThree">
                         <i class="icon-edit"></i>
-                        <span>雷瑟守备</span>
-                        <ul class="second">
-                            <li>
-                                <i class="icon-arrow-down"></i>
-                                <i class="icon-edit"></i>
-                                <span>上单</span>
-                                <ul class="third">
-                                    <li>
-                                        <i class="icon-arrow-down"></i>
-                                        <i class="icon-edit"></i>
-                                        <span>德玛西亚皇子</span>
-                                    </li>
-                                    <li>
-                                        <i class="icon-arrow-down"></i>
-                                        <i class="icon-edit"></i>
-                                        <span>齐天大圣</span>
-                                    </li>
-                                    <li>
-                                        <i class="icon-arrow-down"></i>
-                                        <i class="icon-edit"></i>
-                                        <span>迅捷斥候</span>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <i class="icon-arrow-down"></i>
-                                <i class="icon-edit"></i>
-                                <span>打野</span>
-                            </li>
-                            <li>
-                                <i class="icon-arrow-down"></i>
-                                <i class="icon-edit"></i>
-                                <span>辅助</span>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
+                        <span>裁决之地</span>
                         <i class="icon-arrow-down"></i>
+                    </a>
+                    <ul id="accordionThree">
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>德邦总管</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="panel">
+                    <a href="#accordionFour">
                         <i class="icon-edit"></i>
-                        <span>诺克萨斯</span>
-                    </li>
+                        <span>裁决之地</span>
+                        <i class="icon-arrow-down"></i>
+                    </a>
+                    <ul id="accordionFour">
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>德邦总管</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+        </div><!-- /#nav-sidle -->
         
-                </ul>
-            </div>
+        <div id="nav-content">
+            <div id="content-item">
+                <!-- btn -->
+                <div class="clearfix">
+                    <button class="btn btn-xs" id="dom">dom</button>
+                    <button class="btn btn-xs btn-text" id="arr"><i class="icon-edit"></i>Array</button>
+                    <button class="btn btn-xs btn-border" id="sidleBtn"><i class="icon-edit"></i>sidle</button>
+                    <button class="btn btn-xs btn-theme" ><i class="icon-edit"></i>编辑</button>
+                </div>
     
-            <div id="accordion">
-                <ul class="first">
-                    <li>
-                        <a href="javascript:;">
-                            <!--<i class="icon-arrow-right"></i>-->
-                            <span>艾欧尼亚</span>
-                        </a>
-                        <ul class="second">
-                            <li>
-                                <a href="javascript:;">
-                                    <!--<i class="icon-arrow-right"></i>-->
-                                    <span>中单</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <!--<i class="icon-arrow-right"></i>-->
+                <div class="clearfix">
+                    <button class="btn btn-sm">编辑</button>
+                    <button class="btn btn-sm btn-text"><i class="icon-edit"></i>编辑</button>
+                    <button class="btn btn-sm btn-border"><i class="icon-edit"></i>编辑</button>
+                    <button class="btn btn-sm btn-theme"><i class="icon-edit"></i>编辑</button>
+                </div>
+    
+                <div class="clearfix">
+                    <button class="btn btn-md">编辑</button>
+                    <button class="btn btn-md btn-text"><i class="icon-edit"></i>编辑</button>
+                    <button class="btn btn-md btn-border"><i class="icon-edit"></i>编辑</button>
+                    <button class="btn btn-md btn-theme"><i class="icon-edit"></i>编辑</button>
+                </div>
+    
+                <div class="clearfix">
+                    <!--<button class="btn btn-lg">编辑</button>-->
+                    <!--<button class="btn btn-lg btn-text"><i class="icon-edit"></i>编辑</button>-->
+                    <!--<button class="btn btn-lg btn-border"><i class="icon-edit"></i>编辑</button>-->
+                    <!--<button class="btn btn-lg btn-theme"><i class="icon-edit"></i>编辑</button>-->
+                </div>
+    
+                <div>
+                    <!-- input -->
+                    <!--<div class="clearfix">-->
+                    <!--<div class="input-group-xs">-->
+                    <!--<label for="">项目编号</label>-->
+                    <!--<input type="text" class="">-->
+                    <!--</div>-->
+                    <!---->
+                    <!--</div>-->
+                    <!---->
+                    <!--<div class="clearfix">-->
+                    <!--<div class="input-group-sm">-->
+                    <!--<label>项目编号</label>-->
+                    <!--<input type="text">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!---->
+                    <!--<div class="clearfix">-->
+                    <!--<div class="input-group">-->
+                    <!--<label for="">项目编号</label>-->
+                    <!--<input type="text" class="">-->
+                    <!--</div>-->
+                    <!--</div>-->
+        
+                    <!--  dropDown -->
+                    <!--<div class="clearfix">-->
+                    <!--<div id="asd" class="dropdown">-->
+                    <!--<a href="javascript:;">&#45;&#45; 请选择 &#45;&#45;</a>-->
+                    <!--<ul>-->
+                    <!--<li>窗前明月光</li>-->
+                    <!--<li>疑是地上霜</li>-->
+                    <!--<li>举头望明月</li>-->
+                    <!--<li>低头思故乡</li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!---->
+                    <!--<div class="clearfix">-->
+                    <!--<div class="dropdown drop-sm">-->
+                    <!--<a href="javascript:;">&#45;&#45; 请选择 &#45;&#45;</a>-->
+                    <!--<ul>-->
+                    <!--<li>春眠不觉晓</li>-->
+                    <!--<li>处处闻啼鸟</li>-->
+                    <!--<li>夜来风雨声</li>-->
+                    <!--<li>花落知多少</li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!---->
+                    <!--<div class="clearfix">-->
+                    <!--<div class="dropdown drop-xs">-->
+                    <!--<a href="javascript:;">&#45;&#45; 请选择 &#45;&#45;</a>-->
+                    <!--<ul>-->
+                    <!--<li>春眠不觉晓</li>-->
+                    <!--<li>处处闻啼鸟</li>-->
+                    <!--<li>夜来风雨声</li>-->
+                    <!--<li>花落知多少</li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+    
+                <!-- btn + input + dropDown -->
+                <div class="clearfix">
+                    <div class="input-group-xs">
+                        <label for="">项目编号</label>
+                        <input type="text" class="">
+                    </div>
+        
+                    <div class="dropdown drop-xs">
+                        <a href="javascript:;">-- 请选择 --</a>
+                        <ul>
+                            <li>春眠不觉晓11111</li>
+                            <li>处处闻啼鸟</li>
+                            <li>夜来风雨声</li>
+                            <li>花落知多少</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-theme btn-xs"><i class="icon-edit"></i>编辑</button>
+                </div>
+    
+                <div class="clearfix">
+                    <div class="input-group-sm">
+                        <label for="">项目编号</label>
+                        <input type="text" class="">
+                    </div>
+        
+                    <div class="dropdown drop-sm">
+                        <a href="javascript:;">-- 请选择 --</a>
+                        <ul>
+                            <li>春眠不觉晓</li>
+                            <li>处处闻啼鸟</li>
+                            <li>夜来风雨声</li>
+                            <li>花落知多少</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-theme btn-sm"><i class="icon-edit"></i>编辑</button>
+                </div>
+    
+                <div class="clearfix">
+        
+                    <div class="input-group-md">
+                        <label for="">项目编号</label>
+                        <input type="text" class="">
+                    </div>
+        
+                    <div class="dropdown drop-md">
+                        <a href="javascript:;">-- 请选择 --</a>
+                        <ul>
+                            <li>春眠不觉晓</li>
+                            <li>处处闻啼鸟</li>
+                            <li>夜来风雨声</li>
+                            <li>花落知多少</li>
+                        </ul>
+                    </div>
+        
+                    <button class="btn btn-md btn-theme" id="btn2"><i class="icon-edit"></i>编辑</button>
+                </div>
+    
+                <!-- progress-bar -->
+                <div class="clearfix" style="margin-top: 50px;">
+                    <div class="progress-bar">
+                        <div class="bar">
+                            <span class="percent"> 50% </span>
+                        </div>
+                    </div>
+                    <div style="height: 50px;"></div>
+        
+                    <div class="progress-upload">
+                        <div class="bar">
+                            <span class="percent"> 37% </span>
+                        </div>
+                    </div>
+                    <div style="height: 50px;"></div>
+        
+                    <div class="progress-step">
+                        <div class="step-group bgc-theme">
+                            <div class="step">1</div>
+                        </div>
+            
+                        <div class="step-group bgc-theme ">
+                            <div class="interval"></div>
+                            <div class="step">2</div>
+                        </div>
+            
+                        <div class="step-group ">
+                            <div class="interval"></div>
+                            <div class="step">3</div>
+                        </div>
+            
+                        <div class="step-group">
+                            <div class="interval"></div>
+                            <div class="step">4</div>
+                        </div>
+            
+                        <div class="step-group">
+                            <div class="interval"></div>
+                            <div class="step">5</div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- check-box -->
+                <div class="clearfix">
+                    <br>
+                    <div class="check-box-group">
+                        <input type="checkbox" value="0"><span>篮球</span>
+                        <input type="checkbox" value="1" checked="checked"><span>足球</span>
+                        <input type="checkbox" value="2" checked="checked"><span>羽毛球</span>
+                    </div>
+                    <br>
+                    <div class="radio-group">
+                        <input type="radio" name="asd" checked="checked"><span>三个月</span>
+                        <input type="radio" name="asd" checked="checked"><span>半年</span>
+                        <input type="radio" name="asd"><span>一年</span>
+                        <input type="radio" name="asd" checked="checked"><span>一年</span>
+                        <input type="radio" name="asd"><span>一年</span>
+                    </div>
+                </div>
+    
+                <!-- tab -->
+                <div class="clearfix">
+                    <!-- underline button border btn-border crumb-->
+                    <br>
+                    <div class="nav-crumb">
+                        <div class="nav-item opposite-crumb"><i class="icon-edit"></i>首页</div>
+                        <div class="nav-item opposite-crumb">通讯录</div>
+                        <div class="nav-item">各种报表</div>
+                        <div class="nav-item">好多好多报表</div>
+                    </div>
+                    <br>
+                    <div class="nav-underline">
+                        <div class="nav-item opposite-underline">首页</div>
+                        <div class="nav-item">通讯录</div>
+                        <div class="nav-item">各种报表</div>
+                        <div class="nav-item">好多好多报表</div>
+                    </div>
+                    <br>
+                    <div class="nav-button">
+                        <div class="nav-item opposite-button"><i class="icon-edit"></i>首页</div>
+                        <div class="nav-item">通讯录12312312312</div>
+                        <div class="nav-item">各种报表</div>
+                        <div class="nav-item">好多好多报表</div>
+                    </div>
+                    <br>
+                    <div class="nav-border">
+                        <div class="nav-item ">首页</div>
+                        <div class="nav-item opposite-border">
+                            通讯录
+                            <i class="icon-edit"></i>
+                        </div>
+                        <div class="nav-item">各种报表<i class="icon-edit"></i></div>
+                        <div class="nav-item">好多好多报表</div>
+                    </div>
+                    <br><br>
+                    <div class="nav-btn-border">
+                        <div class="nav-item ">首页</div>
+                        <div class="nav-item opposite-btn-border">
+                            通讯录
+                            <i class="icon-edit"></i>
+                        </div>
+                        <div class="nav-item">
+                            各种报表
+                            <i class="icon-edit"></i>
+                            <i class="icon-edit"></i>
+                        </div>
+                        <div class="nav-item">好多好多报表</div>
+                    </div>
+                </div>
+    
+                <!-- info success error warn-->
+                <div class="clearfix">
+                    <div class="alert-success">
+                        <span>Well done! You successfully read this important alert message</span>
+                    </div>
+                    <br>
+                    <div class="alert-error">
+                        <span>Oh snap! Change a few things up and try submitting again.</span>
+                    </div>
+                    <br>
+                    <div class="alert-warn">
+                        <span>Warning! Better check yourself, you're not looking too good</span>
+                    </div>
+                    <br>
+                    <div class="alert-info">
+                        <span>Heads up! This alert needs your attention, but it's not super important</span>
+                    </div>
+                </div>
+    
+                <!-- pages --> <br>
+                <div class="clearfix">
+                    <div class="pages-line">
+                        <!--<div class="first"> 首页 </div>-->
+                        <div class="previous page-disabled"> 上一页 </div>
+                        <ul>
+                            <li class="">1</li>
+                            <!--<li>...</li>-->
+                            <li class="line-opposite">2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li class="point">···</li>
+                            <li>39</li>
+                        </ul>
+                        <div class="next"> 下一页 </div>
+                        <!--<div class="last"> 末页 </div>-->
+                        <div class="import"> <input type="text"> </div>
+                        <div class="go">Go</div>
+                    </div>
+                    <br><br>
+                    <div class="pages-filled">
+                        <div class="previous page-disabled"> <span class="icon-arrow-left"></span> </div>
+                        <ul>
+                            <li class="page-disabled">1</li>
+                            <!--<li>...</li>-->
+                            <li>2</li>
+                            <li class="filled-opposite">3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li class="point">···</li>
+                            <li>28</li>
+                        </ul>
+                        <div class="next"> <span class="icon-arrow-right"></span> </div>
+                    </div>
+                </div>
+    
+                <!-- tree -->
+                <div id="tree-view">
+                    <ul class="first">
+                        <li>
+                            <i class="icon-arrow-down"></i>
+                            <i class="icon-edit"></i>
+                            <span>艾欧尼亚123123123</span>
+                            <ul class="second">
+                                <li>
+                                    <i class="icon-arrow-down"></i>
+                                    <i class="icon-edit"></i>
+                                    <span>上单</span>
+                                </li>
+                                <li>
+                                    <i class="icon-arrow-down"></i>
+                                    <i class="icon-edit"></i>
                                     <span>打野</span>
-                                </a>
-                                <ul class="third">
-                                    <li>
-                                        <a href="javascript:;">
-                                            <!--<i class="icon-circle"></i>-->
+                                    <ul class="third">
+                                        <li>
+                                            <i class="icon-arrow-down"></i>
+                                            <i class="icon-edit"></i>
                                             <span>德邦总管</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <!--<i class="icon-circle"></i>-->
+                                        </li>
+                                        <li>
+                                            <i class="icon-arrow-down"></i>
+                                            <i class="icon-edit"></i>
                                             <span>狂战士</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <!--<i class="icon-circle"></i>-->
-                                            <span>无极剑圣</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <!--<i class="icon-circle"></i>-->
-                                            <span>雷霆咆哮</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <!--<i class="icon-arrow-right"></i>-->
+                                        </li>
+                                        <li>
+                                            <i class="icon-arrow-down"></i>
+                                            <i class="icon-edit"></i>
+                                            <span>泰达米尔</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="icon-arrow-down"></i>
+                                    <i class="icon-edit"></i>
                                     <span>辅助</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <!--<i class="icon-arrow-right"></i>-->
+                                    <ul class="third">
+                                        <li>
+                                            <i class="icon-arrow-down"></i>
+                                            <i class="icon-edit"></i>
+                                            <span>风暴之怒</span>
+                                        </li>
+                                        <li>
+                                            <i class="icon-arrow-down"></i>
+                                            <i class="icon-edit"></i>
+                                            <span>魂锁典狱长</span>
+                                        </li>
+                                        <li>
+                                            <i class="icon-arrow-down"></i>
+                                            <i class="icon-edit"></i>
+                                            <span>众星之子</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="icon-arrow-down"></i>
+                            <i class="icon-edit"></i>
                             <span>卡拉曼达</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <!--<i class="icon-arrow-right"></i>-->
+                        </li>
+                        <li>
+                            <i class="icon-arrow-down"></i>
+                            <i class="icon-edit"></i>
                             <span>征服之海</span>
-                        </a>
-                        <ul class="second">
-                            <li>
-                                <a href="javascript:;">
-                                    <!--<i class="icon-arrow-right"></i>-->
-                                    <span>中单</span>
-                                </a>
-                                <ul class="third">
-                                    <li>
-                                        <a href="javascript:;">
-                                            <!--<i class="icon-circle"></i>-->
-                                            <span>潮汐海灵</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <!--<i class="icon-circle"></i>-->
-                                            <span>光辉女郎</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <!--<i class="icon-arrow-right"></i>-->
+                            <ul class="second">
+                                <li>
+                                    <i class="icon-arrow-down"></i>
+                                    <i class="icon-edit"></i>
+                                    <span>上单</span>
+                                </li>
+                                <li>
+                                    <i class="icon-arrow-down"></i>
+                                    <i class="icon-edit"></i>
                                     <span>打野</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <!--<i class="icon-arrow-right"></i>-->
+                                </li>
+                                <li>
+                                    <i class="icon-arrow-down"></i>
+                                    <i class="icon-edit"></i>
                                     <span>辅助</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <!--<i class="icon-arrow-right"></i>-->
-                                    <span>ADC</span>
-                                </a>
-                                <ul class="third">
-                                    <li>
-                                        <a href="javascript:;">
-                                            <!--<i class="icon-circle"></i>-->
-                                            <span>寒冰射手</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <!--<i class="icon-circle"></i>-->
-                                            <span>暗夜猎手</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <!--<i class="icon-arrow-right"></i>-->
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="icon-arrow-down"></i>
+                            <i class="icon-edit"></i>
                             <span>皮城警备</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <!--<i class="icon-arrow-right"></i>-->
+                        </li>
+                        <li>
+                            <i class="icon-arrow-down"></i>
+                            <i class="icon-edit"></i>
+                            <span>裁决之地</span>
+                        </li>
+                        <li>
+                            <i class="icon-arrow-down"></i>
+                            <i class="icon-edit"></i>
+                            <span>雷瑟守备</span>
+                            <ul class="second">
+                                <li>
+                                    <i class="icon-arrow-down"></i>
+                                    <i class="icon-edit"></i>
+                                    <span>上单</span>
+                                    <ul class="third">
+                                        <li>
+                                            <i class="icon-arrow-down"></i>
+                                            <i class="icon-edit"></i>
+                                            <span>德玛西亚皇子</span>
+                                        </li>
+                                        <li>
+                                            <i class="icon-arrow-down"></i>
+                                            <i class="icon-edit"></i>
+                                            <span>齐天大圣</span>
+                                        </li>
+                                        <li>
+                                            <i class="icon-arrow-down"></i>
+                                            <i class="icon-edit"></i>
+                                            <span>迅捷斥候</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="icon-arrow-down"></i>
+                                    <i class="icon-edit"></i>
+                                    <span>打野</span>
+                                </li>
+                                <li>
+                                    <i class="icon-arrow-down"></i>
+                                    <i class="icon-edit"></i>
+                                    <span>辅助</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="icon-arrow-down"></i>
+                            <i class="icon-edit"></i>
                             <span>诺克萨斯</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                        </li>
+        
+                    </ul>
+                </div>
     
-            <!-- table -->
-            <div style="margin: 50px 10px;">
-                <table class="table table-striped">
-                    <thead>
-                    <th>序号</th>
-                    <th>姓名</th>
-                    <th>性别</th>
-                    <th>年龄</th>
-                    <th>电话</th>
-                    <th>地址</th>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>德玛西亚</td>
-                        <td>男</td>
-                        <td>19</td>
-                        <td>13579246810</td>
-                        <td>电信一区召唤师峡谷瓦洛兰大陆</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>德玛西亚</td>
-                        <td>男</td>
-                        <td>19</td>
-                        <td>13579246810</td>
-                        <td>电信一区召唤师峡谷瓦洛兰大陆</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>德玛西亚</td>
-                        <td>男</td>
-                        <td>19</td>
-                        <td>13579246810</td>
-                        <td>电信一区召唤师峡谷瓦洛兰大陆</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>德玛西亚</td>
-                        <td>男</td>
-                        <td>19</td>
-                        <td>13579246810</td>
-                        <td>电信一区召唤师峡谷瓦洛兰大陆</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>德玛西亚</td>
-                        <td>男</td>
-                        <td>19</td>
-                        <td>13579246810</td>
-                        <td>电信一区召唤师峡谷瓦洛兰大陆</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>德玛西亚</td>
-                        <td>男</td>
-                        <td>19</td>
-                        <td>13579246810</td>
-                        <td>电信一区召唤师峡谷瓦洛兰大陆</td>
-                    </tr>
+                <div id="accordion">
+                    <ul class="first">
+                        <li>
+                            <a href="javascript:;">
+                                <!--<i class="icon-arrow-right"></i>-->
+                                <span>艾欧尼亚</span>
+                            </a>
+                            <ul class="second">
+                                <li>
+                                    <a href="javascript:;">
+                                        <!--<i class="icon-arrow-right"></i>-->
+                                        <span>中单</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <!--<i class="icon-arrow-right"></i>-->
+                                        <span>打野</span>
+                                    </a>
+                                    <ul class="third">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <!--<i class="icon-circle"></i>-->
+                                                <span>德邦总管</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <!--<i class="icon-circle"></i>-->
+                                                <span>狂战士</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <!--<i class="icon-circle"></i>-->
+                                                <span>无极剑圣</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <!--<i class="icon-circle"></i>-->
+                                                <span>雷霆咆哮</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <!--<i class="icon-arrow-right"></i>-->
+                                        <span>辅助</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <!--<i class="icon-arrow-right"></i>-->
+                                <span>卡拉曼达</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <!--<i class="icon-arrow-right"></i>-->
+                                <span>征服之海</span>
+                            </a>
+                            <ul class="second">
+                                <li>
+                                    <a href="javascript:;">
+                                        <!--<i class="icon-arrow-right"></i>-->
+                                        <span>中单</span>
+                                    </a>
+                                    <ul class="third">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <!--<i class="icon-circle"></i>-->
+                                                <span>潮汐海灵</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <!--<i class="icon-circle"></i>-->
+                                                <span>光辉女郎</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <!--<i class="icon-arrow-right"></i>-->
+                                        <span>打野</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <!--<i class="icon-arrow-right"></i>-->
+                                        <span>辅助</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <!--<i class="icon-arrow-right"></i>-->
+                                        <span>ADC</span>
+                                    </a>
+                                    <ul class="third">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <!--<i class="icon-circle"></i>-->
+                                                <span>寒冰射手</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <!--<i class="icon-circle"></i>-->
+                                                <span>暗夜猎手</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <!--<i class="icon-arrow-right"></i>-->
+                                <span>皮城警备</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <!--<i class="icon-arrow-right"></i>-->
+                                <span>诺克萨斯</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- table -->
+                <div style="margin: 50px 0;">
+                    <table class="table table-striped">
+                        <thead>
+                        <th>序号</th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>年龄</th>
+                        <th>电话</th>
+                        <th>地址</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>德玛西亚</td>
+                            <td>男</td>
+                            <td>19</td>
+                            <td>13579246810</td>
+                            <td>电信一区召唤师峡谷瓦洛兰大陆</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>德玛西亚</td>
+                            <td>男</td>
+                            <td>19</td>
+                            <td>13579246810</td>
+                            <td>电信一区召唤师峡谷瓦洛兰大陆</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>德玛西亚</td>
+                            <td>男</td>
+                            <td>19</td>
+                            <td>13579246810</td>
+                            <td>电信一区召唤师峡谷瓦洛兰大陆</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>德玛西亚</td>
+                            <td>男</td>
+                            <td>19</td>
+                            <td>13579246810</td>
+                            <td>电信一区召唤师峡谷瓦洛兰大陆</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>德玛西亚</td>
+                            <td>男</td>
+                            <td>19</td>
+                            <td>13579246810</td>
+                            <td>电信一区召唤师峡谷瓦洛兰大陆</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>德玛西亚</td>
+                            <td>男</td>
+                            <td>19</td>
+                            <td>13579246810</td>
+                            <td>电信一区召唤师峡谷瓦洛兰大陆</td>
+                        </tr>
             
-                    </tbody>
-                </table>
-            </div>
+                        </tbody>
+                    </table>
+                </div>
     
-            <!-- model -->
-            <div id="popup">
-                <h1>大江东去浪淘尽</h1>
-                <h1>浪花淘尽英雄</h1>
-                <h1>是非成败转头空</h1>
-                <h1>青山依旧在</h1>
-                <h1>几度夕阳红</h1>
-                <h1>白发渔樵江渚上</h1>
-                <h1>惯看秋月春风</h1>
-                <h1>一壶浊酒喜相逢</h1>
-                <h1>古今多少事</h1>
-                <h1>都付笑谈中</h1>
-                <br>
-            </div>
+                <!-- model -->
+                <div id="popup">
+                    <h1>大江东去浪淘尽</h1>
+                    <h1>浪花淘尽英雄</h1>
+                    <h1>是非成败转头空</h1>
+                    <h1>青山依旧在</h1>
+                    <h1>几度夕阳红</h1>
+                    <h1>白发渔樵江渚上</h1>
+                    <h1>惯看秋月春风</h1>
+                    <h1>一壶浊酒喜相逢</h1>
+                    <h1>古今多少事</h1>
+                    <h1>都付笑谈中</h1>
+                    <br>
+                </div>
     
-            <div id="sidle">
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
-                <h1>ui.sidle</h1>
+                <div id="sidle">
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
+                    <h1>ui.sidle</h1>
     
-            </div>
-            
-            <!-- slider -->
-            <span class="box" style="border: 2px solid red; display: inline-block; margin: 0 0 50px 10px;">
+                </div>
+    
+                <!-- slider -->
+                <span class="box" style="border: 2px solid red; display: inline-block; margin: 0 0 50px 0;">
         <div id="focus"></div>
     </span>
-        
-        </div><!-- /.content -->
+            </div><!-- /#content-item -->
+        </div><!-- /#content -->
     </div><!-- /.wrapper -->
 </body>
 </html>
