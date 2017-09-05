@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="iconfont/iconfont.css">
     <title>UI</title>
     <style>
+        #nav-sidle{
+            /*background-color: #F7F7F7;*/
+        }
         #nav-content{
             padding-top: 60px;
             padding-left: 180px;
         }
         #content-item{
             padding: 10px;
+            /*background-color: #F7F7F7;*/
         }
         
         #content-item>div{
@@ -24,7 +28,8 @@
         #nav-head .logo{
             width: 180px;
             height: 100%;
-            background-color: #f60;
+            background-color: #FF8A41;
+            text-align: center;
         }
 
         #popup{
@@ -59,7 +64,9 @@
     <div class="wrapper">
         <!-- navigate -->
         <div id="nav-head">
-            <div class="logo pull-left"></div>
+            <div class="logo pull-left">
+                <img src="../images/i_logo.png" alt="logo" title="logo" style="margin-top: 12px;">
+            </div>
             <div class="nav-head-info-tip pull-left">
             <span class="info-tip-drop">
                 <span>任务</span>
@@ -115,55 +122,119 @@
             <!-- 导航内容 -->
             <div id="accordion-nav">
                 <div class="panel">
-                    <a href="#">
+                    <a href="#" class="">
                         <i class="icon-edit"></i>
-                        <span>艾欧尼亚123</span>
+                        <span>首页</span>
                     </a>
                 </div>
                 
                 <div class="panel">
-                    <a href="#accordionTwo">
+                    <a href="#">
                         <i class="icon-edit"></i>
-                        <span>裁决之地</span>
-                        <i class="icon-arrow-down"></i>
+                        <span>人工客服</span>
+                        <i class="icon-arrow-right"></i>
                     </a>
-                    <ul id="accordionTwo">
+                    <ul>
+                        <li>
+                            <a href="#" class="active">
+                                <i class="icon-edit"></i>
+                                <span>上单</span>
+                            </a>
+                        </li>
                         <li>
                             <a href="#">
                                 <i class="icon-edit"></i>
-                                <span>德邦总管</span>
+                                <span>打野</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>中单</span>
                             </a>
                         </li>
                     </ul>
                 </div>
     
                 <div class="panel">
-                    <a href="#accordionThree">
+                    <a href="#">
                         <i class="icon-edit"></i>
-                        <span>裁决之地</span>
-                        <i class="icon-arrow-down"></i>
+                        <span>学习管理</span>
+                        <i class="icon-arrow-right"></i>
                     </a>
-                    <ul id="accordionThree">
+                    <ul>
                         <li>
                             <a href="#">
                                 <i class="icon-edit"></i>
-                                <span>德邦总管</span>
+                                <span>上单</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>打野</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>中单</span>
                             </a>
                         </li>
                     </ul>
                 </div>
     
                 <div class="panel">
-                    <a href="#accordionFour">
+                    <a href="#">
                         <i class="icon-edit"></i>
-                        <span>裁决之地</span>
-                        <i class="icon-arrow-down"></i>
+                        <span>用户管理</span>
+                        <i class="icon-arrow-right"></i>
                     </a>
-                    <ul id="accordionFour">
+                    <ul>
                         <li>
                             <a href="#">
                                 <i class="icon-edit"></i>
-                                <span>德邦总管</span>
+                                <span>上单</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>打野</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>中单</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="panel">
+                    <a href="#">
+                        <i class="icon-edit"></i>
+                        <span>系统管理</span>
+                        <i class="icon-arrow-right"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>上单</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>打野</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-edit"></i>
+                                <span>中单</span>
                             </a>
                         </li>
                     </ul>
@@ -973,10 +1044,12 @@
         }// slimScroll -- end
     });// extend -- end
     
+    // --
     $('#dom').click(function (){
         ui.model('#popup');
     });
-    
+
+    // --
     $('#arr').click(function (){
         var html =
             '<h1>青山依旧在</h1>'+
@@ -1004,12 +1077,20 @@
         
         ui.model([html, arrFun]);
     });
-    
+
+    // --
     $('#sidleBtn').click(function (){
         ui.sidle('#sidle');
     });
-    
-    
+
+    // --
+    $("#accordion-nav").slimScroll({
+        height: "100%",
+        width: "180px",
+        size: '5px'
+    });
+
+    // --
     var data = [
         {title: "国庆123", src: "../images/b5.jpg", href: "#国庆"},
         {title: "Galaxy On7", src: "../images/b1.jpg", href: "#Galaxy On7"},

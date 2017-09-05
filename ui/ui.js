@@ -1,7 +1,7 @@
 /**
  * Created by luogege on 2017.07.21.
  */
-;(function (){
+
     /*
     *   动态获取 data-value
     *   1. 如果下拉框里面的数据如果是动态获取的，就要在执行一次这个函数
@@ -598,7 +598,37 @@
         $(this).children('.info-tip-menu').slideToggle(10);
     });
 
+    // #collapse-btn 收展侧边栏
+    function toggleCollapse(){
+        var open = $("#collapse-btn").hasClass("to-close");
+        if(open){
+            $("#collapse-btn").removeClass("to-close").addClass("to-open");
+            $('#nav-sidle').animate({'left': '-180px'}, 200);
+            $('#nav-content').css({'padding-left': '15px'});
+        }else{
+            $("#collapse-btn").removeClass("to-open").addClass("to-close");
+            $('#nav-sidle').animate({'left': '0px'}, 200);
+            $('#nav-content').css({'padding-left': '180px'});
+        }
+    };
 
+    // 导航的 accordion
+    $('#accordion-nav a').each(function (index, item){
+        var _item = $(item);
+        _item.click(function (){
+            if(_item.parent().hasClass('panel')){
+                _item.siblings('ul').slideToggle(200);
+                _item.children('i:last-child').css('transform', 'rotate(90deg)');
+            }
+            else{
+
+            }
+            $('#accordion-nav a').each(function (i, v){
+                $(v).removeClass('active');
+            });
+            $(this).addClass('active');
+        });
+    });
 
 
 
@@ -629,18 +659,4 @@
     };
 
 
-})();// -- end
 
-// #collapse-btn 收展侧边栏
-function toggleCollapse(){
-    var open = $("#collapse-btn").hasClass("to-close");
-    if(open){
-        $("#collapse-btn").removeClass("to-close").addClass("to-open");
-        $('#nav-sidle').animate({'left': '-180px'}, 200);
-        $('#nav-content').css({'padding-left': '15px'});
-    }else{
-        $("#collapse-btn").removeClass("to-open").addClass("to-close");
-        $('#nav-sidle').animate({'left': '0px'}, 200);
-        $('#nav-content').css({'padding-left': '180px'});
-    }
-};

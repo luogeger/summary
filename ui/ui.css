@@ -687,7 +687,8 @@ table {
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   overflow-x: hidden;
   overflow-y: auto;
   /* 弹窗 */
@@ -907,9 +908,34 @@ table {
       #nav-sidle #collapse-btn.to-open .collapse-btn-nav i {
         left: -3px;
         transform: rotate(180deg); }
-  #nav-sidle .sidle-hide {
-    width: 20px !important;
-    background-color: transparent !important; }
+  #nav-sidle #accordion-nav a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    padding: 0 10px;
+    position: relative; }
+    #nav-sidle #accordion-nav a span {
+      margin-left: 5px; }
+  #nav-sidle #accordion-nav .panel,
+  #nav-sidle #accordion-nav a,
+  #nav-sidle #accordion-nav ul,
+  #nav-sidle #accordion-nav li {
+    width: 100%; }
+  #nav-sidle #accordion-nav .panel .active {
+    background-color: #FF8A41 !important; }
+    #nav-sidle #accordion-nav .panel .active span,
+    #nav-sidle #accordion-nav .panel .active i {
+      color: #ffffff !important; }
+  #nav-sidle #accordion-nav .panel > a i:last-child {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    transition: all .2s; }
+  #nav-sidle #accordion-nav .panel > ul {
+    display: none; }
+    #nav-sidle #accordion-nav .panel > ul li a {
+      padding-left: 30px; }
 
 #nav-content {
   transition: all .2s linear 0s; }

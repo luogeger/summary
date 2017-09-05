@@ -1033,7 +1033,8 @@ table{
   right: 0;
   background-color: rgba(0, 0 , 0, .5);
   z-index: 2;
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   overflow-x: hidden;
   overflow-y: auto;
 
@@ -1332,15 +1333,69 @@ table{
 
   /* 导航内容 */
   #accordion-nav{
+    a{
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      overflow: hidden;
+      padding: 0 10px;
+      position: relative;
+      span{
+        margin-left: 5px;
+      }
+    }
+    .panel,
+    a,
+    ul,
+    li{
+      width: 100%;
+    }
 
-  }
+    .panel{
+      .active{
+        background-color: $theme-normal !important;
+        span,
+        i{
+          color: $sixF !important;
+        }
+      }
+      >a{
+        i{
 
-  // 隐藏侧边栏的 class
-  .sidle-hide {
-    width: 20px !important;
-    background-color: transparent !important;
+        }
+        span{
+
+        }
+        i:first-child{
+
+        }
+        i:last-child{
+          position: absolute;
+          top: 2px;
+          right: 10px;
+          transition: all .2s;
+        }
+      }
+
+      >ul{
+        display: none;
+        li{
+          a{
+            padding-left: 30px;
+            i{
+
+            }
+
+            span{
+
+            }
+          }
+        }
+      }
+    }
   }
 }//--end .nav-sidle
+
 
 #nav-content{
   transition: all .2s linear 0s;
