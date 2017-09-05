@@ -28,7 +28,13 @@
 
     /*
     *   下拉框 -- 自定义属性data-value
+    *   1. 下拉框的的宽度保持一致
     * */
+    // 1. 下拉框的的宽度保持一致
+    $('.dropdown').children('ul').each(function (index, item){
+        var width = $(item).parent('.dropdown').css('width');
+        $(item).css('width', width);
+    })
     $('.dropdown').each(function (index, item){
         //追加icon
         $(item).prepend('<i class="icon-arrow-down"></i>');
@@ -616,13 +622,19 @@
     $('#accordion-nav a').each(function (index, item){
         var _item = $(item);
         _item.click(function (){
+            // 这里是一级菜单的 a 标签
             if(_item.parent().hasClass('panel')){
-                _item.siblings('ul').slideToggle(200);
-                _item.children('i:last-child').css('transform', 'rotate(90deg)');
+                if(_item.hasClass('flag-open')){
+                    _item.siblings('ul').slideToggle(200);
+                    _item.children('i:last-child').css('transform', 'rotate(0deg)');
+                    _item.removeClass('flag-open');
+                }else{
+                    _item.siblings('ul').slideToggle(200);
+                    _item.children('i:last-child').css('transform', 'rotate(90deg)');
+                    _item.addClass('flag-open');
+                }
             }
-            else{
 
-            }
             $('#accordion-nav a').each(function (i, v){
                 $(v).removeClass('active');
             });

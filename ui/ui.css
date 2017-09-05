@@ -14,6 +14,131 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+/* navigation */
+#nav-head {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 0px -1px 8px 0px #cccccc;
+  margin: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+  #nav-head .nav-head-info-tip {
+    padding: 0 10px;
+    height: 100%;
+    line-height: 60px;
+    position: relative; }
+    #nav-head .nav-head-info-tip .info-tip-drop {
+      cursor: pointer; }
+    #nav-head .nav-head-info-tip .info-tip-menu {
+      display: none;
+      background-color: #ffffff;
+      border: 1px solid #FF8A41;
+      padding: 5px 0;
+      position: absolute;
+      top: 46px;
+      right: 0px;
+      border-radius: 4px;
+      box-shadow: 0 0 2px #FF8A41; }
+      #nav-head .nav-head-info-tip .info-tip-menu li {
+        line-height: 14px;
+        padding: 5px 10px;
+        cursor: pointer;
+        white-space: nowrap; }
+      #nav-head .nav-head-info-tip .info-tip-menu li:hover {
+        background-color: #FF8A41;
+        color: #ffffff; }
+    #nav-head .nav-head-info-tip .info-tip-menu:before {
+      position: absolute;
+      top: -5px;
+      right: 13px;
+      content: '';
+      transform: rotate(45deg);
+      width: 7px;
+      height: 7px;
+      border-left: 1px solid #FF8A41;
+      border-top: 1px solid #FF8A41;
+      background-color: #ffffff; }
+
+#nav-sidle {
+  width: 180px;
+  background-color: #ffffff;
+  box-shadow: -1px 5px 8px 0px #cccccc;
+  margin: 0;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  border-top: 1px solid #ED6C1C;
+  /* 右边小箭头 */
+  /* 导航内容 */ }
+  #nav-sidle #collapse-btn {
+    cursor: pointer;
+    position: fixed;
+    top: 48%;
+    width: 20px;
+    line-height: 30px;
+    z-index: 100;
+    transition: all .2s ease 0s; }
+    #nav-sidle #collapse-btn .collapse-btn-nav i {
+      font-size: 18px;
+      position: relative;
+      display: block; }
+    #nav-sidle #collapse-btn.to-close {
+      left: 165px;
+      border-bottom: 9px solid transparent;
+      border-left: none;
+      border-right: 13px solid #f7f7f7;
+      border-top: 9px solid transparent; }
+      #nav-sidle #collapse-btn.to-close:hover {
+        left: 160px; }
+      #nav-sidle #collapse-btn.to-close .collapse-btn-nav i {
+        left: 5px; }
+    #nav-sidle #collapse-btn.to-open {
+      left: -4px;
+      border-bottom: 9px solid transparent;
+      border-left: 13px solid #d9dee4;
+      border-top: 9px solid transparent; }
+      #nav-sidle #collapse-btn.to-open:hover {
+        left: 0px; }
+      #nav-sidle #collapse-btn.to-open .collapse-btn-nav i {
+        left: -3px;
+        transform: rotate(180deg); }
+  #nav-sidle #accordion-nav a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    padding: 0 10px;
+    position: relative; }
+    #nav-sidle #accordion-nav a span {
+      margin-left: 5px; }
+  #nav-sidle #accordion-nav .panel,
+  #nav-sidle #accordion-nav a,
+  #nav-sidle #accordion-nav ul,
+  #nav-sidle #accordion-nav li {
+    width: 100%; }
+  #nav-sidle #accordion-nav .panel .active {
+    background-color: #FF8A41 !important; }
+    #nav-sidle #accordion-nav .panel .active span,
+    #nav-sidle #accordion-nav .panel .active i {
+      color: #ffffff !important; }
+  #nav-sidle #accordion-nav .panel > a i:last-child {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    transition: all .2s; }
+  #nav-sidle #accordion-nav .panel > ul {
+    display: none; }
+    #nav-sidle #accordion-nav .panel > ul li a {
+      padding-left: 30px; }
+
+#nav-content {
+  transition: all .2s linear 0s; }
+
 /* -- button 按钮 */
 .btn {
   color: #ffffff;
@@ -162,12 +287,13 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  float: left; }
+  float: left;
+  min-width: 140px; }
   .dropdown a {
     display: inline-block;
     height: 34px;
     padding: 5px 20px 5px 10px;
-    min-width: 140px;
+    width: 100%;
     border: 1px solid #CCCCCC;
     border-radius: 6px; }
   .dropdown i {
@@ -189,7 +315,6 @@
     .dropdown ul li {
       padding: 0 10px;
       line-height: 30px;
-      min-width: 173px;
       cursor: pointer; }
       .dropdown ul li:hover {
         color: #ffffff;
@@ -815,130 +940,6 @@ table {
     left: 0em; }
   .slider .slider-extra .extra-page .extra-page-next {
     right: 0em; }
-
-/* navigation */
-#nav-head {
-  width: 100%;
-  height: 60px;
-  background-color: #ffffff;
-  box-shadow: 0px -1px 8px 0px #cccccc;
-  margin: 0px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1; }
-  #nav-head .nav-head-info-tip {
-    padding: 0 10px;
-    height: 100%;
-    line-height: 60px;
-    position: relative; }
-    #nav-head .nav-head-info-tip .info-tip-drop {
-      cursor: pointer; }
-    #nav-head .nav-head-info-tip .info-tip-menu {
-      display: none;
-      background-color: #ffffff;
-      border: 1px solid #FF8A41;
-      padding: 5px 0;
-      position: absolute;
-      top: 46px;
-      right: 0px;
-      border-radius: 4px;
-      box-shadow: 0 0 2px #FF8A41; }
-      #nav-head .nav-head-info-tip .info-tip-menu li {
-        line-height: 14px;
-        padding: 5px 10px;
-        cursor: pointer;
-        white-space: nowrap; }
-      #nav-head .nav-head-info-tip .info-tip-menu li:hover {
-        background-color: #FF8A41;
-        color: #ffffff; }
-    #nav-head .nav-head-info-tip .info-tip-menu:before {
-      position: absolute;
-      top: -5px;
-      right: 13px;
-      content: '';
-      transform: rotate(45deg);
-      width: 7px;
-      height: 7px;
-      border-left: 1px solid #FF8A41;
-      border-top: 1px solid #FF8A41;
-      background-color: #ffffff; }
-
-#nav-sidle {
-  width: 180px;
-  background-color: #ffffff;
-  box-shadow: -1px 5px 8px 0px #cccccc;
-  margin: 0;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  bottom: 0;
-  z-index: auto;
-  /* 右边小箭头 */
-  /* 导航内容 */ }
-  #nav-sidle #collapse-btn {
-    cursor: pointer;
-    position: fixed;
-    top: 48%;
-    width: 20px;
-    line-height: 30px;
-    z-index: 100;
-    transition: all .2s ease 0s; }
-    #nav-sidle #collapse-btn .collapse-btn-nav i {
-      font-size: 18px;
-      position: relative;
-      display: block; }
-    #nav-sidle #collapse-btn.to-close {
-      left: 165px;
-      border-bottom: 9px solid transparent;
-      border-left: none;
-      border-right: 13px solid #f7f7f7;
-      border-top: 9px solid transparent; }
-      #nav-sidle #collapse-btn.to-close:hover {
-        left: 160px; }
-      #nav-sidle #collapse-btn.to-close .collapse-btn-nav i {
-        left: 5px; }
-    #nav-sidle #collapse-btn.to-open {
-      left: -4px;
-      border-bottom: 9px solid transparent;
-      border-left: 13px solid #d9dee4;
-      border-top: 9px solid transparent; }
-      #nav-sidle #collapse-btn.to-open:hover {
-        left: 0px; }
-      #nav-sidle #collapse-btn.to-open .collapse-btn-nav i {
-        left: -3px;
-        transform: rotate(180deg); }
-  #nav-sidle #accordion-nav a {
-    display: block;
-    height: 40px;
-    line-height: 40px;
-    overflow: hidden;
-    padding: 0 10px;
-    position: relative; }
-    #nav-sidle #accordion-nav a span {
-      margin-left: 5px; }
-  #nav-sidle #accordion-nav .panel,
-  #nav-sidle #accordion-nav a,
-  #nav-sidle #accordion-nav ul,
-  #nav-sidle #accordion-nav li {
-    width: 100%; }
-  #nav-sidle #accordion-nav .panel .active {
-    background-color: #FF8A41 !important; }
-    #nav-sidle #accordion-nav .panel .active span,
-    #nav-sidle #accordion-nav .panel .active i {
-      color: #ffffff !important; }
-  #nav-sidle #accordion-nav .panel > a i:last-child {
-    position: absolute;
-    top: 2px;
-    right: 10px;
-    transition: all .2s; }
-  #nav-sidle #accordion-nav .panel > ul {
-    display: none; }
-    #nav-sidle #accordion-nav .panel > ul li a {
-      padding-left: 30px; }
-
-#nav-content {
-  transition: all .2s linear 0s; }
 
 /* 常用类 */
 .themeColor-back {

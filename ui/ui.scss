@@ -49,6 +49,197 @@ $paddingH-10: 10px;
 }
 
 
+
+
+/* navigation */
+#nav-head{
+  width: 100%;
+  height: 60px;
+  background-color: $sixF;
+  box-shadow:0px -1px 8px 0px #cccccc;
+  margin: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  .nav-head-info-tip{
+    padding: 0 10px;
+    height: 100%;
+    line-height: 60px;
+    position: relative;
+    .info-tip-drop{
+      cursor: pointer;
+    }
+
+    .info-tip-menu{
+      display: none;
+      background-color: $sixF;
+      border: 1px solid $theme-normal;
+      padding: 5px 0;
+      position: absolute;
+      top: 46px;
+      right: 0px;
+      border-radius: 4px;
+      box-shadow: 0 0 2px $theme-normal;
+      li{
+        line-height: 14px;
+        padding: 5px 10px;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      li:hover{
+        background-color: $theme-normal;
+        color: $sixF;
+      }
+    }
+    .info-tip-menu:before{
+      position: absolute;
+      top: -5px;
+      right: 13px;
+      content: '';
+      transform: rotate(45deg);
+      width: 7px;
+      height: 7px;
+      border-left: 1px solid $theme-normal;
+      border-top: 1px solid $theme-normal;
+      background-color: $sixF;
+    }
+  }
+}
+
+
+#nav-sidle{
+  width: 180px;
+  background-color: $sixF;
+  box-shadow: -1px 5px 8px 0px #cccccc;
+  margin: 0;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  border-top: 1px solid $theme-hover;
+  /* 右边小箭头 */
+  #collapse-btn{
+    cursor: pointer;
+    position: fixed;
+    top: 48%;
+    width: 20px;
+    line-height: 30px;
+    z-index: 100;
+    transition: all .2s ease 0s;
+    .collapse-btn-nav i{
+      font-size: 18px;
+      position: relative;
+      display: block;
+
+    }
+
+    &.to-close{
+      left: 165px;
+      border-bottom: 9px solid transparent;
+      border-left: none;
+      border-right: 13px solid #f7f7f7;
+      border-top: 9px solid transparent;
+      &:hover{
+        left: 160px;
+      }
+      .collapse-btn-nav i{
+        left: 5px;
+      }
+    }
+
+    &.to-open{
+      left: -4px;
+      border-bottom: 9px solid transparent;
+      border-left: 13px solid #d9dee4;
+      border-top: 9px solid transparent;
+      &:hover{
+        left: 0px;
+      }
+      .collapse-btn-nav i{
+        left: -3px;
+        transform: rotate(180deg);
+      }
+    }
+
+  }
+
+  /* 导航内容 */
+  #accordion-nav{
+    a{
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      overflow: hidden;
+      padding: 0 10px;
+      position: relative;
+      span{
+        margin-left: 5px;
+      }
+    }
+    .panel,
+    a,
+    ul,
+    li{
+      width: 100%;
+    }
+
+    .panel{
+      .active{
+        background-color: $theme-normal !important;
+        span,
+        i{
+          color: $sixF !important;
+        }
+      }
+      >a{
+        i{
+
+        }
+        span{
+
+        }
+        i:first-child{
+
+        }
+        i:last-child{
+          position: absolute;
+          top: 2px;
+          right: 10px;
+          transition: all .2s;
+        }
+      }
+
+      >ul{
+        display: none;
+        li{
+          a{
+            padding-left: 30px;
+            i{
+
+            }
+
+            span{
+
+            }
+          }
+        }
+      }
+    }
+  }
+}//--end .nav-sidle
+
+
+#nav-content{
+  transition: all .2s linear 0s;
+}
+
+
+
+
+
 /* -- button 按钮 */
 .btn{
   color: $sixF;
@@ -238,16 +429,16 @@ $paddingH-10: 10px;
   position: relative;
   display: inline-block;
   float: left;
-
+  min-width: 140px;
   a{
     display: inline-block;
     height: $height-md;
-    //line-height: $height-md - 10px;
     padding: 5px 20px 5px 10px;
-    min-width: 140px;
+    width: 100%;
     border: 1px solid $sixC;
     border-radius: 6px;
   }
+
   i{
     position: absolute;
     top: $height-md / 2 - 7px;
@@ -255,6 +446,7 @@ $paddingH-10: 10px;
     cursor: pointer;
     transition: all 0.3s;
   }
+
   ul{
     border: 1px solid $sixC;
     position: absolute;
@@ -268,7 +460,7 @@ $paddingH-10: 10px;
     li{
       padding: 0 10px;
       line-height: 30px;
-      min-width: 173px;
+      //min-width: $minWidth;
       cursor: pointer;
       &:hover{
         color: $sixF;
@@ -1022,8 +1214,6 @@ table{
 
 
 
-
-
 /* 遮罩层(#mask-layer) -- 弹窗(.layer-popup) -- 侧滑(.layer-sidle) */
 #mask-layer{
   position: fixed;
@@ -1211,203 +1401,6 @@ table{
     }
   }
 }
-
-
-
-
-
-/* navigation */
-#nav-head{
-  width: 100%;
-  height: 60px;
-  background-color: $sixF;
-  box-shadow:0px -1px 8px 0px #cccccc;
-  margin: 0px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  .nav-head-info-tip{
-    padding: 0 10px;
-    height: 100%;
-    line-height: 60px;
-    position: relative;
-    .info-tip-drop{
-      cursor: pointer;
-    }
-
-    .info-tip-menu{
-      display: none;
-      background-color: $sixF;
-      border: 1px solid $theme-normal;
-      padding: 5px 0;
-      position: absolute;
-      top: 46px;
-      right: 0px;
-      border-radius: 4px;
-      box-shadow: 0 0 2px $theme-normal;
-      li{
-        line-height: 14px;
-        padding: 5px 10px;
-        cursor: pointer;
-        white-space: nowrap;
-      }
-      li:hover{
-        background-color: $theme-normal;
-        color: $sixF;
-      }
-    }
-    .info-tip-menu:before{
-      position: absolute;
-      top: -5px;
-      right: 13px;
-      content: '';
-      transform: rotate(45deg);
-      width: 7px;
-      height: 7px;
-      border-left: 1px solid $theme-normal;
-      border-top: 1px solid $theme-normal;
-      background-color: $sixF;
-    }
-  }
-}
-
-
-#nav-sidle{
-  width: 180px;
-  background-color: $sixF;
-  box-shadow: -1px 5px 8px 0px #cccccc;
-  margin: 0;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  bottom: 0;
-  z-index: auto;
-
-  /* 右边小箭头 */
-  #collapse-btn{
-    cursor: pointer;
-    position: fixed;
-    top: 48%;
-    width: 20px;
-    line-height: 30px;
-    z-index: 100;
-    transition: all .2s ease 0s;
-    .collapse-btn-nav i{
-      font-size: 18px;
-      position: relative;
-      display: block;
-
-    }
-
-    &.to-close{
-      left: 165px;
-      border-bottom: 9px solid transparent;
-      border-left: none;
-      border-right: 13px solid #f7f7f7;
-      border-top: 9px solid transparent;
-      &:hover{
-        left: 160px;
-      }
-      .collapse-btn-nav i{
-        left: 5px;
-      }
-    }
-
-    &.to-open{
-      left: -4px;
-      border-bottom: 9px solid transparent;
-      border-left: 13px solid #d9dee4;
-      border-top: 9px solid transparent;
-      &:hover{
-        left: 0px;
-      }
-      .collapse-btn-nav i{
-        left: -3px;
-        transform: rotate(180deg);
-      }
-    }
-
-  }
-
-  /* 导航内容 */
-  #accordion-nav{
-    a{
-      display: block;
-      height: 40px;
-      line-height: 40px;
-      overflow: hidden;
-      padding: 0 10px;
-      position: relative;
-      span{
-        margin-left: 5px;
-      }
-    }
-    .panel,
-    a,
-    ul,
-    li{
-      width: 100%;
-    }
-
-    .panel{
-      .active{
-        background-color: $theme-normal !important;
-        span,
-        i{
-          color: $sixF !important;
-        }
-      }
-      >a{
-        i{
-
-        }
-        span{
-
-        }
-        i:first-child{
-
-        }
-        i:last-child{
-          position: absolute;
-          top: 2px;
-          right: 10px;
-          transition: all .2s;
-        }
-      }
-
-      >ul{
-        display: none;
-        li{
-          a{
-            padding-left: 30px;
-            i{
-
-            }
-
-            span{
-
-            }
-          }
-        }
-      }
-    }
-  }
-}//--end .nav-sidle
-
-
-#nav-content{
-  transition: all .2s linear 0s;
-}
-
-
-
-
-
-
-
-
 
 
 
