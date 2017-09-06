@@ -119,7 +119,8 @@ $paddingH-10: 10px;
   left: 0;
   bottom: 0;
   z-index: 1;
-  border-top: 1px solid $theme-hover;
+  //border-top: 1px solid $theme-hover;
+
   /* 右边小箭头 */
   #collapse-btn{
     cursor: pointer;
@@ -421,6 +422,7 @@ $paddingH-10: 10px;
     height: $height-md;
   }
 }
+
 
 
 

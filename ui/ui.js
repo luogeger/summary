@@ -146,7 +146,7 @@
     * */
     // 1.
     $('.nav-crumb .nav-item:not(:first-child)').each(function (index, item){
-        $(item).before('<i class="icon-arrow-right"></i>')
+        $(item).before('<i class="icon-arrow-dbRight"></i>')
     });
     // 2.
     tabEffect($('.nav-underline'), 'opposite-underline');
