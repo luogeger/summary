@@ -145,21 +145,21 @@
     *   2. tab 的点击效果
     * */
     // 1.
-    $('.nav-crumb .nav-item:not(:first-child)').each(function (index, item){
+    $('.tab-crumb .tab-item:not(:first-child)').each(function (index, item){
         $(item).before('<i class="icon-arrow-dbRight"></i>')
     });
     // 2.
-    tabEffect($('.nav-underline'), 'opposite-underline');
-    tabEffect($('.nav-button'), 'opposite-button');
-    tabEffect($('.nav-border'), 'opposite-border');
-    tabEffect($('.nav-btn-border'), 'opposite-btn-border');
+    tabEffect($('.tab-underline'), 'opposite-underline');
+    tabEffect($('.tab-button'), 'opposite-button');
+    tabEffect($('.tab-border'), 'opposite-border');
+    tabEffect($('.tab-btn-border'), 'opposite-btn-border');
     function tabEffect (dom, cls){
         dom.each(function (index, item){
             $(item).children().each(function (_index, _item){
                 $(_item).click(function (){
                     $(this).parent().children().each(function (i, v){
                         $(v).removeClass(cls);
-                    });
+                    });// 排他
                     $(this).addClass(cls);
                 })
             })

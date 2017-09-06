@@ -710,8 +710,8 @@ $paddingH-10: 10px;
 
 
 
-/* tab + nav */
-.nav-item{
+/* tab*/
+.tab-item{
   padding: 0 $paddingH-10;
   line-height: $height-sm;
   color: $text-normal;
@@ -721,19 +721,21 @@ $paddingH-10: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  i{
+    font-size: 14px;
+  }
 }
 
-.nav-crumb,
-.nav-underline,
-.nav-button,
-.nav-border,
-.nav-btn-border{
+.tab-crumb,
+.tab-underline,
+.tab-button,
+.tab-border,
+.tab-btn-border{
   font-size: 0;
-  margin-top: 17px;
 }
 
-.nav-crumb{
-  .nav-item{
+.tab-crumb{
+  .tab-item{
     i{
       margin-right: 5px;
     }
@@ -748,8 +750,8 @@ $paddingH-10: 10px;
   }
 }
 
-.nav-underline{
-  .nav-item{
+.tab-underline{
+  .tab-item{
     border: none;
     border-bottom: 2px solid $hybrid;
     &:hover{
@@ -760,9 +762,9 @@ $paddingH-10: 10px;
 
 }
 
-.nav-button{
-  .nav-item{
-    padding: 0 $paddingH-20;
+.tab-button{
+  .tab-item{
+    padding: 0 14px;
     border-radius: 4px;
     &:hover{
       color: $sixF;
@@ -773,16 +775,24 @@ $paddingH-10: 10px;
     }
   }
 
+  i,
+  .tab-item:not(:last-child){
+    margin-right: 2px;
+  }
 }
 
-.nav-border{
+.tab-border{
   display: inline-block;
-  .nav-item{
+  border-bottom: 1px solid #000;
+  .tab-item{
     padding: 0 $paddingH-20;
     height: $height-sm;
     line-height: $height-sm;
-    border-bottom: 1px solid $hybrid;
     color: $six9;
+    background-color: $sixF;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid transparent;
+    border-bottom: none;
     i{
       color: $six9;
       position: relative;
@@ -791,6 +801,10 @@ $paddingH-10: 10px;
     }
     &:hover{
       color: $text-normal;
+      border-color: red;
+      position: relative;
+      height: $height-sm + 1;
+      line-height: $height-sm + 1;
       i{
         color: $text-normal;
       }
@@ -798,13 +812,13 @@ $paddingH-10: 10px;
   }
 }
 
-.nav-btn-border{
+.tab-btn-border{
   $padding: 10px;
   border-bottom: 1px solid $hybrid;
   padding: 0 $padding;
   display: inline-block;
   margin-left: -$padding;
-  .nav-item{
+  .tab-item{
     padding: 0 $paddingH-20;
     border: 1px solid $hybrid;
     border-bottom: none;
@@ -819,7 +833,7 @@ $paddingH-10: 10px;
       }
     }
   }
-  .nav-item:not(:first-child){
+  .tab-item:not(:first-child){
     margin-left: $padding;
   }
 }
@@ -848,10 +862,10 @@ $paddingH-10: 10px;
 
 .opposite-border{
   color: $text-normal !important;
-  border: 1px solid $hybrid;
-  border-bottom: none !important;
-  border-radius: 4px 4px 0 0;
-  line-height: $height-sm - 1 !important;
+  border-color: red !important ;
+  height: $height-sm + 1;
+  line-height: $height-sm + 1;
+  position: relative;
   i{
     color: $text-normal !important;
   }
@@ -1284,6 +1298,7 @@ table{
       border-radius: 0 0 6px 6px;
     }
   }
+
 
   /* 侧边弹出 */
   .layer-sidle{
