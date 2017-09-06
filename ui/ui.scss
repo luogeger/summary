@@ -68,8 +68,9 @@ $paddingH-10: 10px;
     height: 100%;
     line-height: 60px;
     position: relative;
+    cursor: pointer;
+    z-index: 2;
     .info-tip-drop{
-      cursor: pointer;
     }
 
     .info-tip-menu{
@@ -112,13 +113,13 @@ $paddingH-10: 10px;
 #nav-sidle{
   width: 180px;
   background-color: $sixF;
-  box-shadow: -1px 5px 8px 0px #cccccc;
+  box-shadow: -1px 0px 8px 0px #cccccc;
   margin: 0;
   position: fixed;
   top: 60px;
   left: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: auto;
   //border-top: 1px solid $theme-hover;
 
   /* 右边小箭头 */
@@ -1311,10 +1312,6 @@ table{
     }
     .content{
       width: 100%;
-      padding: 10px;
-      overflow-x: hidden;
-      overflow-y: auto;
-      //position: relative;
     }
   }
 }

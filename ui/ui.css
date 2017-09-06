@@ -29,9 +29,9 @@
     padding: 0 10px;
     height: 100%;
     line-height: 60px;
-    position: relative; }
-    #nav-head .nav-head-info-tip .info-tip-drop {
-      cursor: pointer; }
+    position: relative;
+    cursor: pointer;
+    z-index: 2; }
     #nav-head .nav-head-info-tip .info-tip-menu {
       display: none;
       background-color: #ffffff;
@@ -65,13 +65,13 @@
 #nav-sidle {
   width: 180px;
   background-color: #ffffff;
-  box-shadow: -1px 5px 8px 0px #cccccc;
+  box-shadow: -1px 0px 8px 0px #cccccc;
   margin: 0;
   position: fixed;
   top: 60px;
   left: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: auto;
   /* 右边小箭头 */
   /* 导航内容 */ }
   #nav-sidle #collapse-btn {
@@ -878,10 +878,7 @@ table {
         #mask-layer .layer-sidle .title i:hover {
           color: #FF8A41; }
     #mask-layer .layer-sidle .content {
-      width: 100%;
-      padding: 10px;
-      overflow-x: hidden;
-      overflow-y: auto; }
+      width: 100%; }
 
 /* slider -- 轮播图 */
 .slider {

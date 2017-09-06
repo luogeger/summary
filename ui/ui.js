@@ -391,7 +391,7 @@
                     '<div class="layer-popup">'+
                         '<div class="title">'+
                             '<span>提示</span>'+
-                            '<i class="icon iconfont icon-arrow-right close"></i>'+
+                            '<i class="icon iconfont icon-close-line close"></i>'+
                         '</div>'+
                         '<div class="content">'+
                             '<div class="content-text">'+ ele[0] +'</div>'+
@@ -439,7 +439,7 @@
                 '<div class="layer-sidle">'+
                     '<div class="title">'+
                         '<span>提示</span>'+
-                        '<i class="icon iconfont icon-arrow-right close"></i>'+
+                        '<i class="icon iconfont icon-close-line close"></i>'+
                     '</div>'+
                     '<div class="content"></div>'+
                 '</div>'+
@@ -448,17 +448,23 @@
 
         $('body').prepend(html).css({'overflow-y': 'hidden'});
         var height = $('.layer-sidle').outerHeight() - $('.title').outerHeight() + 'px';
-        $('.layer-sidle .content').append($(ele).css({'display': 'block'})).css({'max-height': height});
+        var width = $(ele).outerWidth();// 获取dom元素的宽度
+
         $('.layer-sidle').css(css).animate({'left': '0px'}, 300);// sidle 显示
+        $('.layer-sidle').click(function (e){ e.stopPropagation(); });// 阻止冒泡
 
+        // 滚动条
+        $('.layer-sidle .content').append($(ele).css({'display': 'block'})).css({'max-height': height}).slimScroll({ height: "100%", width: width, });
 
-        $('#mask-layer').click(function (){
-            $('.layer-sidle').animate({'left': '-1000px'}, 300, function (){
-                $(ele).parents('#mask-layer').before($(ele).css({'display': 'none'}));// 保留 dom 元素
-                $('#mask-layer').remove();// 删除 #mask-layer
-                $('body').css({'overflow': 'auto'});
-            });// sidle 消失
-
+        // 隐藏 滑动事件
+        $('#mask-layer, #mask-layer .icon-close-line').each(function (index, item){
+            $(item).click(function (){
+                $('.layer-sidle').animate({'left': '-1000px'}, 300, function (){
+                    $(ele).parents('#mask-layer').before($(ele).css({'display': 'none'}));// 保留 dom 元素
+                    $('#mask-layer').remove();// 删除 #mask-layer
+                    $('body').css({'overflow': 'auto'});
+                });// sidle 消失
+            });
         });
     };
 
@@ -602,10 +608,10 @@
     *
     * */
     // .nav-head-info-tip 的hover事件
-    $('.nav-head-info-tip .info-tip-drop').hover(function (){
-        $(this).children('.info-tip-menu').slideToggle(10);
+    $('.nav-head-info-tip').hover(function (){
+        $(this).find('.info-tip-menu').slideToggle(10);
     },function (){
-        $(this).children('.info-tip-menu').slideToggle(10);
+        $(this).find('.info-tip-menu').slideToggle(10);
     });
 
     // #collapse-btn 收展侧边栏
@@ -614,7 +620,7 @@
         if(open){
             $("#collapse-btn").removeClass("to-close").addClass("to-open");
             $('#nav-sidle').animate({'left': '-180px'}, 200);
-            $('#nav-content').css({'padding-left': '15px'});
+            $('#nav-content').css({'padding-left': '5px'});
         }else{
             $("#collapse-btn").removeClass("to-open").addClass("to-close");
             $('#nav-sidle').animate({'left': '0px'}, 200);
