@@ -1013,19 +1013,34 @@ $paddingH-10: 10px;
 
 
 /* tree-view */
-#tree-view{
+.tree-view{
   border: 1px solid $theme-normal;
   display: inline-block;
   padding: 10px;
   .icon-arrow-up{
     transition: all 0.3s;
   }
+
+  i, span{
+    cursor: pointer;
+  }
+  span{
+    display: inline-block;
+    padding: 3px 5px;
+    &:hover{
+      background-color: $content-bg;
+    }
+  }
+
   ul{
 
   }
   li{
     position: relative;
     /* 改名html的动态样式 */
+    i:first-child{
+      margin-right: 5px;
+    }
     .change{
       background-color: #fff;
       display: inline-block;
@@ -1039,20 +1054,13 @@ $paddingH-10: 10px;
         vertical-align: inherit;
       }
       >i{
+        margin-left: 5px;
+        font-size: 17px;
       }
     }
   }
 
-  i, span{
-    cursor: pointer;
-  }
-  span{
-    display: inline-block;
-    padding: 3px 5px;
-    &:hover{
-      background-color: $content-bg;
-    }
-  }
+
 
   .first>li:not(:last-child),
   .second>li:not(:last-child),
@@ -1091,8 +1099,8 @@ $paddingH-10: 10px;
 }
 
 
-/* accordion */
-#accordion{
+/* tree-view-slim */
+.tree-view-slim{
   $paddingL: 10px;
   border: 1px solid $theme-normal;
   display: inline-block;

@@ -699,19 +699,28 @@
   background-color: #ED6C1C !important; }
 
 /* tree-view */
-#tree-view {
+.tree-view {
   border: 1px solid #FF8A41;
   display: inline-block;
   padding: 10px; }
-  #tree-view .icon-arrow-up {
+  .tree-view .icon-arrow-up {
     transition: all 0.3s; }
-  #tree-view li {
+  .tree-view i, .tree-view span {
+    cursor: pointer; }
+  .tree-view span {
+    display: inline-block;
+    padding: 3px 5px; }
+    .tree-view span:hover {
+      background-color: #F6F8F9; }
+  .tree-view li {
     position: relative;
     /* 改名html的动态样式 */ }
-    #tree-view li .change {
+    .tree-view li i:first-child {
+      margin-right: 5px; }
+    .tree-view li .change {
       background-color: #fff;
       display: inline-block; }
-      #tree-view li .change > input {
+      .tree-view li .change > input {
         border: 1px solid #CCCCCC;
         border-radius: 4px;
         padding: 2px 5px;
@@ -719,63 +728,59 @@
         font-family: microsoft yahei;
         min-width: 70px;
         vertical-align: inherit; }
-  #tree-view i, #tree-view span {
-    cursor: pointer; }
-  #tree-view span {
-    display: inline-block;
-    padding: 3px 5px; }
-    #tree-view span:hover {
-      background-color: #F6F8F9; }
-  #tree-view .first > li:not(:last-child),
-  #tree-view .second > li:not(:last-child),
-  #tree-view .third > li:not(:last-child),
-  #tree-view .fourth > li:not(:last-child),
-  #tree-view .fifth > li:not(:last-child) {
+      .tree-view li .change > i {
+        margin-left: 5px;
+        font-size: 17px; }
+  .tree-view .first > li:not(:last-child),
+  .tree-view .second > li:not(:last-child),
+  .tree-view .third > li:not(:last-child),
+  .tree-view .fourth > li:not(:last-child),
+  .tree-view .fifth > li:not(:last-child) {
     padding: 0px 0px 5px 15px;
     margin-top: 1px; }
-  #tree-view .first > li:last-child,
-  #tree-view .second > li:last-child,
-  #tree-view .third > li:last-child,
-  #tree-view .fourth > li:last-child,
-  #tree-view .fifth > li:last-child {
+  .tree-view .first > li:last-child,
+  .tree-view .second > li:last-child,
+  .tree-view .third > li:last-child,
+  .tree-view .fourth > li:last-child,
+  .tree-view .fifth > li:last-child {
     padding: 0px 0px 0px 15px; }
-  #tree-view .first > li {
+  .tree-view .first > li {
     padding-left: 0px !important; }
 
-/* accordion */
-#accordion {
+/* tree-view-slim */
+.tree-view-slim {
   border: 1px solid #FF8A41;
   display: inline-block;
   vertical-align: top; }
-  #accordion ul li {
+  .tree-view-slim ul li {
     width: 180px;
     /* hover*/
     /* 有子集菜单的 -- 点击效果 */
     /* 没有子集菜单 -- 点击效果 */ }
-    #accordion ul li a {
+    .tree-view-slim ul li a {
       display: inline-block;
       width: 100%;
       padding: 5px 15px 5px 0px; }
-      #accordion ul li a i {
+      .tree-view-slim ul li a i {
         display: inline-block;
         transition: all 0.3s; }
-    #accordion ul li .a-hover {
+    .tree-view-slim ul li .a-hover {
       background-color: #F6F8F9; }
-    #accordion ul li .a-hasChild {
+    .tree-view-slim ul li .a-hasChild {
       background-color: #FF8A41; }
-      #accordion ul li .a-hasChild i, #accordion ul li .a-hasChild span {
+      .tree-view-slim ul li .a-hasChild i, .tree-view-slim ul li .a-hasChild span {
         color: #ffffff; }
-    #accordion ul li .a-noChild i, #accordion ul li .a-noChild span {
+    .tree-view-slim ul li .a-noChild i, .tree-view-slim ul li .a-noChild span {
       color: #FF8A41; }
-  #accordion .first a {
+  .tree-view-slim .first a {
     padding-left: 10px; }
-  #accordion .second a {
+  .tree-view-slim .second a {
     padding-left: 25px; }
-  #accordion .third a {
+  .tree-view-slim .third a {
     padding-left: 40px; }
-  #accordion .fourth a {
+  .tree-view-slim .fourth a {
     padding-left: 55px; }
-  #accordion .fifth a {
+  .tree-view-slim .fifth a {
     padding-left: 70px; }
 
 /*  table  */

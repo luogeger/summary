@@ -19,7 +19,7 @@
         $('.dropdown i').css({'transform':'rotate(0deg)'});
 
         // 2. tree-view 改名状态消失
-        $('#tree-view li .change .cancel').each(function (i, v){
+        $('.tree-view li .change .cancel').each(function (i, v){
             $(v).trigger('click');// 双击的时候，让其他的 未保存/取消 的状态消失,
         });
 
@@ -195,16 +195,20 @@
     *   4. 保存改名
     * */
     ;(function (){
-        $('#tree-view li').each(function (index, item){
+        $('.tree-view li').each(function (index, item){
             var _item = $(item);// 这个是 li 标签
 
+            _item.prepend('<i class="icon-fold-close"></i>');
             if(_item.has('ul').length){
+                _item.prepend('<i class="icon-plus"></i>');
                 collapse(_item);// 展开目录
+            }else{
+                _item.prepend('<i class="icon-min"></i>');
             }
 
             _item.children('span').dblclick(function (){
                 // 双击的时候，让其他的 未保存/取消 的状态消失, -- 必须放在 rename() 的前面
-                $('#tree-view li .change .cancel').each(function (i, v){ $(v).trigger('click'); });
+                $('.tree-view li .change .cancel').each(function (i, v){ $(v).trigger('click'); });
 
                 rename(this);// 改名
             });
@@ -213,15 +217,15 @@
         // 展开目录
         function collapse (_item){
             _item.children('ul').css({'display': 'none'});
-            _item.children('.icon-arrow-down').addClass('icon-arrow-up').removeClass('icon-arrow-down');
-            _item.children('.icon-arrow-up').click(function (){
+            _item.children('.icon-min').addClass('icon-plus').removeClass('icon-min');
+            _item.children('.icon-plus').click(function (){
                 if($(this).hasClass('flag-open')){
                     $(this).removeClass('flag-open');
-                    $(this).addClass('icon-arrow-up').removeClass('icon-arrow-down');
+                    $(this).addClass('icon-plus').removeClass('icon-min');
                     $(this).siblings('ul').slideToggle(100);
                     return;
                 }
-                $(this).addClass('icon-arrow-down').removeClass('icon-arrow-up');
+                $(this).addClass('icon-min').removeClass('icon-plus');
                 $(this).siblings('ul').slideToggle(100);
                 $(this).addClass('flag-open');
             })
@@ -233,8 +237,8 @@
             var width = _this.width() + 15 + 'px';
             var html = '<div class="change">' +
                 '<input type="text">' +
-                '<i class="cancel icon-arrow-left"></i>' +
-                '<i class="save icon-arrow-right"></i>' +
+                '<i class="cancel icon-close-line"></i>' +
+                '<i class="save icon-check-line"></i>' +
                 '</div>';
             _this.after(html);
             addPrefix();// 添加前缀
@@ -276,10 +280,10 @@
 
 
     /*
-    *   accordion -- 目录结构
+    *   tree-view-slim -- 目录结构
     * */
     ;(function (){
-        $('#accordion li').each(function (index, item){
+        $('.tree-view-slim li').each(function (index, item){
             var _item = $(item);// 这是 li 标签
             // hover -- 效果
             _item.children('a').hover(function (){
@@ -331,7 +335,7 @@
 
             // 遍历所有 a 标签，清除 点击样式
             function clearClick (){
-                $('#accordion li').each(function (i, v){
+                $('.tree-view-slim li').each(function (i, v){
                     $(v).children('a').removeClass('a-noChild a-hasChild');
                 })
             };
