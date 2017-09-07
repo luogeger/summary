@@ -1026,9 +1026,9 @@ $paddingH-10: 10px;
 /* tree-view */
 .tree-view{
   border: 1px solid $theme-normal;
-  display: inline-block;
   padding: 10px;
-
+  display: inline-block;
+  vertical-align: top;
   i, span{
     cursor: pointer;
   }
@@ -1430,7 +1430,38 @@ table{
 }
 
 
+/* date */
+.datePicker{
+  display: inline-block;
+  vertical-align: top;
 
+  .container{
+    position: relative;
+
+    >input{
+      height: $height-sm;
+      width: 150px;
+      border: 1px solid $theme-normal;
+      border-radius: 4px;
+      padding: 0 25px 0 5px;
+      font-family: "microsoft yahei";
+    }
+
+    >i{
+      color: $theme-normal;
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      cursor: pointer;
+    }
+
+    .dateBox{
+
+    }
+  }
+
+
+}
 
 
 

@@ -707,8 +707,9 @@
 /* tree-view */
 .tree-view {
   border: 1px solid #FF8A41;
+  padding: 10px;
   display: inline-block;
-  padding: 10px; }
+  vertical-align: top; }
   .tree-view i, .tree-view span {
     cursor: pointer; }
   .tree-view span {
@@ -739,8 +740,8 @@
         margin-left: 5px;
         color: #CCCCCC;
         font-size: 17px;
-        position: relative; }
-        t1
+        position: relative;
+        top: 1px; }
         .tree-view li .change > i:hover {
           color: #FF8A41; }
   .tree-view .first > li:not(:last-child),
@@ -954,6 +955,26 @@ table {
     left: 0em; }
   .slider .slider-extra .extra-page .extra-page-next {
     right: 0em; }
+
+/* date */
+.datePicker {
+  display: inline-block;
+  vertical-align: top; }
+  .datePicker .container {
+    position: relative; }
+    .datePicker .container > input {
+      height: 30px;
+      width: 150px;
+      border: 1px solid #FF8A41;
+      border-radius: 4px;
+      padding: 0 25px 0 5px;
+      font-family: "microsoft yahei"; }
+    .datePicker .container > i {
+      color: #FF8A41;
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      cursor: pointer; }
 
 /* 常用类 */
 .themeColor-back {
