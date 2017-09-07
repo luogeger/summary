@@ -143,15 +143,13 @@
     *   tab栏
     *   1. 面包屑 动态添加图标
     *   2. tab 的点击效果
+    *   3. .tab-border 筋斗云效果
     * */
     // 1.
     $('.tab-crumb .tab-item:not(:first-child)').each(function (index, item){
         $(item).before('<i class="icon-arrow-dbRight"></i>')
-    })
-    $('.tab-border .tab-item').each(function (index, item){
-        var width = $(this).outerWidth() + 2 + 'px';
-        // $(item).append('<div class="temp-line"></div>').children('.temp-line').css('width', width);
-    })
+    });
+
     // 2.
     tabEffect($('.tab-underline'), 'opposite-underline');
     tabEffect($('.tab-button'), 'opposite-button');
@@ -169,6 +167,37 @@
             })
         })
     };
+
+    // 3. .tab-border 筋斗云效果
+    $('.tab-border .tab-item').each(function (index, item){
+        var _item = $(item);
+
+        // if(_item.hasClass('opposite-border')){
+        //     _item.addClass('flag');
+        // }
+        // _item.hover(function (){
+        //     $(this).parent().children('.tab-item').each(function (index, item){
+        //         $(item).removeClass('opposite-border');
+        //     });// 先排他 remove
+        //     $(this).addClass('opposite-border');// 再 add
+        // },function (){
+        //     $(this).removeClass('opposite-border');// 先 remove
+        //     $(this).parent().children('.tab-item').each(function (index, item){
+        //         if($(item).hasClass('flag')){
+        //             $(item).addClass('opposite-border');
+        //         }
+        //     });// 再给之前的添加
+        // });
+
+        // _item.click(function (){
+        //     $(this).parent().children('.tab-item').each(function (index, item){
+        //         $(item).removeClass('opposite-border flag');
+        //     });// 先排他 remove
+        //
+        //     $(this).addClass('opposite-border flag');// 再 add
+        // });
+    })
+
 
 
 
