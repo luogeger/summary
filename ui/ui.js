@@ -147,7 +147,11 @@
     // 1.
     $('.tab-crumb .tab-item:not(:first-child)').each(function (index, item){
         $(item).before('<i class="icon-arrow-dbRight"></i>')
-    });
+    })
+    $('.tab-border .tab-item').each(function (index, item){
+        var width = $(this).outerWidth() + 2 + 'px';
+        // $(item).append('<div class="temp-line"></div>').children('.temp-line').css('width', width);
+    })
     // 2.
     tabEffect($('.tab-underline'), 'opposite-underline');
     tabEffect($('.tab-button'), 'opposite-button');

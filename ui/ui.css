@@ -522,20 +522,17 @@
       color: #ffffff; }
 .tab-button i,
 .tab-button .tab-item:not(:last-child) {
-  margin-right: 2px; }
+  margin-right: 5px; }
 
 .tab-border {
-  display: inline-block;
-  border-bottom: 1px solid #000; }
+  display: inline-block; }
   .tab-border .tab-item {
     padding: 0 20px;
     height: 30px;
     line-height: 30px;
     color: #999999;
     background-color: #ffffff;
-    border-radius: 4px 4px 0 0;
-    border: 1px solid transparent;
-    border-bottom: none; }
+    border-bottom: 1px solid #FF8A41; }
     .tab-border .tab-item i {
       color: #999999;
       position: relative;
@@ -543,12 +540,17 @@
       top: 1px; }
     .tab-border .tab-item:hover {
       color: #222222;
-      border-color: red;
+      padding: 0 19px;
+      line-height: 28px;
+      border: 1px solid #FF8A41;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
       position: relative;
-      height: 31px;
-      line-height: 31px; }
+      z-index: 1; }
       .tab-border .tab-item:hover i {
         color: #222222; }
+  .tab-border .tab-item:not(:first-child) {
+    margin-left: -1px; }
 
 .tab-btn-border {
   border-bottom: 1px solid #E2E4E5;
@@ -568,7 +570,7 @@
       .tab-btn-border .tab-item:hover i {
         color: #ffffff; }
   .tab-btn-border .tab-item:not(:first-child) {
-    margin-left: 10px; }
+    margin-left: 5px; }
 
 /* 点击 tab, 需要添加的类 */
 .opposite-crumb {
@@ -588,10 +590,13 @@
 
 .opposite-border {
   color: #222222 !important;
-  border-color: red !important;
-  height: 31px;
-  line-height: 31px;
-  position: relative; }
+  padding: 0 19px !important;
+  line-height: 28px !important;
+  border: 1px solid #FF8A41;
+  border-bottom: none !important;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  z-index: 1; }
   .opposite-border i {
     color: #222222 !important; }
 
