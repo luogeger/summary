@@ -678,7 +678,7 @@ $paddingH-10: 10px;
       color: $theme-normal;
       position: absolute;
       top: 1px;
-      left: -1px;
+      left: 0px;
     }
   }
 }
@@ -784,12 +784,13 @@ $paddingH-10: 10px;
 .tab-border{
   display: inline-block;
   .tab-item{
-    padding: 0 20px;
-    height: 30px;
-    line-height: 30px;
+    padding: 0 $paddingH-20;
+    height: $height-sm;
+    line-height: $height-sm;
     color: $six9;
     background-color: $sixF;
     border-bottom: 1px solid $theme-normal;
+    border-radius: 4px 4px 0 0;
     i{
       color: $six9;
       position: relative;
@@ -799,21 +800,10 @@ $paddingH-10: 10px;
 
     &:hover{
       color: $text-normal;
-      //padding: 0 19px;
-      //line-height: 28px;
-      //border: 1px solid $theme-normal;
-      //border-bottom: none;
-      //border-radius: 4px 4px 0 0;
-      //position: relative;
-      //z-index: 1;
       i{
         color: $text-normal;
       }
     }
-  }
-
-  .tab-item:not(:first-child){
-    margin-left: -1px;
   }
 }
 
@@ -845,19 +835,19 @@ $paddingH-10: 10px;
 
 
 /* 点击 tab, 需要添加的类 */
-.opposite-crumb{
+.contra-crumb{
   color: $theme-normal;
   i{
     color: $theme-normal;
   }
 }
 
-.opposite-underline{
+.contra-underline{
   color: $theme-normal !important;
   border-bottom-color: $theme-normal !important;
 }
 
-.opposite-button{
+.contra-button{
   background-color: $theme-normal;
   color: $sixF;
   i{
@@ -865,21 +855,19 @@ $paddingH-10: 10px;
   }
 }
 
-.opposite-border{
+.contra-border{
   color: $text-normal !important;
-  padding: 0 19px !important;
-  line-height: 28px !important;
+  padding: 0 $paddingH-20 - 1 !important;
+  line-height: $height-sm - 2 !important;
   border: 1px solid $theme-normal;
   border-bottom: none !important;
-  border-radius: 4px 4px 0 0;
-  position: relative;
-  z-index: 1;
+
   i{
     color: $text-normal !important;
   }
 }
 
-.opposite-btn-border{
+.contra-btn-border{
   background-color: $theme-normal !important;
   color: $sixF;
   border-color: $theme-hover !important;
@@ -1022,13 +1010,13 @@ $paddingH-10: 10px;
   }
 }
 
-.line-opposite{
+.line-contra{
   color: $sixF;
   background-color: $theme-normal;
   border-color: $theme-hover !important;
 }
 
-.filled-opposite{
+.filled-contra{
   background-color: $theme-hover !important;
 }
 
@@ -1040,9 +1028,6 @@ $paddingH-10: 10px;
   border: 1px solid $theme-normal;
   display: inline-block;
   padding: 10px;
-  .icon-arrow-up{
-    transition: all 0.3s;
-  }
 
   i, span{
     cursor: pointer;
@@ -1061,14 +1046,19 @@ $paddingH-10: 10px;
   li{
     position: relative;
     /* 改名html的动态样式 */
-    i:first-child{
+    >i:first-child{
       margin-right: 5px;
+      color: $sixC;
+    }
+    >i:nth-child(2){
+      color: #FFC674;
+
     }
     .change{
       background-color: #fff;
       display: inline-block;
       >input{
-        border: 1px solid $sixC;
+        border: 1px solid #3390FF;
         border-radius: 4px;
         padding: 2px 5px;
         font-size: 14px;
@@ -1078,7 +1068,13 @@ $paddingH-10: 10px;
       }
       >i{
         margin-left: 5px;
+        color: $sixC;
         font-size: 17px;
+        position: relative;
+        top: 1px;
+        &:hover{
+          color: $theme-normal;
+        }
       }
     }
   }
@@ -1138,6 +1134,7 @@ $paddingH-10: 10px;
         i{
           display: inline-block;
           transition: all 0.3s;
+          color: $sixC;
         }
         span{
 

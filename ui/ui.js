@@ -143,7 +143,6 @@
     *   tab栏
     *   1. 面包屑 动态添加图标
     *   2. tab 的点击效果
-    *   3. .tab-border 筋斗云效果
     * */
     // 1.
     $('.tab-crumb .tab-item:not(:first-child)').each(function (index, item){
@@ -151,10 +150,10 @@
     });
 
     // 2.
-    tabEffect($('.tab-underline'), 'opposite-underline');
-    tabEffect($('.tab-button'), 'opposite-button');
-    tabEffect($('.tab-border'), 'opposite-border');
-    tabEffect($('.tab-btn-border'), 'opposite-btn-border');
+    tabEffect($('.tab-underline'), 'contra-underline');
+    tabEffect($('.tab-button'), 'contra-button');
+    tabEffect($('.tab-border'), 'contra-border');
+    tabEffect($('.tab-btn-border'), 'contra-btn-border');
     function tabEffect (dom, cls){
         dom.each(function (index, item){
             $(item).children().each(function (_index, _item){
@@ -168,35 +167,6 @@
         })
     };
 
-    // 3. .tab-border 筋斗云效果
-    $('.tab-border .tab-item').each(function (index, item){
-        var _item = $(item);
-
-        // if(_item.hasClass('opposite-border')){
-        //     _item.addClass('flag');
-        // }
-        // _item.hover(function (){
-        //     $(this).parent().children('.tab-item').each(function (index, item){
-        //         $(item).removeClass('opposite-border');
-        //     });// 先排他 remove
-        //     $(this).addClass('opposite-border');// 再 add
-        // },function (){
-        //     $(this).removeClass('opposite-border');// 先 remove
-        //     $(this).parent().children('.tab-item').each(function (index, item){
-        //         if($(item).hasClass('flag')){
-        //             $(item).addClass('opposite-border');
-        //         }
-        //     });// 再给之前的添加
-        // });
-
-        // _item.click(function (){
-        //     $(this).parent().children('.tab-item').each(function (index, item){
-        //         $(item).removeClass('opposite-border flag');
-        //     });// 先排他 remove
-        //
-        //     $(this).addClass('opposite-border flag');// 再 add
-        // });
-    })
 
 
 
@@ -207,16 +177,16 @@
     * */
     $('.pages-line>ul>li:not(.point)').click(function (){
         $('.pages-line ul>li:not(.point)').each(function (index, item){
-            $(item).removeClass('line-opposite');
+            $(item).removeClass('line-contra');
         });
-        $(this).addClass('line-opposite');
+        $(this).addClass('line-contra');
     });
 
     $('.pages-filled>ul>li:not(.point)').click(function (){
         $('.pages-filled>ul>li:not(.point)').each(function (index, item){
-            $(item).removeClass('filled-opposite');
+            $(item).removeClass('filled-contra');
         });
-        $(this).addClass('filled-opposite');
+        $(this).addClass('filled-contra');
     })
 
 
@@ -231,12 +201,12 @@
         $('.tree-view li').each(function (index, item){
             var _item = $(item);// 这个是 li 标签
 
-            _item.prepend('<i class="icon-fold-close"></i>');
+            _item.prepend('<i class="icon-fold-close-fill"></i>');
             if(_item.has('ul').length){
-                _item.prepend('<i class="icon-plus"></i>');
+                _item.prepend('<i class="icon-plus-square"></i>');
                 collapse(_item);// 展开目录
             }else{
-                _item.prepend('<i class="icon-min"></i>');
+                _item.prepend('<i class="icon-min-square"></i>');
             }
 
             _item.children('span').dblclick(function (){
@@ -250,15 +220,15 @@
         // 展开目录
         function collapse (_item){
             _item.children('ul').css({'display': 'none'});
-            _item.children('.icon-min').addClass('icon-plus').removeClass('icon-min');
-            _item.children('.icon-plus').click(function (){
+            _item.children('.icon-min-square').addClass('icon-plus').removeClass('icon-min-square');
+            _item.children('.icon-plus-square').click(function (){
                 if($(this).hasClass('flag-open')){
                     $(this).removeClass('flag-open');
-                    $(this).addClass('icon-plus').removeClass('icon-min');
+                    $(this).addClass('icon-plus-square').removeClass('icon-min-square');
                     $(this).siblings('ul').slideToggle(100);
                     return;
                 }
-                $(this).addClass('icon-min').removeClass('icon-plus');
+                $(this).addClass('icon-min-square').removeClass('icon-plus-square');
                 $(this).siblings('ul').slideToggle(100);
                 $(this).addClass('flag-open');
             })
@@ -270,8 +240,8 @@
             var width = _this.width() + 15 + 'px';
             var html = '<div class="change">' +
                 '<input type="text">' +
-                '<i class="cancel icon-close-line"></i>' +
-                '<i class="save icon-check-line"></i>' +
+                '<i class="cancel icon-close-square"></i>' +
+                '<i class="save icon-check-square"></i>' +
                 '</div>';
             _this.after(html);
             addPrefix();// 添加前缀
@@ -281,6 +251,7 @@
 
             var changeDiv = _this.siblings('.change');// input、cancel、save 的父元素div
 
+            changeDiv.children('input')[0].select();// input 里面的文字被选中
             changeDiv.children('input').click(function (e){
                 e.stopPropagation();
             });
@@ -341,7 +312,7 @@
         // 展开目录
         function collapse (_item, flag){
             if(flag == 'if'){
-                _item.children('a').prepend('<i class="icon-arrow-right"></i>');
+                _item.children('a').prepend('<i class="icon-contract"></i>');
                 _item.children('ul').css({'display': 'none'});
                 _item.children('a').click(function (){
                     var _this = $(this);
