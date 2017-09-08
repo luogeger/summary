@@ -749,14 +749,13 @@
   .tree-view .third > li:not(:last-child),
   .tree-view .fourth > li:not(:last-child),
   .tree-view .fifth > li:not(:last-child) {
-    padding: 0px 0px 5px 15px;
-    margin-top: 1px; }
+    padding: 0px 0px 5px 20px; }
   .tree-view .first > li:last-child,
   .tree-view .second > li:last-child,
   .tree-view .third > li:last-child,
   .tree-view .fourth > li:last-child,
   .tree-view .fifth > li:last-child {
-    padding: 0px 0px 0px 15px; }
+    padding: 0px 0px 0px 20px; }
   .tree-view .first > li {
     padding-left: 0px !important; }
 
@@ -982,6 +981,7 @@
       width: 240px;
       border: 1px solid #CCCCCC;
       border-radius: 4px;
+      background-color: #fff;
       position: absolute;
       left: 0;
       top: 40px; }
@@ -1024,17 +1024,24 @@
           width: 100%; }
           .datePicker .container .dateBox .date-body table thead {
             font-size: 12px; }
-          .datePicker .container .dateBox .date-body table tbody td {
-            font-size: 12px;
+          .datePicker .container .dateBox .date-body table tbody tr td {
             text-align: center;
-            cursor: pointer;
-            border-radius: 4px; }
-            .datePicker .container .dateBox .date-body table tbody td:hover {
-              background-color: #ffd9c2;
-              color: #ffffff; }
-          .datePicker .container .dateBox .date-body table tbody .active {
+            padding: 2px;
+            cursor: pointer; }
+            .datePicker .container .dateBox .date-body table tbody tr td span {
+              font-size: 12px;
+              height: 24px;
+              line-height: 24px;
+              display: block;
+              border-radius: 4px; }
+              .datePicker .container .dateBox .date-body table tbody tr td span:hover {
+                background-color: #ffd9c2;
+                color: #ffffff; }
+          .datePicker .container .dateBox .date-body table tbody tr .active span {
             background-color: #FF8A41;
             color: #ffffff; }
+          .datePicker .container .dateBox .date-body table tbody tr .inactive span {
+            color: #CCCCCC; }
       .datePicker .container .dateBox .date-foot {
         padding: 5px; }
         .datePicker .container .dateBox .date-foot .foot-time {
@@ -1071,10 +1078,10 @@
       background-color: #ffffff; }
 
 /* 常用类 */
-.themeColor-back {
+.theme-bgc {
   background-color: #FF8A41; }
 
-.themeColor-text {
+.theme-text {
   color: #FF8A41; }
 
 /*  辅助类  */

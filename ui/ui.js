@@ -662,8 +662,10 @@
     *   datePicker
     * */
     ;(function (){
-        //var htmlStr = '<div class="container"></div>';
-        //$('.datePicker>input').wrap(htmlStr).after('<i class="icon-cale-a"></i>');
+        $('.datePicker table tbody td').each(function (index, item){
+            var text = $(item).text();
+            $(item).text('').append('<span>'+ text +'</span>');
+        })
     })();
 
 

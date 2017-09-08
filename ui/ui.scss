@@ -1079,15 +1079,13 @@ $paddingH-10: 10px;
     }
   }
 
-
-
   .first>li:not(:last-child),
   .second>li:not(:last-child),
   .third>li:not(:last-child),
   .fourth>li:not(:last-child),
   .fifth>li:not(:last-child){
-    padding: 0px 0px 5px 15px;
-    margin-top: 1px;
+    padding: 0px 0px 5px 20px;
+    //margin-top: 1px;
   }
 
 
@@ -1096,7 +1094,7 @@ $paddingH-10: 10px;
   .third>li:last-child,
   .fourth>li:last-child,
   .fifth>li:last-child{
-    padding: 0px 0px 0px 15px;
+    padding: 0px 0px 0px 20px;
   }
 
 
@@ -1463,6 +1461,7 @@ $paddingH-10: 10px;
       width: 240px;
       border: 1px solid $sixC;
       border-radius: 4px;
+      background-color: #fff;
       position: absolute;
       left: 0;
       top: 40px;
@@ -1521,19 +1520,35 @@ $paddingH-10: 10px;
             font-size: 12px;
           }
           tbody{
-            td{
-              font-size: 12px;
-              text-align: center;
-              cursor: pointer;
-              border-radius: 4px;
-              &:hover{
-                background-color: $theme-other;
-                color: $sixF;
+            tr{
+              td{
+                //box-sizing: border-box;
+                text-align: center;
+                padding: 2px;
+                cursor: pointer;
+                span{
+                  font-size: 12px;
+                  height: 24px;
+                  line-height: 24px;
+                  display: block;
+                  border-radius: 4px;
+                  &:hover{
+                    background-color: $theme-other;
+                    color: $sixF;
+                  }
+                }
               }
-            }
-            .active{
-              background-color: $theme-normal;
-              color: $sixF;
+              .active{
+                span{
+                  background-color: $theme-normal;
+                  color: $sixF;
+                }
+              }
+              .inactive{
+                span{
+                  color: $sixC;
+                }
+              }
             }
           }
         }
@@ -1596,11 +1611,11 @@ $paddingH-10: 10px;
 
 
 /* 常用类 */
-.themeColor-back{
+.theme-bgc{
   background-color: $theme-normal;
 }
 
-.themeColor-text{
+.theme-text{
   color: $theme-normal;
 }
 
