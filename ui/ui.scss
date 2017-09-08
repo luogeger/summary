@@ -1441,7 +1441,7 @@ $paddingH-10: 10px;
       display: inline-block;
       >input{
         height: $height-sm;
-        width: 150px;
+        width: 200px;
         border: 1px solid $theme-normal;
         border-radius: 4px;
         padding: 0 25px 0 5px;
@@ -1458,136 +1458,268 @@ $paddingH-10: 10px;
     }
 
     .dateBox{
-      width: 240px;
-      border: 1px solid $sixC;
-      border-radius: 4px;
-      background-color: #fff;
       position: absolute;
       left: 0;
       top: 40px;
-
-      .date-head{
-        position: relative;
-        padding: 5px;
-        text-align: center;
-        i{
-          position: absolute;
-          top: 7px;
-          font-weight: 600;
-          cursor: pointer;
-          color: $sixC;
-          &:hover{
-            color: $theme-normal;
-          }
-        }
-        .prev-year{
-          left: 10px;
-        }
-        .prev-month{
-          left: 30px;
-        }
-        .next-month{
-          right: 30px;
-        }
-        .next-year{
-          right: 10px;
-        }
-
-        .select-time{
-          .select-year,
-          .select-month{
-            font-size: 12px;
+      border: 1px solid $sixC;
+      border-radius: 4px;
+      background-color: #fff;
+      width: 240px;
+      height: 263px;
+      /* 初始化 */
+      .init-box{
+        //display: none;
+        .date-head{
+          position: relative;
+          padding: 5px;
+          text-align: center;
+          i{
+            position: absolute;
+            top: 7px;
             font-weight: 600;
             cursor: pointer;
+            color: $sixC;
             &:hover{
               color: $theme-normal;
             }
           }
-          .select-month{
-            margin-left: 5px;
+          .prev-year{
+            left: 10px;
+          }
+          .prev-month{
+            left: 30px;
+          }
+          .next-month{
+            right: 30px;
+          }
+          .next-year{
+            right: 10px;
+          }
+
+          .select-time{
+            .select-year,
+            .select-month{
+              font-size: 12px;
+              font-weight: 600;
+              cursor: pointer;
+              &:hover{
+                color: $theme-normal;
+              }
+            }
+            .select-month{
+              margin-left: 5px;
+            }
           }
         }
-      }
 
-      .date-body{
-        padding: 5px;
-        border: 1px solid $sixC;
-        border-left: none;
-        border-right: none;
-        table{
-          width: 100%;
-          thead{
-            font-size: 12px;
-          }
-          tbody{
-            tr{
-              td{
-                //box-sizing: border-box;
-                text-align: center;
-                padding: 2px;
-                cursor: pointer;
-                span{
-                  font-size: 12px;
-                  height: 24px;
-                  line-height: 24px;
-                  display: block;
-                  border-radius: 4px;
-                  &:hover{
-                    background-color: $theme-other;
+        .date-body{
+          padding: 5px;
+          border-top: 1px solid $sixC;
+          border-bottom: 1px solid $sixC;
+          table{
+            width: 100%;
+            thead{
+              font-size: 12px;
+            }
+            tbody{
+              tr{
+                td{
+                  text-align: center;
+                  padding: 2px;
+                  cursor: pointer;
+                  span{
+                    font-size: 12px;
+                    height: 24px;
+                    line-height: 24px;
+                    display: block;
+                    border-radius: 4px;
+                    &:hover{
+                      background-color: $theme-other;
+                      color: $sixF;
+                    }
+                  }
+                }
+                .active{
+                  span{
+                    background-color: $theme-normal;
                     color: $sixF;
                   }
                 }
-              }
-              .active{
-                span{
-                  background-color: $theme-normal;
-                  color: $sixF;
-                }
-              }
-              .inactive{
-                span{
-                  color: $sixC;
+                .inactive{
+                  span{
+                    color: $sixC;
+                  }
                 }
               }
             }
           }
+        }
+
+        .date-foot{
+          padding: 5px;
+          .foot-time{
+            display: inline-block;
+            input{
+              width: 30px;
+              padding: 2px 5px;
+              border: 1px solid $sixC;
+              border-radius: 4px;
+              &:hover{
+                border-color: $theme-normal !important;
+              }
+            }
+            input:not(:last-child){
+              margin-right: 3px;
+            }
+          }
+          .foot-btn{
+            display: inline-block;
+            float: right;
+            span{
+              display: inline-block;
+              padding: 3px;
+              cursor: pointer;
+              font-size: 12px;
+              &:hover{
+                color: $theme-normal;
+              }
+            }
+
+          }
+        ;
         }
       }
 
-      .date-foot{
-        padding: 5px;
-        .foot-time{
-          display: inline-block;
-          input{
-            width: 30px;
-            padding: 2px 5px;
-            border: 1px solid $sixC;
-            border-radius: 4px;
-            &:hover{
-              border-color: $theme-normal !important;
-            }
-          }
-          input:not(:last-child){
-            margin-right: 3px;
-          }
-        }
-        .foot-btn{
-          display: inline-block;
-          float: right;
-          span{
-            display: inline-block;
-            padding: 3px;
+      /* 年份 */
+      .year-box{
+        display: none;
+        .date-head{
+          position: relative;
+          padding: 10px;
+          text-align: center;
+          i{
+            position: absolute;
+            top: 12px;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 12px;
+            color: $sixC;
             &:hover{
               color: $theme-normal;
             }
           }
-
+          i:first-child{
+            left: 15px;
+          }
+          i:last-child{
+            right: 15px;
+          }
+          .select-year{
+            font-size: 12px;
+            font-weight: 600;
+          }
         }
-      ;
+
+        .date-body{
+          border-top: 1px solid $sixC;
+          table{
+            width: 100%;
+            tbody{
+              text-align: center;
+              tr{
+                td{
+                  padding: 18px 0;
+                  span{
+                    cursor: pointer;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    &:hover{
+                      color: $sixF;
+                      background-color: $theme-other;
+                      i{
+                        color: $sixF;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      /* 月份 */
+      .month-box{
+        display: none;
+        .date-head{
+          position: relative;
+          padding: 10px;
+          text-align: center;
+          i{
+            position: absolute;
+            top: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            color: $sixC;
+            &:hover{
+              color: $theme-normal;
+            }
+          }
+          i:first-child{
+            left: 15px;
+          }
+          i:last-child{
+            right: 15px;
+          }
+          .select-month{
+            font-size: 12px;
+            font-weight: 600;
+          }
+        }
+
+        .date-body{
+          border-top: 1px solid $sixC;
+          table{
+            width: 100%;
+            tbody{
+              text-align: center;
+              tr{
+                td{
+                  padding: 18px 0;
+                  span{
+                    cursor: pointer;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    &:hover{
+                      //color: $sixF;
+                      background-color: $theme-other;
+                      i{
+                        color: $sixF;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      /* 小时 */
+      .hour-box{
+
+      }
+
+      /* 分钟 */
+      .minute-box{
+
+      }
+
+      /* 秒数 */
+      .second-box{
+
       }
     }
+
     .dateBox:before{
       content: '';
       width: 7px;
@@ -1603,8 +1735,6 @@ $paddingH-10: 10px;
       background-color: $sixF;
     }
   }
-
-
 }
 
 

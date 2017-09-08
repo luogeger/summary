@@ -793,21 +793,23 @@
                             <input type="text" class="" placeholder="请选择日期">
                             <i class="icon-cale-a"></i>
                         </div>
+                        
                         <div class="dateBox">
-                            <div class="date-head">
-                                <i class="icon-arrow-dbLeft prev-year"></i>
-                                <i class="icon-arrow-left prev-month"></i>
-                                <span class="select-time">
-                                    <span class="select-year">2017年</span>
-                                    <span class="select-month">9月</span>
-                                </span>
-                                <i class="icon-arrow-right next-month"></i>
-                                <i class="icon-arrow-dbRight next-year"></i>
-                            </div>
-                            
-                            <div class="date-body">
-                                <table>
-                                    <thead>
+                            <div class="init-box">
+                                <div class="date-head">
+                                    <i class="icon-arrow-dbLeft prev-year"></i>
+                                    <i class="icon-arrow-left prev-month"></i>
+                                    <span class="select-time">
+                                        <span class="select-year" id="datePickerYear">2017年</span>
+                                        <span class="select-month" id="datePickerMonth">9月</span>
+                                    </span>
+                                    <i class="icon-arrow-right next-month"></i>
+                                    <i class="icon-arrow-dbRight next-year"></i>
+                                </div>
+    
+                                <div class="date-body">
+                                    <table>
+                                        <thead>
                                         <tr>
                                             <th>一</th>
                                             <th>二</th>
@@ -817,8 +819,8 @@
                                             <th>六</th>
                                             <th>日</th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
+                                        </thead>
+                                        <tbody>
                                         <tr>
                                             <td class="inactive">28</td>
                                             <td class="inactive">29</td>
@@ -873,22 +875,101 @@
                                             <td class="inactive">7</td>
                                             <td class="inactive">8</td>
                                         </tr>
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+    
+                                <div class="date-foot">
+                                    <span class="foot-time">
+                                        <input type="text" id="datePickerHour">:
+                                        <input type="text" id="datePickerMinute">:
+                                        <input type="text" id="datePickerSecond">
+                                    </span>
+                                    <span class="foot-btn">
+                                        <span class="btn-today" id="datePickerNow">此刻</span>
+                                        <span class="btn-empty" id="datePickerEmpty">清空</span>
+                                        <span class="btn-ok" id="datePickerConfirm">确认</span>
+                                    </span>
+                                </div>
                             </div>
-                            
-                            <div class="date-foot">
-                                <span class="foot-time">
-                                    <input type="text">:
-                                    <input type="text">:
-                                    <input type="text">
-                                </span>
-                                <span class="foot-btn">
-                                    <span class="btn-today">此刻</span>
-                                    <span class="btn-empty">清空</span>
-                                    <span class="btn-ok">确认</span>
-                                </span>
+    
+                            <div class="year-box">
+                                <div class="date-head">
+                                    <i class="icon-arrow-dbLeft prev-year"></i>
+                                    <span class="select-year">2010 - 2019</span>
+                                    <i class="icon-arrow-dbRight next-year"></i>
+                                </div>
+                                
+                                <div class="date-body">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><span><i class="icon-arrow-dbLeft"></i></span></td>
+                                                <td><span>2010</span></td>
+                                                <td><span>2011</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span>2012</span></td>
+                                                <td><span>2013</span></td>
+                                                <td><span>2014</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span>2015</span></td>
+                                                <td><span>2016</span></td>
+                                                <td><span>2017</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span>2018</span></td>
+                                                <td><span>2019</span></td>
+                                                <td><span><i class="icon-arrow-dbRight"></i></span></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
+    
+                            <div class="month-box">
+                                <div class="date-head">
+                                    <i class="icon-arrow-dbLeft prev-year"></i>
+                                    <span class="select-month">2017</span>
+                                    <i class="icon-arrow-dbRight next-year"></i>
+                                </div>
+    
+                                <div class="date-body">
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td><span>一月</span></td>
+                                            <td><span>二月</span></td>
+                                            <td><span>三月</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>四月</span></td>
+                                            <td><span>五月</span></td>
+                                            <td><span>六月</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>七月</span></td>
+                                            <td><span>八月</span></td>
+                                            <td><span>九月</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>十月</span></td>
+                                            <td><span>十一月</span></td>
+                                            <td><span>十二月</span></td>
+                                        </tr>
+            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+    
+                            <div class="hour-box"></div>
+    
+                            <div class="minute-box"></div>
+    
+                            <div class="second-box"></div>
                         </div>
                     </div>
                 </div>

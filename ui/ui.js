@@ -662,10 +662,37 @@
     *   datePicker
     * */
     ;(function (){
-        $('.datePicker table tbody td').each(function (index, item){
+        var $initBox = $('.datePicker .init-box');// 初始化
+        var $yearBox = $('.datePicker .year-box');// 年份
+        var $monthBox = $('.datePicker .month-box');// 月份
+        $('.datePicker .init-box table tbody td').each(function (index, item){
             var text = $(item).text();
             $(item).text('').append('<span>'+ text +'</span>');
-        })
+        });
+
+        // 年份
+        $('#datePickerYear').click(function (){
+          $initBox.css('display', 'none');
+          $yearBox.css('display', 'block');
+        });
+        $yearBox.find('td:not(:first-child, :last-child)').each(function (index, item){
+            $(item).click(function (){
+                $initBox.css('display', 'block');
+                $yearBox.css('display', 'none');
+            })
+        });
+
+        // 月份
+        $('#datePickerMonth').click(function (){
+            $initBox.css('display', 'none');
+            $monthBox.css('display', 'block');
+        });
+        $monthBox.find('td').each(function (index, item){
+            $(item).click(function (){
+                $initBox.css('display', 'block');
+                $monthBox.css('display', 'none');
+            })
+        });
     })();
 
 
