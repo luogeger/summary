@@ -798,13 +798,13 @@
     padding-left: 70px; }
 
 /*  table  */
-table {
+.table {
   width: 100%;
   font-size: 14px;
   line-height: 24px; }
-  table th, table td {
+  .table th, .table td {
     text-align: center; }
-  table tbody tr:hover {
+  .table tbody tr:hover {
     background-color: #CCCCCC; }
 
 /* 只有bottom边框 */
@@ -962,19 +962,113 @@ table {
   vertical-align: top; }
   .datePicker .container {
     position: relative; }
-    .datePicker .container > input {
-      height: 30px;
-      width: 150px;
-      border: 1px solid #FF8A41;
+    .datePicker .container .inputBox {
+      position: relative;
+      display: inline-block; }
+      .datePicker .container .inputBox > input {
+        height: 30px;
+        width: 150px;
+        border: 1px solid #FF8A41;
+        border-radius: 4px;
+        padding: 0 25px 0 5px;
+        font-family: "microsoft yahei"; }
+      .datePicker .container .inputBox > i {
+        color: #FF8A41;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        cursor: pointer; }
+    .datePicker .container .dateBox {
+      width: 240px;
+      border: 1px solid #CCCCCC;
       border-radius: 4px;
-      padding: 0 25px 0 5px;
-      font-family: "microsoft yahei"; }
-    .datePicker .container > i {
-      color: #FF8A41;
       position: absolute;
-      top: 6px;
-      right: 6px;
-      cursor: pointer; }
+      left: 0;
+      top: 40px; }
+      .datePicker .container .dateBox .date-head {
+        position: relative;
+        padding: 5px;
+        text-align: center; }
+        .datePicker .container .dateBox .date-head i {
+          position: absolute;
+          top: 7px;
+          font-weight: 600;
+          cursor: pointer;
+          color: #CCCCCC; }
+          .datePicker .container .dateBox .date-head i:hover {
+            color: #FF8A41; }
+        .datePicker .container .dateBox .date-head .prev-year {
+          left: 10px; }
+        .datePicker .container .dateBox .date-head .prev-month {
+          left: 30px; }
+        .datePicker .container .dateBox .date-head .next-month {
+          right: 30px; }
+        .datePicker .container .dateBox .date-head .next-year {
+          right: 10px; }
+        .datePicker .container .dateBox .date-head .select-time .select-year,
+        .datePicker .container .dateBox .date-head .select-time .select-month {
+          font-size: 12px;
+          font-weight: 600;
+          cursor: pointer; }
+          .datePicker .container .dateBox .date-head .select-time .select-year:hover,
+          .datePicker .container .dateBox .date-head .select-time .select-month:hover {
+            color: #FF8A41; }
+        .datePicker .container .dateBox .date-head .select-time .select-month {
+          margin-left: 5px; }
+      .datePicker .container .dateBox .date-body {
+        padding: 5px;
+        border: 1px solid #CCCCCC;
+        border-left: none;
+        border-right: none; }
+        .datePicker .container .dateBox .date-body table {
+          width: 100%; }
+          .datePicker .container .dateBox .date-body table thead {
+            font-size: 12px; }
+          .datePicker .container .dateBox .date-body table tbody td {
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 4px; }
+            .datePicker .container .dateBox .date-body table tbody td:hover {
+              background-color: #ffd9c2;
+              color: #ffffff; }
+          .datePicker .container .dateBox .date-body table tbody .active {
+            background-color: #FF8A41;
+            color: #ffffff; }
+      .datePicker .container .dateBox .date-foot {
+        padding: 5px; }
+        .datePicker .container .dateBox .date-foot .foot-time {
+          display: inline-block; }
+          .datePicker .container .dateBox .date-foot .foot-time input {
+            width: 30px;
+            padding: 2px 5px;
+            border: 1px solid #CCCCCC;
+            border-radius: 4px; }
+            .datePicker .container .dateBox .date-foot .foot-time input:hover {
+              border-color: #FF8A41 !important; }
+          .datePicker .container .dateBox .date-foot .foot-time input:not(:last-child) {
+            margin-right: 3px; }
+        .datePicker .container .dateBox .date-foot .foot-btn {
+          display: inline-block;
+          float: right; }
+          .datePicker .container .dateBox .date-foot .foot-btn span {
+            display: inline-block;
+            padding: 3px;
+            cursor: pointer;
+            font-size: 12px; }
+            .datePicker .container .dateBox .date-foot .foot-btn span:hover {
+              color: #FF8A41; }
+    .datePicker .container .dateBox:before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      position: absolute;
+      top: -5px;
+      left: 13px;
+      transform: rotate(45deg);
+      border-left: 1px solid #CCCCCC;
+      border-top: 1px solid #CCCCCC;
+      background-color: #ffffff; }
 
 /* 常用类 */
 .themeColor-back {

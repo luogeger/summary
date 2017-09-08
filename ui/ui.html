@@ -778,18 +778,23 @@
                 <!-- datePicker -->
                 <div class="datePicker">
                     <div class="container">
-                        <input type="text" class="" placeholder="请选择日期">
-                        <i class="icon-cale-a"></i>
+                        <div class="inputBox">
+                            <input type="text" class="" placeholder="请选择日期">
+                            <i class="icon-cale-a"></i>
+                        </div>
                         <div class="dateBox">
-                            <div class="head">
-                                <i class="icon-arrow-dbLeft"></i>
-                                <i class="icon-arrow-left"></i>
-                                <span class="year">2017年</span>
-                                <span class="month">9月</span>
-                                <i class="icon-arrow-dbRight"></i>
-                                <i class="icon-arrow-right"></i>
+                            <div class="date-head">
+                                <i class="icon-arrow-dbLeft prev-year"></i>
+                                <i class="icon-arrow-left prev-month"></i>
+                                <span class="select-time">
+                                    <span class="select-year">2017年</span>
+                                    <span class="select-month">9月</span>
+                                </span>
+                                <i class="icon-arrow-right next-month"></i>
+                                <i class="icon-arrow-dbRight next-year"></i>
                             </div>
-                            <div class="body">
+                            
+                            <div class="date-body">
                                 <table>
                                     <thead>
                                         <tr>
@@ -817,7 +822,7 @@
                                             <td>5</td>
                                             <td>6</td>
                                             <td>7</td>
-                                            <td>8</td>
+                                            <td class="active">8</td>
                                             <td>9</td>
                                             <td>10</td>
                                         </tr>
@@ -860,11 +865,12 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="foot">
+                            
+                            <div class="date-foot">
                                 <span class="foot-time">
-                                    <input type="text" class="time-input">:
-                                    <input type="text" class="time-input">:
-                                    <input type="text" class="time-input">
+                                    <input type="text">:
+                                    <input type="text">:
+                                    <input type="text">
                                 </span>
                                 <span class="foot-btn">
                                     <span class="btn-today">此刻</span>

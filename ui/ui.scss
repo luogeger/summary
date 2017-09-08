@@ -1198,7 +1198,7 @@ $paddingH-10: 10px;
 
 
 /*  table  */
-table{
+.table{
   width: 100%;
   font-size: 14px;
   line-height: 24px;
@@ -1438,25 +1438,154 @@ table{
   .container{
     position: relative;
 
-    >input{
-      height: $height-sm;
-      width: 150px;
-      border: 1px solid $theme-normal;
-      border-radius: 4px;
-      padding: 0 25px 0 5px;
-      font-family: "microsoft yahei";
-    }
+    .inputBox{
+      position: relative;
+      display: inline-block;
+      >input{
+        height: $height-sm;
+        width: 150px;
+        border: 1px solid $theme-normal;
+        border-radius: 4px;
+        padding: 0 25px 0 5px;
+        font-family: "microsoft yahei";
+      }
 
-    >i{
-      color: $theme-normal;
-      position: absolute;
-      top: 6px;
-      right: 6px;
-      cursor: pointer;
+      >i{
+        color: $theme-normal;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        cursor: pointer;
+      }
     }
 
     .dateBox{
+      width: 240px;
+      border: 1px solid $sixC;
+      border-radius: 4px;
+      position: absolute;
+      left: 0;
+      top: 40px;
 
+      .date-head{
+        position: relative;
+        padding: 5px;
+        text-align: center;
+        i{
+          position: absolute;
+          top: 7px;
+          font-weight: 600;
+          cursor: pointer;
+          color: $sixC;
+          &:hover{
+            color: $theme-normal;
+          }
+        }
+        .prev-year{
+          left: 10px;
+        }
+        .prev-month{
+          left: 30px;
+        }
+        .next-month{
+          right: 30px;
+        }
+        .next-year{
+          right: 10px;
+        }
+
+        .select-time{
+          .select-year,
+          .select-month{
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            &:hover{
+              color: $theme-normal;
+            }
+          }
+          .select-month{
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .date-body{
+        padding: 5px;
+        border: 1px solid $sixC;
+        border-left: none;
+        border-right: none;
+        table{
+          width: 100%;
+          thead{
+            font-size: 12px;
+          }
+          tbody{
+            td{
+              font-size: 12px;
+              text-align: center;
+              cursor: pointer;
+              border-radius: 4px;
+              &:hover{
+                background-color: $theme-other;
+                color: $sixF;
+              }
+            }
+            .active{
+              background-color: $theme-normal;
+              color: $sixF;
+            }
+          }
+        }
+      }
+
+      .date-foot{
+        padding: 5px;
+        .foot-time{
+          display: inline-block;
+          input{
+            width: 30px;
+            padding: 2px 5px;
+            border: 1px solid $sixC;
+            border-radius: 4px;
+            &:hover{
+              border-color: $theme-normal !important;
+            }
+          }
+          input:not(:last-child){
+            margin-right: 3px;
+          }
+        }
+        .foot-btn{
+          display: inline-block;
+          float: right;
+          span{
+            display: inline-block;
+            padding: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            &:hover{
+              color: $theme-normal;
+            }
+          }
+
+        }
+      ;
+      }
+    }
+    .dateBox:before{
+      content: '';
+      width: 7px;
+      height: 7px;
+
+      position: absolute;
+      top: -5px;
+      left: 13px;
+      transform: rotate(45deg);
+
+      border-left: 1px solid $sixC;
+      border-top: 1px solid $sixC;
+      background-color: $sixF;
     }
   }
 
