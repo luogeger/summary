@@ -407,7 +407,9 @@
                     '</div>'+
                 '</div>';
             $('body').css({'overflow': 'hidden'}).append(html);// 弹窗 追加
-            $('.layer-popup').animate({'top': '0px'}, 100);// 弹窗 显示
+            $('.layer-popup').animate({'top': '0px'}, 100).click(function (e){
+                e.stopPropagation();
+            });// 弹窗 显示
 
             // 点击 #mask-layer、关闭、取消
             $('#mask-layer, #mask-layer .close, #mask-layer .cancel').each(function (index, item){
@@ -665,7 +667,7 @@
         var $initBox = $('.datePicker .init-box');// 初始化
         var $yearBox = $('.datePicker .year-box');// 年份
         var $monthBox = $('.datePicker .month-box');// 月份
-        $('.datePicker .init-box table tbody td').each(function (index, item){
+        $('.datePicker .init-box td, .datePicker .hour-box td').each(function (index, item){
             var text = $(item).text();
             $(item).text('').append('<span>'+ text +'</span>');
         });

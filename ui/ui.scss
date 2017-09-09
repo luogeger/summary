@@ -1025,7 +1025,7 @@ $paddingH-10: 10px;
 
 /* tree-view */
 .tree-view{
-  border: 1px solid $theme-normal;
+  //border: 1px solid $theme-normal;
   padding: 10px;
   display: inline-block;
   vertical-align: top;
@@ -1119,7 +1119,7 @@ $paddingH-10: 10px;
 /* tree-view-slim */
 .tree-view-slim{
   $paddingL: 10px;
-  border: 1px solid $theme-normal;
+  //border: 1px solid $theme-normal;
   display: inline-block;
   vertical-align: top;
   ul{
@@ -1468,7 +1468,7 @@ $paddingH-10: 10px;
       height: 263px;
       /* 初始化 */
       .init-box{
-        //display: none;
+        display: none;
         .date-head{
           position: relative;
           padding: 5px;
@@ -1535,7 +1535,7 @@ $paddingH-10: 10px;
                     border-radius: 4px;
                     &:hover{
                       background-color: $theme-other;
-                      color: $sixF;
+                      //color: $sixF;
                     }
                   }
                 }
@@ -1706,7 +1706,23 @@ $paddingH-10: 10px;
 
       /* 小时 */
       .hour-box{
+        //display: none;
+        .date-head{
+          padding: 10px;
+          text-align: center;
+          span{
+            font-size: 12px;
+            font-weight: 600;
+          }
+        }
 
+        .date-body{
+          border-top: 1px solid $sixC;
+          table{
+            width: 100%;
+            text-align: center;
+          }
+        }
       }
 
       /* 分钟 */
