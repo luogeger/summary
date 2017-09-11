@@ -682,8 +682,8 @@
                     '<i class="icon-arrow-dbLeft prev-year"></i>'+
                     '<i class="icon-arrow-left prev-month"></i>'+
                     '<span class="select-time">'+
-                    '<span class="select-year" class="datePickerYear">2017年</span>'+
-                    '<span class="select-month" class="datePickerMonth">9月</span>'+
+                    '<span class="select-year">2017年</span>'+
+                    '<span class="select-month">9月</span>'+
                     '</span>'+
                     '<i class="icon-arrow-right next-month"></i>'+
                     '<i class="icon-arrow-dbRight next-year"></i>'+
@@ -761,9 +761,9 @@
                     '</div>'+
                     '<div class="date-foot">'+
                     '<span class="foot-time">'+
-                    '<input type="text" class="datePickerHour">:'+
-                    '<input type="text" class="datePickerMinute">:'+
-                    '<input type="text" class="datePickerSecond">'+
+                    '<input type="text" class="select-hour">:'+
+                    '<input type="text" class="select-minute">:'+
+                    '<input type="text" class="select-second">'+
                     '</span>'+
                     '<span class="foot-btn">'+
                     '<span class="btn-today" class="datePickerNow">此刻</span>'+
@@ -1060,7 +1060,6 @@
                     '</div>';
             };
 
-
             $(item).html(htmlStr);
         })
 
@@ -1078,27 +1077,83 @@
         });
 
         // 年份
-        selectTime('.datePickerYear', $yearBox, 'year');
+        $('.datePicker  .select-year').click(function (){
+            var _this = $(this);
+            _this.parents('.init-box').css('display', 'none');
+            _this.parents('.init-box').siblings('.year-box').css('display','block');
+            var allTd= $(this).parents('.init-box').siblings('.year-box').find('td');
+            allTd.each(function (index, item){
+                $(item).click(function (){
+                    if(index !== 0 && index !== allTd.length - 1){
+                        _this.parents('.init-box').css('display', 'block');
+                        $(item).parents('.year-box').css('display','none');
+                    }
+                })
+            })
+        })
+
 
         // 月份
-        selectTime('.datePickerMonth', $monthBox, 'month');
+        $('.datePicker  .select-month').click(function (){
+            var _this = $(this);
+            _this.parents('.init-box').css('display', 'none');
+            _this.parents('.init-box').siblings('.month-box').css('display','block');
+            var allTd= $(this).parents('.init-box').siblings('.month-box').find('td');
+            allTd.each(function (index, item){
+                $(item).click(function (){
+                    _this.parents('.init-box').css('display', 'block');
+                    $(item).parents('.month-box').css('display','none');
+                })
+            })
+        })
 
         // 小时
-        selectTime('.datePickerHour', $hourBox, 'hour');
+        $('.datePicker  .select-hour').click(function (){
+            var _this = $(this);
+            _this.parents('.init-box').css('display', 'none');
+            _this.parents('.init-box').siblings('.hour-box').css('display','block');
+            $(this).parents('.init-box').siblings('.hour-box').find('td').each(function (index, item){
+                $(item).click(function (){
+                    _this.parents('.init-box').css('display', 'block');
+                    $(item).parents('.hour-box').css('display','none');
+                })
+            })
+        })
 
         // 分钟
-        selectTime('.datePickerMinute', $minuteBox, 'minute');
+        $('.datePicker  .select-minute').click(function (){
+            var _this = $(this);
+            _this.parents('.init-box').css('display', 'none');
+            _this.parents('.init-box').siblings('.minute-box').css('display','block');
+            $(this).parents('.init-box').siblings('.minute-box').find('td').each(function (index, item){
+                $(item).click(function (){
+                    _this.parents('.init-box').css('display', 'block');
+                    $(item).parents('.minute-box').css('display','none');
+                })
+            })
+        })
 
         // 秒数
-        selectTime('.datePickerSecond', $secondBox, 'second');
+        $('.datePicker  .select-second').click(function (){
+            var _this = $(this);
+            _this.parents('.init-box').css('display', 'none');
+            _this.parents('.init-box').siblings('.second-box').css('display','block');
+            $(this).parents('.init-box').siblings('.second-box').find('td').each(function (index, item){
+                $(item).click(function (){
+                    _this.parents('.init-box').css('display', 'block');
+                    $(item).parents('.second-box').css('display','none');
+                })
+            })
+        })
 
         /*
         *   切换 box
         * */
-        function selectTime (ele, box, flag){
+        function selectTime (ele,box, flag){
             $(ele).click(function (){
                 $(this).parents('.init-box').css('display', 'none');
-                box.css('display', 'block');
+                console.log($(this).parents('.init-box').siblings('.'+ flag +'-box'));
+                $(this).parents('.init-box').siblings('.'+ flag +'-box').css('display', 'block');
             });
 
             if(flag == 'year'){
@@ -1112,7 +1167,7 @@
                     }
                 });
             }else{
-                box.find('td').each(function (index, item){
+                $(this).parents('.init-box').siblings('.'+ flag +'-box').find('td').each(function (index, item){
                     $(item).click(function (){
                         $initBox.css('display', 'block');
                         box.css('display', 'none');

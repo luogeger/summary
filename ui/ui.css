@@ -1062,8 +1062,10 @@
             border-radius: 4px; }
             .datePicker .container .dateBox .init-box .date-foot .foot-time input:hover, .datePicker .container .dateBox .init-box .date-foot .foot-time input:focus {
               border-color: #FF8A41 !important; }
-          .datePicker .container .dateBox .init-box .date-foot .foot-time input:not(:last-child) {
-            margin-right: 3px; }
+          .datePicker .container .dateBox .init-box .date-foot .foot-time input {
+            margin: 0px 3px; }
+          .datePicker .container .dateBox .init-box .date-foot .foot-time input:first-child {
+            margin-left: 0px; }
         .datePicker .container .dateBox .init-box .date-foot .foot-btn {
           display: inline-block;
           float: right; }

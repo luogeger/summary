@@ -1583,8 +1583,11 @@ $paddingH-10: 10px;
                 border-color: $theme-normal !important;
               }
             }
-            input:not(:last-child) {
-              margin-right: 3px;
+            input{
+              margin: 0px 3px;
+            }
+            input:first-child{
+              margin-left: 0px;
             }
           }
 
