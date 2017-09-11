@@ -1465,9 +1465,47 @@ $paddingH-10: 10px;
       background-color: #fff;
       width: 240px;
       height: 263px;
+
+      /*  全部table 公用样式,
+      */
+      table{
+        width: 100%;
+        text-align: center;
+        thead{
+          font-size: 12px;
+        }
+        tbody{
+          td{
+            span{
+              cursor: pointer;
+              display: block;
+              font-size: 12px;
+              border: 1px solid transparent;
+            }
+          }
+        }
+      }
+
+      .now{
+        span{
+          border-color: $theme-normal !important;
+        }
+      }
+      .active {
+        span {
+          background-color: $theme-normal;
+          color: $sixF;
+        }
+      }
+
+      .inactive {
+        span {
+          color: $sixC;
+        }
+      }
+
       /* 初始化 */
       .init-box {
-        //display: none;
         .date-head {
           position: relative;
           padding: 5px;
@@ -1516,37 +1554,15 @@ $paddingH-10: 10px;
           border-top: 1px solid $sixC;
           border-bottom: 1px solid $sixC;
           table {
-            width: 100%;
-            thead {
-              font-size: 12px;
-            }
             tbody {
-              tr {
-                td {
-                  text-align: center;
-                  padding: 2px;
-                  cursor: pointer;
-                  span {
-                    font-size: 12px;
-                    height: 24px;
-                    line-height: 24px;
-                    display: block;
-                    border-radius: 4px;
-                    &:hover {
-                      background-color: $theme-other;
-                      //color: $sixF;
-                    }
-                  }
-                }
-                .active {
-                  span {
-                    background-color: $theme-normal;
-                    color: $sixF;
-                  }
-                }
-                .inactive {
-                  span {
-                    color: $sixC;
+              td {
+                padding: 2px 3px;
+
+                span {
+                  padding: 3px 0px;
+                  border-radius: 4px;
+                  &:hover {
+                    background-color: $theme-other;
                   }
                 }
               }
@@ -1571,6 +1587,7 @@ $paddingH-10: 10px;
               margin-right: 3px;
             }
           }
+
           .foot-btn {
             display: inline-block;
             float: right;
@@ -1585,14 +1602,15 @@ $paddingH-10: 10px;
             }
 
           }
-        ;
         }
       }
 
-      /* 年份 */
-      .year-box {
+
+      /* 年份、月份 公用样式 */
+      .year-box,
+      .month-box {
         display: none;
-        .date-head {
+        .date-head{
           position: relative;
           padding: 10px;
           text-align: center;
@@ -1613,30 +1631,28 @@ $paddingH-10: 10px;
           i:last-child {
             right: 15px;
           }
-          .select-year {
+          .select-month,
+          .select-year{
             font-size: 12px;
             font-weight: 600;
           }
         }
+      }
 
+      /* 年份 */
+      .year-box {
         .date-body {
           table {
-            width: 100%;
             tbody {
-              text-align: center;
-              tr {
-                td {
-                  padding: 18px 0;
-                  span {
-                    cursor: pointer;
-                    padding: 5px 10px;
-                    border-radius: 4px;
-                    &:hover {
-                      color: $sixF;
-                      background-color: $theme-other;
-                      i {
-                        color: $sixF;
-                      }
+              td {
+                padding: 9px 14px;
+                span {
+                  padding: 10px 10px;
+                  border-radius: 4px;
+                  &:hover {
+                    background-color: $theme-other;
+                    i {
+                      //color: $sixF;
                     }
                   }
                 }
@@ -1648,52 +1664,19 @@ $paddingH-10: 10px;
 
       /* 月份 */
       .month-box {
-        display: none;
-        .date-head {
-          position: relative;
-          padding: 10px;
-          text-align: center;
-          border-bottom: 1px solid $sixC;
-          i {
-            position: absolute;
-            top: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            color: $sixC;
-            &:hover {
-              color: $theme-normal;
-            }
-          }
-          i:first-child {
-            left: 15px;
-          }
-          i:last-child {
-            right: 15px;
-          }
-          .select-month {
-            font-size: 12px;
-            font-weight: 600;
-          }
-        }
-
         .date-body {
           table {
-            width: 100%;
             tbody {
-              text-align: center;
-              tr {
-                td {
-                  padding: 18px 0;
-                  span {
-                    cursor: pointer;
-                    padding: 5px 10px;
-                    border-radius: 4px;
-                    &:hover {
-                      //color: $sixF;
-                      background-color: $theme-other;
-                      i {
-                        color: $sixF;
-                      }
+              td {
+                padding: 9px 15px;
+                span {
+                  padding: 10px 5px;
+                  border-radius: 4px;
+                  width: 48px;// 保证宽度一致
+                  &:hover {
+                    background-color: $theme-other;
+                    i {
+                      color: $sixF;
                     }
                   }
                 }
@@ -1703,8 +1686,11 @@ $paddingH-10: 10px;
         }
       }
 
-      /* 小时 */
-      .hour-box {
+
+      /* 小时、分钟、秒数 公用样式 */
+      .hour-box,
+      .minute-box,
+      .second-box{
         display: none;
         .date-head {
           padding: 10px;
@@ -1715,19 +1701,16 @@ $paddingH-10: 10px;
             font-weight: 600;
           }
         }
+      }
 
+      /* 小时 */
+      .hour-box {
         .date-body {
           table {
-            width: 100%;
-            text-align: center;
             td {
-              padding: 5px 5px 0 5px;
+              padding: 4px 10px 0 10px;
               span {
-                cursor: pointer;
-                display: inline-block;
-                width: 30px;
-                height: 30px;
-                line-height: 30px;
+                padding: 7px 5px;
                 border-radius: 4px;
                 &:hover {
                   background-color: $theme-other;
@@ -1740,30 +1723,12 @@ $paddingH-10: 10px;
 
       /* 分钟 + 秒数 */
       .minute-box, .second-box {
-        display: none;
-        .date-head {
-          padding: 10px;
-          text-align: center;
-          border-bottom: 1px solid $sixC;
-          span {
-            font-size: 12px;
-            font-weight: 600;
-          }
-        }
-
         .date-body {
           table {
-            width: 100%;
-            text-align: center;
             td {
-              padding-top: 14px;
+              padding: 14px 1px 0 1px;
               span {
-                cursor: pointer;
-                display: inline-block;
-                width: 20px;
-                height: 20px;
                 line-height: 20px;
-                font-size: 12px;
                 border-radius: 2px;
                 &:hover {
                   background-color: $theme-other;
@@ -1772,12 +1737,10 @@ $paddingH-10: 10px;
             }
           }
         }
-      ;
       }
 
+    }// end -- dateBox
 
-    }
-    /* 三角形 */
     .dateBox:before {
       content: '';
       width: 7px;
@@ -1791,9 +1754,12 @@ $paddingH-10: 10px;
       border-left: 1px solid $sixC;
       border-top: 1px solid $sixC;
       background-color: $sixF;
-    }
-  }
-}
+    }// end -- .dateBox:before
+  }// end -- .container
+}// end -- .datePicker
+
+
+
 
 
 /* 常用类 */

@@ -958,8 +958,7 @@
   display: inline-block;
   vertical-align: top; }
   .datePicker .container {
-    position: relative;
-    /* 三角形 */ }
+    position: relative; }
     .datePicker .container .inputBox {
       position: relative;
       display: inline-block; }
@@ -985,11 +984,32 @@
       background-color: #fff;
       width: 240px;
       height: 263px;
+      /*  全部table 公用样式,
+      */
       /* 初始化 */
+      /* 年份、月份 公用样式 */
       /* 年份 */
       /* 月份 */
+      /* 小时、分钟、秒数 公用样式 */
       /* 小时 */
       /* 分钟 + 秒数 */ }
+      .datePicker .container .dateBox table {
+        width: 100%;
+        text-align: center; }
+        .datePicker .container .dateBox table thead {
+          font-size: 12px; }
+        .datePicker .container .dateBox table tbody td span {
+          cursor: pointer;
+          display: block;
+          font-size: 12px;
+          border: 1px solid transparent; }
+      .datePicker .container .dateBox .now span {
+        border-color: #FF8A41 !important; }
+      .datePicker .container .dateBox .active span {
+        background-color: #FF8A41;
+        color: #ffffff; }
+      .datePicker .container .dateBox .inactive span {
+        color: #CCCCCC; }
       .datePicker .container .dateBox .init-box .date-head {
         position: relative;
         padding: 5px;
@@ -1024,27 +1044,13 @@
         padding: 5px;
         border-top: 1px solid #CCCCCC;
         border-bottom: 1px solid #CCCCCC; }
-        .datePicker .container .dateBox .init-box .date-body table {
-          width: 100%; }
-          .datePicker .container .dateBox .init-box .date-body table thead {
-            font-size: 12px; }
-          .datePicker .container .dateBox .init-box .date-body table tbody tr td {
-            text-align: center;
-            padding: 2px;
-            cursor: pointer; }
-            .datePicker .container .dateBox .init-box .date-body table tbody tr td span {
-              font-size: 12px;
-              height: 24px;
-              line-height: 24px;
-              display: block;
-              border-radius: 4px; }
-              .datePicker .container .dateBox .init-box .date-body table tbody tr td span:hover {
-                background-color: #ffd9c2; }
-          .datePicker .container .dateBox .init-box .date-body table tbody tr .active span {
-            background-color: #FF8A41;
-            color: #ffffff; }
-          .datePicker .container .dateBox .init-box .date-body table tbody tr .inactive span {
-            color: #CCCCCC; }
+        .datePicker .container .dateBox .init-box .date-body table tbody td {
+          padding: 2px 3px; }
+          .datePicker .container .dateBox .init-box .date-body table tbody td span {
+            padding: 3px 0px;
+            border-radius: 4px; }
+            .datePicker .container .dateBox .init-box .date-body table tbody td span:hover {
+              background-color: #ffd9c2; }
       .datePicker .container .dateBox .init-box .date-foot {
         padding: 5px; }
         .datePicker .container .dateBox .init-box .date-foot .foot-time {
@@ -1068,126 +1074,83 @@
             font-size: 12px; }
             .datePicker .container .dateBox .init-box .date-foot .foot-btn span:hover {
               color: #FF8A41; }
-      .datePicker .container .dateBox .year-box {
-        display: none; }
-        .datePicker .container .dateBox .year-box .date-head {
-          position: relative;
-          padding: 10px;
-          text-align: center;
-          border-bottom: 1px solid #CCCCCC; }
-          .datePicker .container .dateBox .year-box .date-head i {
-            position: absolute;
-            top: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            color: #CCCCCC; }
-            .datePicker .container .dateBox .year-box .date-head i:hover {
-              color: #FF8A41; }
-          .datePicker .container .dateBox .year-box .date-head i:first-child {
-            left: 15px; }
-          .datePicker .container .dateBox .year-box .date-head i:last-child {
-            right: 15px; }
-          .datePicker .container .dateBox .year-box .date-head .select-year {
-            font-size: 12px;
-            font-weight: 600; }
-        .datePicker .container .dateBox .year-box .date-body table {
-          width: 100%; }
-          .datePicker .container .dateBox .year-box .date-body table tbody {
-            text-align: center; }
-            .datePicker .container .dateBox .year-box .date-body table tbody tr td {
-              padding: 18px 0; }
-              .datePicker .container .dateBox .year-box .date-body table tbody tr td span {
-                cursor: pointer;
-                padding: 5px 10px;
-                border-radius: 4px; }
-                .datePicker .container .dateBox .year-box .date-body table tbody tr td span:hover {
-                  color: #ffffff;
-                  background-color: #ffd9c2; }
-                  .datePicker .container .dateBox .year-box .date-body table tbody tr td span:hover i {
-                    color: #ffffff; }
+      .datePicker .container .dateBox .year-box,
       .datePicker .container .dateBox .month-box {
         display: none; }
+        .datePicker .container .dateBox .year-box .date-head,
         .datePicker .container .dateBox .month-box .date-head {
           position: relative;
           padding: 10px;
           text-align: center;
           border-bottom: 1px solid #CCCCCC; }
+          .datePicker .container .dateBox .year-box .date-head i,
           .datePicker .container .dateBox .month-box .date-head i {
             position: absolute;
             top: 12px;
             font-weight: 600;
             cursor: pointer;
             color: #CCCCCC; }
+            .datePicker .container .dateBox .year-box .date-head i:hover,
             .datePicker .container .dateBox .month-box .date-head i:hover {
               color: #FF8A41; }
+          .datePicker .container .dateBox .year-box .date-head i:first-child,
           .datePicker .container .dateBox .month-box .date-head i:first-child {
             left: 15px; }
+          .datePicker .container .dateBox .year-box .date-head i:last-child,
           .datePicker .container .dateBox .month-box .date-head i:last-child {
             right: 15px; }
-          .datePicker .container .dateBox .month-box .date-head .select-month {
+          .datePicker .container .dateBox .year-box .date-head .select-month,
+          .datePicker .container .dateBox .year-box .date-head .select-year,
+          .datePicker .container .dateBox .month-box .date-head .select-month,
+          .datePicker .container .dateBox .month-box .date-head .select-year {
             font-size: 12px;
             font-weight: 600; }
-        .datePicker .container .dateBox .month-box .date-body table {
-          width: 100%; }
-          .datePicker .container .dateBox .month-box .date-body table tbody {
-            text-align: center; }
-            .datePicker .container .dateBox .month-box .date-body table tbody tr td {
-              padding: 18px 0; }
-              .datePicker .container .dateBox .month-box .date-body table tbody tr td span {
-                cursor: pointer;
-                padding: 5px 10px;
-                border-radius: 4px; }
-                .datePicker .container .dateBox .month-box .date-body table tbody tr td span:hover {
-                  background-color: #ffd9c2; }
-                  .datePicker .container .dateBox .month-box .date-body table tbody tr td span:hover i {
-                    color: #ffffff; }
-      .datePicker .container .dateBox .hour-box {
+      .datePicker .container .dateBox .year-box .date-body table tbody td {
+        padding: 9px 14px; }
+        .datePicker .container .dateBox .year-box .date-body table tbody td span {
+          padding: 10px 10px;
+          border-radius: 4px; }
+          .datePicker .container .dateBox .year-box .date-body table tbody td span:hover {
+            background-color: #ffd9c2; }
+      .datePicker .container .dateBox .month-box .date-body table tbody td {
+        padding: 9px 15px; }
+        .datePicker .container .dateBox .month-box .date-body table tbody td span {
+          padding: 10px 5px;
+          border-radius: 4px;
+          width: 48px; }
+          .datePicker .container .dateBox .month-box .date-body table tbody td span:hover {
+            background-color: #ffd9c2; }
+            .datePicker .container .dateBox .month-box .date-body table tbody td span:hover i {
+              color: #ffffff; }
+      .datePicker .container .dateBox .hour-box,
+      .datePicker .container .dateBox .minute-box,
+      .datePicker .container .dateBox .second-box {
         display: none; }
-        .datePicker .container .dateBox .hour-box .date-head {
+        .datePicker .container .dateBox .hour-box .date-head,
+        .datePicker .container .dateBox .minute-box .date-head,
+        .datePicker .container .dateBox .second-box .date-head {
           padding: 10px;
           text-align: center;
           border-bottom: 1px solid #CCCCCC; }
-          .datePicker .container .dateBox .hour-box .date-head span {
+          .datePicker .container .dateBox .hour-box .date-head span,
+          .datePicker .container .dateBox .minute-box .date-head span,
+          .datePicker .container .dateBox .second-box .date-head span {
             font-size: 12px;
             font-weight: 600; }
-        .datePicker .container .dateBox .hour-box .date-body table {
-          width: 100%;
-          text-align: center; }
-          .datePicker .container .dateBox .hour-box .date-body table td {
-            padding: 5px 5px 0 5px; }
-            .datePicker .container .dateBox .hour-box .date-body table td span {
-              cursor: pointer;
-              display: inline-block;
-              width: 30px;
-              height: 30px;
-              line-height: 30px;
-              border-radius: 4px; }
-              .datePicker .container .dateBox .hour-box .date-body table td span:hover {
-                background-color: #ffd9c2; }
-      .datePicker .container .dateBox .minute-box, .datePicker .container .dateBox .second-box {
-        display: none; }
-        .datePicker .container .dateBox .minute-box .date-head, .datePicker .container .dateBox .second-box .date-head {
-          padding: 10px;
-          text-align: center;
-          border-bottom: 1px solid #CCCCCC; }
-          .datePicker .container .dateBox .minute-box .date-head span, .datePicker .container .dateBox .second-box .date-head span {
-            font-size: 12px;
-            font-weight: 600; }
-        .datePicker .container .dateBox .minute-box .date-body table, .datePicker .container .dateBox .second-box .date-body table {
-          width: 100%;
-          text-align: center; }
-          .datePicker .container .dateBox .minute-box .date-body table td, .datePicker .container .dateBox .second-box .date-body table td {
-            padding-top: 14px; }
-            .datePicker .container .dateBox .minute-box .date-body table td span, .datePicker .container .dateBox .second-box .date-body table td span {
-              cursor: pointer;
-              display: inline-block;
-              width: 20px;
-              height: 20px;
-              line-height: 20px;
-              font-size: 12px;
-              border-radius: 2px; }
-              .datePicker .container .dateBox .minute-box .date-body table td span:hover, .datePicker .container .dateBox .second-box .date-body table td span:hover {
-                background-color: #ffd9c2; }
+      .datePicker .container .dateBox .hour-box .date-body table td {
+        padding: 4px 10px 0 10px; }
+        .datePicker .container .dateBox .hour-box .date-body table td span {
+          padding: 7px 5px;
+          border-radius: 4px; }
+          .datePicker .container .dateBox .hour-box .date-body table td span:hover {
+            background-color: #ffd9c2; }
+      .datePicker .container .dateBox .minute-box .date-body table td, .datePicker .container .dateBox .second-box .date-body table td {
+        padding: 14px 1px 0 1px; }
+        .datePicker .container .dateBox .minute-box .date-body table td span, .datePicker .container .dateBox .second-box .date-body table td span {
+          line-height: 20px;
+          border-radius: 2px; }
+          .datePicker .container .dateBox .minute-box .date-body table td span:hover, .datePicker .container .dateBox .second-box .date-body table td span:hover {
+            background-color: #ffd9c2; }
     .datePicker .container .dateBox:before {
       content: '';
       width: 7px;
