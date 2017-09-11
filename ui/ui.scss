@@ -1486,18 +1486,18 @@ $paddingH-10: 10px;
         }
       }
 
-      .now{
+
+      .today{
         span{
           border-color: $theme-normal !important;
         }
       }
       .active {
         span {
-          background-color: $theme-normal;
-          color: $sixF;
+          background-color: $theme-normal !important;
+          color: $sixF !important;
         }
       }
-
       .inactive {
         span {
           color: $sixC;

@@ -1003,11 +1003,11 @@
           display: block;
           font-size: 12px;
           border: 1px solid transparent; }
-      .datePicker .container .dateBox .now span {
+      .datePicker .container .dateBox .today span {
         border-color: #FF8A41 !important; }
       .datePicker .container .dateBox .active span {
-        background-color: #FF8A41;
-        color: #ffffff; }
+        background-color: #FF8A41 !important;
+        color: #ffffff !important; }
       .datePicker .container .dateBox .inactive span {
         color: #CCCCCC; }
       .datePicker .container .dateBox .init-box .date-head {

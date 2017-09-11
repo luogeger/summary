@@ -664,6 +664,407 @@
     *   datePicker
     * */
     ;(function (){
+        $('.datePicker').each(function (index, item){
+            var inputStr = $(item).html();
+            var htmlStr = '';
+
+            strJoin();
+            function strJoin (){
+                htmlStr = '<div class="container">'+
+                    '<div class="inputBox">'+
+                    inputStr +
+                    '<i class="icon-cale-a"></i>'+
+                    '</div>'+
+                    '<div class="dateBox">'+
+                    '<!-- 初始化 -->'+
+                    '<div class="init-box">'+
+                    '<div class="date-head">'+
+                    '<i class="icon-arrow-dbLeft prev-year"></i>'+
+                    '<i class="icon-arrow-left prev-month"></i>'+
+                    '<span class="select-time">'+
+                    '<span class="select-year" class="datePickerYear">2017年</span>'+
+                    '<span class="select-month" class="datePickerMonth">9月</span>'+
+                    '</span>'+
+                    '<i class="icon-arrow-right next-month"></i>'+
+                    '<i class="icon-arrow-dbRight next-year"></i>'+
+                    '</div>'+
+                    '<div class="date-body">'+
+                    '<table>'+
+                    '<thead>'+
+                    '<tr>'+
+                    '<th>一</th>'+
+                    '<th>二</th>'+
+                    '<th>三</th>'+
+                    '<th>四</th>'+
+                    '<th>五</th>'+
+                    '<th>六</th>'+
+                    '<th>日</th>'+
+                    '</tr>'+
+                    '</thead>'+
+                    '<tbody>'+
+                    '<tr>'+
+                    '<td class="inactive">28</td>'+
+                    '<td class="inactive">29</td>'+
+                    '<td class="inactive">30</td>'+
+                    '<td class="inactive">31</td>'+
+                    '<td>1</td>'+
+                    '<td>2</td>'+
+                    '<td>3</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>4</td>'+
+                    '<td>5</td>'+
+                    '<td>6</td>'+
+                    '<td>7</td>'+
+                    '<td>8</td>'+
+                    '<td>9</td>'+
+                    '<td>10</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td class="active today">11</td>'+
+                    '<td>12</td>'+
+                    '<td>13</td>'+
+                    '<td>14</td>'+
+                    '<td>15</td>'+
+                    '<td>16</td>'+
+                    '<td>17</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>18</td>'+
+                    '<td>19</td>'+
+                    '<td>20</td>'+
+                    '<td>21</td>'+
+                    '<td>22</td>'+
+                    '<td>23</td>'+
+                    '<td>24</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>25</td>'+
+                    '<td>26</td>'+
+                    '<td>27</td>'+
+                    '<td>28</td>'+
+                    '<td>29</td>'+
+                    '<td>30</td>'+
+                    '<td class="inactive">1</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td class="inactive">2</td>'+
+                    '<td class="inactive">3</td>'+
+                    '<td class="inactive">4</td>'+
+                    '<td class="inactive">5</td>'+
+                    '<td class="inactive">6</td>'+
+                    '<td class="inactive">7</td>'+
+                    '<td class="inactive">8</td>'+
+                    '</tr>'+
+                    '</tbody>'+
+                    '</table>'+
+                    '</div>'+
+                    '<div class="date-foot">'+
+                    '<span class="foot-time">'+
+                    '<input type="text" class="datePickerHour">:'+
+                    '<input type="text" class="datePickerMinute">:'+
+                    '<input type="text" class="datePickerSecond">'+
+                    '</span>'+
+                    '<span class="foot-btn">'+
+                    '<span class="btn-today" class="datePickerNow">此刻</span>'+
+                    '<span class="btn-empty" class="datePickerEmpty">清空</span>'+
+                    '<span class="btn-ok" class="datePickerConfirm">确认</span>'+
+                    '</span>'+
+                    '</div>'+
+                    '</div>'+
+                    '<!-- 年份 -->'+
+                    '<div class="year-box">'+
+                    '<div class="date-head">'+
+                    '<i class="icon-arrow-dbLeft prev-year"></i>'+
+                    '<span class="select-year">2010 - 2019</span>'+
+                    '<i class="icon-arrow-dbRight next-year"></i>'+
+                    '</div>'+
+                    '<div class="date-body">'+
+                    '<table>'+
+                    '<tbody>'+
+                    '<tr>'+
+                    '<td><span><i class="icon-arrow-dbLeft"></i></span></td>'+
+                    '<td><span>2010</span></td>'+
+                    '<td><span>2011</span></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td><span>2012</span></td>'+
+                    '<td class="active"><span>2013</span></td>'+
+                    '<td><span>2014</span></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td><span>2015</span></td>'+
+                    '<td><span>2016</span></td>'+
+                    '<td><span>2017</span></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td><span>2018</span></td>'+
+                    '<td><span>2019</span></td>'+
+                    '<td><span><i class="icon-arrow-dbRight"></i></span></td>'+
+                    '</tr>'+
+                    '</tbody>'+
+                    '</table>'+
+                    '</div>'+
+                    '</div>'+
+                    '<!-- 月份 -->'+
+                    '<div class="month-box">'+
+                    '<div class="date-head">'+
+                    '<i class="icon-arrow-dbLeft prev-year"></i>'+
+                    '<span class="select-month">2017</span>'+
+                    '<i class="icon-arrow-dbRight next-year"></i>'+
+                    '</div>'+
+                    '<div class="date-body">'+
+                    '<table>'+
+                    '<tbody>'+
+                    '<tr>'+
+                    '<td><span>一月</span></td>'+
+                    '<td><span>二月</span></td>'+
+                    '<td><span>三月</span></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td><span>四月</span></td>'+
+                    '<td><span>五月</span></td>'+
+                    '<td><span>六月</span></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td class="active"><span>七月</span></td>'+
+                    '<td><span>八月</span></td>'+
+                    '<td class="active"><span>九月</span></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td><span>十月</span></td>'+
+                    '<td><span>十一月</span></td>'+
+                    '<td><span>十二月</span></td>'+
+                    '</tr>'+
+                    '</tbody>'+
+                    '</table>'+
+                    '</div>'+
+                    '</div>'+
+                    '<!-- 小时 -->'+
+                    '<div class="hour-box">'+
+                    '<div class="date-head">'+
+                    '<span>选择小时</span>'+
+                    '</div>'+
+                    '<div class="date-body">'+
+                    '<table>'+
+                    '<tbody>'+
+                    '<tr>'+
+                    '<td>0</td>'+
+                    '<td>1</td>'+
+                    '<td>2</td>'+
+                    '<td>3</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>4</td>'+
+                    '<td>5</td>'+
+                    '<td>6</td>'+
+                    '<td class="active">7</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>8</td>'+
+                    '<td>9</td>'+
+                    '<td>10</td>'+
+                    '<td>11</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>12</td>'+
+                    '<td>13</td>'+
+                    '<td>14</td>'+
+                    '<td>15</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>16</td>'+
+                    '<td>17</td>'+
+                    '<td>18</td>'+
+                    '<td>19</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>20</td>'+
+                    '<td>21</td>'+
+                    '<td>22</td>'+
+                    '<td>23</td>'+
+                    '</tr>'+
+                    '</tbody>'+
+                    '</table>'+
+                    '</div>'+
+                    '</div>'+
+                    '<!-- 分钟 -->'+
+                    '<div class="minute-box">'+
+                    '<div class="date-head">'+
+                    '<span>选择小时</span>'+
+                    '</div>'+
+                    '<div class="date-body">'+
+                    '<table>'+
+                    '<tbody>'+
+                    '<tr>'+
+                    '<td>0</td>'+
+                    '<td>1</td>'+
+                    '<td>2</td>'+
+                    '<td>3</td>'+
+                    '<td>4</td>'+
+                    '<td>5</td>'+
+                    '<td>6</td>'+
+                    '<td>7</td>'+
+                    '<td>8</td>'+
+                    '<td>9</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>10</td>'+
+                    '<td>11</td>'+
+                    '<td class="active">12</td>'+
+                    '<td>13</td>'+
+                    '<td>14</td>'+
+                    '<td>15</td>'+
+                    '<td>16</td>'+
+                    '<td>17</td>'+
+                    '<td>18</td>'+
+                    '<td>19</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>20</td>'+
+                    '<td>21</td>'+
+                    '<td>22</td>'+
+                    '<td>23</td>'+
+                    '<td>24</td>'+
+                    '<td>25</td>'+
+                    '<td>26</td>'+
+                    '<td>27</td>'+
+                    '<td>28</td>'+
+                    '<td>29</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>30</td>'+
+                    '<td>31</td>'+
+                    '<td>32</td>'+
+                    '<td>33</td>'+
+                    '<td>34</td>'+
+                    '<td>35</td>'+
+                    '<td>36</td>'+
+                    '<td>37</td>'+
+                    '<td>38</td>'+
+                    '<td>39</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>40</td>'+
+                    '<td>41</td>'+
+                    '<td>42</td>'+
+                    '<td>43</td>'+
+                    '<td>44</td>'+
+                    '<td>45</td>'+
+                    '<td>46</td>'+
+                    '<td>47</td>'+
+                    '<td>48</td>'+
+                    '<td>49</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>50</td>'+
+                    '<td>51</td>'+
+                    '<td>52</td>'+
+                    '<td>53</td>'+
+                    '<td>54</td>'+
+                    '<td>55</td>'+
+                    '<td>56</td>'+
+                    '<td>57</td>'+
+                    '<td>58</td>'+
+                    '<td>59</td>'+
+                    '</tr>'+
+                    '</tbody>'+
+                    '</table>'+
+                    '</div>'+
+                    '</div>'+
+                    '<!-- 秒数 -->'+
+                    '<div class="second-box">'+
+                    '<div class="date-head">'+
+                    '<span>选择秒</span>'+
+                    '</div>'+
+                    '<div class="date-body">'+
+                    '<table>'+
+                    '<tbody>'+
+                    '<tr>'+
+                    '<td>0</td>'+
+                    '<td>1</td>'+
+                    '<td>2</td>'+
+                    '<td>3</td>'+
+                    '<td>4</td>'+
+                    '<td>5</td>'+
+                    '<td>6</td>'+
+                    '<td>7</td>'+
+                    '<td>8</td>'+
+                    '<td>9</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>10</td>'+
+                    '<td>11</td>'+
+                    '<td>12</td>'+
+                    '<td class="active">13</td>'+
+                    '<td>14</td>'+
+                    '<td>15</td>'+
+                    '<td>16</td>'+
+                    '<td>17</td>'+
+                    '<td>18</td>'+
+                    '<td>19</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>20</td>'+
+                    '<td>21</td>'+
+                    '<td>22</td>'+
+                    '<td>23</td>'+
+                    '<td>24</td>'+
+                    '<td>25</td>'+
+                    '<td>26</td>'+
+                    '<td>27</td>'+
+                    '<td>28</td>'+
+                    '<td>29</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>30</td>'+
+                    '<td>31</td>'+
+                    '<td>32</td>'+
+                    '<td>33</td>'+
+                    '<td>34</td>'+
+                    '<td>35</td>'+
+                    '<td>36</td>'+
+                    '<td>37</td>'+
+                    '<td>38</td>'+
+                    '<td>39</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>40</td>'+
+                    '<td>41</td>'+
+                    '<td>42</td>'+
+                    '<td>43</td>'+
+                    '<td>44</td>'+
+                    '<td>45</td>'+
+                    '<td>46</td>'+
+                    '<td>47</td>'+
+                    '<td>48</td>'+
+                    '<td>49</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>50</td>'+
+                    '<td>51</td>'+
+                    '<td>52</td>'+
+                    '<td>53</td>'+
+                    '<td>54</td>'+
+                    '<td>55</td>'+
+                    '<td>56</td>'+
+                    '<td>57</td>'+
+                    '<td>58</td>'+
+                    '<td>59</td>'+
+                    '</tr>'+
+                    '</tbody>'+
+                    '</table>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>';
+            };
+
+
+            $(item).html(htmlStr);
+        })
+
+
         var $initBox = $('.datePicker .init-box');// 初始化
         var $yearBox = $('.datePicker .year-box');// 年份
         var $monthBox = $('.datePicker .month-box');// 月份
@@ -677,67 +1078,51 @@
         });
 
         // 年份
-        $('#datePickerYear').click(function (){
-          $initBox.css('display', 'none');
-          $yearBox.css('display', 'block');
-        });
-        $yearBox.find('td:not(:first-child, :last-child)').each(function (index, item){
-            $(item).click(function (){
-                $initBox.css('display', 'block');
-                $yearBox.css('display', 'none');
-            })
-        });
+        selectTime('.datePickerYear', $yearBox, 'year');
 
         // 月份
-        $('#datePickerMonth').click(function (){
-            $initBox.css('display', 'none');
-            $monthBox.css('display', 'block');
-        });
-        $monthBox.find('td').each(function (index, item){
-            $(item).click(function (){
-                $initBox.css('display', 'block');
-                $monthBox.css('display', 'none');
-            })
-        });
+        selectTime('.datePickerMonth', $monthBox, 'month');
 
         // 小时
-        $('#datePickerHour').click(function (){
-            $initBox.css('display', 'none');
-            $hourBox.css('display', 'block');
-        })
-        $hourBox.find('table span').each(function (index, item){
-            $(item).click(function (){
-                $hourBox.css('display', 'none');
-                $initBox.css('display', 'block');
-                $('#datePickerHour')[0].focus();
-            })
-        })
+        selectTime('.datePickerHour', $hourBox, 'hour');
 
         // 分钟
-        $('#datePickerMinute').click(function (){
-            $initBox.css('display', 'none');
-            $minuteBox.css('display', 'block');
-        })
-        $minuteBox.find('td').each(function (index, item){
-            $(item).click(function (){
-                $initBox.css('display', 'block');
-                $minuteBox.css('display', 'none');
-                $('#datePickerMinute')[0].focus();
-            })
-        })
+        selectTime('.datePickerMinute', $minuteBox, 'minute');
 
         // 秒数
-        $('#datePickerSecond').click(function (){
-            $initBox.css('display', 'none');
-            $secondBox.css('display', 'block');
-        })
-        $secondBox.find('td').each(function (index, item){
-            $(item).click(function (){
-                $initBox.css('display', 'block');
-                $secondBox.css('display', 'none');
-                $('#datePickerSecond')[0].focus();
-            })
-        });
+        selectTime('.datePickerSecond', $secondBox, 'second');
+
+        /*
+        *   切换 box
+        * */
+        function selectTime (ele, box, flag){
+            $(ele).click(function (){
+                $(this).parents('.init-box').css('display', 'none');
+                box.css('display', 'block');
+            });
+
+            if(flag == 'year'){
+                var yearEle = box.find('td');
+                yearEle.each(function (index, item){
+                    if(index !== 0 && index !== yearEle.length - 1){
+                        $(item).click(function (){
+                            $initBox.css('display', 'block');
+                            box.css('display', 'none');
+                        })
+                    }
+                });
+            }else{
+                box.find('td').each(function (index, item){
+                    $(item).click(function (){
+                        $initBox.css('display', 'block');
+                        box.css('display', 'none');
+                        if(flag == 'year' && flag == 'month'){
+                            $(ele)[0].focus();
+                        }
+                    })
+                });
+            }
+        };
     })();// end - datePicker
 
 
