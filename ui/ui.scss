@@ -1429,17 +1429,16 @@ $paddingH-10: 10px;
 
 
 /* date */
-.datePicker{
+.datePicker {
   display: inline-block;
   vertical-align: top;
-
-  .container{
+  .container {
     position: relative;
 
-    .inputBox{
+    .inputBox {
       position: relative;
       display: inline-block;
-      >input{
+      > input {
         height: $height-sm;
         width: 200px;
         border: 1px solid $theme-normal;
@@ -1448,7 +1447,7 @@ $paddingH-10: 10px;
         font-family: "microsoft yahei";
       }
 
-      >i{
+      > i {
         color: $theme-normal;
         position: absolute;
         top: 6px;
@@ -1457,7 +1456,7 @@ $paddingH-10: 10px;
       }
     }
 
-    .dateBox{
+    .dateBox {
       position: absolute;
       left: 0;
       top: 40px;
@@ -1467,86 +1466,86 @@ $paddingH-10: 10px;
       width: 240px;
       height: 263px;
       /* 初始化 */
-      .init-box{
-        display: none;
-        .date-head{
+      .init-box {
+        //display: none;
+        .date-head {
           position: relative;
           padding: 5px;
           text-align: center;
-          i{
+          i {
             position: absolute;
             top: 7px;
             font-weight: 600;
             cursor: pointer;
             color: $sixC;
-            &:hover{
+            &:hover {
               color: $theme-normal;
             }
           }
-          .prev-year{
+          .prev-year {
             left: 10px;
           }
-          .prev-month{
+          .prev-month {
             left: 30px;
           }
-          .next-month{
+          .next-month {
             right: 30px;
           }
-          .next-year{
+          .next-year {
             right: 10px;
           }
 
-          .select-time{
+          .select-time {
             .select-year,
-            .select-month{
+            .select-month {
               font-size: 12px;
               font-weight: 600;
               cursor: pointer;
-              &:hover{
+              &:hover {
                 color: $theme-normal;
               }
             }
-            .select-month{
+            .select-month {
               margin-left: 5px;
             }
           }
         }
 
-        .date-body{
+        .date-body {
           padding: 5px;
           border-top: 1px solid $sixC;
           border-bottom: 1px solid $sixC;
-          table{
+          table {
             width: 100%;
-            thead{
+            thead {
               font-size: 12px;
             }
-            tbody{
-              tr{
-                td{
+            tbody {
+              tr {
+                td {
                   text-align: center;
                   padding: 2px;
                   cursor: pointer;
-                  span{
+                  span {
                     font-size: 12px;
                     height: 24px;
                     line-height: 24px;
                     display: block;
                     border-radius: 4px;
-                    &:hover{
+                    &:hover {
                       background-color: $theme-other;
                       //color: $sixF;
                     }
                   }
                 }
-                .active{
-                  span{
+                .active {
+                  span {
                     background-color: $theme-normal;
                     color: $sixF;
                   }
                 }
-                .inactive{
-                  span{
+                .inactive {
+                  span {
                     color: $sixC;
                   }
                 }
@@ -1555,32 +1554,32 @@ $paddingH-10: 10px;
           }
         }
 
-        .date-foot{
+        .date-foot {
           padding: 5px;
-          .foot-time{
+          .foot-time {
             display: inline-block;
-            input{
+            input {
               width: 30px;
               padding: 2px 5px;
               border: 1px solid $sixC;
               border-radius: 4px;
-              &:hover{
+              &:hover, &:focus {
                 border-color: $theme-normal !important;
               }
             }
-            input:not(:last-child){
+            input:not(:last-child) {
               margin-right: 3px;
             }
           }
-          .foot-btn{
+          .foot-btn {
             display: inline-block;
             float: right;
-            span{
+            span {
               display: inline-block;
               padding: 3px;
               cursor: pointer;
               font-size: 12px;
-              &:hover{
+              &:hover {
                 color: $theme-normal;
               }
             }
@@ -1591,51 +1590,51 @@ $paddingH-10: 10px;
       }
 
       /* 年份 */
-      .year-box{
+      .year-box {
         display: none;
-        .date-head{
+        .date-head {
           position: relative;
           padding: 10px;
           text-align: center;
-          i{
+          border-bottom: 1px solid $sixC;
+          i {
             position: absolute;
             top: 12px;
             font-weight: 600;
             cursor: pointer;
             color: $sixC;
-            &:hover{
+            &:hover {
               color: $theme-normal;
             }
           }
-          i:first-child{
+          i:first-child {
             left: 15px;
           }
-          i:last-child{
+          i:last-child {
             right: 15px;
           }
-          .select-year{
+          .select-year {
             font-size: 12px;
             font-weight: 600;
           }
         }
 
-        .date-body{
-          border-top: 1px solid $sixC;
-          table{
+        .date-body {
+          table {
             width: 100%;
-            tbody{
+            tbody {
               text-align: center;
-              tr{
-                td{
+              tr {
+                td {
                   padding: 18px 0;
-                  span{
+                  span {
                     cursor: pointer;
                     padding: 5px 10px;
                     border-radius: 4px;
-                    &:hover{
+                    &:hover {
                       color: $sixF;
                       background-color: $theme-other;
-                      i{
+                      i {
                         color: $sixF;
                       }
                     }
@@ -1648,51 +1647,51 @@ $paddingH-10: 10px;
       }
 
       /* 月份 */
-      .month-box{
+      .month-box {
         display: none;
-        .date-head{
+        .date-head {
           position: relative;
           padding: 10px;
           text-align: center;
-          i{
+          border-bottom: 1px solid $sixC;
+          i {
             position: absolute;
             top: 12px;
             font-weight: 600;
             cursor: pointer;
             color: $sixC;
-            &:hover{
+            &:hover {
               color: $theme-normal;
             }
           }
-          i:first-child{
+          i:first-child {
             left: 15px;
           }
-          i:last-child{
+          i:last-child {
             right: 15px;
           }
-          .select-month{
+          .select-month {
             font-size: 12px;
             font-weight: 600;
           }
         }
 
-        .date-body{
-          border-top: 1px solid $sixC;
-          table{
+        .date-body {
+          table {
             width: 100%;
-            tbody{
+            tbody {
               text-align: center;
-              tr{
-                td{
+              tr {
+                td {
                   padding: 18px 0;
-                  span{
+                  span {
                     cursor: pointer;
                     padding: 5px 10px;
                     border-radius: 4px;
-                    &:hover{
+                    &:hover {
                       //color: $sixF;
                       background-color: $theme-other;
-                      i{
+                      i {
                         color: $sixF;
                       }
                     }
@@ -1705,38 +1704,81 @@ $paddingH-10: 10px;
       }
 
       /* 小时 */
-      .hour-box{
-        //display: none;
-        .date-head{
+      .hour-box {
+        display: none;
+        .date-head {
           padding: 10px;
           text-align: center;
-          span{
+          border-bottom: 1px solid $sixC;
+          span {
             font-size: 12px;
             font-weight: 600;
           }
         }
 
-        .date-body{
-          border-top: 1px solid $sixC;
-          table{
+        .date-body {
+          table {
             width: 100%;
             text-align: center;
+            td {
+              padding: 5px 5px 0 5px;
+              span {
+                cursor: pointer;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                border-radius: 4px;
+                &:hover {
+                  background-color: $theme-other;
+                }
+              }
+            }
           }
         }
       }
 
-      /* 分钟 */
-      .minute-box{
+      /* 分钟 + 秒数 */
+      .minute-box, .second-box {
+        display: none;
+        .date-head {
+          padding: 10px;
+          text-align: center;
+          border-bottom: 1px solid $sixC;
+          span {
+            font-size: 12px;
+            font-weight: 600;
+          }
+        }
 
+        .date-body {
+          table {
+            width: 100%;
+            text-align: center;
+            td {
+              padding-top: 14px;
+              span {
+                cursor: pointer;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                font-size: 12px;
+                border-radius: 2px;
+                &:hover {
+                  background-color: $theme-other;
+                }
+              }
+            }
+          }
+        }
+      ;
       }
 
-      /* 秒数 */
-      .second-box{
 
-      }
     }
-
-    .dateBox:before{
+    /* 三角形 */
+    .dateBox:before {
       content: '';
       width: 7px;
       height: 7px;
@@ -1752,8 +1794,6 @@ $paddingH-10: 10px;
     }
   }
 }
-
-
 
 
 /* 常用类 */

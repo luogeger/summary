@@ -667,7 +667,11 @@
         var $initBox = $('.datePicker .init-box');// 初始化
         var $yearBox = $('.datePicker .year-box');// 年份
         var $monthBox = $('.datePicker .month-box');// 月份
-        $('.datePicker .init-box td, .datePicker .hour-box td').each(function (index, item){
+        var $hourBox = $('.datePicker .hour-box');// 小时
+        var $minuteBox = $('.datePicker .minute-box');// 分钟
+        var $secondBox = $('.datePicker .second-box');// 秒数
+        // td 外面追加 span, /初始化、小时、分钟、秒数
+        $('.datePicker .init-box td, .datePicker .hour-box td, .datePicker .minute-box td, .datePicker .second-box td').each(function (index, item){
             var text = $(item).text();
             $(item).text('').append('<span>'+ text +'</span>');
         });
@@ -695,7 +699,46 @@
                 $monthBox.css('display', 'none');
             })
         });
-    })();
+
+        // 小时
+        $('#datePickerHour').click(function (){
+            $initBox.css('display', 'none');
+            $hourBox.css('display', 'block');
+        })
+        $hourBox.find('table span').each(function (index, item){
+            $(item).click(function (){
+                $hourBox.css('display', 'none');
+                $initBox.css('display', 'block');
+                $('#datePickerHour')[0].focus();
+            })
+        })
+
+        // 分钟
+        $('#datePickerMinute').click(function (){
+            $initBox.css('display', 'none');
+            $minuteBox.css('display', 'block');
+        })
+        $minuteBox.find('td').each(function (index, item){
+            $(item).click(function (){
+                $initBox.css('display', 'block');
+                $minuteBox.css('display', 'none');
+                $('#datePickerMinute')[0].focus();
+            })
+        })
+
+        // 秒数
+        $('#datePickerSecond').click(function (){
+            $initBox.css('display', 'none');
+            $secondBox.css('display', 'block');
+        })
+        $secondBox.find('td').each(function (index, item){
+            $(item).click(function (){
+                $initBox.css('display', 'block');
+                $secondBox.css('display', 'none');
+                $('#datePickerSecond')[0].focus();
+            })
+        });
+    })();// end - datePicker
 
 
 
