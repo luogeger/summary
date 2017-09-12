@@ -80,8 +80,7 @@
     top: 48%;
     width: 20px;
     line-height: 30px;
-    z-index: 1;
-    transition: all .2s ease 0s; }
+    z-index: 1; }
     #nav-sidle #collapse-btn .collapse-btn-nav i {
       font-size: 18px;
       position: relative;
@@ -134,9 +133,6 @@
     display: none; }
     #nav-sidle #accordion-nav .panel > ul li a {
       padding-left: 30px; }
-
-#nav-content {
-  transition: all .2s linear 0s; }
 
 /* -- button 按钮 */
 .btn {

@@ -627,13 +627,12 @@
         var open = $("#collapse-btn").hasClass("to-close");
         if(open){
             $('#nav-sidle').animate({'left': '-180px'}, 10, function (){
-                $('#nav-content').animate({'padding-left': '5px'}, 10);
+                $('#nav-content').animate({'padding-left': '5px'}, 150);
                 $("#collapse-btn").removeClass("to-close").addClass("to-open");// 改变箭头方向，以及位置
             });
-
         }else{
-            $('#nav-content').animate({'padding-left': '180px'}, 10, function (){
-                $('#nav-sidle').animate({'left': '0px'}, 200);
+            $('#nav-content').animate({'padding-left': '180px'}, 150, function (){
+                $('#nav-sidle').animate({'left': '0px'}, 10);
                 $("#collapse-btn").removeClass("to-open").addClass("to-close");// 改变箭头方向，以及位置
             });
 
