@@ -80,7 +80,7 @@
     top: 48%;
     width: 20px;
     line-height: 30px;
-    z-index: 100;
+    z-index: 1;
     transition: all .2s ease 0s; }
     #nav-sidle #collapse-btn .collapse-btn-nav i {
       font-size: 18px;
@@ -826,7 +826,7 @@
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
+  z-index: 3;
   margin: 0 !important;
   padding: 0 !important;
   overflow-x: hidden;
@@ -1041,7 +1041,7 @@
           .datePicker .container .dateBox .init-box .date-head .select-time .select-month:hover {
             color: #FF8A41; }
         .datePicker .container .dateBox .init-box .date-head .select-time .select-month {
-          margin-left: 5px; }
+          margin-left: 25px; }
       .datePicker .container .dateBox .init-box .date-body {
         padding: 5px;
         border-top: 1px solid #CCCCCC;
@@ -1085,13 +1085,13 @@
         .datePicker .container .dateBox .year-box .date-head,
         .datePicker .container .dateBox .month-box .date-head {
           position: relative;
-          padding: 10px;
+          padding: 5px;
           text-align: center;
           border-bottom: 1px solid #CCCCCC; }
           .datePicker .container .dateBox .year-box .date-head i,
           .datePicker .container .dateBox .month-box .date-head i {
             position: absolute;
-            top: 12px;
+            top: 7px;
             font-weight: 600;
             cursor: pointer;
             color: #CCCCCC; }
@@ -1134,7 +1134,7 @@
         .datePicker .container .dateBox .hour-box .date-head,
         .datePicker .container .dateBox .minute-box .date-head,
         .datePicker .container .dateBox .second-box .date-head {
-          padding: 10px;
+          padding: 5px;
           text-align: center;
           border-bottom: 1px solid #CCCCCC; }
           .datePicker .container .dateBox .hour-box .date-head span,
@@ -1150,7 +1150,7 @@
           .datePicker .container .dateBox .hour-box .date-body table td span:hover {
             background-color: #ffd9c2; }
       .datePicker .container .dateBox .minute-box .date-body table td, .datePicker .container .dateBox .second-box .date-body table td {
-        padding: 13px 1px 0 1px; }
+        padding: 8px 1px; }
         .datePicker .container .dateBox .minute-box .date-body table td span, .datePicker .container .dateBox .second-box .date-body table td span {
           line-height: 20px;
           border-radius: 2px; }

@@ -129,7 +129,7 @@ $paddingH-10: 10px;
     top: 48%;
     width: 20px;
     line-height: 30px;
-    z-index: 100;
+    z-index: 1;
     transition: all .2s ease 0s;
     .collapse-btn-nav i{
       font-size: 18px;
@@ -1250,7 +1250,7 @@ $paddingH-10: 10px;
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0 , 0, .5);
-  z-index: 2;
+  z-index: 3;
   margin: 0 !important;
   padding: 0 !important;
   overflow-x: hidden;
@@ -1545,7 +1545,7 @@ $paddingH-10: 10px;
               }
             }
             .select-month {
-              margin-left: 5px;
+              margin-left: 25px;
             }
           }
         }
@@ -1617,12 +1617,12 @@ $paddingH-10: 10px;
         display: none;
         .date-head{
           position: relative;
-          padding: 10px;
+          padding: 5px;
           text-align: center;
           border-bottom: 1px solid $sixC;
           i {
             position: absolute;
-            top: 12px;
+            top: 7px;
             font-weight: 600;
             cursor: pointer;
             color: $sixC;
@@ -1698,7 +1698,7 @@ $paddingH-10: 10px;
       .second-box{
         display: none;
         .date-head {
-          padding: 10px;
+          padding: 5px;
           text-align: center;
           border-bottom: 1px solid $sixC;
           span {
@@ -1731,7 +1731,7 @@ $paddingH-10: 10px;
         .date-body {
           table {
             td {
-              padding: 13px 1px 0 1px;
+              padding: 8px 1px;
               span {
                 line-height: 20px;
                 border-radius: 2px;
