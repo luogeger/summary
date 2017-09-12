@@ -1089,7 +1089,7 @@
         $(item).text('').append('<span>'+ text +'</span>');
     });
 
-    // 年份
+    // 年 (4)
     $('.datePicker  .select-year').click(function (){
         var _this = $(this);
         _this.parents('.init-box').css('display', 'none');
@@ -1105,7 +1105,7 @@
         })
     })
 
-    // 月份
+    // 月 (2)
     $('.datePicker  .select-month').click(function (){
         var _this = $(this);
         _this.parents('.init-box').css('display', 'none');
@@ -1116,6 +1116,16 @@
                 _this.parents('.init-box').css('display', 'block');
                 $(item).parents('.month-box').css('display','none');
             })
+        })
+    })
+
+    // 日
+    $('.datePicker  .init-box .date-body tbody td').each(function (index, item){
+        var _item = $(item);
+        _item.click(function (){
+            $(this).parents('tbody').find('td').each(function (i, v){ $(v).removeClass('active'); });// 先排他
+            $(this).addClass('active');// 再加上
+            getTime(this);
         })
     })
 
@@ -1131,6 +1141,7 @@
                 var val = $(this).children('span').text();// 获取值
                 if(parseInt(val) <  10){ val = '0' + val; };//  前面加0
                 $(this).parents('.hour-box').siblings('.init-box').find('.select-hour').val(val)[0].focus();// 返回input获取焦点
+                getTime(this);
             })
         })
     })
@@ -1147,6 +1158,7 @@
                 var val = $(this).children('span').text();// 获取值
                 if(parseInt(val) <  10){ val = '0' + val; };//  前面加0
                 $(this).parents('.minute-box').siblings('.init-box').find('.select-minute').val(val)[0].focus();// 返回input获取焦点
+                getTime(this);
             })
         })
     })
@@ -1158,16 +1170,31 @@
         _this.parents('.init-box').siblings('.second-box').css('display','block');
         $(this).parents('.init-box').siblings('.second-box').find('td').each(function (index, item){
             $(item).click(function (){
-                getTime(this);
                 _this.parents('.init-box').css('display', 'block');
                 $(item).parents('.second-box').css('display','none');
                 var val = $(this).children('span').text();// 获取值
                 if(parseInt(val) <  10){ val = '0' + val; };//  前面加0
                 $(this).parents('.second-box').siblings('.init-box').find('.select-second').val(val)[0].focus();// 返回input获取焦点
-
+                getTime(this);
             })
         })
     })
+
+    // 清空
+    $('.datePicker .init-box .btn-empty').click(function (){
+        $(this).parents('.dateBox').siblings('.inputBox').children('input').val('');
+    })
+
+    // 确认
+    $('.datePicker .init-box .btn-ok').click(function (){
+        $(this).parents('.dateBox').slideUp(10);
+    })
+
+    // 此刻
+    $('.datePicker .init-box .btn-today').click(function (){
+
+    })
+
 
     /*
     *   获取值显示到input
@@ -1177,6 +1204,7 @@
         var year = initBox.children('.date-head').find('.select-year').data('val');
         var month = initBox.children('.date-head').find('.select-month').data('val');
         var today = initBox.children('.date-body').find('.active span').text();
+            if(parseInt(today) <  10){ today = '0' + today; };//  前面加0
         var hour = initBox.children('.date-foot').find('.select-hour').val();
         var minute = initBox.children('.date-foot').find('.select-minute').val();
         var second = initBox.children('.date-foot').find('.select-second').val();
@@ -1184,41 +1212,8 @@
 
         var results = year +'-'+ month +'-'+ today +'  '+ hour +':'+ minute +':'+ second;
         initBox.parent('.dateBox').siblings('.inputBox').children('input').val(results);
-        console.log(results);
     };
 
-    /*
-    *   切换 box
-    * */
-    function selectTime (ele,box, flag){
-        $(ele).click(function (){
-            $(this).parents('.init-box').css('display', 'none');
-            console.log($(this).parents('.init-box').siblings('.'+ flag +'-box'));
-            $(this).parents('.init-box').siblings('.'+ flag +'-box').css('display', 'block');
-        });
-
-        if(flag == 'year'){
-            var yearEle = box.find('td');
-            yearEle.each(function (index, item){
-                if(index !== 0 && index !== yearEle.length - 1){
-                    $(item).click(function (){
-                        $initBox.css('display', 'block');
-                        box.css('display', 'none');
-                    })
-                }
-            });
-        }else{
-            $(this).parents('.init-box').siblings('.'+ flag +'-box').find('td').each(function (index, item){
-                $(item).click(function (){
-                    $initBox.css('display', 'block');
-                    box.css('display', 'none');
-                    if(flag == 'year' && flag == 'month'){
-                        $(ele)[0].focus();
-                    }
-                })
-            });
-        }
-    };
 })();// end - datePicker
 
 

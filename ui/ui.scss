@@ -1580,6 +1580,7 @@ $paddingH-10: 10px;
               padding: 2px 5px;
               border: 1px solid $sixC;
               border-radius: 4px;
+              font-family: "microsoft yahei";
               &:hover, &:focus {
                 border-color: $theme-normal !important;
               }
@@ -1597,7 +1598,7 @@ $paddingH-10: 10px;
             float: right;
             span {
               display: inline-block;
-              padding: 3px;
+              padding: 2px 4px;
               cursor: pointer;
               font-size: 12px;
               &:hover {
@@ -1730,7 +1731,7 @@ $paddingH-10: 10px;
         .date-body {
           table {
             td {
-              padding: 14px 1px 0 1px;
+              padding: 13px 1px 0 1px;
               span {
                 line-height: 20px;
                 border-radius: 2px;
