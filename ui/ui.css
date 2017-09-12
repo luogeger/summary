@@ -24,7 +24,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1; }
+  z-index: 2; }
   #nav-head .nav-head-info-tip {
     padding: 0 10px;
     height: 100%;
@@ -976,6 +976,7 @@
         right: 6px;
         cursor: pointer; }
     .datePicker .container .dateBox {
+      display: none;
       position: absolute;
       left: 0;
       top: 40px;
@@ -984,6 +985,7 @@
       background-color: #fff;
       width: 240px;
       height: 263px;
+      z-index: 1;
       /*  全部table 公用样式,
       */
       /* 初始化 */

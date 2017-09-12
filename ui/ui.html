@@ -1193,7 +1193,10 @@
                 <div class="datePicker">
                     <input type="text" placeholder="123123">
                 </div>
-                
+    
+                <div class="datePicker">
+                    <input type="text" placeholder="345345345">
+                </div>
                 <!-- table -->
                 <div style="margin: 50px 0;">
                     <table class="table table-striped">
@@ -1335,7 +1338,7 @@
     
                 <!-- slider -->
                 <span class="box" style="border: 2px solid red; display: inline-block; margin: 0 0 50px 0;">
-                    <!--<div id="focus"></div>-->
+                    <div id="focus"></div>
                 </span>
             
                 
@@ -1459,7 +1462,20 @@
         data: data,
     };
     ui.slider('#focus', obj);
-    
+
+
+    var date = new Date();
+    console.log(date.getTime() , '-- getTime()');
+    console.log(date.getMilliseconds(), '-- getMilliseconds()');
+    console.log(date.getSeconds(), '-- getSeconds()');
+    console.log(date.getMinutes(), '-- getMinute()');
+    console.log(date.getHours(), '-- getHours()');
+    console.log(date.getDay(), '-- getDay()');
+    console.log(date.getDate(), '-- getDate()');
+    console.log(date.getMonth(), '-- getMonth()');
+    console.log(date.getFullYear(), '-- getFullYear()');
+    console.log(date.setDate(1), '-- 每月第一天');
+    console.log(new Date('2017', '9', 0), '-- 每月最后一天');
 </script>
 
 
