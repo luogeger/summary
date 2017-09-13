@@ -80,7 +80,8 @@
     top: 48%;
     width: 20px;
     line-height: 30px;
-    z-index: 1; }
+    z-index: 1;
+    transition: all .2s ease 0s; }
     #nav-sidle #collapse-btn .collapse-btn-nav i {
       font-size: 18px;
       position: relative;
@@ -91,20 +92,20 @@
       border-left: none;
       border-right: 13px solid #f7f7f7;
       border-top: 9px solid transparent; }
-      #nav-sidle #collapse-btn.to-close:hover {
-        left: 160px; }
       #nav-sidle #collapse-btn.to-close .collapse-btn-nav i {
         left: 5px; }
+      #nav-sidle #collapse-btn.to-close:hover {
+        left: 160px; }
     #nav-sidle #collapse-btn.to-open {
       left: -4px;
       border-bottom: 9px solid transparent;
       border-left: 13px solid #d9dee4;
       border-top: 9px solid transparent; }
-      #nav-sidle #collapse-btn.to-open:hover {
-        left: 0px; }
       #nav-sidle #collapse-btn.to-open .collapse-btn-nav i {
         left: -3px;
         transform: rotate(180deg); }
+      #nav-sidle #collapse-btn.to-open:hover {
+        left: 0px; }
   #nav-sidle #accordion-nav a {
     display: block;
     height: 40px;
@@ -133,6 +134,9 @@
     display: none; }
     #nav-sidle #accordion-nav .panel > ul li a {
       padding-left: 30px; }
+
+#nav-content {
+  transition: all .2s linear 0s; }
 
 /* -- button 按钮 */
 .btn {

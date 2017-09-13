@@ -613,8 +613,8 @@
 
     /*
     *   navigate
-    *
     * */
+    //  1. nav-head
     // .nav-head-info-tip 的hover事件
     $('.nav-head-info-tip').hover(function (){
         $(this).find('.info-tip-menu').slideToggle(10);
@@ -622,20 +622,31 @@
         $(this).find('.info-tip-menu').slideToggle(10);
     });
 
+    //  2. nav-sidle
+    // #collapse-btn 的 transition
+    // $('#collapse-btn').hover(function (){
+    //     if($(this).hasClass('to-close')){
+    //         $(this).animate({'left':'160px'}, 200);
+    //     }
+    // },function (){
+    //     if($(this).hasClass('to-close')){
+    //         $(this).animate({'left':'165px'}, 200);
+    //     }
+    // })
+
+
     // #collapse-btn 收展侧边栏
     function toggleCollapse(){
         var open = $("#collapse-btn").hasClass("to-close");
         if(open){
-            $('#nav-sidle').animate({'left': '-180px'}, 10, function (){
-                $('#nav-content').animate({'padding-left': '5px'}, 150);
-                $("#collapse-btn").removeClass("to-close").addClass("to-open");// 改变箭头方向，以及位置
-            });
+            $('#nav-content').css({'padding-left': '5px'});
+            $("#collapse-btn").removeClass("to-close").addClass("to-open");// 改变箭头方向，以及位置
+            $('#nav-sidle').animate({'left': '-180px'}, 200);
         }else{
-            $('#nav-content').animate({'padding-left': '180px'}, 150, function (){
-                $('#nav-sidle').animate({'left': '0px'}, 10);
-                $("#collapse-btn").removeClass("to-open").addClass("to-close");// 改变箭头方向，以及位置
-            });
 
+            $('#nav-content').css({'padding-left': '180px'});
+            $("#collapse-btn").removeClass("to-open").addClass("to-close");// 改变箭头方向，以及位置
+            $('#nav-sidle').animate({'left': '0px'}, 200);
         }
     };
 

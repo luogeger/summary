@@ -130,12 +130,11 @@ $paddingH-10: 10px;
     width: 20px;
     line-height: 30px;
     z-index: 1;
-    //transition: all .2s ease 0s;
+    transition: all .2s ease 0s;
     .collapse-btn-nav i{
       font-size: 18px;
       position: relative;
       display: block;
-
     }
 
     &.to-close{
@@ -144,11 +143,11 @@ $paddingH-10: 10px;
       border-left: none;
       border-right: 13px solid #f7f7f7;
       border-top: 9px solid transparent;
-      &:hover{
-        left: 160px;
-      }
       .collapse-btn-nav i{
         left: 5px;
+      }
+      &:hover{
+        left: 160px;
       }
     }
 
@@ -157,15 +156,14 @@ $paddingH-10: 10px;
       border-bottom: 9px solid transparent;
       border-left: 13px solid #d9dee4;
       border-top: 9px solid transparent;
-      &:hover{
-        left: 0px;
-      }
       .collapse-btn-nav i{
         left: -3px;
         transform: rotate(180deg);
       }
+      &:hover{
+        left: 0px;
+      }
     }
-
   }
 
   /* 导航内容 */
@@ -235,7 +233,7 @@ $paddingH-10: 10px;
 
 
 #nav-content{
-  //transition: all .2s linear 0s;
+  transition: all .2s linear 0s;
 }
 
 
