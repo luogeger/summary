@@ -953,6 +953,29 @@
   .slider .slider-extra .extra-page .extra-page-next {
     right: 0em; }
 
+.img-square,
+.img-round {
+  display: inline-block;
+  vertical-align: top;
+  border: 2px solid #CCCCCC;
+  padding: 5px; }
+  .img-square img,
+  .img-round img {
+    cursor: pointer; }
+  .img-square:hover,
+  .img-round:hover {
+    border-color: #FF8A41; }
+
+.img-square {
+  border-radius: 4px; }
+  .img-square img {
+    border-radius: 4px; }
+
+.img-round {
+  border-radius: 50%; }
+  .img-round img {
+    border-radius: 50%; }
+
 /* date */
 .datePicker {
   display: inline-block;

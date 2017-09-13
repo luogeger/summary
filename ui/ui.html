@@ -58,7 +58,14 @@
             width: 500px;
         }
         
-        
+        .fixed{
+            width: 200px;
+            height: 200px;
+            background-color: deeppink;
+            position: fixed;
+            right: 200px;
+            top: 100px;
+        }
     </style>
 </head>
 <body>
@@ -1201,12 +1208,14 @@
                 <div style="margin: 50px 0;">
                     <table class="table table-striped">
                         <thead>
-                        <th>序号</th>
-                        <th>姓名</th>
-                        <th>性别</th>
-                        <th>年龄</th>
-                        <th>电话</th>
-                        <th>地址</th>
+                            <tr>
+                                <th>序号</th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>年龄</th>
+                                <th>电话</th>
+                                <th>地址</th>
+                            </tr>
                         </thead>
                         <tbody>
                         <tr>
@@ -1338,18 +1347,29 @@
                 </div>
     
                 <!-- slider -->
-                <span class="box" style="border: 2px solid red; display: inline-block; margin: 0 0 50px 0;">
+                <span class="box" style="display: inline-block; margin: 0 0 50px 0;">
                     <div id="focus"></div>
                 </span>
             
-                <!-- -->
+                <!-- img -->
+                <div class="img-square" style="margin: 0 0 0 10px;">
+                    <img style="width: 140px; height: 140px;" src="../images/motp.jpg" title="img-square" alt="这是图片">
+                </div>
+                
+                <div class="img-round" style="margin: 0 0 0 10px;">
+                    <img style="width: 140px; height: 140px;" src="../images/motp.jpg" alt="这是图片">
+                </div>
+                
+                <div class="fixed">
+                
+                </div>
                 
                 
             </div><!-- /#content-item -->
-        </div><!-- /#content -->
+        </div><!-- /#nav-content -->
     </div><!-- /.wrapper -->
-</body>
-</html>
+
+
 <script src="../fileJs/jquery-1.12.4.min.js"></script>
 <script src="../fileJs/jquery.slimscroll.min.js"></script>
 <script src="ui.js"></script>
@@ -1403,12 +1423,12 @@
         }// slimScroll -- end
     });// extend -- end
     
-    // --
+    // -- model dom
     $('#dom').click(function (){
         ui.model('#popup');
     });
 
-    // --
+    // -- model 字符串、函数
     $('#arr').click(function (){
         var html =
             '<h1>青山依旧在</h1>'+
@@ -1437,34 +1457,74 @@
         ui.model([html, arrFun]);
     });
 
-    // --
+    // -- sidle dom
     $('#sidleBtn').click(function (){
         ui.sidle('#sidle');
     });
 
-    // --
+    // -- 滚动条
     $("#accordion-nav").slimScroll({
         height: "100%",
         width: "180px",
     });
     
 
-    // --
+    // -- 轮播图
     var data = [
-        {title: "国庆123", src: "../images/b5.jpg", href: "#国庆"},
-        {title: "Galaxy On7", src: "../images/b1.jpg", href: "#Galaxy On7"},
-        {title: "Air Touch-X2", src: "../images/b2.jpg", href: "#Air Touch-X2"},
-        {title: "满199减100", src: "../images/b3.jpg", href: "#满199减100"},
-        {title: "奇趣", src: "../images/b4.jpg", href: "#奇趣"},
-        {title: "360奇酷", src: "../images/b6.jpg", href: "#360奇酷"}
+        {title: "国庆123", src: "../images/b5.jpg", href: "国庆"},
+        {title: "Galaxy On7", src: "../images/b1.jpg", href: "Galaxy On7"},
+        {title: "Air Touch-X2", src: "../images/b2.jpg", href: "Air Touch-X2"},
+        {title: "满199减100", src: "../images/b3.jpg", href: "满199减100"},
+        {title: "奇趣", src: "../images/b4.jpg", href: "奇趣"},
+        {title: "360奇酷", src: "../images/b6.jpg", href: "360奇酷"}
     ];
     
     var obj = {
         data: data,
     };
+    
     ui.slider('#focus', obj);
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     var date = new Date();
     console.log(date.getTime() , '-- getTime()');
     console.log(date.getMilliseconds(), '-- getMilliseconds()');
@@ -1478,5 +1538,6 @@
     console.log(date.setDate(1), '-- 每月第一天');
     console.log(new Date('2017', '9', 0), '-- 每月最后一天');
 </script>
-
+</body>
+</html>
 

@@ -454,7 +454,7 @@
             '</div>';
 
 
-        $('body').prepend(html).css({'overflow-y': 'hidden'});
+        $('body').prepend(html).css({'overflow': 'hidden'});
         var height = $('.layer-sidle').outerHeight() - $('.title').outerHeight() + 'px';
         var width = $(ele).outerWidth();// 获取dom元素的宽度
 
@@ -615,25 +615,15 @@
     *   navigate
     * */
     //  1. nav-head
+
     // .nav-head-info-tip 的hover事件
-    $('.nav-head-info-tip').hover(function (){
-        $(this).find('.info-tip-menu').slideToggle(10);
-    },function (){
-        $(this).find('.info-tip-menu').slideToggle(10);
-    });
+    // $('.nav-head-info-tip').hover(function (){
+    //     $(this).find('.info-tip-menu').slideToggle(10);
+    // },function (){
+    //     $(this).find('.info-tip-menu').slideToggle(10);
+    // });
 
     //  2. nav-sidle
-    // #collapse-btn 的 transition
-    // $('#collapse-btn').hover(function (){
-    //     if($(this).hasClass('to-close')){
-    //         $(this).animate({'left':'160px'}, 200);
-    //     }
-    // },function (){
-    //     if($(this).hasClass('to-close')){
-    //         $(this).animate({'left':'165px'}, 200);
-    //     }
-    // })
-
 
     // #collapse-btn 收展侧边栏
     function toggleCollapse(){
@@ -687,7 +677,8 @@
 
         strJoin();
         function strJoin (){
-            htmlStr = '<div class="container">'+
+            htmlStr =
+                '<div class="container">'+
                 '<div class="inputBox">'+
                 inputStr +
                 '<i class="icon-cale-a"></i>'+
@@ -844,7 +835,7 @@
                 '<td><span>六月</span></td>'+
                 '</tr>'+
                 '<tr>'+
-                '<td class="active"><span>七月</span></td>'+
+                '<td><span>七月</span></td>'+
                 '<td><span>八月</span></td>'+
                 '<td class="active"><span>九月</span></td>'+
                 '</tr>'+

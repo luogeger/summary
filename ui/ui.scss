@@ -1114,6 +1114,8 @@ $paddingH-10: 10px;
 }
 
 
+
+
 /* tree-view-slim */
 .tree-view-slim{
   $paddingL: 10px;
@@ -1191,8 +1193,6 @@ $paddingH-10: 10px;
 
 
 
-
-
 /*  table  */
 .table{
   width: 100%;
@@ -1235,7 +1235,6 @@ $paddingH-10: 10px;
     }
   }
 }
-
 
 
 
@@ -1335,7 +1334,6 @@ $paddingH-10: 10px;
 
 
 
-
 /* slider -- 轮播图 */
 .slider{
   width: 100%;
@@ -1424,6 +1422,37 @@ $paddingH-10: 10px;
     }
   }
 }
+
+
+.img-square,
+.img-round{
+  display: inline-block;
+  vertical-align: top;
+  border: 2px solid $sixC;
+  padding: 5px;
+  img{
+    cursor: pointer;
+  }
+  &:hover{
+    border-color: $theme-normal;
+  }
+}
+
+.img-square{
+  border-radius: 4px;
+  img{
+    border-radius: 4px;
+  }
+}
+
+.img-round{
+  border-radius: 50%;
+  img{
+    border-radius: 50%;
+  }
+}
+
+
 
 
 /* date */
