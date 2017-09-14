@@ -1,5 +1,13 @@
 # icon
 
+- 字体：cookies font-family: Menlo, Consolas, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+
+- font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, Arial, sans-serif;
+
+
+
+
+
 
 [简约线性](http://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512.691448eaSUnl2o&cid=4798)
 
