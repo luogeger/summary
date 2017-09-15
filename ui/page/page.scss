@@ -1,0 +1,100 @@
+.wrapper{
+  // .head
+  .head{
+    #nav-head{
+      padding: 0 30px;
+      >div{
+        height: 100%;
+        line-height: 60px;
+        padding: 0 10px;
+      }
+
+      .logo{
+        color: #E26A12;
+        font-weight: bold;
+        cursor: pointer;
+        i{
+          display: inline-block;
+          vertical-align: middle;
+          width: 34px;
+          height: 34px;
+          background: url(../images/page.png) 0px -33px;
+        }
+      }
+
+      .start-use,
+      .page-show{
+        padding:0 30px;
+        position: relative;
+        span{
+          cursor: pointer;
+        }
+        .line{
+          height: 5px;
+          width: 100%;
+          background-color: #CCCCCC;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          display: none;
+        }
+      }
+
+      .change-skin{
+        >i{
+          display: inline-block;
+          vertical-align: middle;
+          width: 18px;
+          height: 16px;
+          background: url("../images/page.png") 0 0;
+          margin-right: 5px;
+          cursor: pointer;
+        }
+
+        .panel:before{
+          position: absolute;
+          top: -5px;
+          right: 30px;
+          content: '';
+          transform: rotate(45deg);
+          width: 7px;
+          height: 7px;
+          border-left: 1px solid #CCCCCC;
+          border-top: 1px solid #CCCCCC;
+          background-color: #FFFFFF;
+        }
+        .panel{
+          display: none;
+          position: relative;
+          background-color: #fefefe;
+          border: 1px solid #CCCCCC;
+          border-radius: 4px;
+          box-shadow: 0px 0px 5px 1px #cccccc;
+          li{
+            text-align: center;
+            line-height: 0px;
+            margin: 15px 0;
+            cursor: pointer;
+            i{
+              display: inline-block;
+              vertical-align: middle;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+            }
+            span{
+              line-height: 14px;
+            }
+          }
+
+
+        }
+      }
+    }
+  }
+
+  // .main
+  .main{
+  }
+
+}

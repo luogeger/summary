@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page</title>
+    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="../ui.css">
+    <link rel="stylesheet" href="page.css">
+</head>
+<body style="padding-top: 60px;">
+<div class="wrapper">
+    <div class="head">
+        <div id="nav-head">
+            <div class="logo pull-left" onclick="loadMainPage('.content', '../home/home.html')">
+                <i></i>
+                &nbsp; Xiaoi UI
+            </div>
+            <div class="start-use pull-left" onclick="loadMainPage('.content', '../use/use.html')">
+                <span>开始使用</span>
+                <div class="line"></div>
+            </div>
+            <div class="page-show pull-left" onclick="loadMainPage('.content', '../show/show.html')">
+                <span>页面展示</span>
+                <div class="line"></div>
+            </div>
+            <div class="change-skin pull-right">
+                <i id="changeSkin"></i>
+                <span>一键换肤</span>
+                <ul class="panel">
+                    <li class="red">
+                        <i style="background-color: #ED5565;"></i>
+                        <span>红色</span>
+                    </li>
+                    <li class="orange">
+                        <i style="background-color: #FF8A41;"></i>
+                        <span>橙色</span>
+                    </li>
+                    <li class="green">
+                        <i style="background-color: #00BFA5;"></i>
+                        <span>绿色</span>
+                    </li>
+                    <li class="blue">
+                        <i style="background-color: #1D98F9;"></i>
+                        <span>蓝色</span>
+                    </li>
+                    <li class="gray">
+                        <i style="background-color: #CCCCCC;"></i>
+                        <span>灰色</span>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /#nav-head -->
+    </div><!-- /.head -->
+    
+    <div class="content">
+    
+    </div><!-- /.content -->
+</div><!-- /.wrapper -->
+<script src="../../fileJs/jquery-1.12.4.min.js"></script>
+<script src="../../fileJs/jquery.slimscroll.min.js"></script>
+<script src="../ui.js"></script>
+<script>
+    loadMainPage('.content', '../home/home.html');
+    
+    // 一键换肤 -- 显示、隐藏
+    $('#changeSkin').click(function (e){
+        e.stopPropagation()
+        $(this).siblings('.panel').slideToggle(30);
+    })
+    
+    // 下滑线
+    var lineArr = [];// 排他
+    $('.start-use, .page-show').each(function (index, item){
+        lineArr.push($(item));
+        $(item).click(function (e){
+            e.stopPropagation()
+            $(lineArr).each(function (i, v){ v.children('.line').hide() })// 排他
+            $(this).children('.line').show()
+        })
+    })
+    
+    // 点击logo 下划线消失
+    $('.logo').click(function (){
+        $(lineArr).each(function (i, v){ v.children('.line').hide() })// 排他
+    })
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // document
+    $(document).click(function (){
+        $('#changeSkin').siblings('.panel').slideUp(30)// 一键换肤
+    })
+    
+    // 加载页面
+    function loadMainPage (ele, url){
+        $(ele).load(url, function (){
+            setMinHeight(ele);
+        })
+    };
+    
+    // 设置 .content 的最小高度
+    function setMinHeight(ele) {
+        var top = $(ele).offset().top.toFixed();//获取div的高度
+        $(ele).css({"min-height":$(window).height()- top+"px"});
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
