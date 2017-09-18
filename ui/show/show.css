@@ -9,10 +9,13 @@
     line-height: 20px; }
 .main .info {
   text-align: center;
-  padding-top: 50px; }
+  padding: 50px 0; }
   .main .info img {
     width: 1250px; }
-  .main .info p {
-    padding: 20px 0; }
+.main .footer {
+  text-align: center;
+  font-size: 12px;
+  padding: 10px 0;
+  border-top: 1px solid #CCCCCC; }
 
 /*# sourceMappingURL=show.css.map */

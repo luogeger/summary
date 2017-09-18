@@ -14,13 +14,16 @@
 
   .info{
     text-align: center;
-    padding-top: 50px;
+    padding: 50px 0;
     img{
       width: 1250px;
     }
+  }
 
-    p{
-      padding: 20px 0;
-    }
+  .footer{
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 0;
+    border-top: 1px solid #CCCCCC;
   }
 }

@@ -1,0 +1,48 @@
+.main .intro {
+  padding: 30px 40px 0 40px;
+  background-color: #EAEAEA; }
+  .main .intro h1 {
+    font-size: 30px; }
+  .main .intro h3 {
+    padding: 20px 0;
+    width: 520px;
+    line-height: 20px; }
+.main .info {
+  padding: 50px 40px;
+  position: relative; }
+  .main .info .info-sidle {
+    width: 19%;
+    min-width: 200px;
+    position: relative;
+    top: 0; }
+    .main .info .info-sidle ul {
+      border-right: 1px solid #CCCCCC; }
+      .main .info .info-sidle ul li {
+        color: #222222;
+        background-color: #fff;
+        border-left: 4px solid transparent;
+        padding-left: 15px; }
+        .main .info .info-sidle ul li a {
+          display: block; }
+          .main .info .info-sidle ul li a span {
+            color: #999999;
+            margin-left: 5px;
+            line-height: 1.8; }
+        .main .info .info-sidle ul li:hover {
+          border-color: #000; }
+      .main .info .info-sidle ul .li-border {
+        border-color: #000; }
+  .main .info .info-content {
+    width: 80%; }
+    .main .info .info-content > div {
+      height: 200px;
+      border: 1px dashed #ff0000;
+      border-radius: 10px;
+      margin-bottom: 10px; }
+.main .footer {
+  text-align: center;
+  font-size: 12px;
+  padding: 10px 0;
+  border-top: 1px solid #CCCCCC; }
+
+/*# sourceMappingURL=use.css.map */

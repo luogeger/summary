@@ -48,7 +48,8 @@
     height: 7px;
     border-left: 1px solid #CCCCCC;
     border-top: 1px solid #CCCCCC;
-    background-color: #FFFFFF; }
+    background-color: #FFFFFF;
+    box-shadow: -2px -2px 5px -1px #cccccc; }
   .wrapper .head #nav-head .change-skin .panel {
     display: none;
     position: relative;
