@@ -4,7 +4,8 @@
     <div class="intro">
         <h1>开始使用</h1>
         <h3>Xiaoi UI是一个轻量级HTML、CSS和JS框架, 专注于系统的WEB项目, 提供最好最新最受欢迎的综合性UI组件。</h3>
-    </div>
+    </div><!-- /.intro -->
+    
     <div class="info clearfix">
         <div class="info-sidle pull-left">
             <ul>
@@ -32,8 +33,8 @@
                 <li class="date"><a href="#date">日期组件 <span>DatePicker</span></a></li>
                 <li class="chart"><a href="#chart">图标 <span>Chart</span></a></li>
             </ul>
-        </div>
-        <!-- /.info-sidle -->
+        </div><!-- /.info-sidle -->
+        
         <div class="info-content pull-right">
             <div id="down"> 下载</div>
             <div id="icon"> 图标</div>
@@ -58,10 +59,12 @@
             <div id="scroll"> 滚动条</div>
             <div id="date"> 日期组件</div>
             <div id="chart"> 图标</div>
-        </div>
-        <!-- /.info-content -->
-    
+            <div> 123</div>
+            <div> 456</div>
+        </div><!-- /.info-content -->
+        
     </div><!-- /.info -->
+    
     <p class="footer">版权所有 © 上海智臻智能网络科技股份有限公司 | 2017 沪ICP备 11021460</p>
 </div><!-- /.main -->
 
@@ -73,27 +76,29 @@
             $(this).addClass('li-border')
         })
     })
+
+
+    
+    
     
     $(document).scroll(function (){
-        var height = $('body')[0].scrollTop;
-        if(height > 190){
-            var top = (height-190) + 'px';
+        var scrollHeight = $('body')[0].scrollTop;
+        var boxHeight = $('.info')[0].clientHeight;// 盒子高度
+        var thisHeight = $('.info-sidle')[0].clientHeight;// 自身高度
+        var footHeight = $('.footer').outerHeight();// 底部高度
+        var maxHeight = boxHeight - thisHeight - footHeight -20;
+        var top = scrollHeight - 190;
+        if(scrollHeight > 190){
+            top > maxHeight ? top = maxHeight+'px' : top = top+'px';
             $('.info-sidle').css('top', top);
         }else{
             $('.info-sidle').css('top', '0');
         }
-        var boxHeight = $('.info')[0].clientHeight;// 盒子高度
-        var thisHeight = $('.info-sidle')[0].clientHeight;// 自身高度
-        var fixHeight = boxHeight - thisHeight;
-        var allHeight = 60 + $('.intro')[0].clientHeight + fixHeight// 全部高度
-        
-        
-        if(height == allHeight){
-            console.log('..................');
-        }
+
     })
 
-
-
+    
+    
+    
     
 </script>
