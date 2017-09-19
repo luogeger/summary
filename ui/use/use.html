@@ -7,7 +7,7 @@
     </div><!-- /.intro -->
     
     <div class="info clearfix">
-        <div class="info-sidle pull-left">
+        <div class="info-sidle">
             <ul>
                 <li class="down"><a href="#down">下载 <span>DownLoad</span></a></li>
                 <li class="icon"><a href="#icon">图标 <span>Icon</span></a></li>
@@ -21,7 +21,7 @@
                 <li class="gallery"><a href="#gallery">图片画廊 <span>Gallery</span></a></li>
                 <li class="badge"><a href="#badge">标签徽章 <span>Badge</span></a></li>
                 <li class="tabControl"><a href="#tabControl">选项卡 <span>Tabs</span></a></li>
-                <li class="crumb"><a href="#">面包屑导航 <span>BreadCrumb</span></a></li>
+                <li class="crumb"><a href="#crumb">面包屑导航 <span>BreadCrumb</span></a></li>
                 <li class="navigate"><a href="#navigate">导航 <span>Navigate</span></a></li>
                 <li class="treeView"><a href="#treeView">树形菜单 <span>TreeView</span></a></li>
                 <li class="paging"><a href="#paging">分页 <span>Pagination</span></a></li>
@@ -32,73 +32,129 @@
                 <li class="scroll"><a href="#scroll">滚动条 <span>ScrollBar</span></a></li>
                 <li class="date"><a href="#date">日期组件 <span>DatePicker</span></a></li>
                 <li class="chart"><a href="#chart">图标 <span>Chart</span></a></li>
+                <li class="backTop"><a href="#"> 返回顶部 ↑</a></li>
             </ul>
         </div><!-- /.info-sidle -->
         
-        <div class="info-content pull-right">
-            <div id="down"> 下载</div>
-            <div id="icon"> 图标</div>
-            <div id="typo"> 排版</div>
-            <div id="button"> 按钮</div>
-            <div id="link"> 链接</div>
-            <div id="form"> 表单</div>
-            <div id="tableInfo"> 表格</div>
-            <div id="image"> 图片</div>
-            <div id="slider"> 图片轮播</div>
-            <div id="gallery"> 图片画廊</div>
-            <div id="badge"> 标签徽章</div>
-            <div id="tabControl"> 选项卡</div>
-            <div id="crumb"> 面包屑导航</div>
-            <div id="navigate"> 导航</div>
-            <div id="treeView"> 树形菜单</div>
-            <div id="paging"> 分页</div>
-            <div id="progressBar"> 进度条</div>
-            <div id="alert"> 警告框</div>
-            <div id="modal"> 模态窗口</div>
-            <div id="sidle"> 侧滑</div>
-            <div id="scroll"> 滚动条</div>
-            <div id="date"> 日期组件</div>
-            <div id="chart"> 图标</div>
-            <div> 123</div>
-            <div> 456</div>
+        <div class="info-content">
+            <div id="down">
+                <h1 class="title">下载</h1>
+            </div>
+            <div id="icon">
+                <h1 class="title">图标</h1>
+            </div>
+            <div id="typo">
+                <h1 class="title">文字排版</h1>
+            </div>
+            <div id="button">
+                <h1 class="title"> 按钮</h1>
+                <p class="lead"> 按钮的使用介绍以及方法</p>
+                <code class="code">
+                    ''
+                </code>
+            </div>
+            <div id="link">
+                <h1 class="title">链接</h1>
+            </div>
+            <div id="form">
+                <h1 class="title">表单</h1>
+            </div>
+            <div id="tableInfo">
+                <h1 class="title">表格</h1>
+            </div>
+            <div id="image">
+                <h1 class="title">图片</h1>
+            </div>
+            <div id="slider">
+                <h1 class="title">图片轮播</h1>
+            </div>
+            <div id="gallery">
+                <h1 class="title">图片画廊</h1>
+            </div>
+            <div id="badge">
+                <h1 class="title">标签徽章</h1>
+            </div>
+            <div id="tabControl">
+                <h1 class="title">选项卡</h1>
+            </div>
+            <div id="crumb">
+                <h1 class="title">面包屑导航</h1>
+            </div>
+            <div id="navigate">
+                <h1 class="title">导航</h1>
+            </div>
+            <div id="treeView">
+                <h1 class="title">树形菜单</h1>
+            </div>
+            <div id="paging">
+                <h1 class="title">分页</h1>
+            </div>
+            <div id="progressBar">
+                <h1 class="title">进度条</h1>
+            </div>
+            <div id="alert">
+                <h1 class="title">警告框</h1>
+            </div>
+            <div id="modal">
+                <h1 class="title">模态窗口</h1>
+            </div>
+            <div id="sidle">
+                <h1 class="title">侧滑</h1>
+            </div>
+            <div id="scroll">
+                <h1 class="title">滚动条</h1>
+            </div>
+            <div id="date">
+                <h1 class="title">日期组件</h1>
+            </div>
+            <div id="chart">
+                <h1 class="title">图标</h1>
+            </div>
         </div><!-- /.info-content -->
-        
     </div><!-- /.info -->
     
     <p class="footer">版权所有 © 上海智臻智能网络科技股份有限公司 | 2017 沪ICP备 11021460</p>
 </div><!-- /.main -->
 
 <script>
-    var $lis = $('.info-sidle ul li');
+    // 左边 点击的样式
+    var $lis = $('.info-sidle ul li:not(:last-child)');// 所有 li 标签
+    var $divs = $('.info-content>div');// li 对应的 div
     $lis.each(function (index, item){
         $(item).click(function (){
             $lis.each(function (i, v){ $(v).removeClass('li-border') })// 排他
-            $(this).addClass('li-border')
+            $divs.each(function (i, v){ $(v).children('.title').css('padding-top', '0') })// 去除所有 h1 的 padding-top
+            $(this).addClass('li-border');
+            var $name = $(this).children('a').attr('href');
+            $name = $name.substring(1);
+            $divs.each(function (index, item){
+                if($(item).attr('id') == $name){
+                    $(item).children('.title').css('padding-top', '60px')
+                }
+            })
+
         })
-    })
+    })// end -- click
 
-
     
-    
-    
+    // 左边 滚动的定位
     $(document).scroll(function (){
-        var scrollHeight = $('body')[0].scrollTop;
+        
+        var scrollHeight = $('body').scrollTop();
         var boxHeight = $('.info')[0].clientHeight;// 盒子高度
         var thisHeight = $('.info-sidle')[0].clientHeight;// 自身高度
+        var introHeight = $('.intro').outerHeight();// intro 高度
         var footHeight = $('.footer').outerHeight();// 底部高度
-        var maxHeight = boxHeight - thisHeight - footHeight -20;
-        var top = scrollHeight - 190;
-        if(scrollHeight > 190){
+        var maxHeight = boxHeight - thisHeight - footHeight -10;
+        console.log(maxHeight);
+        var top = scrollHeight - (introHeight + 40) +10;// 这里的 40 指的是 .info 的padding, 不能随便改, if里面的40 也一样
+        if(scrollHeight > (introHeight + 40)){
             top > maxHeight ? top = maxHeight+'px' : top = top+'px';
             $('.info-sidle').css('top', top);
         }else{
             $('.info-sidle').css('top', '0');
         }
+    })// end -- scroll
 
-    })
-
-    
-    
-    
     
 </script>
