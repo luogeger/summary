@@ -14,10 +14,10 @@
 
   .info{
     padding: 40px;
-
+    min-width: 1200px;
     position: relative;
     .info-sidle{
-      //width: 19%;
+      width: 20%;
       float: left;
       min-width: 200px;
       position: relative;
@@ -61,7 +61,8 @@
     }
 
     .info-content{
-      //width: 80%;
+      width: 80%;
+      //min-width: 900px;
       float: left;
       padding-left: 40px;
       >div{

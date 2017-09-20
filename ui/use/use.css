@@ -9,8 +9,10 @@
     line-height: 20px; }
 .main .info {
   padding: 40px;
+  min-width: 1200px;
   position: relative; }
   .main .info .info-sidle {
+    width: 20%;
     float: left;
     min-width: 200px;
     position: relative;
@@ -39,6 +41,7 @@
           line-height: 1.5;
           color: #CCCCCC; }
   .main .info .info-content {
+    width: 80%;
     float: left;
     padding-left: 40px; }
     .main .info .info-content > div {
