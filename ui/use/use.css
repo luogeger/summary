@@ -6,7 +6,7 @@
   .main .intro h3 {
     padding: 20px 0;
     width: 520px;
-    line-height: 20px; }
+    line-height: 1.8; }
 .main .info {
   padding: 40px;
   min-width: 1200px;
@@ -15,6 +15,7 @@
     width: 20%;
     float: left;
     min-width: 200px;
+    max-width: 300px;
     position: relative;
     top: 0px; }
     .main .info .info-sidle ul {
@@ -23,19 +24,19 @@
         color: #222222;
         background-color: #fff;
         border-left: 4px solid transparent;
-        padding-left: 15px; }
+        padding-left: 20px; }
         .main .info .info-sidle ul li:not(:last-child) a {
           display: block; }
           .main .info .info-sidle ul li:not(:last-child) a span {
             color: #999999;
             margin-left: 5px;
-            line-height: 1.8; }
+            line-height: 2.6; }
         .main .info .info-sidle ul li:not(:last-child):hover {
           border-color: #000; }
       .main .info .info-sidle ul .li-border {
         border-color: #000 !important; }
       .main .info .info-sidle ul .backTop {
-        padding: 10px 0 0 17px; }
+        padding: 10px 0 0 22px; }
         .main .info .info-sidle ul .backTop a {
           font-size: 12px;
           line-height: 1.5;
@@ -45,15 +46,51 @@
     float: left;
     padding-left: 40px; }
     .main .info .info-content > div {
-      height: 200px;
-      border: 1px dashed #ff0000;
       border-radius: 10px; }
       .main .info .info-content > div h1 {
         font-size: 24px;
-        line-height: 2;
+        line-height: 2.8;
         border-bottom: 1px solid #EEEEEE; }
-    .main .info .info-content #down > h1 {
-      padding-top: 0; }
+        .main .info .info-content > div h1 span {
+          color: #CCCCCC; }
+      .main .info .info-content > div p {
+        padding: 15px 0;
+        font-size: 14px;
+        line-height: 1.8; }
+    .main .info .info-content #down ul li {
+      float: left;
+      text-align: center;
+      border-radius: 6px;
+      box-shadow: 1px 1px 2px #cccccc; }
+      .main .info .info-content #down ul li a {
+        display: block;
+        width: 150px;
+        height: 100px; }
+        .main .info .info-content #down ul li a .color {
+          height: 60px;
+          padding-top: 12px;
+          border-radius: 6px 6px 0 0; }
+          .main .info .info-content #down ul li a .color span {
+            display: block;
+            color: #ffffff; }
+        .main .info .info-content #down ul li a .txt {
+          height: 40px;
+          line-height: 40px;
+          border-radius: 0 0 6px 6px;
+          border: 1px solid #F3F3F3;
+          border-top: none; }
+    .main .info .info-content #down ul li:not(:first-child) {
+      margin-left: 51px; }
+    .main .info .info-content #down ul li:nth-child(1) a .color {
+      background-color: #ff8a41; }
+    .main .info .info-content #down ul li:nth-child(2) a .color {
+      background-color: #ed5565; }
+    .main .info .info-content #down ul li:nth-child(3) a .color {
+      background-color: #00bfa5; }
+    .main .info .info-content #down ul li:nth-child(4) a .color {
+      background-color: #1d98f9; }
+    .main .info .info-content #down ul li:nth-child(5) a .color {
+      background-color: #CCCCCC; }
 .main .footer {
   text-align: center;
   font-size: 12px;

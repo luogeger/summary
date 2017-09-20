@@ -8,7 +8,7 @@
     h3{
       padding: 20px 0;
       width: 520px;
-      line-height: 20px;
+      line-height: 1.8;
     }
   }
 
@@ -20,6 +20,7 @@
       width: 20%;
       float: left;
       min-width: 200px;
+      max-width: 300px;
       position: relative;
       top: 0px;
       ul{
@@ -29,13 +30,13 @@
           background-color: #fff;
           //margin-bottom: 10px;
           border-left: 4px solid transparent;
-          padding-left: 15px;
+          padding-left: 20px;
           a{
             display: block;
             span{
               color: #999999;
               margin-left: 5px;
-              line-height: 1.8;
+              line-height: 2.6;
             }
           }
 
@@ -49,7 +50,7 @@
         }
 
         .backTop{
-          padding: 10px 0 0 17px;
+          padding: 10px 0 0 22px;
           a{
             font-size: 12px;
             line-height: 1.5;
@@ -62,22 +63,98 @@
 
     .info-content{
       width: 80%;
-      //min-width: 900px;
       float: left;
       padding-left: 40px;
       >div{
-        height: 200px;
-        border: 1px dashed #ff0000;
         border-radius: 10px;
         h1{
           font-size: 24px;
-          line-height: 2;
-          //padding-top: 60px;
+          line-height: 2.8;
           border-bottom: 1px solid #EEEEEE;
+          span{
+            color: #CCCCCC;
+          }
+        }
+
+        p{
+          padding: 15px 0;
+          font-size: 14px;
+          line-height: 1.8;
         }
       }
-      #down>h1{
-        padding-top: 0;
+
+      #down{
+        ul{
+          li{
+            float: left;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 1px 1px 2px #cccccc;
+            a{
+              display: block;
+              width: 150px;
+              height: 100px;
+
+              .color{
+                height: 60px;
+                padding-top: 12px;
+                border-radius: 6px 6px 0 0;
+                span{
+                  display: block;
+                  color: #ffffff;
+                }
+              }
+              .txt{
+                height: 40px;
+                line-height: 40px;
+                border-radius: 0 0 6px 6px;
+                border: 1px solid #F3F3F3;
+                border-top: none;
+              }
+            }
+          }
+
+          li:not(:first-child){
+            margin-left: 51px;
+          }
+
+          li:nth-child(1){
+            a{
+              .color{
+                background-color: #ff8a41;
+              }
+            }
+          }
+          li:nth-child(2){
+            a{
+              .color{
+                background-color: #ed5565;
+              }
+            }
+          }
+          li:nth-child(3){
+            a{
+              .color{
+                background-color: #00bfa5;
+              }
+            }
+          }
+          li:nth-child(4){
+            a{
+              .color{
+                background-color: #1d98f9;
+              }
+            }
+          }
+          li:nth-child(5){
+            a{
+              .color{
+                background-color: #CCCCCC;
+              }
+            }
+          }
+
+        }
       }
     }
   }

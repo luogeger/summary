@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚动轮播</title>
+    <link rel="stylesheet" href="../ui/base.css">
+    <link rel="stylesheet" href="../ui/iconfont/iconfont.css">
+    <style>
+        #focus{
+            width: 350px;
+        }
+        /* slider */
+        .slider {
+            width: 100%;
+            position: relative; }
+        .slider .slider-main .slider-main-item {
+            float: left; }
+        .slider .slider-main .slider-main-item a img {
+            width: 100%; }
+        .slider .slider-extra .extra-nav {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            margin-left: -60px; }
+        .slider .slider-extra .extra-nav .extra-nav-item {
+            float: left;
+            cursor: pointer;
+            position: relative; }
+        .slider .slider-extra .extra-nav .extra-nav-item span {
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #00BFA5;
+            opacity: .5;
+            float: left; }
+        .slider .slider-extra .extra-nav .extra-nav-item i {
+            color: #00BFA5;
+            position: absolute;
+            top: 0px;
+            left: 0px; }
+        .slider .slider-extra .extra-nav .extra-nav-item:hover i {
+            font-size: 27px;
+            top: -7px;
+            left: -5px; }
+        .slider .slider-extra .extra-nav .extra-nav-item:not(:last-child) {
+            margin-right: 5px; }
+        .slider .slider-extra .extra-page a {
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            margin-top: -31px;
+            width: 28px;
+            height: 62px;
+            line-height: 62px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 800;
+            font-family: simsun; }
+        .slider .slider-extra .extra-page a:hover {
+            background: rgba(0, 0, 0, 0.8); }
+        .slider .slider-extra .extra-page .extra-page-prev {
+            left: 0em; }
+        .slider .slider-extra .extra-page .extra-page-next {
+            right: 0em; }
+    </style>
+</head>
+<body>
+    <span class="box" style="border: 2px solid red; display: inline-block; margin: 50px 0 0 150px;">
+        <div id="focus"></div>
+    </span>
+</body>
+</html>
+<script src="../fileJs/jquery-1.12.4.min.js"></script>
+<script>
+    window.ui = {
+        slider: function (ele, option){ uiSlider(ele, option); }
+    };
+    
+    function uiSlider (ele, obj){
+        var $box = $(ele);
+        var data = obj.data;// data 必须是数组，每一项是对象
+        var sliderWidth = obj.data.length + '00%';// .slider-main 的宽度
+        $box.html(parserDataHtml());
+        var $arrow = $box.find('.extra-page a');// 左右箭头
+        var $extraNav = $box.find('.extra-nav');// 数字导航 -- ul
+        var $navItem = $extraNav.children('.extra-nav-item');// 数字导航 -- li
+        var $sliderMain = $box.find('.slider-main');// 装图片的 ul
+        var imgWidth = $box.width();// 每张图片的宽度
+
+
+
+        bindEvent();
+        function parserDataHtml (){
+            var sliderMainList = [],
+                sliderNavList = [],
+                resultsList = [];
+
+            sliderMainList.push('<ul class="slider-main clearfix" style="width:'+ sliderWidth +'">');
+            data.forEach(function (item){
+                sliderMainList.push('<li class="slider-main-item" style="width:'+ $(ele).width()+'px' +'">');
+                sliderMainList.push('<a href="'+ item.href +'">');
+                sliderMainList.push('<img src="'+ item.src +'" title="'+ item.title +'"/>');
+                sliderMainList.push('</a>');
+                sliderMainList.push('</li>');
+            });
+            sliderMainList.push('</ul>');
+
+
+            sliderNavList.push('<ul class="extra-nav clearfix">');
+            data.forEach(function (item, i){
+                var index = i +1;
+                if(i >= 1){
+                    sliderNavList.push('<li class="extra-nav-item"><span></span><i class=" icon iconfont icon-circle"></i></li>');
+
+                }else{
+                    sliderNavList.push('<li class="extra-nav-item"><span></span><i class=" icon iconfont icon-circle"></i></li>');
+                }
+            });
+            sliderNavList.push('</ul>');
+
+
+            resultsList.push('<div class="slider" data-index="0">');
+            resultsList.push(sliderMainList.join(''));
+            resultsList.push('<div class="slider-extra">');
+            resultsList.push(sliderNavList.join(''));
+
+
+            resultsList.push('<div class="extra-page">');
+            resultsList.push('<a href="javascript:;" class="extra-page-prev">&lt;</a>');
+            resultsList.push('<a href="javascript:;" class="extra-page-next">&gt;</a>');
+            resultsList.push('</div>');
+            resultsList.push('</div>');
+
+            return resultsList.join('');
+        };
+
+        function bindEvent (){
+            $box.hover(function (){
+                $arrow.css('z-index', '0');
+            },function (){
+                $arrow.css('z-index', '-1');
+            });
+
+
+            //数字导航
+            $navItem.each(function (index, item){
+                var _item = $(item);
+                _item.click(function (){
+                    $navItem.each(function (i, v){ $(v).children('span').css('opacity', '.3'); });// 排他
+                    $(this).children('span').css('opacity', '0');
+                    var target = -index * imgWidth;// 目标距离
+                    console.log(target);
+                    autoPlay($sliderMain, target);
+                });
+            });
+
+        };
+
+        function autoPlay (ele, target){
+            var leader = ele[0].offsetLeft;// 获取 ul 标签到边的距离
+            ele[0].style.left = target + 'px';
+            console.log(leader);
+        };
+        
+        
+        
+        function animate(obj,target){
+            clearInterval(obj.timerId);//每次开启定时器之前，一定要先将之前的清空，然后再开，保证只开启一个定时器
+            obj.timerId = setInterval(function(){
+                var step = 20;
+                var leader = obj.offsetLeft;//先获得当前的值  不是字符串，是一个数字，只是可读的，只能用来获取值
+                step=  leader <target?step:-step;
+                if(Math.abs(leader-target)>Math.abs(step)){ //没到达指定位置的时候，不断的加步长 进行移动，步长是整数的时候，是没有问题的   判断 怎么改
+                    leader = leader+step; // 这是一个数字
+                    obj.style.left = leader + 'px';
+                }else {
+                    clearInterval(obj.timerId);  // 清除的也是当前对象的定时器
+                    obj.style.left = target+'px';//给到一个最后的定值
+                    // 如果两者之间的距离 很接近了，已经小于一个步长 的时候，就不需要再加步长了，
+                    // 就直接清除定时器，把差的那一点点的距离 ，直接自己补上就可以了，也就是让当前对象的位置直接等于目标位置就行
+                }
+            },15);
+        }
+    };
+    
+    var data = [
+        {title: "国庆", src: "../images/b5.jpg", href: "#国庆"},
+        {title: "Galaxy On7", src: "../images/b1.jpg", href: "#Galaxy On7"},
+        {title: "Air Touch-X2", src: "../images/b2.jpg", href: "#Air Touch-X2"},
+        {title: "满199减100", src: "../images/b3.jpg", href: "#满199减100"},
+        {title: "奇趣", src: "../images/b4.jpg", href: "#奇趣"},
+        {title: "360奇酷", src: "../images/b6.jpg", href: "#360奇酷"}
+    ];
+
+    var obj = {
+        data: data,
+    };
+    ui.slider('#focus', obj);
+</script>
