@@ -206,7 +206,27 @@
       }
 
       #typo{
+        .demo-main{
+          ul{
+            padding-left: 30px;
+            li{
+              padding: 10px 0;
+              h1,h2,h3,h4,h5,h6{
+                display: inline-block;
+                width: 160px;
+              }
+              .t-key{
+                color: #cccccc;
+              }
+              .t-val{
+                padding-right: 50px;
+                padding-left: 10px;
+              }
 
+            }
+          }
+
+        }
       }
     }
   }

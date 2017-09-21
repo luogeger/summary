@@ -1,17 +1,17 @@
 @charset "UTF-8";
 /* 定义变量 */
 /* theme */
-$theme-normal: #FF8A41;
-$theme-hover: #ED6C1C;
-$theme-other: #ffd9c2;
+//$theme-normal: #FF8A41;
+//$theme-hover: #ED6C1C;
+//$theme-other: #ffd9c2;
 
 //$theme-normal: #ED5565;
 //$theme-hover: #DA4453;
 //$theme-other: #FA7A87;
 
-//$theme-normal: #00BFA5;
-//$theme-hover: #04A28D;
-//$theme-other: #0BDABE;
+$theme-normal: #00BFA5;
+$theme-hover: #04A28D;
+$theme-other: #0BDABE;
 
 //$theme-normal: #1D98F9;
 //$theme-hover: #0283E8;
@@ -49,32 +49,32 @@ $paddingH-10: 10px;
 }
 
 /* 文字排版 */
-h1{
+h1,.h1{
   font-size: 32px !important;
   line-height: 48px !important;
 }
 
-h2{
+h2,.h2{
   font-size: 24px !important;
   line-height: 30px !important;
 }
 
-h3{
+h3,.h3{
   font-size: 18px !important;
   line-height: 24px !important;
 }
 
-h4{
+h4,.h4{
   font-size: 16px !important;
   line-height: 22px !important;
 }
 
-h5{
+h5,.h5{
   font-size: 14px !important;
   line-height: 18px !important;
 }
 
-h6{
+h6,.h6{
   font-size: 12px !important;
   line-height: 16px !important;
 }

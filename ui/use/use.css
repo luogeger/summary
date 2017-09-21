@@ -117,6 +117,18 @@
           padding: 20px 0; }
         .main .info .info-content #icon .box .box-demo #iconPic ul li span h6 {
           height: 32px; }
+    .main .info .info-content #typo .demo-main ul {
+      padding-left: 30px; }
+      .main .info .info-content #typo .demo-main ul li {
+        padding: 10px 0; }
+        .main .info .info-content #typo .demo-main ul li h1, .main .info .info-content #typo .demo-main ul li h2, .main .info .info-content #typo .demo-main ul li h3, .main .info .info-content #typo .demo-main ul li h4, .main .info .info-content #typo .demo-main ul li h5, .main .info .info-content #typo .demo-main ul li h6 {
+          display: inline-block;
+          width: 160px; }
+        .main .info .info-content #typo .demo-main ul li .t-key {
+          color: #cccccc; }
+        .main .info .info-content #typo .demo-main ul li .t-val {
+          padding-right: 50px;
+          padding-left: 10px; }
 .main .footer {
   text-align: center;
   font-size: 12px;
