@@ -3,8 +3,8 @@
 
 <div class="main">
     <div class="intro">
-        <h1>开始使用</h1>
-        <h3>Xiaoi UI是一个轻量级HTML、CSS和JS框架, 专注于系统的WEB项目, 提供最好最新最受欢迎的综合性UI组件。</h3>
+        <p class="title">开始使用</p>
+        <p class="explain">Xiaoi UI是一个轻量级HTML、CSS和JS框架, 专注于系统的WEB项目, 提供最好最新最受欢迎的综合性UI组件。</p>
     </div><!-- /.intro -->
     
     <div class="info clearfix">
@@ -39,8 +39,8 @@
         
         <div class="info-content">
             <div id="down">
-                <h1 class="title">下载 <span>Download</span></h1>
-                <p>
+                <h2 class="title">下载 <span>Download</span></h2>
+                <p class="explain">
                     Xiaoi UI( 当前版本 v1.0.0 )提供以下几种方式帮你快速上手, 每一种方式针对具有不同技能等级的开发者和不同的使用场景。分别有5种颜色可供下载, 看看哪种方式适合你的需求吧。
                 </p>
                 <ul class="clearfix">
@@ -104,90 +104,118 @@
             </div>
             
             <div id="icon">
-                <h1 class="title">图标 <span>Icon</span></h1>
-                <p>包括100多个来自iconfont的字体图标。为了我表示感谢, 希望你在使用时尽量为icons添加一个友情链接。</p>
-                
-                <pre>
-                    <code class="xml">
-                    &lt;title&gt;Title&lt;/title&gt;
-                    &lt;style&gt;body {width: 500px;}&lt;/style&gt;
-                    &lt;script type="application/javascript"&gt;
-            function $init() {
-                return true;
-            }
-            &lt;/script&gt;
-                    &lt;body&gt;
-                        &lt;p checked class="title" id='title'&gt;Title&lt;/p&gt;
-                        &lt;!-- here goes the rest of the page --&gt;
-                        &lt;div id="icon"&gt;
-                            &lt;h1 class="title"&gt;图标&lt;/h1&gt;
-                        &lt;/div&gt;
-                    &lt;/body&gt;
-                    </code>
-                </pre>
+                <h2 class="title">图标 <span>Icon</span></h2>
+                <p class="explain">包括100多个来自iconfont的字体图标。为了我表示感谢, 希望你在使用时尽量为icons添加一个友情链接。</p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例：</p>
+                        <div id="iconPic">
+                            <ul>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+    &lt;!-- 只需要给i标签加上对应的class就可以， --&gt;
+    &lt;i class="icon-circle" &gt;&lt;/i&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
             </div>
+            
             <div id="typo">
-                <h1 class="title">文字排版</h1>
+                <h2 class="title">文字排版 <span>Typography</span></h2>
+                <p class="explain">
+                    很多设计师喜欢用英文，因为中文排版真的不容易搞。中文字符多、不同字符的笔画差异也很大，使用英文时高大上的设计稿，替换成中文以后，
+                    可能会大打折扣。网页设计中，针对中文排版的研究很少，没有太多现成的杰伦供参考。Xiaoi UI 只能根据一些经验，在字体设置、字号上做一些
+                    更适合中文的设置。Xiaoi UI 主要使用非衬线字体中文默认微软雅黑，英文默认Arial.
+                </p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例：</p>
+                        <div class="demo-main">
+                            内容
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+    &lt;i class="icon-circle" &gt;&lt;/i&gt;
+    &lt;i class="icon-circle" &gt;&lt;/i&gt;
+    &lt;i class="icon-circle" &gt;&lt;/i&gt;
+    &lt;i class="icon-circle" &gt;&lt;/i&gt;
+    &lt;i class="icon-circle" &gt;&lt;/i&gt;
+    &lt;i class="icon-circle" &gt;&lt;/i&gt;
+    &lt;i class="icon-circle" &gt;&lt;/i&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
             </div>
+            
             <div id="button">
-                <h1 class="title"> 按钮</h1>
+                <h2 class="title"> 按钮</h2>
             </div>
+            
             <div id="link">
-                <h1 class="title">链接</h1>
+                <h2 class="title">链接</h2>
             </div>
             <div id="form">
-                <h1 class="title">表单</h1>
+                <h2 class="title">表单</h2>
             </div>
             <div id="tableInfo">
-                <h1 class="title">表格</h1>
+                <h2 class="title">表格</h2>
             </div>
             <div id="image">
-                <h1 class="title">图片</h1>
+                <h2 class="title">图片</h2>
             </div>
             <div id="slider">
-                <h1 class="title">图片轮播</h1>
+                <h2 class="title">图片轮播</h2>
             </div>
             <div id="gallery">
-                <h1 class="title">图片画廊</h1>
+                <h2 class="title">图片画廊</h2>
             </div>
             <div id="badge">
-                <h1 class="title">标签徽章</h1>
+                <h2 class="title">标签徽章</h2>
             </div>
             <div id="tabControl">
-                <h1 class="title">选项卡</h1>
+                <h2 class="title">选项卡</h2>
             </div>
             <div id="crumb">
-                <h1 class="title">面包屑导航</h1>
+                <h2 class="title">面包屑导航</h2>
             </div>
             <div id="navigate">
-                <h1 class="title">导航</h1>
+                <h2 class="title">导航</h2>
             </div>
             <div id="treeView">
-                <h1 class="title">树形菜单</h1>
+                <h2 class="title">树形菜单</h2>
             </div>
             <div id="paging">
-                <h1 class="title">分页</h1>
+                <h2 class="title">分页</h2>
             </div>
             <div id="progressBar">
-                <h1 class="title">进度条</h1>
+                <h2 class="title">进度条</h2>
             </div>
             <div id="alert">
-                <h1 class="title">警告框</h1>
+                <h2 class="title">警告框</h2>
             </div>
             <div id="modal">
-                <h1 class="title">模态窗口</h1>
+                <h2 class="title">模态窗口</h2>
             </div>
             <div id="sidle">
-                <h1 class="title">侧滑</h1>
+                <h2 class="title">侧滑</h2>
             </div>
             <div id="scroll">
-                <h1 class="title">滚动条</h1>
+                <h2 class="title">滚动条</h2>
             </div>
             <div id="date">
-                <h1 class="title">日期组件</h1>
+                <h2 class="title">日期组件</h2>
             </div>
             <div id="chart">
-                <h1 class="title">图标</h1>
+                <h2 class="title">图标</h2>
             </div>
         </div><!-- /.info-content -->
     </div><!-- /.info -->
@@ -196,6 +224,8 @@
 </div><!-- /.main -->
 
 <script>
+    addPrefix();// -- icon 添加前缀
+    // -- 代码语法高亮
     hljs.initHighlightingOnLoad();
     $(document).ready(function() {
         $('pre code').each(function(i, block) {
@@ -204,13 +234,13 @@
     });
     
     
-    // 左边 点击的样式
+    // -- 左边 点击的样式
     var $lis = $('.info-sidle ul li:not(:last-child)');// 所有 li 标签
     var $divs = $('.info-content>div');// li 对应的 div
     $lis.each(function (index, item){
         $(item).click(function (){
             $lis.each(function (i, v){ $(v).removeClass('li-border') })// 排他
-            $divs.each(function (i, v){ $(v).children('.title').css('padding-top', '0') })// 去除所有 h1 的 padding-top
+            $divs.each(function (i, v){ $(v).children('.title').css('padding-top', '0') })// 去除所有 h2 的 padding-top
             $(this).addClass('li-border');
             var $name = $(this).children('a').attr('href');
             $name = $name.substring(1);
@@ -224,7 +254,7 @@
     })// end -- click
 
     
-    // 左边 滚动的定位
+    // -- 左边 滚动的定位
     $(document).scroll(function (){
         var scrollHeight = $('body').scrollTop();
         var boxHeight = $('.info')[0].clientHeight;// 盒子高度
@@ -232,7 +262,6 @@
         var introHeight = $('.intro').outerHeight();// intro 高度
         var footHeight = $('.footer').outerHeight();// 底部高度
         var maxHeight = boxHeight - thisHeight - footHeight -10;
-        console.log(maxHeight);
         var top = scrollHeight - (introHeight + 40) +10;// 这里的 40 指的是 .info 的padding, 不能随便改, if里面的40 也一样
         if(scrollHeight > (introHeight + 40)){
             top > maxHeight ? top = maxHeight+'px' : top = top+'px';
@@ -242,5 +271,153 @@
         }
     })// end -- scroll
 
+    // -- 滚动条
+    $("#iconPic").slimScroll({
+        height: "500px",
+        width: "100%",
+        
+    });
     
+    // -- 动态 icon
+    var iconData = [
+        ['icon-download-b', ''],
+        ['icon-upload-b', ''],
+        ['icon-check', ''],
+        ['icon-fold-open-fill', ''],
+        ['icon-fold-close-fill', ''],
+        ['icon-spread', ''],
+        ['icon-check-square', ''],
+        ['icon-min-square', ''],
+        
+        ['icon-circle', ''],
+        ['icon-plus-square', ''],
+        ['icon-contract', ''],
+        ['icon-close-square', ''],
+        ['icon-point', ''],
+        ['icon-check-a', ''],
+        ['icon-check-empty', ''],
+        ['icon-circle-empty', ''],
+
+        ['icon-cale-a', ''],
+        ['icon-download-file', ''],
+        ['icon-mic', ''],
+        ['icon-mic-quiet', ''],
+        ['icon-fold-open-line', ''],
+        ['icon-fold-open-line', ''],
+        ['icon-remind', ''],
+        ['icon-voice', ''],
+
+        ['icon-data-search', ''],
+        ['icon-help', ''],
+        ['icon-data-wait', ''],
+        ['icon-explain', ''],
+        ['icon-data-nopass', ''],
+        ['icon-data-pass', ''],
+        ['icon-link', ''],
+        ['icon-chart', ''],
+
+        ['icon-gold', ''],
+        ['icon-paste', ''],
+        ['icon-align-left', ''],
+        ['icon-align-middle', ''],
+        ['icon-align-right', ''],
+        ['icon-data', ''],
+        ['icon-keynote', ''],
+        ['icon-open-up', ''],
+        
+        ['icon-pack-up', ''],
+        ['icon-admin', ''],
+        ['icon-download-cloud', ''],
+        ['icon-upload-cloud', ''],
+        ['icon-customer', ''],
+        ['icon-money-rmb', ''],
+        ['icon-ranking', ''],
+        ['icon-time', ''],
+        
+        ['icon-history', ''],
+        ['icon-edu', ''],
+        ['icon-file', ''],
+        ['icon-fold-close-line', ''],
+        ['icon-bag-work', ''],
+        ['icon-arrow-dbLeft', ''],
+        ['icon-arrow-dbRight', ''],
+        ['icon-share', ''],
+        
+        ['icon-shopping-cart', ''],
+        ['icon-exit', ''],
+        ['icon-check-fill', ''],
+        ['icon-check-line', ''],
+        ['icon-min', ''],
+        ['icon-plus', ''],
+        ['icon-tel', ''],
+        ['icon-key', ''],
+        
+        ['icon-power', ''],
+        ['icon-close', ''],
+        ['icon-unlock', ''],
+        ['icon-edit', ''],
+        ['icon-location-line', ''],
+        ['icon-location-fill', ''],
+        ['icon-home-line', ''],
+        ['icon-home-fill', ''],
+        
+        ['icon-collect-fill', ''],
+        ['icon-eva-good', ''],
+        ['icon-eva-bad', ''],
+        ['icon-comment', ''],
+        ['icon-send', ''],
+        ['icon-phone', ''],
+        ['icon-setting', ''],
+        ['icon-delete', ''],
+        
+        ['icon-book', ''],
+        ['icon-heart', ''],
+        ['icon-camera', ''],
+        ['icon-locking', ''],
+        ['icon-collect', ''],
+        ['icon-show', ''],
+        ['icon-user', ''],
+        ['icon-copy', ''],
+        
+        ['icon-earth', ''],
+        ['icon-pen', ''],
+        ['icon-message', ''],
+        ['icon-map', ''],
+        ['icon-laud', ''],
+        ['icon-search', ''],
+        ['icon-people', ''],
+        ['icon-album', ''],
+        
+        ['icon-refresh', ''],
+        ['icon-list', ''],
+        ['icon-people-group', ''],
+        ['icon-arrow-left', ''],
+        ['icon-arrow-down', ''],
+        ['icon-arrow-right', ''],
+        ['icon-arrow-up', ''],
+        ['icon-workpermit', ''],
+        
+        ['icon-position', ''],
+        ['icon-voice-quiet', ''],
+        ['icon-right', ''],
+        ['icon-card', ''],
+        ['icon-close-line', ''],
+        ['icon-close-fill', ''],
+        ['icon-top', ''],
+        ['icon-tag', ''],
+        
+        ['icon-annex', ''],
+        ['icon-truck', ''],
+        ['icon-nav', ''],
+        ['icon-upload-file', ''],
+        
+    ];
+    var iconArr = [];
+    iconData.forEach(function (item, index){
+        var str ='';
+        str = '<li><i class="'+ item[0] +'"></i><span><p>'+ item[1] +'</p><h6>'+ item[0] +'</h6></span></li>'
+        iconArr.push(str)
+    })
+    $('#iconPic ul').html('').html(iconArr.join(''))
+    addPrefix();// -- icon 添加前缀
 </script>

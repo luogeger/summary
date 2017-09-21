@@ -48,7 +48,36 @@ $paddingH-10: 10px;
   box-sizing: border-box;
 }
 
+/* 文字排版 */
+h1{
+  font-size: 32px !important;
+  line-height: 48px !important;
+}
 
+h2{
+  font-size: 24px !important;
+  line-height: 30px !important;
+}
+
+h3{
+  font-size: 18px !important;
+  line-height: 24px !important;
+}
+
+h4{
+  font-size: 16px !important;
+  line-height: 22px !important;
+}
+
+h5{
+  font-size: 14px !important;
+  line-height: 18px !important;
+}
+
+h6{
+  font-size: 12px !important;
+  line-height: 16px !important;
+}
 
 
 /* navigation */
@@ -1846,3 +1875,19 @@ $paddingH-10: 10px;
   }
 }
 
+
+
+/*
+   use.html 的换肤
+*/
+#iconPic{
+  ul{
+    li{
+      &:hover{
+        i{
+          color: $theme-normal !important;
+        }
+      }
+    }
+  }
+}

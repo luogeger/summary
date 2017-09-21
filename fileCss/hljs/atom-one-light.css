@@ -18,16 +18,19 @@ hue-6-2: #c18401
 
 */
 pre{
-    margin: 0 !important;
+    margin-top: -19px;
+    margin-bottom: -37px;
 }
 pre code{
-    color: #222222 !important;
+    color: #0184bb !important;
     font-family: "Microsoft YaHei";
     padding: 0 !important;
+    background-color: #F8F8F8 !important;
 }
 pre code span{
     font: normal 10pt Consolas, Monaco, monospace !important;
     font-size: 16px !important;
+    color: #222222;
 }
 
 .hljs-tag{
@@ -45,7 +48,7 @@ pre code span{
 .hljs-comment,
 .hljs-quote {
   color: #a0a1a7;
-  font-style: italic !important;
+  /*font-style: italic !important;*/
 
 }
 

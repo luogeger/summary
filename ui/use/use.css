@@ -1,9 +1,9 @@
 .main .intro {
   padding: 30px 40px 0 40px;
   background-color: #EAEAEA; }
-  .main .intro h1 {
+  .main .intro .title {
     font-size: 30px; }
-  .main .intro h3 {
+  .main .intro .explain {
     padding: 20px 0;
     width: 520px;
     line-height: 1.8; }
@@ -46,25 +46,34 @@
     float: left;
     padding-left: 40px; }
     .main .info .info-content > div {
-      border-radius: 10px; }
-      .main .info .info-content > div h1 {
-        font-size: 24px;
-        line-height: 2.8;
-        border-bottom: 1px solid #EEEEEE; }
-        .main .info .info-content > div h1 span {
+      border-radius: 10px;
+      padding-bottom: 20px; }
+      .main .info .info-content > div > h2 {
+        border-bottom: 1px solid #EEEEEE;
+        padding: 10px 0; }
+        .main .info .info-content > div > h2 span {
           color: #CCCCCC; }
-      .main .info .info-content > div p {
+      .main .info .info-content > div > .explain {
         padding: 15px 0;
         font-size: 14px;
-        line-height: 1.8; }
+        line-height: 1.3; }
+      .main .info .info-content > div > .box {
+        border: 1px solid #e2e4e5;
+        border-radius: 4px; }
+        .main .info .info-content > div > .box .box-demo {
+          padding: 20px; }
+          .main .info .info-content > div > .box .box-demo .instance {
+            line-height: 2; }
+        .main .info .info-content > div > .box .box-code {
+          border-top: 1px solid #E2E4E5; }
     .main .info .info-content #down ul li {
+      width: 16%;
       float: left;
       text-align: center;
       border-radius: 6px;
       box-shadow: 1px 1px 2px #cccccc; }
       .main .info .info-content #down ul li a {
         display: block;
-        width: 150px;
         height: 100px; }
         .main .info .info-content #down ul li a .color {
           height: 60px;
@@ -80,7 +89,7 @@
           border: 1px solid #F3F3F3;
           border-top: none; }
     .main .info .info-content #down ul li:not(:first-child) {
-      margin-left: 51px; }
+      margin-left: 5%; }
     .main .info .info-content #down ul li:nth-child(1) a .color {
       background-color: #ff8a41; }
     .main .info .info-content #down ul li:nth-child(2) a .color {
@@ -91,6 +100,23 @@
       background-color: #1d98f9; }
     .main .info .info-content #down ul li:nth-child(5) a .color {
       background-color: #CCCCCC; }
+    .main .info .info-content #icon .box .box-demo #iconPic {
+      height: 500px;
+      background-color: #FCFCFC;
+      overflow: hidden; }
+      .main .info .info-content #icon .box .box-demo #iconPic ul li {
+        border-radius: 4px;
+        float: left;
+        width: 12.5%;
+        text-align: center; }
+        .main .info .info-content #icon .box .box-demo #iconPic ul li i {
+          font-size: 36px;
+          color: #CCCCCC;
+          display: inline-block;
+          vertical-align: middle;
+          padding: 20px 0; }
+        .main .info .info-content #icon .box .box-demo #iconPic ul li span h6 {
+          height: 32px; }
 .main .footer {
   text-align: center;
   font-size: 12px;
