@@ -63,7 +63,8 @@
         .main .info .info-content > div > .box .box-demo {
           padding: 20px; }
           .main .info .info-content > div > .box .box-demo .instance {
-            line-height: 2; }
+            line-height: 2;
+            color: #cccccc; }
         .main .info .info-content > div > .box .box-code {
           border-top: 1px solid #E2E4E5; }
     .main .info .info-content #down ul li {
@@ -101,7 +102,7 @@
     .main .info .info-content #down ul li:nth-child(5) a .color {
       background-color: #CCCCCC; }
     .main .info .info-content #icon .box .box-demo #iconPic {
-      height: 500px;
+      height: 330px;
       background-color: #FCFCFC;
       overflow: hidden; }
       .main .info .info-content #icon .box .box-demo #iconPic ul li {
@@ -129,6 +130,12 @@
         .main .info .info-content #typo .demo-main ul li .t-val {
           padding-right: 50px;
           padding-left: 10px; }
+    .main .info .info-content #button .demo-main ul li {
+      float: left;
+      width: 16.6%; }
+      .main .info .info-content #button .demo-main ul li button {
+        display: block;
+        margin: 30px 0; }
 .main .footer {
   text-align: center;
   font-size: 12px;

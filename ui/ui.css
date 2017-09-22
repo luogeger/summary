@@ -1,4 +1,90 @@
 @charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+  margin: 0;
+  padding: 0; }
+
+fieldset, img, input, button, textarea {
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline-style: none;
+  /* 去掉环绕光圈*/ }
+
+ul, ol {
+  list-style: none; }
+
+/*去掉原样式中的小黑点*/
+input {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-family: "SimSun", "宋体"; }
+
+select, input {
+  vertical-align: middle; }
+
+/*输入字居中显示*/
+select, input, textarea {
+  font-size: 12px;
+  margin: 0; }
+
+/**/
+textarea {
+  resize: none; }
+
+/*防止拖动*/
+img {
+  border: 0;
+  vertical-align: middle;
+  /*  去掉图片底部默认的3像素空白缝隙*/ }
+
+table {
+  border-collapse: collapse;
+  /*合并外连线*/ }
+
+.clearfix:before, .clearfix:after {
+  /*清除浮动，最好最标准的写法*/
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1;
+  /*IE/7/6*/
+  /*兼容IE6下的写法*/ }
+
+a {
+  text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 100%; }
+
+s, i, em {
+  font-style: normal;
+  /*将原有的样式风格去掉*/
+  text-decoration: none;
+  /*去掉中划线，或是惯穿线*/ }
+
+/* select 兼容性处理 */
+select {
+  border: solid 1px #000;
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  appearance: none;
+  /*很关键：将默认的select选择框样式清除*/
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /* background: #0094ff;将背景改为红色*/
+  padding-right: 14px;
+  /*加padding防止文字覆盖*/ }
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand {
+  display: none; }
+
 /* 定义变量 */
 /* theme */
 /*  height  */
@@ -60,20 +146,20 @@ h6, .h6 {
     #nav-head .nav-head-info-tip .info-tip-menu {
       display: none;
       background-color: #ffffff;
-      border: 1px solid #00BFA5;
+      border: 1px solid #FF8A41;
       padding: 5px 0;
       position: absolute;
       top: 46px;
       right: 0px;
       border-radius: 4px;
-      box-shadow: 0 0 2px #00BFA5; }
+      box-shadow: 0 0 2px #FF8A41; }
       #nav-head .nav-head-info-tip .info-tip-menu li {
         line-height: 14px;
         padding: 5px 10px;
         cursor: pointer;
         white-space: nowrap; }
       #nav-head .nav-head-info-tip .info-tip-menu li:hover {
-        background-color: #00BFA5;
+        background-color: #FF8A41;
         color: #ffffff; }
     #nav-head .nav-head-info-tip .info-tip-menu:before {
       position: absolute;
@@ -83,8 +169,8 @@ h6, .h6 {
       transform: rotate(45deg);
       width: 7px;
       height: 7px;
-      border-left: 1px solid #00BFA5;
-      border-top: 1px solid #00BFA5;
+      border-left: 1px solid #FF8A41;
+      border-top: 1px solid #FF8A41;
       background-color: #ffffff; }
 
 #nav-sidle {
@@ -146,7 +232,7 @@ h6, .h6 {
   #nav-sidle #accordion-nav li {
     width: 100%; }
   #nav-sidle #accordion-nav .panel .active {
-    background-color: #00BFA5 !important; }
+    background-color: #FF8A41 !important; }
     #nav-sidle #accordion-nav .panel .active span,
     #nav-sidle #accordion-nav .panel .active i {
       color: #ffffff !important; }
@@ -219,40 +305,40 @@ h6, .h6 {
   .btn-border i {
     color: #222222; }
   .btn-border:hover {
-    color: #00BFA5;
-    border-color: #00BFA5;
+    color: #FF8A41;
+    border-color: #FF8A41;
     background-color: #ffffff; }
     .btn-border:hover i {
-      color: #00BFA5; }
+      color: #FF8A41; }
   .btn-border:focus {
-    color: #00BFA5;
-    border-color: #00BFA5;
+    color: #FF8A41;
+    border-color: #FF8A41;
     background-color: #ffffff; }
     .btn-border:focus i {
-      color: #00BFA5; }
+      color: #FF8A41; }
 
 .btn-text {
   background-color: #ffffff;
-  color: #00BFA5; }
+  color: #FF8A41; }
   .btn-text i {
-    color: #00BFA5; }
+    color: #FF8A41; }
   .btn-text:hover {
-    color: #04A28D;
+    color: #ED6C1C;
     background-color: #ffffff; }
   .btn-text:focus {
-    color: #04A28D;
+    color: #ED6C1C;
     background-color: #ffffff; }
 
 .btn-theme {
   border: 1px solid transparent;
-  background-color: #00BFA5;
+  background-color: #FF8A41;
   color: #ffffff; }
   .btn-theme i {
     color: #ffffff; }
   .btn-theme:hover {
-    background-color: #04A28D; }
+    background-color: #ED6C1C; }
   .btn-theme:focus {
-    background-color: #04A28D; }
+    background-color: #ED6C1C; }
 
 /*  input 共用样式 */
 .input-group-xs,
@@ -261,7 +347,6 @@ h6, .h6 {
 .input-group-lg {
   position: relative;
   display: inline-block;
-  float: left;
   padding: 0 5px; }
   .input-group-xs label,
   .input-group-sm label,
@@ -284,8 +369,30 @@ h6, .h6 {
     .input-group-sm input:focus,
     .input-group-md input:focus,
     .input-group-lg input:focus {
-      border: 1px solid transparent;
-      box-shadow: -1px 0 1px #00BFA5, 0 -1px 1px #00BFA5, 0 1px 1px #00BFA5, 1px 0 1px #00BFA5; }
+      border: 1px solid #FF8A41;
+      box-shadow: inset 0 1px 1px rgba(255, 217, 194, 0.3), 0 0 8px rgba(255, 217, 194, 0.3); }
+  .input-group-xs .tip,
+  .input-group-sm .tip,
+  .input-group-md .tip,
+  .input-group-lg .tip {
+    display: none;
+    position: absolute;
+    top: -18px;
+    left: 20%;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #fff;
+    color: #ff0000; }
+
+.readonly input {
+  border: 1px dashed #CCCCCC;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-family: microsoft yahei; }
+  .readonly input:focus {
+    border: 1px dashed #CCCCCC !important;
+    box-shadow: none !important; }
 
 /* input -- 尺寸 */
 .input-group-xs {
@@ -307,11 +414,24 @@ h6, .h6 {
 .input-group-md input {
   height: 34px; }
 
+/* 文本框 */
+textarea {
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  resize: vertical;
+  width: 230px;
+  height: 100px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: top; }
+  textarea:focus {
+    border: 1px solid #FF8A41;
+    box-shadow: inset 0 1px 1px rgba(255, 217, 194, 0.3), 0 0 8px rgba(255, 217, 194, 0.3); }
+
 /* drapdown */
 .dropdown {
   position: relative;
   display: inline-block;
-  float: left;
   min-width: 140px; }
   .dropdown a {
     display: inline-block;
@@ -342,7 +462,7 @@ h6, .h6 {
       cursor: pointer; }
       .dropdown ul li:hover {
         color: #ffffff;
-        background-color: #00BFA5; }
+        background-color: #FF8A41; }
 
 .drop-xs a {
   height: 24px;
@@ -378,9 +498,9 @@ h6, .h6 {
 
 /* .drop-hover */
 .drop-hover-border a {
-  border: 1px solid #00BFA5; }
+  border: 1px solid #FF8A41; }
 .drop-hover-border ul {
-  border: 1px solid #00BFA5; }
+  border: 1px solid #FF8A41; }
 
 /* 进度条 */
 .progress-bar {
@@ -391,7 +511,7 @@ h6, .h6 {
   .progress-bar .bar {
     width: 300px;
     height: 100%;
-    background-color: #00BFA5;
+    background-color: #FF8A41;
     border-radius: 5px;
     position: relative; }
     .progress-bar .bar .percent {
@@ -400,7 +520,7 @@ h6, .h6 {
       right: -15px;
       top: -30px;
       padding: 3px 5px;
-      background-color: #00BFA5;
+      background-color: #FF8A41;
       border-radius: 6px;
       color: #ffffff; }
       .progress-bar .bar .percent:before {
@@ -410,7 +530,7 @@ h6, .h6 {
         left: 13px;
         width: 8px;
         height: 8px;
-        background-color: #00BFA5;
+        background-color: #FF8A41;
         transform: rotate(45deg); }
 
 /* 进度条 -- 上传中 */
@@ -422,7 +542,7 @@ h6, .h6 {
   .progress-upload .bar {
     width: 300px;
     height: 100%;
-    background-color: #00BFA5;
+    background-color: #FF8A41;
     border-radius: 4px;
     position: relative; }
     .progress-upload .bar .percent {
@@ -465,7 +585,7 @@ h6, .h6 {
 .bgc-theme .interval,
 .bgc-theme .step {
   color: #fff !important;
-  background: #00BFA5 !important; }
+  background: #FF8A41 !important; }
 
 /* 多选框 */
 .check-box-group .check-parent {
@@ -474,11 +594,11 @@ h6, .h6 {
   cursor: pointer;
   position: relative; }
   .check-box-group .check-parent:hover .icon-check-empty {
-    color: #00BFA5; }
+    color: #FF8A41; }
   .check-box-group .check-parent .icon-check-empty {
     color: #CCCCCC; }
   .check-box-group .check-parent .icon-check {
-    color: #00BFA5;
+    color: #FF8A41;
     position: absolute;
     top: 1px;
     left: 0px; }
@@ -490,11 +610,11 @@ h6, .h6 {
   cursor: pointer;
   position: relative; }
   .radio-group .radio-parent:hover .icon-circle-empty {
-    color: #00BFA5; }
+    color: #FF8A41; }
   .radio-group .radio-parent .icon-circle-empty {
     color: #CCCCCC; }
   .radio-group .radio-parent .icon-circle {
-    color: #00BFA5;
+    color: #FF8A41;
     position: absolute;
     top: 1px;
     left: 0px; }
@@ -534,15 +654,15 @@ h6, .h6 {
   border: none;
   border-bottom: 2px solid #E2E4E5; }
   .tab-underline .tab-item:hover {
-    color: #00BFA5;
-    border-bottom-color: #00BFA5; }
+    color: #FF8A41;
+    border-bottom-color: #FF8A41; }
 
 .tab-button .tab-item {
   padding: 0 14px;
   border-radius: 4px; }
   .tab-button .tab-item:hover {
     color: #ffffff;
-    background-color: #00BFA5; }
+    background-color: #FF8A41; }
     .tab-button .tab-item:hover i {
       color: #ffffff; }
 .tab-button i,
@@ -557,7 +677,7 @@ h6, .h6 {
     line-height: 30px;
     color: #999999;
     background-color: #ffffff;
-    border-bottom: 1px solid #00BFA5;
+    border-bottom: 1px solid #FF8A41;
     border-radius: 4px 4px 0 0; }
     .tab-border .tab-item i {
       color: #999999;
@@ -581,9 +701,9 @@ h6, .h6 {
     border-radius: 4px 4px 0px 0px;
     background-color: #F6F8F9; }
     .tab-btn-border .tab-item:hover {
-      background-color: #00BFA5;
+      background-color: #FF8A41;
       color: #ffffff;
-      border-color: #04A28D; }
+      border-color: #ED6C1C; }
       .tab-btn-border .tab-item:hover i {
         color: #ffffff; }
   .tab-btn-border .tab-item:not(:first-child) {
@@ -591,16 +711,16 @@ h6, .h6 {
 
 /* 点击 tab, 需要添加的类 */
 .contra-crumb {
-  color: #00BFA5; }
+  color: #FF8A41; }
   .contra-crumb i {
-    color: #00BFA5; }
+    color: #FF8A41; }
 
 .contra-underline {
-  color: #00BFA5 !important;
-  border-bottom-color: #00BFA5 !important; }
+  color: #FF8A41 !important;
+  border-bottom-color: #FF8A41 !important; }
 
 .contra-button {
-  background-color: #00BFA5;
+  background-color: #FF8A41;
   color: #ffffff; }
   .contra-button i {
     color: #ffffff; }
@@ -609,15 +729,15 @@ h6, .h6 {
   color: #222222 !important;
   padding: 0 19px !important;
   line-height: 28px !important;
-  border: 1px solid #00BFA5;
+  border: 1px solid #FF8A41;
   border-bottom: none !important; }
   .contra-border i {
     color: #222222 !important; }
 
 .contra-btn-border {
-  background-color: #00BFA5 !important;
+  background-color: #FF8A41 !important;
   color: #ffffff;
-  border-color: #04A28D !important; }
+  border-color: #ED6C1C !important; }
   .contra-btn-border i {
     color: #ffffff; }
 
@@ -684,8 +804,8 @@ h6, .h6 {
   padding: 0 12px; }
   .pages-line ul > li:hover:not(.point) {
     color: #ffffff;
-    background-color: #00BFA5;
-    border-color: #04A28D !important; }
+    background-color: #FF8A41;
+    border-color: #ED6C1C !important; }
 .pages-line .previous, .pages-line .next {
   padding: 0 15px; }
 .pages-line .import {
@@ -697,7 +817,7 @@ h6, .h6 {
     font-family: "Microsoft YaHei";
     margin-top: -3px; }
     .pages-line .import input:focus .import {
-      border-color: #00BFA5; }
+      border-color: #FF8A41; }
 .pages-line .go {
   margin-right: 0px; }
 .pages-line .page-disabled {
@@ -705,15 +825,15 @@ h6, .h6 {
   background-color: #E2E4E5; }
 
 .pages-filled div, .pages-filled ul > li {
-  background-color: #00BFA5; }
+  background-color: #FF8A41; }
 .pages-filled div > i, .pages-filled div > span, .pages-filled ul > li {
   color: #ffffff; }
 .pages-filled ul > li {
   padding: 0 13px; }
   .pages-filled ul > li:hover:not(.point) {
-    background-color: #04A28D !important; }
+    background-color: #ED6C1C !important; }
 .pages-filled ul > li:not(:last-child) {
-  border-right: 1px solid #04A28D; }
+  border-right: 1px solid #ED6C1C; }
 .pages-filled .previous {
   border-radius: 4px 0 0 4px;
   margin-right: 5px; }
@@ -723,11 +843,11 @@ h6, .h6 {
 
 .line-contra {
   color: #ffffff;
-  background-color: #00BFA5;
-  border-color: #04A28D !important; }
+  background-color: #FF8A41;
+  border-color: #ED6C1C !important; }
 
 .filled-contra {
-  background-color: #04A28D !important; }
+  background-color: #ED6C1C !important; }
 
 /* tree-view */
 .tree-view {
@@ -767,7 +887,7 @@ h6, .h6 {
         position: relative;
         top: 1px; }
         .tree-view li .change > i:hover {
-          color: #00BFA5; }
+          color: #FF8A41; }
   .tree-view .first > li:not(:last-child),
   .tree-view .second > li:not(:last-child),
   .tree-view .third > li:not(:last-child),
@@ -803,11 +923,11 @@ h6, .h6 {
     .tree-view-slim ul li .a-hover {
       background-color: #F6F8F9; }
     .tree-view-slim ul li .a-hasChild {
-      background-color: #00BFA5; }
+      background-color: #FF8A41; }
       .tree-view-slim ul li .a-hasChild i, .tree-view-slim ul li .a-hasChild span {
         color: #ffffff; }
     .tree-view-slim ul li .a-noChild i, .tree-view-slim ul li .a-noChild span {
-      color: #00BFA5; }
+      color: #FF8A41; }
   .tree-view-slim .first a {
     padding-left: 10px; }
   .tree-view-slim .second a {
@@ -885,7 +1005,7 @@ h6, .h6 {
         float: right;
         cursor: pointer; }
         #mask-layer .layer-popup .title i:hover {
-          color: #00BFA5; }
+          color: #FF8A41; }
     #mask-layer .layer-popup .content {
       text-align: center;
       background-color: #fff;
@@ -912,7 +1032,7 @@ h6, .h6 {
         position: relative;
         top: 2px; }
         #mask-layer .layer-sidle .title i:hover {
-          color: #00BFA5; }
+          color: #FF8A41; }
     #mask-layer .layer-sidle .content {
       width: 100%; }
 
@@ -943,11 +1063,11 @@ h6, .h6 {
         width: 16px;
         height: 16px;
         border-radius: 50%;
-        background-color: #00BFA5;
+        background-color: #FF8A41;
         opacity: .5;
         float: left; }
       .slider .slider-extra .extra-nav .extra-nav-item i {
-        color: #00BFA5;
+        color: #FF8A41;
         position: absolute;
         top: 0px;
         left: 0px; }
@@ -989,7 +1109,7 @@ h6, .h6 {
     cursor: pointer; }
   .img-square:hover,
   .img-round:hover {
-    border-color: #00BFA5; }
+    border-color: #FF8A41; }
 
 .img-square {
   border-radius: 4px; }
@@ -1013,12 +1133,12 @@ h6, .h6 {
       .datePicker .container .inputBox > input {
         height: 30px;
         width: 200px;
-        border: 1px solid #00BFA5;
+        border: 1px solid #FF8A41;
         border-radius: 4px;
         padding: 0 25px 0 5px;
         font-family: "microsoft yahei"; }
       .datePicker .container .inputBox > i {
-        color: #00BFA5;
+        color: #FF8A41;
         position: absolute;
         top: 6px;
         right: 6px;
@@ -1054,9 +1174,9 @@ h6, .h6 {
           font-size: 12px;
           border: 1px solid transparent; }
       .datePicker .container .dateBox .today span {
-        border-color: #00BFA5 !important; }
+        border-color: #FF8A41 !important; }
       .datePicker .container .dateBox .active span {
-        background-color: #00BFA5 !important;
+        background-color: #FF8A41 !important;
         color: #ffffff !important; }
       .datePicker .container .dateBox .inactive span {
         color: #CCCCCC; }
@@ -1071,7 +1191,7 @@ h6, .h6 {
           cursor: pointer;
           color: #CCCCCC; }
           .datePicker .container .dateBox .init-box .date-head i:hover {
-            color: #00BFA5; }
+            color: #FF8A41; }
         .datePicker .container .dateBox .init-box .date-head .prev-year {
           left: 10px; }
         .datePicker .container .dateBox .init-box .date-head .prev-month {
@@ -1087,7 +1207,7 @@ h6, .h6 {
           cursor: pointer; }
           .datePicker .container .dateBox .init-box .date-head .select-time .select-year:hover,
           .datePicker .container .dateBox .init-box .date-head .select-time .select-month:hover {
-            color: #00BFA5; }
+            color: #FF8A41; }
         .datePicker .container .dateBox .init-box .date-head .select-time .select-month {
           margin-left: 25px; }
       .datePicker .container .dateBox .init-box .date-body {
@@ -1100,7 +1220,7 @@ h6, .h6 {
             padding: 3px 0px;
             border-radius: 4px; }
             .datePicker .container .dateBox .init-box .date-body table tbody td span:hover {
-              background-color: #0BDABE; }
+              background-color: #ffd9c2; }
       .datePicker .container .dateBox .init-box .date-foot {
         padding: 5px; }
         .datePicker .container .dateBox .init-box .date-foot .foot-time {
@@ -1112,7 +1232,7 @@ h6, .h6 {
             border-radius: 4px;
             font-family: "microsoft yahei"; }
             .datePicker .container .dateBox .init-box .date-foot .foot-time input:hover, .datePicker .container .dateBox .init-box .date-foot .foot-time input:focus {
-              border-color: #00BFA5 !important; }
+              border-color: #FF8A41 !important; }
           .datePicker .container .dateBox .init-box .date-foot .foot-time input {
             margin: 0px 3px; }
           .datePicker .container .dateBox .init-box .date-foot .foot-time input:first-child {
@@ -1126,7 +1246,7 @@ h6, .h6 {
             cursor: pointer;
             font-size: 12px; }
             .datePicker .container .dateBox .init-box .date-foot .foot-btn span:hover {
-              color: #00BFA5; }
+              color: #FF8A41; }
       .datePicker .container .dateBox .year-box,
       .datePicker .container .dateBox .month-box {
         display: none; }
@@ -1145,7 +1265,7 @@ h6, .h6 {
             color: #CCCCCC; }
             .datePicker .container .dateBox .year-box .date-head i:hover,
             .datePicker .container .dateBox .month-box .date-head i:hover {
-              color: #00BFA5; }
+              color: #FF8A41; }
           .datePicker .container .dateBox .year-box .date-head i:first-child,
           .datePicker .container .dateBox .month-box .date-head i:first-child {
             left: 15px; }
@@ -1164,7 +1284,7 @@ h6, .h6 {
           padding: 10px 10px;
           border-radius: 4px; }
           .datePicker .container .dateBox .year-box .date-body table tbody td span:hover {
-            background-color: #0BDABE; }
+            background-color: #ffd9c2; }
       .datePicker .container .dateBox .month-box .date-body table tbody td {
         padding: 9px 15px; }
         .datePicker .container .dateBox .month-box .date-body table tbody td span {
@@ -1172,7 +1292,7 @@ h6, .h6 {
           border-radius: 4px;
           width: 48px; }
           .datePicker .container .dateBox .month-box .date-body table tbody td span:hover {
-            background-color: #0BDABE; }
+            background-color: #ffd9c2; }
             .datePicker .container .dateBox .month-box .date-body table tbody td span:hover i {
               color: #ffffff; }
       .datePicker .container .dateBox .hour-box,
@@ -1196,14 +1316,14 @@ h6, .h6 {
           padding: 7px 5px;
           border-radius: 4px; }
           .datePicker .container .dateBox .hour-box .date-body table td span:hover {
-            background-color: #0BDABE; }
+            background-color: #ffd9c2; }
       .datePicker .container .dateBox .minute-box .date-body table td, .datePicker .container .dateBox .second-box .date-body table td {
         padding: 8px 1px; }
         .datePicker .container .dateBox .minute-box .date-body table td span, .datePicker .container .dateBox .second-box .date-body table td span {
           line-height: 20px;
           border-radius: 2px; }
           .datePicker .container .dateBox .minute-box .date-body table td span:hover, .datePicker .container .dateBox .second-box .date-body table td span:hover {
-            background-color: #0BDABE; }
+            background-color: #ffd9c2; }
     .datePicker .container .dateBox:before {
       content: '';
       width: 7px;
@@ -1218,10 +1338,10 @@ h6, .h6 {
 
 /* 常用类 */
 .theme-bgc {
-  background-color: #00BFA5; }
+  background-color: #FF8A41; }
 
 .theme-text {
-  color: #00BFA5; }
+  color: #FF8A41; }
 
 /*  辅助类  */
 .hide {
@@ -1267,6 +1387,6 @@ h6, .h6 {
    use.html 的换肤
 */
 #iconPic ul li:hover i {
-  color: #00BFA5 !important; }
+  color: #FF8A41 !important; }
 
 /*# sourceMappingURL=ui.css.map */
