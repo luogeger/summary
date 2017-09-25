@@ -136,6 +136,8 @@
       .main .info .info-content #button .demo-main ul li button {
         display: block;
         margin: 30px 0; }
+    .main .info .info-content #tabControl .instance {
+      margin-bottom: 10px; }
 .main .footer {
   text-align: center;
   font-size: 12px;
