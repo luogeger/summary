@@ -13,7 +13,7 @@
       vertical-align: middle;
       width: 34px;
       height: 34px;
-      background: url(../images/page.png) 0px -33px; }
+      background: url(../asset/images/page.png) 0px -33px; }
   .wrapper .head #nav-head .start-use,
   .wrapper .head #nav-head .page-show {
     padding: 0 30px;
@@ -35,7 +35,7 @@
     vertical-align: middle;
     width: 18px;
     height: 16px;
-    background: url("../images/page.png") 0 0;
+    background: url("../asset/images/page.png") 0 0;
     margin-right: 5px;
     cursor: pointer; }
   .wrapper .head #nav-head .change-skin .panel:before {
@@ -71,4 +71,4 @@
       .wrapper .head #nav-head .change-skin .panel li span {
         line-height: 14px; }
 
-/*# sourceMappingURL=page.css.map */
+/*# sourceMappingURL=index.css.map */

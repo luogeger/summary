@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--<link rel="stylesheet" href="../fonts-bootstrap/fontawesome/font-awesome.css">-->
-    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="ui.css">
-    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="asset/iconfont/iconfont.css">
     <title>UI</title>
     <style>
         #nav-sidle{
@@ -74,7 +72,7 @@
         <!-- navigate -->
         <div id="nav-head">
             <div class="logo pull-left">
-                <img src="../images/i_logo.png" alt="logo" title="logo" style="margin-top: 12px;">
+                <img src="asset/images/i_logo.png" alt="logo" title="logo" style="margin-top: 12px;">
             </div>
             <div class="nav-head-info-tip pull-left">
             <span class="info-tip-drop">
@@ -1351,11 +1349,11 @@
             
                 <!-- img -->
                 <div class="img-square" style="margin: 0 0 0 10px;">
-                    <img style="width: 140px; height: 140px;" src="../images/motp.jpg" title="img-square" alt="这是图片">
+                    <img style="width: 140px; height: 140px;" src="asset/images/motp.jpg" title="img-square" alt="这是图片">
                 </div>
                 
                 <div class="img-round" style="margin: 0 0 0 10px;">
-                    <img style="width: 140px; height: 140px;" src="../images/motp.jpg" alt="这是图片">
+                    <img style="width: 140px; height: 140px;" src="asset/images/motp.jpg" alt="这是图片">
                 </div>
                 
                 
@@ -1365,8 +1363,7 @@
     </div><!-- /.wrapper -->
 
 
-<script src="../fileJs/jquery-1.12.4.min.js"></script>
-<script src="../fileJs/jquery.slimscroll.min.js"></script>
+<script src="asset/js/jquery-1.12.4.min.js"></script>
 <script src="ui.js"></script>
 <script>
     $.fn.extend({
@@ -1420,7 +1417,7 @@
     
     // -- model dom
     $('#dom').click(function (){
-        ui.model('#popup');
+        ui.modal('#popup');
     });
 
     // -- model 字符串、函数
@@ -1449,7 +1446,7 @@
         };
         
         
-        ui.model([html, arrFun]);
+        ui.modal([html, arrFun]);
     });
 
     // -- sidle dom
@@ -1466,12 +1463,12 @@
 
     // -- 轮播图
     var data = [
-        {title: "国庆123", src: "../images/b5.jpg", href: "国庆"},
-        {title: "Galaxy On7", src: "../images/b1.jpg", href: "Galaxy On7"},
-        {title: "Air Touch-X2", src: "../images/b2.jpg", href: "Air Touch-X2"},
-        {title: "满199减100", src: "../images/b3.jpg", href: "满199减100"},
-        {title: "奇趣", src: "../images/b4.jpg", href: "奇趣"},
-        {title: "360奇酷", src: "../images/b6.jpg", href: "360奇酷"}
+        {title: "国庆123", src: "asset/images/b5.jpg", href: "国庆"},
+        {title: "Galaxy On7", src: "asset/images/b1.jpg", href: "Galaxy On7"},
+        {title: "Air Touch-X2", src: "asset/images/b2.jpg", href: "Air Touch-X2"},
+        {title: "满199减100", src: "asset/images/b3.jpg", href: "满199减100"},
+        {title: "奇趣", src: "asset/images/b4.jpg", href: "奇趣"},
+        {title: "360奇酷", src: "asset/images/b6.jpg", href: "360奇酷"}
     ];
     
     var obj = {

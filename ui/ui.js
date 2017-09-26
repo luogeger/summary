@@ -3,15 +3,9 @@ console.log('ui');
  * Created by luogege on 2017.07.21.
  */
 
-/*
- *   动态获取 data-value
- *   1. 如果下拉框里面的数据如果是动态获取的，就要在执行一次这个函数
- * */
 // window.dynamicDataValue = '';
 
-/*
- *   点击 document 的事件
- * */
+// -- 点击 document 的事件
 $(document).click(function (){
     // 1. 下拉框消失
     $('.dropdown').removeClass('flag-open').removeClass('drop-hover-border');// 清除打开标记 + 边框颜色
@@ -923,25 +917,9 @@ function xiaoiInit (){
 };//  end  inputInit();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- *   1. 弹出层 -- model
- *   2. 侧边滑出-- sidle
- *   3. **每次都要 remove #mask-layer
- * */
+// -- 1. 弹出层 -- model
+// -- 2. 侧边滑出-- sidle
+// -- 3. **每次都要 remove #mask-layer
 window.ui = {
     modal: function (ele){
         uiModal(ele);
@@ -1027,38 +1005,44 @@ function uiModal (ele){
 };
 
 function uiSidle (ele){
-    var css = {'left': '-1000px', 'borderRadius': '0px 6px 6px 0px'};
-
+    var _ele = $(ele);
     var html =
         '<div id="mask-layer">'+
-        '<div class="layer-sidle">'+
-        '<div class="title">'+
-        '<span>提示</span>'+
-        '<i class="icon iconfont icon-close-line close"></i>'+
-        '</div>'+
-        '<div class="content"></div>'+
-        '</div>'+
+            '<div class="layer-sidle">'+
+                '<div class="title">'+
+                    '<span>提示</span>'+
+                    '<i class="icon iconfont icon-close-line close"></i>'+
+                '</div>'+
+                '<div class="content"></div>'+
+            '</div>'+
         '</div>';
-
-
-    $('body').prepend(html).css({'overflow': 'hidden', 'padding-right': '17px'});
-    var height = $('.layer-sidle').outerHeight() - $('.title').outerHeight() + 'px';
+    _ele.before(html);
+    var _body = $('body');
+    var _layer = $('#mask-layer');
+    var _sidle = $('.layer-sidle');
+    var _content = $('.layer-sidle .content');
+    var css = {'left': '-1000px', 'borderRadius': '0px 6px 6px 0px'};
+    var height = _sidle.outerHeight() - $('.title').outerHeight() + 'px';
     var width = $(ele).outerWidth();// 获取dom元素的宽度
 
-    $('.layer-sidle').css(css).animate({'left': '0px'}, 300);// sidle 显示
-    $('.layer-sidle').click(function (e){ e.stopPropagation(); });// 阻止冒泡
+
+    _content.append(_ele.remove());
+    _sidle.css(css).animate({'left': '0px'}, 300);// sidle 显示
+    _sidle.click(function (e){ e.stopPropagation(); });// 阻止冒泡
+    _body.css({'overflow': 'hidden', 'padding-right': '17px'});
 
     // 滚动条
-    $('.layer-sidle .content').append($(ele).css({'display': 'block'})).css({'max-height': height}).slimScroll({ height: "100%", width: width, });
+    _content.append(_ele.css({'display': 'block'})).css({'max-height': height}).slimScroll({ height: "100%", width: width, });
 
     // 隐藏 滑动事件
     $('#mask-layer, #mask-layer .icon-close-line').each(function (index, item){
         $(item).click(function (){
-            $('.layer-sidle').animate({'left': '-1000px'}, 300, function (){
-                $(ele).parents('#mask-layer').before($(ele).css({'display': 'none'}));// 保留 dom 元素
-                $('#mask-layer').remove();// 删除 #mask-layer
-                $('body').css({'overflow': 'auto', 'padding-right': '0'});
-            });// sidle 消失
+            _sidle.animate({'left': '-1000px'}, 150);// sidle 消失
+            _ele.parents('#mask-layer').before(_ele.css({'display': 'none'}));// 保留 dom 元素
+            _layer.animate({'opacity': '0'}, 200, function (){
+                _layer.remove()
+            });// 删除 #mask-layer
+            _body.css({'overflow': 'auto', 'padding-right': '0'});
         });
     });
 };
@@ -1198,24 +1182,19 @@ function uiSlider (ele, obj){
 };// end -- uiSlider
 
 
+// -- navigate
 
-
-//  -----------------------------------------------------------
-/*
-*   navigate
-* */
 //  1. nav-head
-
-// .nav-head-info-tip 的hover事件
+//  .nav-head-info-tip 的hover事件
 $('.nav-head-info-tip').hover(function (){
     $(this).find('.info-tip-menu').slideToggle(10);
 },function (){
     $(this).find('.info-tip-menu').slideToggle(10);
 });
 
-//  2. nav-sidle
 
-// #collapse-btn 收展侧边栏
+//  2. nav-sidle
+//  #collapse-btn 收展侧边栏
 function toggleCollapse(){
     var open = $("#collapse-btn").hasClass("to-close");
     if(open){
@@ -1229,6 +1208,7 @@ function toggleCollapse(){
         $('#nav-sidle').animate({'left': '0px'}, 200);
     }
 };
+
 
 // 导航的 accordion
 $('#accordion-nav a').each(function (index, item){
@@ -1255,25 +1235,7 @@ $('#accordion-nav a').each(function (index, item){
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- *   -- 放在最后, 图标的 class 前缀 'icon iconfont', 动态添加
- * */
+// -- 放在最后, 图标的 class 前缀 'icon iconfont', 动态添加
 addPrefix();
 function addPrefix (){
     $('i[class*=icon], span[class*=icon]').each(function (index, item){
@@ -1283,5 +1245,197 @@ function addPrefix (){
     });
 };
 
+// -- 滚动条
+(function (f) {
+    jQuery.fn.extend({
+        slimScroll: function (h) {
+            var a = f.extend({
+                width: "auto",
+                height: "250px",
+                size: "5px",
+                color: "#000",
+                position: "right",
+                distance: "1px",
+                start: "top",
+                opacity: 0.4,
+                alwaysVisible: !1,
+                disableFadeOut: !1,
+                railVisible: !1,
+                railColor: "#333",
+                railOpacity: 0.2,
+                railDraggable: !0,
+                railClass: "slimScrollRail",
+                barClass: "slimScrollBar",
+                wrapperClass: "slimScrollDiv",
+                allowPageScroll: !1,
+                wheelStep: 2,
+                touchScrollStep: 200,
+                borderRadius: "7px",
+                railBorderRadius: "7px"
+            }, h);
+            this.each(function () {
+                function r(d) {
+                    if (s) {
+                        d = d ||
+                            window.event;
+                        var c = 0;
+                        d.wheelDelta && (c = -d.wheelDelta / 120);
+                        d.detail && (c = d.detail / 3);
+                        f(d.target || d.srcTarget || d.srcElement).closest("." + a.wrapperClass).is(b.parent()) && m(c, !0);
+                        d.preventDefault && !k && d.preventDefault();
+                        k || (d.returnValue = !1)
+                    }
+                }
 
+                function m(d, f, h) {
+                    k = !1;
+                    var e = d, g = b.outerHeight(false) - c.outerHeight(false);
+                    f && (e = parseInt(c.css("top")) + d * parseInt(a.wheelStep) / 100 * c.outerHeight(false), e = Math.min(Math.max(e, 0), g), e = 0 < d ? Math.ceil(e) : Math.floor(e), c.css({top: e + "px"}));
+                    l = parseInt(c.css("top")) / (b.outerHeight(false) - c.outerHeight(false));
+                    e = l * (b[0].scrollHeight - b.outerHeight(false));
+                    h && (e = d, d = e / b[0].scrollHeight * b.outerHeight(false), d = Math.min(Math.max(d, 0), g), c.css({top: d + "px"}));
+                    b.scrollTop(e);
+                    b.trigger("slimscrolling", ~~e);
+                    v();
+                    p()
+                }
 
+                function C() {
+                    window.addEventListener ? (this.addEventListener("DOMMouseScroll", r, !1), this.addEventListener("mousewheel", r, !1), this.addEventListener("MozMousePixelScroll", r, !1)) : document.attachEvent("onmousewheel", r)
+                }
+
+                function w() {
+                    u = Math.max(b.outerHeight(false) / b[0].scrollHeight * b.outerHeight(false), D);
+                    c.css({height: u + "px"});
+                    var a = u == b.outerHeight(false) ? "none" : "block";
+                    c.css({display: a})
+                }
+
+                function v() {
+                    w();
+                    clearTimeout(A);
+                    l == ~~l ? (k = a.allowPageScroll, B != l && b.trigger("slimscroll", 0 == ~~l ? "top" : "bottom")) : k = !1;
+                    B = l;
+                    u >= b.outerHeight(false) ? k = !0 : (c.stop(!0, !0).fadeIn("fast"), a.railVisible && g.stop(!0, !0).fadeIn("fast"))
+                }
+
+                function p() {
+                    a.alwaysVisible || (A = setTimeout(function () {
+                        a.disableFadeOut && s || (x || y) || (c.fadeOut("slow"), g.fadeOut("slow"))
+                    }, 1E3))
+                }
+
+                var s, x, y, A, z, u, l, B, D = 30, k = !1, b = f(this);
+                if (b.parent().hasClass(a.wrapperClass)) {
+                    var n = b.scrollTop(),
+                        c = b.parent().find("." + a.barClass), g = b.parent().find("." + a.railClass);
+                    w();
+                    if (f.isPlainObject(h)) {
+                        if ("height" in h && "auto" == h.height) {
+                            b.parent().css("height", "auto");
+                            b.css("height", "auto");
+                            var q = b.parent().parent().height();
+                            b.parent().css("height", q);
+                            b.css("height", q)
+                        }
+                        if ("scrollTo" in h) n = parseInt(a.scrollTo); else if ("scrollBy" in h) n += parseInt(a.scrollBy); else if ("destroy" in h) {
+                            c.remove();
+                            g.remove();
+                            b.unwrap();
+                            return
+                        }
+                        m(n, !1, !0)
+                    }
+                } else {
+                    a.height = "auto" == a.height ? b.parent().height() : a.height;
+                    n = f("<div></div>").addClass(a.wrapperClass).css({
+                        position: "relative",
+                        overflow: "hidden", width: a.width, height: a.height
+                    });
+                    b.css({overflow: "hidden", width: a.width, height: a.height});
+                    var g = f("<div></div>").addClass(a.railClass).css({
+                        width: a.size,
+                        height: "100%",
+                        position: "absolute",
+                        top: 0,
+                        display: a.alwaysVisible && a.railVisible ? "block" : "none",
+                        "border-radius": a.railBorderRadius,
+                        background: a.railColor,
+                        opacity: a.railOpacity,
+                        zIndex: 90
+                    }), c = f("<div></div>").addClass(a.barClass).css({
+                        background: a.color,
+                        width: a.size,
+                        position: "absolute",
+                        top: 0,
+                        opacity: a.opacity,
+                        display: a.alwaysVisible ?
+                            "block" : "none",
+                        "border-radius": a.borderRadius,
+                        BorderRadius: a.borderRadius,
+                        MozBorderRadius: a.borderRadius,
+                        WebkitBorderRadius: a.borderRadius,
+                        zIndex: 1
+                    }), q = "right" == a.position ? {right: a.distance} : {left: a.distance};
+                    g.css(q);
+                    c.css(q);
+                    b.wrap(n);
+                    b.parent().append(c);
+                    b.parent().append(g);
+                    a.railDraggable && c.bind("mousedown", function (a) {
+                        var b = f(document);
+                        y = !0;
+                        t = parseFloat(c.css("top"));
+                        pageY = a.pageY;
+                        b.bind("mousemove.slimscroll", function (a) {
+                            currTop = t + a.pageY - pageY;
+                            c.css("top", currTop);
+                            m(0, c.position().top, !1)
+                        });
+                        b.bind("mouseup.slimscroll", function (a) {
+                            y = !1;
+                            p();
+                            b.unbind(".slimscroll")
+                        });
+                        return !1
+                    }).bind("selectstart.slimscroll", function (a) {
+                        a.stopPropagation();
+                        a.preventDefault();
+                        return !1
+                    });
+                    g.hover(function () {
+                        v()
+                    }, function () {
+                        p()
+                    });
+                    c.hover(function () {
+                        x = !0
+                    }, function () {
+                        x = !1
+                    });
+                    b.hover(function () {
+                        s = !0;
+                        v();
+                        p()
+                    }, function () {
+                        s = !1;
+                        p()
+                    });
+                    b.bind("touchstart", function (a, b) {
+                        a.originalEvent.touches.length && (z = a.originalEvent.touches[0].pageY)
+                    });
+                    b.bind("touchmove", function (b) {
+                        k || b.originalEvent.preventDefault();
+                        b.originalEvent.touches.length &&
+                        (m((z - b.originalEvent.touches[0].pageY) / a.touchScrollStep, !0), z = b.originalEvent.touches[0].pageY)
+                    });
+                    w();
+                    "bottom" === a.start ? (c.css({top: b.outerHeight(false) - c.outerHeight(false)}), m(0, !0)) : "top" !== a.start && (m(f(a.start).position().top, null, !0), a.alwaysVisible || c.hide());
+                    C()
+                }
+            });
+            return this
+        }
+    });
+    jQuery.fn.extend({slimscroll: jQuery.fn.slimScroll})
+})(jQuery);

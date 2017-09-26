@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0, .5);
+        }
+        .child{
+            position: absolute;
+            top:0;
+            left: 0;
+            bottom: 0;
+            background-color: deeppink;
+        }
+        .inner{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="child">
+            <div class="inner">
+            
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../fileJs/jquery-1.12.4.min.js"></script>
+<script>
+    $('body').click(function (){
+        var $box = $('.box');
+        var $child = $('.child');
+        $box.after($child.remove())
+        $box.animate({'opacity': '0'}, 500, function (){
+            $box.remove()
+        })
+        $child.animate({'left': '-300px'}, 500, function (){
+        
+        })
+    })
+</script>
