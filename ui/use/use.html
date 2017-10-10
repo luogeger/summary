@@ -113,7 +113,6 @@
                 <li class="treeView"><a href="#treeView">树形菜单 <span>TreeView</span></a></li>
                 <li class="date"><a href="#date">日期组件 <span>DatePicker</span></a></li>
                 <li class="alert"><a href="#alert">警告框 <span>Alert</span></a></li>
-                <li class="navigate"><a href="#navigate">导航 <span>Navigate</span></a></li>
                 <li class="slider"><a href="#slider">图片轮播 <span>Slider</span></a></li>
                 <li class="gallery"><a href="#gallery">图片画廊 <span>Gallery</span></a></li>
                 <li class="image"><a href="#image">图片 <span>Image</span></a></li>
@@ -124,6 +123,7 @@
                 <li class="crumb"><a href="#crumb">面包屑导航 <span>BreadCrumb</span></a></li>
                 <li class="scroll"><a href="#scroll">滚动条 <span>ScrollBar</span></a></li>
                 <li class="chart"><a href="#chart">图表 <span>Chart</span></a></li>
+                <li class="navigate"><a href="#navigate">导航 <span>Navigate</span></a></li>
                 <li id="backTop"><a href="#"> 返回顶部 ↑</a></li>
             </ul>
         </div><!-- /.info-sidle -->
@@ -1480,22 +1480,9 @@
                     </div>
                 </div>
             </div><!-- /#alert -->
-    
-            <div id="navigate">
-                <h2 class="title">导航</h2>
-                <p class="explain"></p>
-                <div class="box">
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                
-                        </div>
-                    </div>
-                    <div class="box-code">
             
-                    </div>
-                </div>
-            </div><!-- /#navigate -->
+            
+            
     
             <div id="slider">
                 <h2 class="title">图片轮播</h2>
@@ -1504,7 +1491,7 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                
+                            <div id="focus"></div>
                         </div>
                     </div>
                     <div class="box-code">
@@ -1544,10 +1531,6 @@
                     </div>
                 </div>
             </div><!-- /#image -->
-            
-            
-            
-            
             
             <div id="badge">
                 <h2 class="title">标签徽章</h2>
@@ -1628,6 +1611,22 @@
                     </div>
                 </div>
             </div><!-- /#chart -->
+    
+            <div id="navigate">
+                <h2 class="title">导航</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                
+                        </div>
+                    </div>
+                    <div class="box-code">
+            
+                    </div>
+                </div>
+            </div><!-- /#navigate -->
         </div><!-- /.info-content -->
     </div><!-- /.info -->
     
@@ -1637,8 +1636,10 @@
 
 
 <script>
+    xiaoiInit();// -- 页面加载重新执行
     addPrefix();// -- icon 添加前缀
-    xiaoiInit();// -- 页面加载需要再执行一次
+    navLocation();// -- 左侧导航重新定位
+    
     // -- 代码语法高亮
     hljs.initHighlightingOnLoad();
     $(document).ready(function() {
@@ -1663,27 +1664,49 @@
                     $(item).children('.title').css('padding-top', '60px')
                 }
             })
-
         })
     })// end -- click
     
     
-    // -- 左边 滚动的定位
+    // -- 左边 导航的定位
     $(document).scroll(function (){
-        var scrollHeight = $(document).scrollTop();
-        var boxHeight = $('.info')[0].clientHeight;// 盒子高度
-        var thisHeight = $('.info-sidle')[0].clientHeight;// 自身高度
-        var introHeight = $('.intro').outerHeight();// intro 高度
-        var footHeight = $('.footer').outerHeight();// 底部高度
-        var maxHeight = boxHeight - thisHeight - footHeight -10;
-        var top = scrollHeight - (introHeight + 40) +10;// 这里的 40 指的是 .info 的padding, 不能随便改, if里面的40 也一样
-        if(scrollHeight > (introHeight + 40)){
+        navLocation()
+    })
+    function navLocation (){
+        var scrollHeight = $(document).scrollTop();// 滚动出去 高度
+        var boxHeight = $('.info').outerHeight();// 盒子 高度
+        var selfHeight = $('.info-sidle').outerHeight();// 自身 高度
+        var underHeight = $('.footer').outerHeight();// 下面 高度
+        var aboveHeight = $('.intro').outerHeight();// 上面 高度
+        var top = scrollHeight - (aboveHeight + 40) + 10;// 这里的 40 指的是 .info 的padding, 不能随便改, if里面的40 也一样
+        var maxHeight = boxHeight - selfHeight - underHeight -10;//
+
+        if(scrollHeight > (aboveHeight + 40)){
             top > maxHeight ? top = maxHeight+'px' : top = top+'px';
             $('.info-sidle').css('top', top);
         }else{
             $('.info-sidle').css('top', '0');
         }
-    })// end -- scroll
+        
+        //console.log(scrollHeight);
+        $('.info-content>div').each(function (index, item){
+            var _item = $(item);
+            var top = _item.offset().top;
+            var topHeight = _item.outerHeight() + top;
+            var result = scrollHeight - top - 60;
+            if(result > top && result < topHeight){
+//                $lis.each(function (i, v){ $(v).removeClass('li-border') })// 排他
+//                var _id = _item.attr('id');
+//                console.log(_id);
+//                $lis.each(function (index, item){
+//                    if($(item).attr('class') == _id){
+//                        $(item).addClass('li-border');
+//                    }
+//                })
+            }
+            
+        })
+    };// end -- navLocation
 
     // -- 返回顶部
     $('#backTop').click(function (){
@@ -1697,7 +1720,7 @@
         size: '10px'
     });
     
-    // -- 动态 icon
+    // -- 所有icon图标
     var iconData = [
         ['icon-download-b', ''],
         ['icon-upload-b', ''],
@@ -1868,7 +1891,7 @@
     
     window.onscroll = function (){
         function scroll() {
-            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;;
+            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
             var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
 
             var obj = {
@@ -1882,5 +1905,38 @@
         //console.log(scroll().scrollTop);
     }
 
+    // -- copy 功能
+    //$('.box .box-code').each(function (index ,item){ $(item).prepend('<div class="box-copy">Copy</div>') })// 追加 copy
+    $('.box .box-code .box-copy').each(function (index ,item){
+        var _item = $(item);
+        _item.click(function (){
+            var txt = $(this).siblings('pre').children('code').text();
+            //console.log(txt);
+            
+        })
+    })
+    
+    // -- 轮播图
+    var data = [
+        {title: "Galaxy On7", src: "../asset/images/b1.jpg", href: "Galaxy On7"},
+        {title: "Air Touch-X2", src: "../asset/images/b2.jpg", href: "Air Touch-X2"},
+        {title: "满199减100", src: "../asset/images/b3.jpg", href: "满199减100"},
+        {title: "奇趣", src: "../asset/images/b4.jpg", href: "奇趣"},
+        {title: "国庆123", src: "../asset/images/b5.jpg", href: "国庆"},
+        {title: "360奇酷", src: "../asset/images/b6.jpg", href: "360奇酷"},
+    ];
+
+    var obj = {
+        data: data,
+    };
+
+    ui.slider('#focus', obj)
+    
     
 </script>
+<script>
+
+    
+    
+</script>
+

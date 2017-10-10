@@ -1,9 +1,10 @@
-console.log('ui');
 /**
  * Created by luogege on 2017.07.21.
  */
 
-// window.dynamicDataValue = '';
+
+console.log('xiaoiInit');
+
 
 // -- 点击 document 的事件
 $(document).click(function (){
@@ -1048,20 +1049,20 @@ function uiSidle (ele){
 };
 
 function uiSlider (ele, obj){
-    var $box = $(ele);
+    var $ele = $(ele);
     var data = obj.data;// data 必须是数组，每一项是对象
     var sliderWidth = obj.data.length + 1 + '00%';// .slider-main 的宽度
-    $box.html(parserDataHtml());
-    var $arrow = $box.find('.extra-page a');// 左右箭头
-    var $extraNav = $box.find('.extra-nav');// 数字导航 -- ul
+    $ele.html(parserDataHtml())
+    var $arrow = $ele.find('.extra-page a');// 左右箭头
+    var $extraNav = $ele.find('.extra-nav');// 数字导航 -- ul
     var $navItem = $extraNav.children('.extra-nav-item');// 数字导航 -- li
-    var $sliderMain = $box.find('.slider-main');// 图片的 ul
-    var $imgAll = $box.find('.slider-main-item');// 所有图片 -- li
-    var $imgNum = $box.find('.slider-main-item').length;// 所有图片的数量
-    var $imgWidth = $box.width();// 每张图片的宽度
+    var $sliderMain = $ele.find('.slider-main');// 图片的 ul
+    var $imgAll = $ele.find('.slider-main-item');// 所有图片 -- li
+    var $imgNum = $ele.find('.slider-main-item').length;// 所有图片的数量
+    var $imgWidth = $ele.width();// 每张图片的宽度
 
-    var $prev = $box.find('.extra-page-prev');// 上一页
-    var $next = $box.find('.extra-page-next');// 下一页
+    var $prev = $ele.find('.extra-page-prev');// 上一页
+    var $next = $ele.find('.extra-page-next');// 下一页
 
 
 
@@ -1074,7 +1075,8 @@ function uiSlider (ele, obj){
 
         sliderMainList.push('<ul class="slider-main clearfix" style="width:'+ sliderWidth +'">');
         data.forEach(function (item, index){
-            sliderMainList.push('<li class="slider-main-item" style="width:'+ $(ele).width()+'px' +'">');
+            sliderMainList.push('<li class="slider-main-item" style="width:'+ $ele.width()+'px' +'">');
+            //sliderMainList.push('<li class="slider-main-item">');
             sliderMainList.push('<a href="'+ item.href +'">');
             sliderMainList.push('<img src="'+ item.src +'" title="'+ item.title +'"/>');
             sliderMainList.push('</a>');
@@ -1113,7 +1115,7 @@ function uiSlider (ele, obj){
 
     function bindEvent (){
         //左右导航的显示隐藏
-        $box.hover(function (){
+        $ele.hover(function (){
             $arrow.css('z-index', '0');
         },function (){
             $arrow.css('z-index', '-1');
@@ -1176,15 +1178,10 @@ function uiSlider (ele, obj){
             }
         }, 10);
     };
-
-
-
 };// end -- uiSlider
 
 
-// -- navigate
-
-//  1. nav-head
+//  navigate -- 1. nav-head
 //  .nav-head-info-tip 的hover事件
 $('.nav-head-info-tip').hover(function (){
     $(this).find('.info-tip-menu').slideToggle(10);
@@ -1193,7 +1190,7 @@ $('.nav-head-info-tip').hover(function (){
 });
 
 
-//  2. nav-sidle
+//  navigate -- 2. nav-sidle
 //  #collapse-btn 收展侧边栏
 function toggleCollapse(){
     var open = $("#collapse-btn").hasClass("to-close");
@@ -1210,7 +1207,7 @@ function toggleCollapse(){
 };
 
 
-// 导航的 accordion
+// nav-sidle -> accordion
 $('#accordion-nav a').each(function (index, item){
     var _item = $(item);
     _item.click(function (){
@@ -1234,16 +1231,6 @@ $('#accordion-nav a').each(function (index, item){
     });
 });
 
-
-// -- 放在最后, 图标的 class 前缀 'icon iconfont', 动态添加
-addPrefix();
-function addPrefix (){
-    $('i[class*=icon], span[class*=icon]').each(function (index, item){
-        if(!$(item).hasClass('icon iconfont')){
-            $(item).addClass('icon iconfont');
-        }
-    });
-};
 
 // -- 滚动条
 (function (f) {
@@ -1439,3 +1426,14 @@ function addPrefix (){
     });
     jQuery.fn.extend({slimscroll: jQuery.fn.slimScroll})
 })(jQuery);
+
+
+// -- 放在最后, 图标的 class 前缀 'icon iconfont', 动态添加
+addPrefix();
+function addPrefix (){
+    $('i[class*=icon], span[class*=icon]').each(function (index, item){
+        if(!$(item).hasClass('icon iconfont')){
+            $(item).addClass('icon iconfont');
+        }
+    });
+};

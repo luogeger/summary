@@ -25,8 +25,8 @@
                 <span>页面展示</span>
                 <div class="line"></div>
             </div>
-            <div class="change-skin pull-right">
-                <i id="changeSkin"></i>
+            <div class="change-skin pull-right" id="changeSkin">
+                <i></i>
                 <span>一键换肤</span>
                 <ul class="panel">
                     <li class="red">
@@ -68,12 +68,12 @@
     loadMainPage('.content-item', '../home/home.html');
 
     
-    
     // 一键换肤 -- 显示、隐藏
     $('#changeSkin').click(function (e){
         e.stopPropagation()
-        $(this).siblings('.panel').slideToggle(30);
+        $(this).children('.panel').slideToggle(30);
     })
+    
     
     // 下滑线
     var lineArr = [];// 排他
@@ -85,6 +85,7 @@
             $(this).children('.line').show()
         })
     })
+    
     
     // 点击logo 下划线消失
     $('.logo').click(function (){
@@ -113,7 +114,7 @@
     
     // document
     $(document).click(function (){
-        $('#changeSkin').siblings('.panel').slideUp(30)// 一键换肤
+        $('#changeSkin').children('.panel').slideUp(30)// 一键换肤
     })
     
     // 加载页面

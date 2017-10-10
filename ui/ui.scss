@@ -590,7 +590,7 @@ textarea{
   padding: 10px;
   resize: vertical;
   width: 230px;
-  height: 100px;
+  min-height: 60px;
   border-radius: 4px;
   display: inline-block;
   vertical-align: top;
@@ -1522,6 +1522,7 @@ textarea{
     .slider-main-item{
       float: left;
       a{
+        display: inline-block;
         img{
           width: 100%;
         }
@@ -1598,7 +1599,6 @@ textarea{
     }
   }
 }
-
 
 .img-square,
 .img-round{

@@ -86,15 +86,36 @@
         >.box{
           border: 1px solid #e2e4e5;
           border-radius: 4px;
-          overflow: hidden;
+
           .box-demo{
             padding: 20px;
+            border-bottom: 1px solid #E2E4E5;
             .instance{
               line-height: 2;
               margin-bottom: 10px;
               color: #cccccc;
             }
           }
+          // copy 样式
+          .box-code{
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 4px 4px;
+            .box-copy{
+              position: absolute;
+              top: 19px;
+              right: 0;
+              width: 70px;
+              line-height: 30px;
+              text-align: center;
+              border-left: 1px solid #E2E4E5;
+              border-bottom: 1px solid #E2E4E5;
+              border-radius: 0 0 0 4px;
+              background-color: #fff;
+              cursor: pointer;
+            }
+          }
+
           .box-code:not(:last-child){
             code{
               border-bottom: 1px solid #E2E4E5;

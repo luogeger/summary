@@ -424,7 +424,7 @@ textarea {
   padding: 10px;
   resize: vertical;
   width: 230px;
-  height: 100px;
+  min-height: 60px;
   border-radius: 4px;
   display: inline-block;
   vertical-align: top; }
@@ -1052,8 +1052,10 @@ textarea {
     left: 0px; }
     .slider .slider-main .slider-main-item {
       float: left; }
-      .slider .slider-main .slider-main-item a img {
-        width: 100%; }
+      .slider .slider-main .slider-main-item a {
+        display: inline-block; }
+        .slider .slider-main .slider-main-item a img {
+          width: 100%; }
   .slider .slider-extra .extra-nav {
     position: absolute;
     bottom: 5%;

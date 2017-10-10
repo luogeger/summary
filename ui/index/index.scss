@@ -41,6 +41,7 @@
       }
 
       .change-skin{
+        cursor: pointer;
         >i{
           display: inline-block;
           vertical-align: middle;
@@ -48,7 +49,6 @@
           height: 16px;
           background: url("../asset/images/page.png") 0 0;
           margin-right: 5px;
-          cursor: pointer;
         }
 
         .panel:before{

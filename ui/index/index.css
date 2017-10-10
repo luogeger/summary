@@ -30,45 +30,46 @@
       bottom: 0;
       left: 0;
       display: none; }
-  .wrapper .head #nav-head .change-skin > i {
-    display: inline-block;
-    vertical-align: middle;
-    width: 18px;
-    height: 16px;
-    background: url("../asset/images/page.png") 0 0;
-    margin-right: 5px;
+  .wrapper .head #nav-head .change-skin {
     cursor: pointer; }
-  .wrapper .head #nav-head .change-skin .panel:before {
-    position: absolute;
-    top: -5px;
-    right: 30px;
-    content: '';
-    transform: rotate(45deg);
-    width: 7px;
-    height: 7px;
-    border-left: 1px solid #CCCCCC;
-    border-top: 1px solid #CCCCCC;
-    background-color: #FFFFFF;
-    box-shadow: -2px -2px 5px -1px #cccccc; }
-  .wrapper .head #nav-head .change-skin .panel {
-    display: none;
-    position: relative;
-    background-color: #fefefe;
-    border: 1px solid #CCCCCC;
-    border-radius: 4px;
-    box-shadow: 0px 0px 5px 1px #cccccc; }
-    .wrapper .head #nav-head .change-skin .panel li {
-      text-align: center;
-      line-height: 0px;
-      margin: 15px 0;
-      cursor: pointer; }
-      .wrapper .head #nav-head .change-skin .panel li i {
-        display: inline-block;
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%; }
-      .wrapper .head #nav-head .change-skin .panel li span {
-        line-height: 14px; }
+    .wrapper .head #nav-head .change-skin > i {
+      display: inline-block;
+      vertical-align: middle;
+      width: 18px;
+      height: 16px;
+      background: url("../asset/images/page.png") 0 0;
+      margin-right: 5px; }
+    .wrapper .head #nav-head .change-skin .panel:before {
+      position: absolute;
+      top: -5px;
+      right: 30px;
+      content: '';
+      transform: rotate(45deg);
+      width: 7px;
+      height: 7px;
+      border-left: 1px solid #CCCCCC;
+      border-top: 1px solid #CCCCCC;
+      background-color: #FFFFFF;
+      box-shadow: -2px -2px 5px -1px #cccccc; }
+    .wrapper .head #nav-head .change-skin .panel {
+      display: none;
+      position: relative;
+      background-color: #fefefe;
+      border: 1px solid #CCCCCC;
+      border-radius: 4px;
+      box-shadow: 0px 0px 5px 1px #cccccc; }
+      .wrapper .head #nav-head .change-skin .panel li {
+        text-align: center;
+        line-height: 0px;
+        margin: 15px 0;
+        cursor: pointer; }
+        .wrapper .head #nav-head .change-skin .panel li i {
+          display: inline-block;
+          vertical-align: middle;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%; }
+        .wrapper .head #nav-head .change-skin .panel li span {
+          line-height: 14px; }
 
 /*# sourceMappingURL=index.css.map */
