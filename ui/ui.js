@@ -1181,59 +1181,8 @@ function uiSlider (ele, obj){
 };// end -- uiSlider
 
 
-//  navigate -- 1. nav-head
-//  .nav-head-info-tip 的hover事件
-$('.nav-head-info-tip').hover(function (){
-    $(this).find('.info-tip-menu').slideToggle(10);
-},function (){
-    $(this).find('.info-tip-menu').slideToggle(10);
-});
-
-
-//  navigate -- 2. nav-sidle
-//  #collapse-btn 收展侧边栏
-function toggleCollapse(){
-    var open = $("#collapse-btn").hasClass("to-close");
-    if(open){
-        $('#nav-content').css({'padding-left': '5px'});
-        $("#collapse-btn").removeClass("to-close").addClass("to-open");// 改变箭头方向，以及位置
-        $('#nav-sidle').animate({'left': '-180px'}, 200);
-    }else{
-
-        $('#nav-content').css({'padding-left': '180px'});
-        $("#collapse-btn").removeClass("to-open").addClass("to-close");// 改变箭头方向，以及位置
-        $('#nav-sidle').animate({'left': '0px'}, 200);
-    }
-};
-
-
-// nav-sidle -> accordion
-$('#accordion-nav a').each(function (index, item){
-    var _item = $(item);
-    _item.click(function (){
-        // 这里是一级菜单的 a 标签
-        if(_item.parent().hasClass('panel')){
-            if(_item.hasClass('flag-open')){
-                _item.siblings('ul').slideToggle(200);
-                _item.children('i:last-child').css('transform', 'rotate(0deg)');
-                _item.removeClass('flag-open');
-            }else{
-                _item.siblings('ul').slideToggle(200);
-                _item.children('i:last-child').css('transform', 'rotate(90deg)');
-                _item.addClass('flag-open');
-            }
-        }
-
-        $('#accordion-nav a').each(function (i, v){
-            $(v).removeClass('active');
-        });
-        $(this).addClass('active');
-    });
-});
-
-
 // -- 滚动条
-(function (f) {
+;(function (f) {
     jQuery.fn.extend({
         slimScroll: function (h) {
             var a = f.extend({
@@ -1426,6 +1375,94 @@ $('#accordion-nav a').each(function (index, item){
     });
     jQuery.fn.extend({slimscroll: jQuery.fn.slimScroll})
 })(jQuery);
+
+
+//  navigate
+//  1. #nav-head
+//  .nav-head-info-tip 的hover事件
+$('.nav-head-info-tip').hover(function (){
+    $(this).find('.info-tip-menu').slideToggle(10);
+},function (){
+    $(this).find('.info-tip-menu').slideToggle(10);
+});
+
+
+//  2. #nav-sidle
+//  #collapse-btn 收展侧边栏
+function toggleCollapse(){
+    var open = $("#collapse-btn").hasClass("to-close");
+    if(open){
+        $('#nav-content').css({'padding-left': '5px'});
+        $("#collapse-btn").removeClass("to-close").addClass("to-open");// 改变箭头方向，以及位置
+        $('#nav-sidle').animate({'left': '-180px'}, 200);
+    }else{
+
+        $('#nav-content').css({'padding-left': '180px'});
+        $("#collapse-btn").removeClass("to-open").addClass("to-close");// 改变箭头方向，以及位置
+        $('#nav-sidle').animate({'left': '0px'}, 200);
+    }
+};
+
+
+//  右边小箭头
+var collapseBtn =
+    '<div id="collapse-btn" class="to-close" onclick="toggleCollapse()">'+
+        '<div class="collapse-btn-nav">'+
+            '<i class="icon-arrow-left"></i>'+
+        '</div>'+
+    '</div>';
+$('#nav-sidle').prepend(collapseBtn);
+
+
+//  #nav-sidle -> accordion
+$('#accordion-nav a').each(function (index, item){
+    var _item = $(item);
+    _item.click(function (){
+        // 这里是一级菜单的 a 标签
+        if(_item.parent().hasClass('panel')){
+            if(_item.hasClass('flag-open')){
+                _item.siblings('ul').slideToggle(200);
+                _item.children('i:last-child').css('transform', 'rotate(0deg)');
+                _item.removeClass('flag-open');
+            }else{
+                _item.siblings('ul').slideToggle(200);
+                _item.children('i:last-child').css('transform', 'rotate(90deg)');
+                _item.addClass('flag-open');
+            }
+        }
+
+        $('#accordion-nav a').each(function (i, v){
+            $(v).removeClass('active');
+        });
+        $(this).addClass('active');
+    });
+
+    // 默认展开父级菜单
+    if(_item.hasClass('active')){
+        _item.parents('ul').slideDown(200).siblings('a').addClass('flag-open').children('i:last-child').css('transform', 'rotate(90deg)');
+    }
+});
+
+
+// #nav-sidle -> accordion的滚动条
+$("#accordion-nav").slimScroll({
+    height: "100%",
+    width: "180px",
+});
+
+
+//  #nav-content -> padding + min-Height
+var navContentHeight = $('#nav-head').css('height');
+var navContentWidth =  $('#nav-sidle').css('width');
+var navContentMinHeight = $(window).height();
+$('#nav-content').css({'paddingTop': navContentHeight, 'paddingLeft': navContentWidth, 'min-height': navContentMinHeight});
+
+//  #nav-sidle -> top值的设置
+if($('#nav-head').length > 0){
+    $('#nav-sidle').css({'top': $('#nav-head').css('height')})
+}else{
+    $('#nav-sidle').css({'top': '0'})
+}
 
 
 // -- 放在最后, 图标的 class 前缀 'icon iconfont', 动态添加

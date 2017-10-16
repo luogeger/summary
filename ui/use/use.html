@@ -119,10 +119,10 @@
                 
                 
                 <li class="badge"><a href="#badge">标签徽章 <span>Badge</span></a></li>
-                <li class="link"><a href="#link">链接 <span>Link</span></a></li>
                 <li class="crumb"><a href="#crumb">面包屑导航 <span>BreadCrumb</span></a></li>
-                <li class="scroll"><a href="#scroll">滚动条 <span>ScrollBar</span></a></li>
                 <li class="chart"><a href="#chart">图表 <span>Chart</span></a></li>
+                <li class="link"><a href="#link">链接 <span>Link</span></a></li>
+                <li class="scroll"><a href="#scroll">滚动条 <span>ScrollBar</span></a></li>
                 <li class="navigate"><a href="#navigate">导航 <span>Navigate</span></a></li>
                 <li id="backTop"><a href="#"> 返回顶部 ↑</a></li>
             </ul>
@@ -740,6 +740,7 @@
                             <code class="xml">
             &lt;div class="pages-line"&gt;
                     &lt;div class="previous page-disabled"&gt; 上一页 &lt;/div&gt;
+                    &lt;!-- page-disabled 元素就会有灰色背景颜色以及鼠标样式 --&gt;
                         &lt;ul&gt;
                                 &lt;li&gt;1&lt;/li&gt;
                                 &lt;li class="line-contra"&gt;2&lt;/li&gt;
@@ -1547,22 +1548,6 @@
                     </div>
                 </div>
             </div><!-- /#badge -->
-    
-            <div id="link">
-                <h2 class="title">链接</h2>
-                <p class="explain"></p>
-                <div class="box">
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                
-                        </div>
-                    </div>
-                    <div class="box-code">
-            
-                    </div>
-                </div>
-            </div><!-- /#link -->
             
             <div id="crumb">
                 <h2 class="title">面包屑导航</h2>
@@ -1580,22 +1565,6 @@
                 </div>
             </div><!-- /#crumb -->
             
-            <div id="scroll">
-                <h2 class="title">滚动条</h2>
-                <p class="explain"></p>
-                <div class="box">
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-            
-                        </div>
-                    </div>
-                    <div class="box-code">
-        
-                    </div>
-                </div>
-            </div><!-- /#scroll -->
-            
             <div id="chart">
                 <h2 class="title">图表</h2>
                 <p class="explain"></p>
@@ -1612,8 +1581,8 @@
                 </div>
             </div><!-- /#chart -->
     
-            <div id="navigate">
-                <h2 class="title">导航</h2>
+            <div id="link">
+                <h2 class="title">链接</h2>
                 <p class="explain"></p>
                 <div class="box">
                     <div class="box-demo">
@@ -1624,6 +1593,95 @@
                     </div>
                     <div class="box-code">
             
+                    </div>
+                </div>
+            </div><!-- /#link -->
+    
+            <div id="scroll">
+                <h2 class="title">滚动条</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <img src="../asset/images/scroll.png" style="width: 100%;" alt="scroll" title="scroll">
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="javascript">
+            $("#iconPic").slimScroll({
+                height: "350px",
+                width: "100%",
+                size: '10px'
+            });
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#scroll -->
+    
+            <div id="navigate">
+                <h2 class="title">导航</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <img src="../asset/images/navigate.png" style="width: 100%;" title="navigate" alt="navigate">
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="wrapper"&gt;
+                    &lt;div id="nav-head"&gt;
+                            ... &lt;!-- #nav-head 默认高度是60px --&gt;
+                    &lt;/div&gt;
+                
+                    &lt;div id="nav-sidle"&gt;
+                            &lt;div id="accordion-nav"&gt;
+                                    &lt;div class="panel"&gt;
+                                            &lt;a href="javascript:;"&gt;
+                                                    &lt;i class="icon-home-line"&gt;&lt;/i&gt;
+                                                    &lt;span&gt;首页&lt;/span&gt;
+                                            &lt;/a&gt;
+                                    &lt;/div&gt;
+                                
+                                    &lt;div class="panel"&gt;
+                                            &lt;a href="javascript:;"&gt;
+                                                    &lt;i class="icon-customer"&gt;&lt;/i&gt;
+                                                    &lt;span&gt;人工客服&lt;/span&gt;
+                                                    &lt;i class="icon-arrow-right"&gt;&lt;/i&gt;
+                                            &lt;/a&gt;
+                                            &lt;ul&gt;
+                                                    &lt;li&gt;
+                                                            &lt;a href="javascript:;"&gt;
+                                                                    &lt;span&gt;上单&lt;/span&gt;
+                                                            &lt;/a&gt;
+                                                    &lt;/li&gt;
+                                                    &lt;li&gt;
+                                                            &lt;a href="javascript:;" class="active"&gt;
+                                                                    &lt;!-- .active 默认选中状态，父元素展开 --&gt;
+                                                                    &lt;span&gt;打野&lt;/span&gt;
+                                                            &lt;/a&gt;
+                                                    &lt;/li&gt;
+                                                    ...
+                                            &lt;/ul&gt;
+                                    &lt;/div&gt;
+                                
+                                    &lt;div class="panel"&gt;...&lt;/div&gt;
+                                    &lt;div class="panel"&gt;...&lt;/div&gt;
+                                    &lt;div class="panel"&gt;...&lt;/div&gt;
+                            &lt;/div&gt;
+                    &lt;/div&gt;
+                
+                    &lt;div id="nav-content"&gt;
+                            ...
+                    &lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div><!-- /#navigate -->

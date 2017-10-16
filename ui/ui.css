@@ -183,6 +183,7 @@ h6, .h6 {
   left: 0;
   bottom: 0;
   z-index: auto;
+  border-top: 1px solid #FFFFFF;
   /* 右边小箭头 */
   /* 导航内容 */ }
   #nav-sidle #collapse-btn {
@@ -191,7 +192,7 @@ h6, .h6 {
     top: 48%;
     width: 20px;
     line-height: 30px;
-    z-index: 1;
+    z-index: 2;
     transition: all .2s ease 0s; }
     #nav-sidle #collapse-btn .collapse-btn-nav i {
       font-size: 18px;

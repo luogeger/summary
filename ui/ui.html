@@ -6,20 +6,7 @@
     <link rel="stylesheet" href="asset/iconfont/iconfont.css">
     <title>UI</title>
     <style>
-        #nav-sidle{
-            border-top: 1px solid #FFFFFF;
-        }
-        
-        #nav-content{
-            padding-top: 60px;
-            padding-left: 180px;
-        }
-        #content-item{
-            padding: 10px;
-            /*background-color: #F7F7F7;*/
-        }
-        
-        #content-item>div{
+        .content-item>div{
             margin: 10px;
             margin-left: 0;
         }
@@ -52,19 +39,6 @@
             display: none;
         }
         
-        .boxFocus{
-            width: 511px;
-        }
-        
-        .fixed{
-            width: 200px;
-            height: 200px;
-            background-color: deeppink;
-            position: fixed;
-            right: 200px;
-            top: 60px;
-            margin: 0 !important;
-        }
     </style>
 </head>
 <body>
@@ -120,11 +94,11 @@
     
         <div id="nav-sidle">
             <!-- 右边小箭头 -->
-            <div id="collapse-btn" class="to-close" onclick="toggleCollapse()">
-                <div class="collapse-btn-nav">
-                    <i class="icon-arrow-left"></i>
-                </div>
-            </div>
+            <!--<div id="collapse-btn" class="to-close" onclick="toggleCollapse()">-->
+                <!--<div class="collapse-btn-nav">-->
+                    <!--<i class="icon-arrow-left"></i>-->
+                <!--</div>-->
+            <!--</div>-->
         
             <!-- 导航内容 -->
             <div id="accordion-nav">
@@ -239,7 +213,7 @@
         </div><!-- /#nav-sidle -->
         
         <div id="nav-content">
-            <div id="content-item">
+            <div class="content-item" style="padding: 10px;">
                 <div>
                     <div class="btn btn-xs btn-border">按钮</div>
                     <div class="btn btn-sm btn-border">按钮</div>
@@ -491,8 +465,8 @@
                         <br>
                     <div class="tab-border">
                         <div class="tab-item ">首页</div>
-                        <div class="tab-item contra-border">通讯录<i class="icon-edit"></i></div>
-                        <div class="tab-item">各种报表<i class="icon-edit"></i></div>
+                        <div class="tab-item contra-border"><i class="icon-edit"></i>通讯录</div>
+                        <div class="tab-item"><i class="icon-edit"></i>各种报表</div>
                         <div class="tab-item">好多好多报表</div>
                     </div>
                         <br><br>
@@ -1349,7 +1323,7 @@
                 </div>
     
                 <!-- slider -->
-                <span class="boxFocus" style="display: inline-block; margin: 0 0 50px 0;">
+                <span class="boxFocus" style="display: inline-block; margin: 0 0 50px 0; width: 511px;">
                     <div id="focus"></div>
                 </span>
             
@@ -1461,10 +1435,10 @@
     });
 
     // -- 滚动条
-    $("#accordion-nav").slimScroll({
-        height: "100%",
-        width: "180px",
-    });
+//    $("#accordion-nav").slimScroll({
+//        height: "100%",
+//        width: "180px",
+//    });
     
 
     // -- 轮播图
