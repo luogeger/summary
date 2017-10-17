@@ -579,7 +579,7 @@ li[people|=dog]{
 
 > 6.``align-content``: flex-start | flex-end | center | space-between | space-around | stretch ;
 
-    定义了多根轴线的对齐方式，**如果只有一根轴线，这个属性就不起作用**
+    定义了多根轴线的对齐方式，如果只有一根轴线，这个属性就不起作用
     
 1``stretch``：默认，轴线占满整个交叉轴
 
@@ -717,7 +717,7 @@ flex-basis: 100%; 单个item占据整行, 可以实现骰子5的形状
 
 
 
-# CSS总结
+# css 总结
 
 - 1.文字超过宽度以...的形式
 ```css
@@ -842,3 +842,95 @@ input, button, textarea, select{
 
 
 
+# scss
+
+### 1.  变量声明
+- 普通变量、默认变量
+- 局部变量、全局变量
+    
+
+### 2.  嵌套
+- 选择器嵌套
+- 属性嵌套
+- 伪类嵌套
+
+### 3.  混合宏
+- 声明宏``@mixin``
+- 调用宏``@include``
+- 混合宏的参数
+    - 不传参
+    - 不传参的默认值
+    - 传入多个参
+    
+### 4.  继承
+- ``@extend`` 在sass中的继承，可以继承类样式块中所有样式代码，而且编译出来的css会将选择器合并在一起，形成组合选择器
+```css
+/*scss*/
+.btn {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+.btn-primary {
+  background-color: #f36;
+  color: #fff;
+  @extend .btn;
+}
+
+
+/*css*/
+.btn, .btn-primary {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  font-size: 14px;
+ }
+.btn-primary {
+  background-color: #f36;
+  color: #fff; 
+}
+```
+
+### 5.  占位符
+用占位符声明的代码，如果不被``@extend``调用就不会被编译。
+```css
+/*scss*/
+%mt5 {
+  margin-top: 5px;
+}
+%pt5{
+  padding-top: 5px;
+}
+
+.btn {
+  @extend %mt5;//使用@extend调用占位符代码
+  @extend %pt5;
+}
+.block {
+  @extend %mt5;
+  span {
+    @extend %pt5;
+  }
+}
+
+/*css*/
+.btn, .block {
+  margin-top: 5px;
+}
+.btn, .block span {
+  padding-top: 5px;
+}
+
+```
+
+### 6.  插值
+
+### 7.  注释
+
+### 8.  运算
+- 加法、减法
+- 乘法
+- 除法
+- 变量计算
+- 数字计算
+- 颜色计算
+- 字符运算
