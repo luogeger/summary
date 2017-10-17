@@ -125,5 +125,18 @@ pre code span{
 
 .hljs-value{
     color: #2C577C !important;
+}
+
+.hljs-id{
+    color: #F22DB2;
+}
+
+.hljs-class{
+    color: #14a6ef;
+}
+
+.hljs-string,
+.hljs-id,
+.hljs-value{
     font-style: italic !important;
 }

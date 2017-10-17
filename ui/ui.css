@@ -811,19 +811,30 @@ textarea {
     color: #ffffff;
     background-color: #FF8A41;
     border-color: #ED6C1C !important; }
-.pages-line .previous, .pages-line .next {
+.pages-line .line-previous, .pages-line .line-next {
   padding: 0 15px; }
-.pages-line .import {
-  padding: 0px; }
-  .pages-line .import input {
+.pages-line .line-import {
+  border: none;
+  padding: 0 1px;
+  position: relative; }
+  .pages-line .line-import .line-border {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px; }
+  .pages-line .line-import input {
     width: 34px;
-    padding-left: 10px;
+    padding-left: 5px;
     font-size: 14px;
     font-family: "Microsoft YaHei";
     margin-top: -3px; }
-    .pages-line .import input:focus .import {
+    .pages-line .line-import input:focus + .line-border {
       border-color: #FF8A41; }
-.pages-line .go {
+.pages-line .line-go {
   margin-right: 0px; }
 .pages-line .page-disabled {
   cursor: not-allowed !important;
@@ -1141,12 +1152,16 @@ textarea {
       .datePicker .container .inputBox > input {
         height: 30px;
         width: 200px;
-        border: 1px solid #FF8A41;
+        border: 1px solid #CCCCCC;
         border-radius: 4px;
         padding: 0 25px 0 5px;
         font-family: "microsoft yahei"; }
+        .datePicker .container .inputBox > input:focus {
+          border-color: #FF8A41; }
+        .datePicker .container .inputBox > input:focus + i {
+          color: #FF8A41; }
       .datePicker .container .inputBox > i {
-        color: #FF8A41;
+        color: #CCCCCC;
         position: absolute;
         top: 6px;
         right: 6px;

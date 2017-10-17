@@ -70,6 +70,9 @@
           height: 20px;
           border-radius: 50%; }
         .wrapper .head #nav-head .change-skin .panel li span {
-          line-height: 14px; }
+          line-height: 14px;
+          color: #cccccc; }
+        .wrapper .head #nav-head .change-skin .panel li:hover span {
+          color: #222222; }
 
 /*# sourceMappingURL=index.css.map */

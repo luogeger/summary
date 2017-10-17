@@ -85,6 +85,10 @@
             }
             span{
               line-height: 14px;
+              color: #cccccc;
+            }
+            &:hover span{
+              color: #222222;
             }
           }
 

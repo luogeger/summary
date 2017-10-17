@@ -398,7 +398,7 @@
                     </div>
                     <div class="box-code">
                         <pre>
-                            <code class="javascript">
+                            <code class="jQuery">
             $('#modelDomBtn').click(function (){
                     ui.model('.model-dom');  // .model-dom 是页面已存在的dom元素
             });
@@ -414,7 +414,7 @@
                     </div>
                     <div class="box-code">
                         <pre>
-                            <code class="javascript">
+                            <code class="jQuery">
             // 传入数组，分别为提示的信息，和确认之后执行的函数
             $('#modelArrayBtn').click( function (){
                     ui.model( [ '弹出提示信息', function  (){
@@ -439,7 +439,7 @@
                     </div>
                     <div class="box-code">
                         <pre>
-                            <code class="javascript">
+                            <code class="jQuery">
             $('#sidleBtn').click(function (){
                     ui.sidle('.sidle-dom') // .sidle-dom 是页面已存在的dom元素
             })
@@ -717,7 +717,7 @@
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
                             <div class="pages-line">
-                                <div class="previous page-disabled"> 上一页 </div>
+                                <div class="line-previous page-disabled"> 上一页 </div>
                                 <ul>
                                     <li>1</li>
                                     <li class="line-contra">2</li>
@@ -726,12 +726,15 @@
                                     <li>5</li>
                                     <li>6</li>
                                     <li>7</li>
-                                    <li class="point">···</li>
+                                    <li class="line-point">···</li>
                                     <li>39</li>
                                 </ul>
-                                <div class="next"> 下一页 </div>
-                                <div class="import"> <input type="text"></div>
-                                <div class="go">Go</div>
+                                <div class="line-next"> 下一页 </div>
+                                <div class="line-import">
+                                    <input type="text" id="line-input">
+                                    <label for="line-input" class="line-border"></label>
+                                </div>
+                                <div class="line-go">Go</div>
                             </div>
                         </div>
                     </div>
@@ -739,7 +742,7 @@
                         <pre>
                             <code class="xml">
             &lt;div class="pages-line"&gt;
-                    &lt;div class="previous page-disabled"&gt; 上一页 &lt;/div&gt;
+                    &lt;div class="line-previous page-disabled"&gt; 上一页 &lt;/div&gt;
                     &lt;!-- page-disabled 元素就会有灰色背景颜色以及鼠标样式 --&gt;
                         &lt;ul&gt;
                                 &lt;li&gt;1&lt;/li&gt;
@@ -749,12 +752,12 @@
                                 &lt;li&gt;5&lt;/li&gt;
                                 &lt;li&gt;6&lt;/li&gt;
                                 &lt;li&gt;7&lt;/li&gt;
-                                &lt;li class="point"&gt;···&lt;/li&gt;
+                                &lt;li class="line-point"&gt;···&lt;/li&gt;
                                 &lt;li&gt;39&lt;/li&gt;
                         &lt;/ul&gt;
-                    &lt;div class="next"&gt; 下一页 &lt;/div&gt;
-                    &lt;div class="import"&gt; &lt;input type="text"&gt;&lt;/div&gt;
-                    &lt;div class="go"&gt;Go&lt;/div&gt;
+                    &lt;div class="line-next"&gt; 下一页 &lt;/div&gt;
+                    &lt;div class="line-import"&gt; &lt;input type="text"&gt;&lt;/div&gt;
+                    &lt;div class="line-go"&gt;Go&lt;/div&gt;
             &lt;/div&gt;
                             </code>
                         </pre>
@@ -1604,12 +1607,12 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                            <img src="../asset/images/scroll.png" style="width: 100%;" alt="scroll" title="scroll">
+                            <img src="../asset/images/scroll.png" style="width: 100%;" alt="scroll">
                         </div>
                     </div>
                     <div class="box-code">
                         <pre>
-                            <code class="javascript">
+                            <code class="jQuery">
             $("#iconPic").slimScroll({
                 height: "350px",
                 width: "100%",
@@ -1628,7 +1631,7 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                            <img src="../asset/images/navigate.png" style="width: 100%;" title="navigate" alt="navigate">
+                            <img src="../asset/images/navigate.png" style="width: 100%;" alt="navigate">
                         </div>
                     </div>
                     <div class="box-code">

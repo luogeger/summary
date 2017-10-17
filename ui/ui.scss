@@ -1132,23 +1132,35 @@ textarea{
       border-color: $theme-hover !important;
     }
   }
-  .previous, .next{
+  .line-previous, .line-next{
     padding: 0 15px;
   }
-  .import{
-    padding: 0px;
+  .line-import{
+    border: none;
+    padding: 0 1px;
+    position: relative;
+    .line-border{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      border: 1px solid $sixC;
+      border-radius: 4px;
+    }
     input{
       width: $height-md;
-      padding-left: 10px;
+      padding-left: 5px;
       font-size: 14px;
       font-family: "Microsoft YaHei";
       margin-top: -3px;
-      &:focus .import{
+      &:focus + .line-border{
         border-color: $theme-normal;
       }
     }
   }
-  .go{
+  .line-go{
     margin-right: 0px;
   }
   .page-disabled{
@@ -1644,14 +1656,20 @@ textarea{
       > input {
         height: $height-sm;
         width: 200px;
-        border: 1px solid $theme-normal;
+        border: 1px solid $sixC;
         border-radius: 4px;
         padding: 0 25px 0 5px;
         font-family: "microsoft yahei";
+        &:focus {
+          border-color: $theme-normal;
+        }
+        &:focus + i{
+          color: $theme-normal;
+        }
       }
 
       > i {
-        color: $theme-normal;
+        color: $sixC;
         position: absolute;
         top: 6px;
         right: 6px;
