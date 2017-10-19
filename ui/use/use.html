@@ -582,30 +582,6 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                            <div class="tab-crumb">
-                                <div class="tab-item contra-crumb"><i class="icon-edit"></i>首页</div>
-                                <div class="tab-item contra-crumb">通讯录</div>
-                                <div class="tab-item">文字超过一定宽度就是用....代替</div>
-                                <div class="tab-item">好多好多报表</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-            &lt;div class="tab-crumb"&gt;
-                    &lt;div class="tab-item contra-crumb"&gt;&lt;i class="icon-edit"&gt;&lt;/i&gt;首页&lt;/div&gt;
-                    &lt;div class="tab-item contra-crumb"&gt;通讯录&lt;/div&gt;
-                    &lt;div class="tab-item"&gt;文字超过一定宽度就是用....代替&lt;/div&gt;
-                    &lt;div class="tab-item"&gt;好多好多报表&lt;/div&gt;
-            &lt;/div&gt;
-                            </code>
-                        </pre>
-                    </div>
-                    
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
                             <div class="tab-underline">
                                 <div class="tab-item contra-underline">首页</div>
                                 <div class="tab-item">通讯录</div>
@@ -731,8 +707,8 @@
                                 </ul>
                                 <div class="line-next"> 下一页 </div>
                                 <div class="line-import">
-                                    <input type="text" id="line-input">
-                                    <label for="line-input" class="line-border"></label>
+                                    <input type="text">
+                                    <label class="line-border"></label>
                                 </div>
                                 <div class="line-go">Go</div>
                             </div>
@@ -756,7 +732,11 @@
                                 &lt;li&gt;39&lt;/li&gt;
                         &lt;/ul&gt;
                     &lt;div class="line-next"&gt; 下一页 &lt;/div&gt;
-                    &lt;div class="line-import"&gt; &lt;input type="text"&gt;&lt;/div&gt;
+                    &lt;div class="line-import"&gt;
+                            &lt;input type="text"&gt;
+                            &lt;!-- 这里的label标签是给边框 --&gt;
+                            &lt;label class="line-border"&gt;&lt;/label&gt;
+                    &lt;/div&gt;
                     &lt;div class="line-go"&gt;Go&lt;/div&gt;
             &lt;/div&gt;
                             </code>
@@ -1559,11 +1539,25 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-            
+                            <div class="tab-crumb">
+                                <div class="tab-item contra-crumb"><i class="icon-edit"></i>首页</div>
+                                <div class="tab-item contra-crumb">通讯录</div>
+                                <div class="tab-item">文字超过一定宽度就是用....代替</div>
+                                <div class="tab-item">好多好多报表</div>
+                            </div>
                         </div>
                     </div>
                     <div class="box-code">
-        
+                        <pre>
+                            <code class="xml">
+            &lt;div class="tab-crumb"&gt;
+                    &lt;div class="tab-item contra-crumb"&gt;&lt;i class="icon-edit"&gt;&lt;/i&gt;首页&lt;/div&gt;
+                    &lt;div class="tab-item contra-crumb"&gt;通讯录&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;文字超过一定宽度就是用....代替&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;好多好多报表&lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div><!-- /#crumb -->

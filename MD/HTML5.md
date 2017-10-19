@@ -837,7 +837,19 @@ input, button, textarea, select{
     background: linearGradient(direction, color-stop1, color-stop2, ...);
 ```
 
-
+- 11.颜色
+```scss
+    $baseColor: #ff8a41;
+    .normal{
+      background: $baseColor;
+    }
+    .lighten {
+      background: lighten($baseColor,15%);
+    }
+    .darken{
+      background: darken($baseColor,15%);
+    }
+```
 
 
 
@@ -864,7 +876,7 @@ input, button, textarea, select{
     
 ### 4.  继承
 - ``@extend`` 在sass中的继承，可以继承类样式块中所有样式代码，而且编译出来的css会将选择器合并在一起，形成组合选择器
-```css
+```scss
 /*scss*/
 .btn {
   border: 1px solid #ccc;
@@ -892,7 +904,7 @@ input, button, textarea, select{
 
 ### 5.  占位符
 用占位符声明的代码，如果不被``@extend``调用就不会被编译。
-```css
+```scss
 /*scss*/
 %mt5 {
   margin-top: 5px;

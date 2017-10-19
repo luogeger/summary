@@ -346,15 +346,15 @@ function xiaoiInit (){
      *   分页
      *    - 2种样式的分页
      * */
-    $('.pages-line>ul>li:not(.point)').click(function (){
-        $('.pages-line ul>li:not(.point)').each(function (index, item){
+    $('.pages-line>ul>li:not(.line-point)').click(function (){
+        $('.pages-line ul>li:not(.line-point)').each(function (index, item){
             $(item).removeClass('line-contra');
         });
         $(this).addClass('line-contra');
     });
 
-    $('.pages-filled>ul>li:not(.point)').click(function (){
-        $('.pages-filled>ul>li:not(.point)').each(function (index, item){
+    $('.pages-filled>ul>li:not(.line-point)').click(function (){
+        $('.pages-filled>ul>li:not(.line-point)').each(function (index, item){
             $(item).removeClass('filled-contra');
         });
         $(this).addClass('filled-contra');
