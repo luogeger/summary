@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,IAAI;ECDF,qBAAqB,EDEE,GAAG;ECD1B,kBAAkB,EDCK,GAAG;ECA1B,aAAa,EDAU,GAAG;;AED5B,KAAK;ECDH,gBAAgB,EDED,OAAO",
-"sources": ["buttons.scss","mixins/buttons.scss","tables.scss","mixins/tables.scss"],
-"names": [],
-"file": "ui.css"
-}

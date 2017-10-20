@@ -1,3 +1,14 @@
-//  13 + 9 + 3 + 5 == 30
-@import "buttons.scss";
-@import "tables.scss";
+// Mixins
+// 13 + 9 + 3 + 5 == 30
+// -------------------------------------
+
+// Utilities -13
+@import "mixins/opacity";
+@import "mixins/vendor-prefixes";
+
+
+// Components -9
+@import "mixins/buttons.scss";
+@import "mixins/tables.scss";
+
+
