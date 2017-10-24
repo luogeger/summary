@@ -1,0 +1,181 @@
+// button-groups
+// make the div behave like a button
+.clearfix{
+  color: #0094ff;
+}
+
+.btn-group,
+.btn-group-vertical{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;//
+  > .btn{
+    position: relative;
+    float: left;
+    // bring the 'active' button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.active{
+      z-index: 2;
+    }
+  }
+}
+
+// prevent double border when buttons are next to each other
+.btn-group{
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group{
+    margin-left: -1px;
+  }
+}
+
+// optional: group multiple button groups together for a toolbar
+.btn-toolbar{
+  margin-left: -5px;// offset the first child's margin
+  @extend .clearfix;// ......
+
+  .btn,
+  .btn-group,
+  .input-group{
+    float: left;
+  }
+  > .btn,
+  > .btn-group,
+  > .input-group{
+    margin-left: -5px;
+  }
+}
+
+
+.btn-group
+> .btn:not(:first-child):not(:last-child):not(.dropdown-toggle){
+  border-radius: 0;
+}
+
+// Set
+.btn-group
+> .btn:first-child{
+  margin-left: 0;
+  &:not(:last-child):not(.dropdown-toggle) {
+    @include border-right-radius(0);
+  }
+}
+
+// Need
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+  @include border-left-radius(0);
+}
+
+// Custom
+/* custom */
+.btn-group > .btn-group{
+  float: left;
+}
+
+.btn-group
+> .btn-group:not(:first-child):not(:last-child)
+> .btn{
+  border-radius: 0;
+}
+
+.btn-group > .btn-group:first-child:not(:last-child) {
+  > .btn:last-child,
+  > .dropdown-toggle {
+    @include border-right-radius(0);
+  }
+}
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  @include border-left-radius(0);
+}
+
+// On
+.btn-group .dropdown-toggle:active,
+.btn-group.open .dropdown-toggle{
+  outline: 0;
+}
+
+/* Sizing */
+.btn-group-xs > .btn{
+  @extend .btn-xs;
+}
+.btn-group-sm > .btn{
+  @extend .btn-sm;
+}
+.btn-group-lg > .btn{
+  @extend .btn-lg;
+}
+
+
+// split button dropdowns
+
+// give the line between buttons some depth
+.btn-group > .btn + .dropdown-toggle{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.btn-group > .btn-lg + .dropdown-toggle{
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+// the clickable...
+// remove th gradient and set the same inset shadow...
+.btn-group.open .dropdown-toggle{
+  @include box-shadow(inset 0 3px 5px rgba(0,0,0, .125));
+  // show no shadow
+  &.btn-link{
+    @include box-shadow(none);
+  }
+}
+
+// reposition the caret
+.btn .caret{
+  margin-left: 0;
+}
+
+.btn-lg .caret {
+
+}
+
+.dropup .btn-lg .caret{
+
+}
+
+
+// Vertical button groups
+// ----------------------
+.btn-group-vertical{
+  > .btn,
+  > .btn-group,
+  > .btn-group > .btn{
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+// Justified button groups
+// ----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
