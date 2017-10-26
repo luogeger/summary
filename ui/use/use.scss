@@ -25,7 +25,7 @@
       top: 0px;
       ul{
         border-right: 1px solid #CCCCCC;
-        li:not(:last-child){
+        li{
           color: #222222;
           background-color: #fff;
           //margin-bottom: 10px;
@@ -49,16 +49,6 @@
           border-color: #000 !important;
         }
 
-
-        #backTop{
-          padding: 10px 0 0 22px;
-          a{
-            font-size: 12px;
-            line-height: 1.5;
-            color: #CCCCCC;
-          }
-
-        }
       }
     }
 
@@ -283,5 +273,22 @@
     font-size: 12px;
     padding: 10px 0;
     border-top: 1px solid #CCCCCC;
+  }
+
+  #backTop{
+    position: fixed;
+    bottom: 40px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #E0E0E0;
+    color: #ffffff;
+    z-index: 2;
+    text-align: center;
+    line-height: 32px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: cursive;
   }
 }

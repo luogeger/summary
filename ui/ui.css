@@ -1359,6 +1359,31 @@ textarea {
       border-top: 1px solid #CCCCCC;
       background-color: #ffffff; }
 
+/* i-gallery-img */
+.i-gallery-img,
+.i-gallery-all {
+  display: inline-block;
+  vertical-align: top; }
+  .i-gallery-img .text,
+  .i-gallery-all .text {
+    padding: 5px 10px; }
+    .i-gallery-img .text p,
+    .i-gallery-all .text p {
+      margin: 5px 0; }
+    .i-gallery-img .text .title,
+    .i-gallery-all .text .title {
+      font: 600 16px 'microsoft yahei'; }
+    .i-gallery-img .text .explain,
+    .i-gallery-all .text .explain {
+      font: 500 14px 'microsoft yahei'; }
+    .i-gallery-img .text .time,
+    .i-gallery-all .text .time {
+      font: 400 12px 'microsoft yahei';
+      color: #CCCCCC; }
+    .i-gallery-img .text .btn,
+    .i-gallery-all .text .btn {
+      margin: 10px 0; }
+
 /* 常用类 */
 .theme-bgc {
   background-color: #FF8A41; }

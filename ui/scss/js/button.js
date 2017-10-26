@@ -1,4 +1,4 @@
-
+// http://blog.csdn.net/wujimiao/article/details/70220367
 +function ($) {
     'use strict';
 

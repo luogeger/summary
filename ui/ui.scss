@@ -1985,8 +1985,40 @@ textarea{
 }// end -- .datePicker
 
 
+/* i-gallery-img */
+.i-gallery-img,
+.i-gallery-all{
+  display: inline-block;
+  vertical-align: top;
+  .text{
+    padding: 5px 10px;
+    p{
+      margin: 5px 0;
+    }
+    .title{
+      font: 600 16px 'microsoft yahei';
+    }
+    .explain{
+      font: 500 14px 'microsoft yahei';
+    }
+    .time{
+      font: 400 12px 'microsoft yahei';
+      color: $sixC;
+    }
+    .btn{
+      margin: 10px 0;
+    }
+  }
 
+}
 
+.i-gallery-img{
+
+}
+
+.i-gallery-all{
+
+}
 
 /* 常用类 */
 .theme-bgc{

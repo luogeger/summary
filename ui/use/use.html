@@ -91,6 +91,8 @@
         <p>sidle-dom</p>
     </div>
     
+    <a id="backTop" href="#">↑</a>
+    
     <div class="intro">
         <p class="title">开始使用</p>
         <p class="explain">Xiaoi UI是一个轻量级HTML、CSS和JS框架, 专注于系统的WEB项目, 提供最好最新最受欢迎的综合性UI组件。</p>
@@ -118,13 +120,12 @@
                 <li class="image"><a href="#image">图片 <span>Image</span></a></li>
                 
                 
-                <li class="badge"><a href="#badge">标签徽章 <span>Badge</span></a></li>
                 <li class="crumb"><a href="#crumb">面包屑导航 <span>BreadCrumb</span></a></li>
-                <li class="chart"><a href="#chart">图表 <span>Chart</span></a></li>
+                <li class="badge"><a href="#badge">标签徽章 <span>Badge</span></a></li>
                 <li class="link"><a href="#link">链接 <span>Link</span></a></li>
                 <li class="scroll"><a href="#scroll">滚动条 <span>ScrollBar</span></a></li>
                 <li class="navigate"><a href="#navigate">导航 <span>Navigate</span></a></li>
-                <li id="backTop"><a href="#"> 返回顶部 ↑</a></li>
+                <li class="chart"><a href="#chart">图表 <span>Chart</span></a></li>
             </ul>
         </div><!-- /.info-sidle -->
         
@@ -1507,30 +1508,30 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                
+                            <div class="img-square" style="margin: 0 0 0 10px;">
+                                <img style="width: 140px; height: 140px;" src="../asset/images/motp.jpg" title="img-square" alt="这是图片">
+                            </div>
+    
+                            <div class="img-round" style="margin: 0 0 0 10px;">
+                                <img style="width: 140px; height: 140px;" src="../asset/images/motp.jpg" alt="这是图片">
+                            </div>
                         </div>
                     </div>
                     <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="img-square"&gt;
+                    &lt;img style="width: 140px; height: 140px;" src="../asset/images/motp.jpg"&gt;
+            &lt;/div&gt;
             
+            &lt;div class="img-round"&gt;
+                    &lt;img style="width: 140px; height: 140px;" src="../asset/images/motp.jpg"&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div><!-- /#image -->
-            
-            <div id="badge">
-                <h2 class="title">标签徽章</h2>
-                <p class="explain"></p>
-                <div class="box">
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-            
-                        </div>
-                    </div>
-                    <div class="box-code">
-        
-                    </div>
-                </div>
-            </div><!-- /#badge -->
             
             <div id="crumb">
                 <h2 class="title">面包屑导航</h2>
@@ -1561,22 +1562,22 @@
                     </div>
                 </div>
             </div><!-- /#crumb -->
-            
-            <div id="chart">
-                <h2 class="title">图表</h2>
+    
+            <div id="badge">
+                <h2 class="title">标签徽章</h2>
                 <p class="explain"></p>
                 <div class="box">
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-            
+                
                         </div>
                     </div>
                     <div class="box-code">
-        
+            
                     </div>
                 </div>
-            </div><!-- /#chart -->
+            </div><!-- /#badge -->
     
             <div id="link">
                 <h2 class="title">链接</h2>
@@ -1682,6 +1683,22 @@
                     </div>
                 </div>
             </div><!-- /#navigate -->
+    
+            <div id="chart">
+                <h2 class="title">图表</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                
+                        </div>
+                    </div>
+                    <div class="box-code">
+            
+                    </div>
+                </div>
+            </div><!-- /#chart -->
         </div><!-- /.info-content -->
     </div><!-- /.info -->
     
