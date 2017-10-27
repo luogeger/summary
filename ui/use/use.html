@@ -20,6 +20,15 @@
         padding: 20px;
         display: none;
     }
+    
+    .i-gallery-img:last-child, .i-gallery-all{
+        margin-left: 100px;
+    }
+
+    .i-gallery-img img,
+    .i-gallery-all img{
+        width: 200px;
+    }
 </style>
 
 
@@ -1492,11 +1501,67 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                
+                            <div class="i-gallery-img">
+                                <div class="img-square">
+                                    <img src="../asset/images/motp.jpg" title="img-square" alt="这是图片">
+                                </div>
+                                <div class="text">
+                                    <p class="title">图片边框</p>
+                                    <p class="explain">小i工程中心内部使用规范</p>
+                                    <p class="time">2017-10-24</p>
+                                </div>
+                            </div>
+    
+                            <div class="i-gallery-all">
+                                <div class="img-square">
+                                    <img src="../asset/images/motp.jpg" title="img-square" alt="这是图片">
+                                    <div class="text">
+                                        <p class="title">容器边框</p>
+                                        <p class="explain">小i工程中心内部使用规范</p>
+                                        <p class="time">2017-10-24</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="i-gallery-all">
+                                <div class="img-square">
+                                    <img src="../asset/images/motp.jpg" title="img-square" alt="这是图片">
+                                    <div class="text">
+                                        <p class="title">容器边框</p>
+                                        <p class="explain">小i工程中心内部使用规范</p>
+                                        <p class="time">2017-10-24</p>
+                                        <div class="btn btn-md btn-theme">按钮</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="i-gallery-img"&gt;
+                    &lt;div class="img-square"&gt;
+                            &lt;img src="../asset/images/motp.jpg" title="img-square" alt="这是图片"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="text"&gt;
+                            &lt;p class="title"&gt;图片边框&lt;/p&gt;
+                            &lt;p class="explain"&gt;小i工程中心内部使用规范&lt;/p&gt;
+                            &lt;p class="time"&gt;2017-10-24&lt;/p&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
             
+            &lt;div class="i-gallery-all"&gt;
+                    &lt;div class="img-square"&gt;
+                            &lt;img src="../asset/images/motp.jpg" title="img-square" alt="这是图片"&gt;
+                            &lt;div class="text"&gt;
+                                    &lt;p class="title"&gt;容器边框&lt;/p&gt;
+                                    &lt;p class="explain"&gt;小i工程中心内部使用规范&lt;/p&gt;
+                                    &lt;p class="time"&gt;2017-10-24&lt;/p&gt;
+                            &lt;/div&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+                                        </code>
+                        </pre>
                     </div>
                 </div>
             </div><!-- /#gallery -->
