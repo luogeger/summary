@@ -1384,6 +1384,56 @@ textarea {
     .i-gallery-all .text .btn {
       margin: 10px 0 0px 0; }
 
+/* i-label */
+.i-badge-info,
+.i-badge-success,
+.i-badge-warn,
+.i-badge-error,
+.i-badge-default,
+.i-label-info,
+.i-label-success,
+.i-label-warn,
+.i-label-error,
+.i-label-default {
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 4px;
+  padding: 0px 8px;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1.5; }
+
+.i-badge-info,
+.i-badge-success,
+.i-badge-warn,
+.i-badge-error,
+.i-badge-default {
+  padding: 0;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  text-align: center; }
+
+.i-badge-info,
+.i-label-info {
+  background-color: #1D98F9; }
+
+.i-badge-success,
+.i-label-success {
+  background-color: #00BFA5; }
+
+.i-badge-warn,
+.i-label-warn {
+  background-color: #FF8A41; }
+
+.i-badge-error,
+.i-label-error {
+  background-color: #FC263C; }
+
+.i-badge-default,
+.i-label-default {
+  background-color: #cccccc; }
+
 /* 常用类 */
 .theme-bgc {
   background-color: #FF8A41; }
