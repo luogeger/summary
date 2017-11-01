@@ -1401,7 +1401,8 @@ textarea {
   padding: 0px 8px;
   color: #ffffff;
   font-size: 12px;
-  line-height: 1.5; }
+  line-height: 1.5;
+  cursor: pointer; }
 
 .i-badge-info,
 .i-badge-success,
