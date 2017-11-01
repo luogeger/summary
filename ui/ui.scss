@@ -1686,7 +1686,7 @@ textarea{
       border-radius: 4px;
       background-color: #fff;
       width: 240px;
-      height: 263px;
+      //height: 263px;
       z-index: 1;
       /*  全部table 公用样式,
       */
@@ -1941,6 +1941,12 @@ textarea{
                 &:hover {
                   background-color: $theme-other;
                 }
+              }
+            }
+            /**/
+            tbody tr:last-child{
+              td{
+                padding-bottom: 4px;
               }
             }
           }

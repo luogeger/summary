@@ -1175,7 +1175,6 @@ textarea {
       border-radius: 4px;
       background-color: #fff;
       width: 240px;
-      height: 263px;
       z-index: 1;
       /*  全部table 公用样式,
       */
@@ -1333,13 +1332,17 @@ textarea {
           .datePicker .container .dateBox .second-box .date-head span {
             font-size: 12px;
             font-weight: 600; }
-      .datePicker .container .dateBox .hour-box .date-body table td {
-        padding: 4px 10px 0 10px; }
-        .datePicker .container .dateBox .hour-box .date-body table td span {
-          padding: 7px 5px;
-          border-radius: 4px; }
-          .datePicker .container .dateBox .hour-box .date-body table td span:hover {
-            background-color: #ffd9c2; }
+      .datePicker .container .dateBox .hour-box .date-body table {
+        /**/ }
+        .datePicker .container .dateBox .hour-box .date-body table td {
+          padding: 4px 10px 0 10px; }
+          .datePicker .container .dateBox .hour-box .date-body table td span {
+            padding: 7px 5px;
+            border-radius: 4px; }
+            .datePicker .container .dateBox .hour-box .date-body table td span:hover {
+              background-color: #ffd9c2; }
+        .datePicker .container .dateBox .hour-box .date-body table tbody tr:last-child td {
+          padding-bottom: 4px; }
       .datePicker .container .dateBox .minute-box .date-body table td, .datePicker .container .dateBox .second-box .date-body table td {
         padding: 8px 1px; }
         .datePicker .container .dateBox .minute-box .date-body table td span, .datePicker .container .dateBox .second-box .date-body table td span {
