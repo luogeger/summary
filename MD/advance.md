@@ -1,7 +1,7 @@
 ### http 
-#### [HTTP 协议入门](http://www.ruanyifeng.com/blog/2016/08/http.html)
-#### [互联网协议入门(一)](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)
-#### [互联网协议入门(二)](http://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html)
+- [HTTP 协议入门](http://www.ruanyifeng.com/blog/2016/08/http.html)
+- [互联网协议入门(一)](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)
+- [互联网协议入门(二)](http://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html)
 
 |1|2|3|
 |:--:|:--:|:--:|
@@ -25,7 +25,7 @@
 
     
 ### flow & paint
-#### [网页性能管理](http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html)
+- [网页性能管理](http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html)
 - 渲染(render)
     - layout - 生成布局(flow) - 重排(reflow)
     - paint - 布局绘制(paint) - 重绘(repaint)
@@ -34,8 +34,7 @@
 
     
 ### performance
-
-#### [火焰图](http://www.ruanyifeng.com/blog/2017/09/flame-graph.html)
-#### [简书](http://www.jianshu.com/p/4da0f0bda768)
-#### [demo指南](https://zhuanlan.zhihu.com/p/29879682)
+- [火焰图](http://www.ruanyifeng.com/blog/2017/09/flame-graph.html)
+- [简书](http://www.jianshu.com/p/4da0f0bda768)
+- [demo指南](https://zhuanlan.zhihu.com/p/29879682)
 
