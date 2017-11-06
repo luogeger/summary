@@ -1391,7 +1391,7 @@ textarea{
   tbody{
     tr{
       &:hover{
-        background-color: $sixC;
+        background-color: $sixC !important;
       }
     }
   }

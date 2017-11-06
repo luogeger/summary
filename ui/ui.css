@@ -963,7 +963,7 @@ textarea {
   .table th, .table td {
     text-align: center; }
   .table tbody tr:hover {
-    background-color: #CCCCCC; }
+    background-color: #CCCCCC !important; }
 
 /* 只有bottom边框 */
 .table-bottom thead, .table-bottom tr {
