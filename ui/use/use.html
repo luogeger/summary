@@ -31,7 +31,6 @@
     }
 </style>
 
-
 <div class="main">
     <div class="model-dom">
         <p>大江东去浪淘尽</p>
@@ -109,7 +108,7 @@
     
     <div class="info clearfix">
         <div class="info-sidle">
-            <ul>
+            <ul id="sidleNav">
                 <li class="down"><a href="#down">下载 <span>DownLoad</span></a></li>
                 <li class="icon"><a href="#icon">图标 <span>Icon</span></a></li>
                 <li class="typo"><a href="#typo">文字排版 <span>Typography</span></a></li>
@@ -1853,9 +1852,11 @@
         }
         
         //console.log(scrollHeight);
-        $('.info-content>div').each(function (index, item){
+        var $allDiv = $('.info-content>div')
+        $allDiv.each(function (index, item){
             var _item = $(item);
             var top = _item.offset().top;
+            console.log(top);
             var topHeight = _item.outerHeight() + top;
             var result = scrollHeight - top - 60;
             if(result > top && result < topHeight){
@@ -1870,8 +1871,19 @@
             }
             
         })
+        
+        // 滚动的时候计算，每个id到top的距离，在排他
+        
     };// end -- navLocation
 
+    
+    // -- 左边导航，滚动条
+    $('#sidleNav').slimScroll({
+        width: "100%",
+        height: "540px",
+        size: '5px'
+    })
+    
     // -- 返回顶部
     $('#backTop').click(function (){
         $divs.each(function (i, v){ $(v).children('.title').css('padding-top', '0') })// 去除所有 h2 的 padding-top

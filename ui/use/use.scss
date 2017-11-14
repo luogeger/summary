@@ -41,7 +41,10 @@
           }
 
           &:hover{
-            border-color: #000;
+            //border-color: #000;
+            a,span{
+              color: #000000;
+            }
           }
         }
 
