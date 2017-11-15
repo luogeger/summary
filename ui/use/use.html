@@ -1851,28 +1851,36 @@
             $('.info-sidle').css('top', '0');
         }
         
-        //console.log(scrollHeight);
-        var $allDiv = $('.info-content>div')
+        var $allNav = $('#sidleNav li');
+        //console.log($allNav);
+        var $allDiv = $('.info-content>div'); // 右边的每个div
+        var totalDiv = [] ;// 每个div的top值和height
+        //console.log(totalDiv);
+        var result = scrollHeight + 60;// 滚动出去的距离
         $allDiv.each(function (index, item){
             var _item = $(item);
-            var top = _item.offset().top;
-            console.log(top);
-            var topHeight = _item.outerHeight() + top;
-            var result = scrollHeight - top - 60;
-            if(result > top && result < topHeight){
-//                $lis.each(function (i, v){ $(v).removeClass('li-border') })// 排他
-//                var _id = _item.attr('id');
-//                console.log(_id);
-//                $lis.each(function (index, item){
-//                    if($(item).attr('class') == _id){
-//                        $(item).addClass('li-border');
-//                    }
-//                })
+            var top = _item.offset().top;// 每个dom 到浏览器顶端的距离
+            var domHeight = _item.outerHeight();// 每个dom的高度
+            var dom_obj = {
+                item: _item,
+                top: top,
+                height: domHeight,
             }
-            
+            totalDiv.push(dom_obj)
+        })// 每个div的 top 和 height
+        
+        $(totalDiv).each(function (index, val){
+            var _item = $(val)
+            if(result >= _item[0].top && result <= _item[0].height + _item[0].top){
+                console.log(index);
+                console.log($allNav.eq(index));
+                $allNav.each(function (i, v){$(v).removeClass('li-border')})
+                $allNav.eq(index).addClass('li-border');
+            }
         })
         
-        // 滚动的时候计算，每个id到top的距离，在排他
+        
+        
         
     };// end -- navLocation
 
