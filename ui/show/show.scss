@@ -15,8 +15,29 @@
   .info{
     text-align: center;
     padding: 50px 0;
-    img{
-      width: 1250px;
+    .pop-up{
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      overflow: auto;
+      img{
+        width: 100%;
+      }
+    }
+    .images{
+      img{
+        width: 43%;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        padding: 10px;
+        cursor: pointer;
+      }
+      img:first-child{
+        margin-left: 4%;
+      }
     }
   }
 

@@ -10,8 +10,24 @@
 .main .info {
   text-align: center;
   padding: 50px 0; }
-  .main .info img {
-    width: 1250px; }
+  .main .info .pop-up {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto; }
+    .main .info .pop-up img {
+      width: 100%; }
+  .main .info .images img {
+    width: 43%;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer; }
+  .main .info .images img:first-child {
+    margin-left: 4%; }
 .main .footer {
   text-align: center;
   font-size: 12px;

@@ -6,7 +6,30 @@
         <p class="explain">本页面展示内容都是基于Xiaoi UI框架构建, 并且用心设计。我们追求卓越, 然时间、经验有很多不足的地方, 希望大家包容、不吝啬赐教, 给我们提意见、建议。感谢你们 !</p>
     </div>
     <div class="info">
-        <img src="../asset/images/show.png" alt="">
+        <div class="pop-up hide">
+            <img src="" alt="">
+        </div>
+        <div class="images">
+            <img src="../asset/images/login.png" alt="">
+            <img src="../asset/images/web.png" alt="">
+        </div>
     </div>
     <p class="footer">版权所有 © 上海智臻智能网络科技股份有限公司 | 2017 沪ICP备 11021460</p>
 </div>
+
+<script>
+    var $imgs = $('.images img');
+    var $pop = $('.pop-up');
+    $imgs.each(function (index, item){
+        var _item = $(item);
+        _item.click(function (){
+            var src = $(this).attr('src');
+            $pop.removeClass('hide').css('overflow', 'auto').children('img').attr('src', src)
+            $('body').css('overflow', 'hidden')
+        })
+    })
+    $pop.children('img').click(function (){
+        $pop.addClass('hide').children('img').attr('src', '')
+        $('body').css('overflow', 'auto')
+    })
+</script>
