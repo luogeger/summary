@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 秒表
+    function toDou(n) {
+        return n < 10 ? '0' + n : '' + n;
+    }
+    window.onload = function () {
+        var oT = document.getElementById('t1');
+        var oBtn = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+        var timer = null;
+        var num = parseInt(oT.value);
+        var bSin = false;
+        oBtn.onclick = function () {
+            if (bSin) {
+                return;
+            }
+            bSin = true;
+            clearInterval(timer);
+            function m() {
+                num++;
+                var iM = parseInt(num / 60);
+                var iS = num % 60;
+                oT.value = toDou(iM) + ':' + toDou(iS);
+            }
+
+            m();
+            timer = setInterval(m, 1000);
+        };
+        oBtn2.onclick = function () {
+            clearInterval(timer);
+            bSin = false;
+        };
+    };
+
+    // 拖拽
+    var oBox = document.getElementById('box');
+    oBox.onmousedown = function (ev) {
+        var oEvent = ev || event;
+        var disX = oEvent.clientX - oBox.offsetLeft;
+        var disY = oEvent.clientY - oBox.offsetTop;
+        document.onmousemove = function (ev) {
+            var oEvent = ev || event;
+            oBox.style.left = oEvent.clientX - disX + 'px';
+            oBox.style.top = oEvent.clientY - disY + 'px';
+        };
+        document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        };
+        return false;
+    };
+
+    // 键盘控制元素
+    var oBox = document.getElementById('box');
+    document.onkeydown = function (ev) {
+        var oEvent = ev || event;
+        switch (oEvent.keyCode) {
+            case 37:
+                oBox.style.left = oBox.offsetLeft - 10 + 'px';
+                break;
+            case 39:
+                oBox.style.left = oBox.offsetLeft + 10 + 'px';
+                break;
+            case 40:
+                oBox.style.top = oBox.offsetTop + 10 + 'px';
+                break;
+        }
+    };
+
+    // 无线运动
+    var oBtn = document.getElementsByTagName('input')[0];
+    var timer = null;
+    var oBall = document.getElementById('ball');
+    var arr = [{left: 100, top: 100}, {left: 800, top: 200}, {left: 400, top: 600}];
+    var n = 0;
+    oBtn.onclick = function () {
+        next();
+    };
+    function next() {
+        timer = setInterval(function () {
+            move(oBall, {left: arr[n % arr.length].left, top: arr[n % arr.length].top}, {
+                complete: function () {
+                    next();
+                }
+            })
+            n++;
+        }, 300);
+    }
+    
+    // 文本时钟
+    function toDou(n) {
+        return n < 10 ? '0' + n : '' + n;
+    }
+    window.onload = function() {
+        var oDiv = document.getElementById('div1');
+
+        function clock() {
+            var oDate = new Date();
+            var iH = oDate.getHours();
+            var iM = oDate.getMinutes();
+            var iS = oDate.getSeconds();
+            oDiv.innerHTML = toDou(iH) + ':' + toDou(iM) + ':' + toDou(iS);
+        }
+
+        clock();
+        setInterval(clock, 1000);
+    }
+    
+    //
+</script>
