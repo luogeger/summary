@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scroll</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        #app{
+            padding: 60px 0 0 180px;
+            border: 2px solid #ff0000;
+        }
+
+        .main{
+            position: relative;
+            height: 10000px;
+            background-color: #f6f7f8;
+
+        }
+        .right{
+            height: 500px;
+            width: 300px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="main">
+            <div class="right">
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../fileJs/jquery-1.12.4.min.js"></script>
+<script>
+    //  固定标签列表
+    $(window).scroll(function () {
+        var top = $(window).scrollTop();
+        var maxTop = $('.main').height() - $('.right').outerHeight() -2;
+        top > maxTop ? (top = maxTop +'px') : (top = top +'px');
+
+        console.log($('.main').height(), 'main');
+        console.log($('.right').outerHeight(), 'right');
+        console.log(maxTop, 'maxTop');
+        console.log(top);
+
+
+        $('.right').css('top', top)
+    });
+</script>
