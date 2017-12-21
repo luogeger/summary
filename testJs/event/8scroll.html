@@ -11,28 +11,33 @@
 
         #app{
             padding: 60px 0 0 180px;
-            border: 2px solid #ff0000;
         }
 
         .main{
             position: relative;
+            border: 1px solid #000000;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .left{
+            border: 1px solid red;
             height: 10000px;
-            background-color: #f6f7f8;
-
+            float: left;
+            width: 69%;
         }
         .right{
+            float: right;
             height: 500px;
-            width: 300px;
-            position: absolute;
-            right: 0;
-            top: 0;
+            width: 30%;
             border: 1px solid blue;
+            margin-top: 0px;
         }
     </style>
 </head>
 <body>
     <div id="app">
         <div class="main">
+            <div class="left"></div>
             <div class="right">
 
             </div>
@@ -46,7 +51,7 @@
     //  固定标签列表
     $(window).scroll(function () {
         var top = $(window).scrollTop();
-        var maxTop = $('.main').height() - $('.right').outerHeight() -2;
+        var maxTop = $('.main').height() - $('.right').outerHeight() +60 -2;
         top > maxTop ? (top = maxTop +'px') : (top = top +'px');
 
         console.log($('.main').height(), 'main');
@@ -55,6 +60,6 @@
         console.log(top);
 
 
-        $('.right').css('top', top)
+        $('.right').css('margin-top', top)
     });
 </script>
