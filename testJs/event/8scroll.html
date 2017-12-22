@@ -9,39 +9,61 @@
             margin: 0;
         }
 
-        #app{
+        #wrapper{
             padding: 60px 0 0 180px;
         }
 
-        .main{
+        #main{
             position: relative;
             border: 1px solid #000000;
             overflow: hidden;
             padding: 10px;
         }
+
+        #nav{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #ccc;
+            z-index: 1;
+        }
+
+        #sidle{
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 180px;
+            background-color: #eee;
+
+        }
+
         .left{
             border: 1px solid red;
             height: 10000px;
             float: left;
-            width: 69%;
+            width: 79%;
+            border-radius: 4px;
         }
         .right{
             float: right;
             height: 500px;
-            width: 30%;
+            width: 20%;
             border: 1px solid blue;
             margin-top: 0px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
-    <div id="app">
-        <div class="main">
+    <div id="wrapper">
+        <div id="nav"><h1>nav</h1></div>
+        <div id="sidle"><h1>sidle</h1></div>
+
+        <div id="main">
             <div class="left"></div>
-            <div class="right">
-
-            </div>
-
+            <div class="right"></div>
         </div>
     </div>
 </body>
@@ -51,10 +73,10 @@
     //  固定标签列表
     $(window).scroll(function () {
         var top = $(window).scrollTop();
-        var maxTop = $('.main').height() - $('.right').outerHeight() +60 -2;
+        var maxTop = $('#main').height() - $('.right').outerHeight() +60 -2;
         top > maxTop ? (top = maxTop +'px') : (top = top +'px');
 
-        console.log($('.main').height(), 'main');
+        console.log($('#main').height(), 'main');
         console.log($('.right').outerHeight(), 'right');
         console.log(maxTop, 'maxTop');
         console.log(top);
