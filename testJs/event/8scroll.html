@@ -46,12 +46,19 @@
             width: 79%;
             border-radius: 4px;
         }
-        .right{
+
+        #right{
+            width: 20%;
             float: right;
-            height: 500px;
+        }
+        .right{
+            min-height: 350px;
+            position: fixed;
+            top: 70px;
+            right: 10px;
+            bottom: 10px;
             width: 20%;
             border: 1px solid blue;
-            margin-top: 0px;
             border-radius: 4px;
         }
     </style>
@@ -62,7 +69,63 @@
         <div id="sidle"><h1>sidle</h1></div>
 
         <div id="main">
-            <div class="left"></div>
+            <div class="left">
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h1> thisi is left</h1>
+                <h2> this id left --------</h2>
+            </div>
+            <div id="right"></div>
             <div class="right"></div>
         </div>
     </div>
@@ -71,17 +134,20 @@
 <script src="../../fileJs/jquery-1.12.4.min.js"></script>
 <script>
     //  固定标签列表
+    var width = $('#right').width() +'px';
+    $('.right').css('width', width)
+
     $(window).scroll(function () {
         var top = $(window).scrollTop();
         var maxTop = $('#main').height() - $('.right').outerHeight() +60 -2;
         top > maxTop ? (top = maxTop +'px') : (top = top +'px');
+        //top < 10 ? (top = '10px') : (top = top +'px');
+        //console.log($('#main').height(), 'main');
+        //console.log($('.right').outerHeight(), 'right');
+        //console.log(maxTop, 'maxTop');
+        //console.log(top);
 
-        console.log($('#main').height(), 'main');
-        console.log($('.right').outerHeight(), 'right');
-        console.log(maxTop, 'maxTop');
-        console.log(top);
 
 
-        $('.right').css('margin-top', top)
     });
 </script>
