@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>progress</title>
+    <style>
+        .pro-wrap{
+            width: 400px;
+            height: 15px;
+            background-color: #C8C8C8;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pro-bar{
+            height: 100%;
+            border-radius: 20px;
+            background-color: rgb(43, 194, 83);
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .pro-bar:after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 20px;
+            background-size: 50px 50px;
+            background-image: linear-gradient(
+                    -45deg,
+                    rgba(255, 255, 255, .2) 25%,
+                    transparent 25%,
+                    transparent 50%,
+                    rgba(255, 255, 255, .2) 50%,
+                    rgba(255, 255, 255, .2) 75%,
+                    transparent 75%,
+                    transparent
+            );
+            animation: autoMove  2s  infinite linear;
+        }
+        @keyframes autoMove{
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="pro-wrap">
+    <div class="pro-bar" style="width: 45%;"></div>
+</div>
+</body>
+</html>
