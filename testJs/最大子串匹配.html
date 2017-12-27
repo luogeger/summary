@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script type="text/javascript">
+    var str1 = '住所（地址）：上海市松江区沈砖公路5398弄13-14号   ';
+    var str2 = '上海市松江区沈砖公路5398弄13-14号法定代表人/负责人: 王五贷款要素信息：贷款金额:  10000.00   。贷款期限: 12 个月，贷款起始日以贷款本金划离乙方账户之日（即贷款发放之日）为准。借款人指定贷款发放账户:户名： 张三 开户行： 上海银行 账号： 6312456121214560 借款人指定还款';
+    function search(str1, str2) {
+        var i = j = k = a = jk = kk = 0;
+        var m = str1.length;
+        var n = str2.length;
+        var index = 0;
+        var maxlen = 0;
+        var str = "";
+        var flag = 0;
+        for (i = 0; i < n; i++) {
+            k = i;
+            for (j = 0; j < m; j++) {
+                a = 0;
+                flag = 0;
+                jk = j;
+                kk = k;
+                while (jk <= m && str1[kk] == str2[jk]) {
+                    kk++;
+                    jk++;
+                    a++;
+                    flag = 1;
+                }
+                if (flag == 1) {
+                    if (a > maxlen) {
+                        maxlen = a;
+                        index = jk - a;//匹配的首项
+                    }
+                }
+            }
+
+        }
+        for (; maxlen > 0; maxlen--) {
+            str += str2[index++];
+
+        }
+        return str;
+    }
+    console.log(search(str1, str2));
+</script>
+<body>
+<div>11</div>
+</body>
+</html>
