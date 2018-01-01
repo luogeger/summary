@@ -1,0 +1,201 @@
+@charset "utf-8";
+*{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+body{
+  background-color: #F5F5D5;
+  padding-left: 100px;
+
+  .explain{
+    border: 1px solid #e0dfcc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 0;
+    display: inline-block;
+    background-color: #F5F2F0;
+  }
+
+  .title{
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #F5F2F0;
+    border-radius: 4px;
+    display: inline-block;
+    border: 2px solid #e0dfcc;
+  }
+
+  .box{
+    width: 330px;
+    height: 330px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #e0dfcc;
+    display: flex;
+    margin: 10px 0;
+  }
+
+  .item{
+    width: 100px;
+    height: 100px;
+    background-color: #FFD200;
+    border-radius: 2px;
+    margin: 5px;
+  }
+
+  .full{
+    flex-wrap: wrap;
+  }
+}// body
+
+
+.one-box{
+  .one-1{
+    display: flex;
+  }
+
+  .one-2-1{
+    display: flex;
+    justify-content: center;
+  }
+
+  .one-2-2{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .one-3-1{
+    display: flex;
+    align-items: center;
+  }
+
+  .one-3-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .one-3-3{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .one-3-4{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}// one
+
+.two-box{
+  .two-1{
+    justify-content: space-between;
+  }
+
+  .two-2{
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .two-3{
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .two-4{
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .two-5{
+    .item:nth-child(2){
+      align-self: center;
+    }
+  }
+
+  .two-6{
+    .item:nth-child(2){
+      align-self: flex-end;
+    }
+  }
+
+  .two-7{
+    justify-content: space-between;// 整体先水平布局
+    .item:nth-child(2){
+      align-self: flex-end;// 局部在垂直布局
+    }
+  }
+}// two
+
+.three-box{
+  .three-1{
+    .item:nth-child(2){
+      align-self: center;
+    }
+    .item:nth-child(3){
+      align-self: flex-end;
+    }
+  }
+}// three
+
+.four-box{
+  .four-1{
+    flex-wrap: wrap;// 不占用最后一个元素的位置
+    justify-content: center;// 水平方向控制的在 container
+    .item:last-child{
+      align-self: flex-end;// 只能垂直方向控制
+    }
+  }
+}// four
+
+.five-box{
+  .five-1{
+    flex-wrap: wrap;// entire
+    .row{
+      display: flex;// entire
+      flex-basis: 100%;// entire
+    }
+
+    .row:nth-child(1){
+      justify-content: space-between;
+    }
+
+    .row:nth-child(2){
+      justify-content: center;
+    }
+
+    .row:nth-child(3){
+      justify-content: space-between;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

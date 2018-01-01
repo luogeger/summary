@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="flex.css">
+    <title>flex</title>
+</head>
+<body>
+    <h1>弹性布局</h1>
+    <p class="explain">基本概念：分为容器container和项目item</p>
+    <h2>container有6个属性</h2>
+    <ul>
+        <li>1.flex-direction: 决定主轴的方向 -> 就是item的排列方向</li>
+        <li>2.flex-wrap: 默认下，item在一条轴线上，这个属性定义轴线放不了那么多item，决定如何换行</li>
+        <li>3.flex-flow: 是上面2个的合并属性</li>
+        <li>4.justify-content: 定义item在主轴上面的对齐方式</li>
+        <li>5.align-items: 定义item在交叉轴上的对齐方式</li>
+        <li>6.align-content: 定义了多根轴线的对齐方式，<strong>如果只有一根轴线，这个属性就不起作用</strong></li>
+    </ul>
+
+    <div class="box full">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <h3>一、单项目</h3>
+    <div class="one-box">
+        <p class="title">1.1 只有左上角1个点的情况。Flex布局默认就是首行左对齐，所以一行代码就够了。</p>
+        <div class="box one-1">
+            <div class="item"></div>
+        </div>
+
+        <p class="title">1.2设置项目的对齐方式，就能实现居中对齐和右对齐。</p>
+        <div class="box one-2-1">
+            <div class="item"></div>
+        </div>
+        <div class="box one-2-2">
+            <div class="item"></div>
+        </div>
+
+        <p class="title">1.3交叉轴对齐方式，可以垂直移动主轴。</p>
+        <div class="box one-3-1">
+            <div class="item"></div>
+        </div>
+
+        <div class="box one-3-2">
+            <div class="item"></div>
+        </div>
+
+        <div class="box one-3-3">
+            <div class="item"></div>
+        </div>
+
+        <div class="box one-3-4">
+            <div class="item"></div>
+        </div>
+    </div>
+
+    <h3>二、双项目</h3>
+    <div class="two-box">
+        <div class="box two-1">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="box two-2">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="box two-3">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="box two-4">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="box two-5">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="box two-6">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="box two-7">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+
+    <h3>三、三项目</h3>
+    <div class="three-box">
+        <div class="box three-1">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+
+    <h3>四、四项目</h3>
+    <div class="four-box">
+        <div class="box four-1">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+
+    <h3>五、五项目</h3>
+    <div class="five-box">
+        <div class="box five-1">
+            <div class="row">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="row">
+                <div class="item"></div>
+            </div>
+            <div class="row">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
