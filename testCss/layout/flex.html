@@ -8,15 +8,54 @@
 <body>
     <h1>弹性布局</h1>
     <p class="explain">基本概念：分为容器container和项目item</p>
-    <h2>container有6个属性</h2>
-    <ul>
-        <li>1.flex-direction: 决定主轴的方向 -> 就是item的排列方向</li>
-        <li>2.flex-wrap: 默认下，item在一条轴线上，这个属性定义轴线放不了那么多item，决定如何换行</li>
-        <li>3.flex-flow: 是上面2个的合并属性</li>
-        <li>4.justify-content: 定义item在主轴上面的对齐方式</li>
-        <li>5.align-items: 定义item在交叉轴上的对齐方式</li>
-        <li>6.align-content: 定义了多根轴线的对齐方式，<strong>如果只有一根轴线，这个属性就不起作用</strong></li>
-    </ul>
+
+    <h2>container 的6个属性</h2>
+    <ol>
+        <li><span class="key">flex-direction</span>: 决定主轴的方向 -> 就是item的排列方向</li>
+        <li><span class="key">flex-wrap</span>: 默认下，item在一条轴线上，这个属性定义轴线放不了那么多item，决定如何换行</li>
+        <li><span class="key">flex-flow</span>: 是上面2个的合并属性</li>
+        <li><span class="key">justify-content</span>: 定义item在主轴上面的对齐方式</li>
+        <li><span class="key">align-items</span>: 定义item在交叉轴上的对齐方式</li>
+        <li><span class="key">align-content</span>: 定义了多根轴线的对齐方式，<strong>如果只有一根轴线，这个属性就不起作用</strong></li>
+    </ol>
+
+    <h2>item 的6个属性</h2>
+    <ol>
+        <li><span class="key">order</span>:
+            <span class="value">integer</span>
+            <p>定义item的排列顺序，数值越小，排列越靠前，默认为0</p>
+        </li>
+        <li><span class="key">flex-grow</span>:
+            <span class="value">number</span>
+            <p>定义了item的放大比例额，默认是0，即使存在剩余空间，也不放大。</p>
+        </li>
+        <li><span class="key">flex-shrink</span>:
+            <span class="value">number</span>
+            <p>定义了item的缩小比例，默认是1，如果空间不足，这个item缩小。空间不足的时候，所有item都等比缩小，设置有flex-shrink: 0;的item不会缩小</p>
+        </li>
+        <li><span class="key">flex-basis</span>:
+            <span class="value">100%</span>
+            <p>单个item占据整行</p>
+        </li>
+        <li><span class="key">flex</span>:
+            <span class="value">default : 0 1 auto</span>
+            <span class="value">auto : 1 1 auto</span>
+            <span class="value">none : 0 0 auto</span>
+            <p>前面3个属性的简写，有1个默认值，和2个快捷值</p>
+        </li>
+        <li><span class="key">align-self</span>:
+            <span class="value">auto</span>
+            <span class="value">flex-start</span>
+            <span class="value">flex-end</span>
+            <span class="value">center</span>
+            <span class="value">baseline</span>
+            <span class="value">stretch</span>
+            <p>为自己单独设置和其他item不一样的对齐方式，会覆盖align-items属性。
+                默认是auto,表示继承container的align-items属性，
+                 如果没有container，就等同于stretch</p>
+        </li>
+    </ol>
+
 
     <div class="box full">
         <div class="item"></div>

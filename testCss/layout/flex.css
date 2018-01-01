@@ -1,11 +1,25 @@
 * {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
-  box-sizing: content-box; }
+  box-sizing: content-box;
+  font-family: Arial, 'Times New Roman'; }
 
 body {
   background-color: #F5F5D5;
   padding-left: 100px; }
+  body ol > li:not(:last-child) {
+    margin-bottom: 10px; }
+  body ol .key {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 0px 5px;
+    border: 1px solid #e0dfcc; }
+  body ol .value {
+    text-decoration: underline;
+    margin: 0 10px; }
+  body ol p {
+    margin: 10px 0 0 50px; }
   body .explain {
     border: 1px solid #e0dfcc;
     border-radius: 4px;
