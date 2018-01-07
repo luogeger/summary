@@ -3,7 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        .li-1, .li-2, .li-3, .li-4{
+            color: #fff;
+            padding: 0px 5px;
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        .li-1{
+            background-color: #ff0000;
+        }
+
+        .li-2{
+            background-color: #ECC849;
+        }
+
+        .li-3{
+            background-color: #0000ff;
+        }
+
+        .li-4{
+            background-color: #00ff00;
+        }
+    </style>
 </head>
+<body>
+    <div>
+        <p>中华<span class="li-1">人民</span>共和国<span class="li-2">湖北省</span>仙桃市<span class="li-3">长埫口镇</span>曾台村</p>
+        <p>中华<span class="li-1">人<span class="li-4">民</span><span>共和国</span><span class="li-2">湖北省</span>仙桃市<span class="li-3">长</span>埫口镇</span>曾台村</p>
+    </div>
+</body>
+</html>
 <script type="text/javascript">
     var str1 = '住所（地址）：上海市松江区沈砖公路5398弄13-14号   ';
     var str2 = '上海市松江区沈砖公路5398弄13-14号法定代表人/负责人: 王五贷款要素信息：贷款金额:  10000.00   。贷款期限: 12 个月，贷款起始日以贷款本金划离乙方账户之日（即贷款发放之日）为准。借款人指定贷款发放账户:户名： 张三 开户行： 上海银行 账号： 6312456121214560 借款人指定还款';
@@ -45,7 +76,3 @@
     }
     console.log(search(str1, str2));
 </script>
-<body>
-<div>11</div>
-</body>
-</html>
