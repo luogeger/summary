@@ -852,10 +852,22 @@ input, button, textarea, select{
 ```
 
 - 12.字体
+    -
 ```css
     p{
         font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;
         font-style: italic;
+    }
+
+    code, pre {
+        font-family: 'Monaco','Lucida Console', monospace;// 第二个字体
+    }
+
+    h1.title {
+        font-size: 60px;
+        font-weight: bold;
+        font-style: italic;
+        font-family: Georgia;// 粗体，斜体，印刷体
     }
 ```
 
