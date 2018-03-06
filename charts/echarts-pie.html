@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts</title>
+</head>
+<body>
+    <h3>饼图</h3>
+    <div id="pie-0" style="width: 150px; height: 150px; border: 1px solid;"></div>
+
+    <div id="pie-1" style="width: 600px; height: 400px; border: 1px solid;"></div>
+</body>
+</html>
+<script src="../file-js/jquery-1.12.4.min.js"></script>
+<script src="../file-js/echarts.min.js"></script>
+<script>
+    +function() {
+        var box = echarts.init(document.getElementById('pie-0'));
+        var option = {
+            //backgroundColor:'rgba(29,152,248, .4)',
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)",// 格式，
+                show: false,// 不显示标题
+            },
+            legend: {
+                orient: 'vertical',
+                x: 'left',
+                selectedMode:false,
+                data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+            },
+            series: [
+                {
+                    name:'访问来源',
+                    type:'pie',
+                    radius: ['90%', '70%'],
+                    avoidLabelOverlap: false,
+                    hoverAnimation: false,// hover 动画
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'center',
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold',
+                                color: '#222222'
+                            }
+                        },
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    itemStyle: {
+                      normal: {
+                          color: '#FF8A41'
+                      }
+                    },
+                    data:[
+                        {
+                            value:67,
+                            name:'67%',
+                        },
+                        {
+                            value:33,
+                            itemStyle: {
+                                normal: {
+                                    color: '#D1D2D3',
+                                },
+                                emphasis: {color: '#D1D2D3'},// 悬浮不显示高亮
+                            },
+                        },
+                    ]
+                }
+            ]
+        };
+        box.setOption(option);
+    }();
+
+    +function (){
+        var box = echarts.init(document.getElementById('pie-1'));
+        option = {
+            series: [{
+                name: '饼图二',
+                type: 'pie',
+                radius: ['90%', '95%'],
+                label: {
+                    normal: {
+                        position: 'center'
+                    }
+                },
+                data: [
+                    {
+                        value: 63,
+                        itemStyle: {
+                            normal: {
+                                color: '#017DE2',
+                                shadowBlur: 0,
+                                shadowColor: '#ff0000'
+                            }
+                        },
+                        label: {
+                            normal: {
+                                formatter: '{d}%',
+                                textStyle: {
+                                    color: '#aeb2b7',
+                                    fontSize: 35,
+                                }
+                            }
+                        },
+                        hoverAnimation: false
+                    },
+                    {
+                        value: 37,
+                        name: '占位',
+                        label: {
+                            normal: {
+                                formatter: '\n智能客服满意度',
+                                textStyle: {
+                                    color:'#aeb2b7', fontSize:12, fontFamily:'微软雅黑'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            show: false,// 不显示标题
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: '#0C0429',
+                                shadowBlur: 0,
+                            },
+
+                        },
+                        hoverAnimation: false
+                    }
+                ]// data
+            }]// series
+        };// option
+        box.setOption(option);
+    }();
+</script>
