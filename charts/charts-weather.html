@@ -2,14 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>curve-charts</title>
+    <title>weather-chart</title>
 </head>
 <body>
-    <div id="curve-2" style="width: 600px; height: 400px; margin: 0 auto;"></div>
-    <br>
-    <div id="curve-1" style="width: 1000px; height: 600px; margin: 0 auto;"></div>
-    <br>
-
+<div id="curve-1" style="width: 1000px; height: 600px; margin: 0 auto;"></div>
 </body>
 </html>
 <script src="../file-js/jquery-1.12.4.min.js"></script>
@@ -18,6 +14,11 @@
     var box = echarts.init(document.getElementById('curve-1'));
 
     $.getJSON('charts-data.json', function (rawData) {
+        var weatherIcons = {
+            'Showers': '../images/w_showers.png',
+            'Sunny': '../images/w_sunny.png',
+            'Cloudy': '../images/w_cloudy.png'
+        };
 
         var directionMap = {};
         echarts.util.each(
@@ -29,6 +30,9 @@
 
         var data = echarts.util.map(rawData.data, function (entry) {
             return [entry.time, entry.windSpeed, entry.R, entry.waveHeight];
+        });
+        var weatherData = echarts.util.map(rawData.forecast, function (entry) {
+            return [entry.localDate, 0, weatherIcons[entry.skyIcon], entry.minTemp, entry.maxTemp];
         });
 
 
@@ -108,8 +112,8 @@
             },// title
             tooltip: {
                 trigger: 'axis',
+                //show: false,
                 formatter: function (params) {
-                    console.log(params)
                     return [
                         echarts.format.formatTime('yyyy-MM-dd', params[0].value[dims.time])
                         + ' ' + echarts.format.formatTime('hh:mm', params[0].value[dims.time]),
@@ -119,11 +123,14 @@
                     ].join('<br>');
                 }
             },// tooltip
+            grid: {
+                top: 160,
+                bottom: 125
+            },// grid
             xAxis: {
                 type: 'time',
                 maxInterval: 3600 * 1000 * 24,
                 splitLine: {
-                    show: false,// 分隔线
                     lineStyle: {
                         color: '#ddd'
                     }
@@ -131,30 +138,84 @@
             },// xAxis
             yAxis: [
                 {
-                    name: '每小时更新一次数据',
+                    name: '风速（节）',
+                    nameLocation: 'middle',
+                    nameGap: 35,
                     axisLine: {
                         lineStyle: {
-                            color: '#0094ff'
+                            color: '#666'
                         }
                     },
                     splitLine: {
-                        show: false,// 分隔线
                         lineStyle: {
-                            color: '#ff0000'
+                            color: '#ddd'
                         }
                     }
                 },
                 {
-                    axisLine: {show: false},// 右边的线
-                    axisTick: {show: false},// 右边刻度
-                    axisLabel: {show: false},// 右边的数字
-                    splitLine: {show: false},// 网格线
+                    name: '浪高（米）',
+                    nameLocation: 'middle',
+                    nameGap: 35,
+                    max: 6,
+                    axisLine: {
+                        lineStyle: {
+                            color: '#015DD5'
+                        }
+                    },
+                    splitLine: {show: false}
+                },
+                {
+                    axisLine: {show: false},
+                    axisTick: {show: false},
+                    axisLabel: {show: false},
+                    splitLine: {show: false}
                 }
             ],// yAxis
+            visualMap: {
+                type: 'piecewise',
+                // show: false,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: 10,
+                seriesIndex: 1,
+                dimension: 1,
+                pieces: [
+                    {
+                        gte: 17,
+                        color: '#18BF12',
+                        label: '大风（>=17节）'
+                    },
+                    {
+                        gte: 11,
+                        lt: 17,
+                        color: '#f4e9a3',
+                        label: '中风（11  ~ 17 节）'
+                    },
+                    {
+                        lt: 11,
+                        color: '#D33C3E',
+                        label: '微风（小于 11 节）'
+                    }
+                ],// pieces
+            },// visualMap
+            dataZoom: [
+                {
+                    type: 'inside',
+                    xAxisIndex: 0,
+                    minSpan: 5
+                },
+                {
+                    type: 'slider',
+                    xAxisIndex: 0,
+                    minSpan: 5,
+                    height: 20,
+                    bottom: 50,
+                    handleIcon: 'M10.7,11.9H9.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+                    handleSize: '120%'
+                }
+            ],// dataZoom 缩放
             series: [
                 {
-                    //z: 2,
-                    data: data,
                     type: 'line',
                     yAxisIndex: 1,
                     showSymbol: false,
@@ -180,124 +241,65 @@
                     },
                     lineStyle: {
                         normal: {
-                            color: 'rgba(88,160,253,1)',// 曲线的颜色
+                            color: 'rgba(88,160,253,1)'
                         }
                     },
                     itemStyle: {
                         normal: {
-                            color: 'rgba(88,160,253,1)',// 曲线上面小球的颜色
+                            color: 'rgba(88,160,253,1)'
                         }
                     },
                     encode: {
                         x: dims.time,
                         y: dims.waveHeight
                     },
+                    data: data,
+                    z: 2
                 },// 曲线
+                {
+                    type: 'custom',
+                    renderItem: renderArrow,
+                    encode: {
+                        x: dims.time,
+                        y: dims.windSpeed
+                    },
+                    data: data,
+                    z: 10
+                },// 箭头
+                {
+                    type: 'line',
+                    symbol: 'none',
+                    encode: {
+                        x: dims.time,
+                        y: dims.windSpeed
+                    },
+                    lineStyle: {
+                        normal: {
+                            color: '#aaa',
+                            type: 'dotted'
+                        }
+                    },
+                    data: data,
+                    z: 1
+                },// 虚线
+                {
+                    type: 'custom',
+                    renderItem: renderWeather,
+                    data: weatherData,
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: function (param) {
+                            return param.value[dims.time] + ': '
+                                + param.value[dims.minTemp] + ' - ' + param.value[dims.maxTemp] + '°';
+                        }
+                    },
+                    yAxisIndex: 2,
+                    z: 11
+                },// 天气
             ],// series
         };
 
         box.setOption(option);
     });
 
-</script>
-
-<script>
-    var box2 = echarts.init(document.getElementById('curve-2'));
-
-    option2 = {
-        color: ['#3398DB'],
-        tooltip : {
-            trigger: 'axis',
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'line'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-        },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-        xAxis : [
-            {
-                type : 'category',
-                boundaryGap: false,// 标准坐标轴
-                data : ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
-                axisTick: {
-                    alignWithLabel: true
-                }
-            }
-        ],
-        yAxis : [
-            {
-                name: '每小时更新一次数据',
-                type : 'value',
-            }
-        ],
-        series : [
-            {
-                name:'直接访问',
-                type:'line',
-                barWidth: '60%',
-                //data:[10, 152, 200, 334, 390, 330, 220, 390, 330, 220],
-                data:[50,58,78,76,90,87,88,68,97,88],
-                areaStyle: {
-                    normal: {
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                offset: 0, color: 'rgba(88,160,253,1)'
-                            }, {
-                                offset: 0.5, color: 'rgba(88,160,253,0.7)'
-                            }, {
-                                offset: 1, color: 'rgba(88,160,253,0)'
-                            }]
-                        }
-                    }
-                },
-            },
-
-            {
-                name:'直接访问',
-                type:'line',
-                barWidth: '60%',
-                //data:[34, 76, 340, 110, 220, 130,320, 220, 130,320],
-                data:[35,43,21,14,42,33,29,36,29,44],
-                areaStyle: {
-                    normal: {
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                offset: 0, color: 'rgba(170,49,77,1)'
-                            }, {
-                                offset: 0.5, color: 'rgba(170,49,77,0.7)'
-                            }, {
-                                offset: 1, color: 'rgba(170,49,77,0)'
-                            }]
-                        }
-                    }
-                },
-                lineStyle: {
-                    normal: {
-                        color: 'rgba(170,49,77,1)',// 曲线的颜色
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        color: 'rgba(170,49,77,1)',// 曲线上面小球的颜色
-                    }
-                },
-            }
-        ]
-    };
-
-    box2.setOption(option2);
 </script>
