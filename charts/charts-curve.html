@@ -5,7 +5,7 @@
     <title>curve-charts</title>
 </head>
 <body>
-    <div id="curve-2" style="width: 600px; height: 400px; margin: 0 auto;"></div>
+    <div id="curve-2" style="width: 100%; height: 400px; margin: 0 auto;"></div>
     <br>
     <div id="curve-1" style="width: 1000px; height: 600px; margin: 0 auto;"></div>
     <br>
@@ -15,6 +15,135 @@
 <script src="../file-js/jquery-1.12.4.min.js"></script>
 <script src="../file-js/echarts.min.js"></script>
 <script>
+    var data;
+
+    $.ajax({
+        type: 'GET',
+        url: 'charts-data.json',
+        success: function (reuslts) {
+            data = reuslts.curve;
+            console.log(data)
+            renderCurve (data)
+        }
+    });
+
+    function renderCurve (data) {
+        var box2 = echarts.init(document.getElementById('curve-2'));
+
+        option2 = {
+            //color: ['#ff0000'],
+            legend: {
+                data:['岗位知识','其他知识'],
+                right: '5%',
+            },
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                    type : 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            grid: {
+                left: '5%',
+                right: '5%',
+                bottom: '1%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap: false,// 标准坐标轴
+                    data: data.axisX,
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    name: '每小时更新一次数据',
+                    type : 'value',
+                }
+            ],
+            series : [
+                {
+                    data: data.red,
+                    name:'岗位知识',
+                    type:'line',
+                    barWidth: '60%',
+                    showSymbol: false,// 取消折线上面的小圈
+                    color: 'rgba(237,85,101,1)',
+                    encode: {
+                        x: 0,
+                        y: 3
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(237,85,101,1)'
+                                }, {
+                                    offset: 0.5,
+                                    color: 'rgba(237,85,101,0.7)'
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(237,85,101,0)'
+                                }]
+                            }
+                        }
+                    },
+                },
+
+                {
+                    data: data.blue,
+                    name:'其他知识',
+                    type:'line',
+                    barWidth: '60%',
+                    showSymbol: false,// 取消折线上面的小圈
+                    color: 'rgba(29,152,248,1)',
+                    encode: {
+                        x: 0,
+                        y: 3
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: 'rgba(29,152,248,1)'
+                                }, {
+                                    offset: 0.5, color: 'rgba(29,152,248,0.7)'
+                                }, {
+                                    offset: 1, color: 'rgba(29,152,248,0)'
+                                }]
+                            }
+                        }
+                    },
+                }
+            ]
+        };
+
+        box2.setOption(option2);
+
+    };// renderCurve
+
+
+
+
+
+
+
+
+    // ========================================================
     var box = echarts.init(document.getElementById('curve-1'));
 
     $.getJSON('charts-data.json', function (rawData) {
@@ -31,7 +160,7 @@
             return [entry.time, entry.windSpeed, entry.R, entry.waveHeight];
         });
 
-
+        console.log(data)
         var dims = {
             time: 0,
             windSpeed: 1,
@@ -153,7 +282,7 @@
             ],// yAxis
             series: [
                 {
-                    //z: 2,
+
                     data: data,
                     type: 'line',
                     yAxisIndex: 1,
@@ -199,105 +328,23 @@
         box.setOption(option);
     });
 
-</script>
 
-<script>
-    var box2 = echarts.init(document.getElementById('curve-2'));
 
-    option2 = {
-        color: ['#3398DB'],
-        tooltip : {
-            trigger: 'axis',
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'line'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-        },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-        xAxis : [
-            {
-                type : 'category',
-                boundaryGap: false,// 标准坐标轴
-                data : ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
-                axisTick: {
-                    alignWithLabel: true
-                }
-            }
-        ],
-        yAxis : [
-            {
-                name: '每小时更新一次数据',
-                type : 'value',
-            }
-        ],
-        series : [
-            {
-                name:'直接访问',
-                type:'line',
-                barWidth: '60%',
-                //data:[10, 152, 200, 334, 390, 330, 220, 390, 330, 220],
-                data:[50,58,78,76,90,87,88,68,97,88],
-                areaStyle: {
-                    normal: {
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                offset: 0, color: 'rgba(88,160,253,1)'
-                            }, {
-                                offset: 0.5, color: 'rgba(88,160,253,0.7)'
-                            }, {
-                                offset: 1, color: 'rgba(88,160,253,0)'
-                            }]
-                        }
-                    }
-                },
-            },
 
-            {
-                name:'直接访问',
-                type:'line',
-                barWidth: '60%',
-                //data:[34, 76, 340, 110, 220, 130,320, 220, 130,320],
-                data:[35,43,21,14,42,33,29,36,29,44],
-                areaStyle: {
-                    normal: {
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                offset: 0, color: 'rgba(170,49,77,1)'
-                            }, {
-                                offset: 0.5, color: 'rgba(170,49,77,0.7)'
-                            }, {
-                                offset: 1, color: 'rgba(170,49,77,0)'
-                            }]
-                        }
-                    }
-                },
-                lineStyle: {
-                    normal: {
-                        color: 'rgba(170,49,77,1)',// 曲线的颜色
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        color: 'rgba(170,49,77,1)',// 曲线上面小球的颜色
-                    }
-                },
-            }
-        ]
-    };
 
-    box2.setOption(option2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bar-charts</title>
+</head>
+<body>
+    <div id="bar-1" style="width: 100%; height: 500px;"></div>
+</body>
+</html>
+<script src="../file-js/jquery-1.12.4.min.js"></script>
+<script src="../file-js/echarts.min.js"></script>
+<script>
+    var bar1 = echarts.init(document.getElementById('bar-1'));
+
+    option = {
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        legend: {
+            data: ['客服知识', '岗位知识','金融知识','机器人知识','其他知识']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        yAxis:  {
+            name: '每24小时更新一次数据',
+            type: 'value'
+        },
+        xAxis: {
+            type: 'category',
+            data: ['周一','周二','周三','周四','周五','周六','周日']
+        },
+        series: [
+            {
+                name: '客服知识',
+                type: 'bar',
+                color: '#FF8A41',
+                stack: '总量',
+                barMaxWidth: '50%',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideTop'
+                    }
+                },
+                data: [320, 302, 301, 334, 390, 330, 320]
+            },
+            {
+                name: '岗位知识',
+                type: 'bar',
+                color: '#1D98F9',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideTop'
+                    }
+                },
+                data: [120, 132, 401, 134, 190, 230, 210]
+            },
+            {
+                name: '金融知识',
+                type: 'bar',
+                color: '#ED5565',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideTop'
+                    }
+                },
+                data: [220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name: '机器人知识',
+                type: 'bar',
+                color: '#00BFA5',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideTop'
+                    }
+                },
+                data: [150, 212, 201, 154, 190, 330, 410]
+            },
+            {
+                name: '其他知识',
+                type: 'bar',
+                color: '#637A84',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideTop'
+                    }
+                },
+                data: [820, 832, 901, 934, 1290, 1330, 1320]
+            }
+        ]
+    };
+
+    bar1.setOption(option);
+</script>
